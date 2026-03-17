@@ -80,6 +80,8 @@
     .pill:focus-visible,
     .tab-button:focus-visible,
     .hero-button:focus-visible,
+    .mobile-nav-btn:focus-visible,
+    .back-to-top:focus-visible,
     .topic-card:focus-visible,
     a:focus-visible {
       outline: 2px solid var(--accent);
@@ -1053,6 +1055,7 @@
         gap: 8px;
         padding-bottom: 6px;
         scroll-snap-type: x mandatory;
+        scroll-padding-left: 4px;
         mask-image: linear-gradient(to right, black 85%, transparent 100%);
         -webkit-mask-image: linear-gradient(to right, black 85%, transparent 100%);
       }
@@ -1076,6 +1079,148 @@
       }
     }
 
+    /* Sticky bottom nav */
+    .mobile-nav {
+      display: none;
+    }
+
+    @media (max-width: 760px) {
+      .mobile-nav {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        display: flex;
+        justify-content: space-around;
+        align-items: stretch;
+        background: rgba(255, 255, 255, 0.88);
+        backdrop-filter: blur(18px) saturate(1.6);
+        -webkit-backdrop-filter: blur(18px) saturate(1.6);
+        border-top: 1px solid var(--line);
+        padding: 0 0 env(safe-area-inset-bottom, 4px);
+        z-index: 200;
+        box-shadow: 0 -4px 20px rgba(23, 48, 75, 0.06);
+      }
+
+      .mobile-nav-btn {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 3px;
+        padding: 10px 4px 8px;
+        border: none;
+        background: none;
+        color: var(--muted);
+        font-size: 0.68rem;
+        font-weight: 600;
+        letter-spacing: 0.03em;
+        text-transform: uppercase;
+        cursor: pointer;
+        position: relative;
+        transition: color 0.18s ease;
+        -webkit-tap-highlight-color: transparent;
+      }
+
+      .mobile-nav-btn::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%) scaleX(0);
+        width: 32px;
+        height: 3px;
+        border-radius: 0 0 3px 3px;
+        background: var(--accent);
+        transition: transform 0.22s ease;
+      }
+
+      .mobile-nav-btn.is-active {
+        color: var(--accent);
+      }
+
+      .mobile-nav-btn.is-active::before {
+        transform: translateX(-50%) scaleX(1);
+      }
+
+      .mobile-nav-icon {
+        font-size: 1.3rem;
+        line-height: 1;
+      }
+
+      .mobile-nav-btn:active {
+        transform: scale(0.94);
+        transition-duration: 0.08s;
+      }
+
+      body {
+        padding-bottom: calc(64px + env(safe-area-inset-bottom, 4px));
+      }
+
+      .site-footer {
+        padding-bottom: 20px;
+      }
+    }
+
+    /* Scroll progress bar */
+    .scroll-progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--accent), #4f9cf7);
+      z-index: 300;
+      width: 0%;
+      border-radius: 0 2px 2px 0;
+      pointer-events: none;
+    }
+
+    @media (min-width: 761px) {
+      .scroll-progress {
+        display: none;
+      }
+    }
+
+    /* Back to top */
+    .back-to-top {
+      position: fixed;
+      bottom: 78px;
+      right: 16px;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      border: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      box-shadow: 0 4px 16px rgba(23, 48, 75, 0.1);
+      color: var(--text);
+      font-size: 1.1rem;
+      cursor: pointer;
+      z-index: 190;
+      opacity: 0;
+      pointer-events: none;
+      transform: translateY(10px);
+      transition: opacity 0.22s ease, transform 0.22s ease;
+      display: none;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .back-to-top.is-visible {
+      opacity: 1;
+      pointer-events: auto;
+      transform: translateY(0);
+    }
+
+    @media (max-width: 760px) {
+      .back-to-top {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+
     @media (prefers-reduced-motion: reduce) {
       *,
       *::before,
@@ -1088,6 +1233,9 @@
   </style>
 </head>
 <body>
+  <!-- Scroll progress bar -->
+  <div class="scroll-progress" id="scroll-progress" aria-hidden="true"></div>
+
   <div class="container">
     <header class="site-header">
       <section class="hero" aria-labelledby="page-title">
@@ -2707,6 +2855,105 @@
     });
 
     renderAll();
+  </script>
+
+  <!-- Mobile bottom navigation -->
+  <nav class="mobile-nav" id="mobile-nav" aria-label="Section navigation">
+    <button class="mobile-nav-btn is-active" type="button" data-nav-target="devices">
+      <span class="mobile-nav-icon" aria-hidden="true">📱</span>
+      <span>Devices</span>
+    </button>
+    <button class="mobile-nav-btn" type="button" data-nav-target="operating-systems">
+      <span class="mobile-nav-icon" aria-hidden="true">⚙️</span>
+      <span>OS</span>
+    </button>
+    <button class="mobile-nav-btn" type="button" data-nav-target="apps">
+      <span class="mobile-nav-icon" aria-hidden="true">🧩</span>
+      <span>Apps</span>
+    </button>
+    <button class="mobile-nav-btn" type="button" data-nav-target="page-title" data-is-top="true">
+      <span class="mobile-nav-icon" aria-hidden="true">↑</span>
+      <span>Top</span>
+    </button>
+  </nav>
+
+  <!-- Back to top button -->
+  <button class="back-to-top" id="back-to-top" aria-label="Back to top">↑</button>
+
+  <script>
+    (function () {
+      var mobileNav = document.getElementById("mobile-nav");
+      var progressBar = document.getElementById("scroll-progress");
+      var backToTop = document.getElementById("back-to-top");
+      if (!mobileNav) return;
+
+      var navButtons = mobileNav.querySelectorAll("[data-nav-target]");
+      var sections = ["devices", "operating-systems", "apps"];
+      var sectionEls = sections.map(function (id) { return document.getElementById(id); }).filter(Boolean);
+
+      // Click: smooth scroll to section
+      mobileNav.addEventListener("click", function (e) {
+        var btn = e.target.closest("[data-nav-target]");
+        if (!btn) return;
+        var el = document.getElementById(btn.dataset.navTarget);
+        if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+      });
+
+      // Back to top
+      if (backToTop) {
+        backToTop.addEventListener("click", function () {
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        });
+      }
+
+      // Scroll handler
+      var ticking = false;
+      function onScroll() {
+        if (ticking) return;
+        ticking = true;
+        requestAnimationFrame(function () {
+          ticking = false;
+          var scrollTop = window.scrollY || document.documentElement.scrollTop;
+          var docHeight = document.documentElement.scrollHeight - window.innerHeight;
+
+          // Progress bar
+          if (progressBar && docHeight > 0) {
+            progressBar.style.width = ((scrollTop / docHeight) * 100) + "%";
+          }
+
+          // Back to top visibility
+          if (backToTop) {
+            if (scrollTop > 600) {
+              backToTop.classList.add("is-visible");
+            } else {
+              backToTop.classList.remove("is-visible");
+            }
+          }
+
+          // Active section detection
+          var activeId = "";
+          var offset = window.innerHeight * 0.35;
+          for (var i = sectionEls.length - 1; i >= 0; i--) {
+            if (sectionEls[i].getBoundingClientRect().top <= offset) {
+              activeId = sectionEls[i].id;
+              break;
+            }
+          }
+
+          navButtons.forEach(function (btn) {
+            if (btn.dataset.isTop === "true") return;
+            if (btn.dataset.navTarget === activeId) {
+              btn.classList.add("is-active");
+            } else {
+              btn.classList.remove("is-active");
+            }
+          });
+        });
+      }
+
+      window.addEventListener("scroll", onScroll, { passive: true });
+      onScroll();
+    })();
   </script>
 </body>
 </html>
