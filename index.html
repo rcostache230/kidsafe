@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Digital Safety Hub</title>
+  <title>Digital Parents</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700&family=Source+Serif+4:wght@600;700&display=swap" rel="stylesheet" />
@@ -1032,7 +1032,7 @@
       <section class="hero" aria-labelledby="page-title">
         <div class="hero-grid">
           <div>
-            <span class="kicker">Digital Safety Hub</span>
+            <span class="kicker">Digital Parents</span>
             <h1 id="page-title">A clearer way to judge digital risk at home.</h1>
             <p class="lead">This page is built for quick, plain-language checks. Start with the topic you need right now, then use the selector inside that section to find the exact device, operating system, or app. Every card focuses on what the risk looks like for a child and what a parent can do today.</p>
             <div class="hero-actions">
@@ -1064,7 +1064,7 @@
                 <span>Operating system profiles with exact setup paths for parents</span>
               </article>
               <article class="mini-card">
-                <strong>5</strong>
+                <strong>9</strong>
                 <span>App guides with age guidance, warning flags, and safe setup steps</span>
               </article>
             </div>
@@ -1734,7 +1734,7 @@
       },
       sectionTwo: {
         defaultKey: "roblox",
-        order: ["roblox", "snapchat", "instagram", "tiktok", "chatgpt"],
+        order: ["roblox", "youtube", "snapchat", "instagram", "tiktok", "discord", "fortnite", "minecraft", "chatgpt"],
         items: {
           roblox: {
             name: "Roblox",
@@ -1803,6 +1803,76 @@
               {
                 title: "Set device-level time limits",
                 instruction: "Use iPhone Screen Time, Android Family Link, Windows Family Safety, or macOS Screen Time to put Roblox on a hard stop."
+              }
+            ]
+          },
+          youtube: {
+            name: "YouTube",
+            icon: "▶️",
+            description: "A video platform driven by a powerful recommendation engine, autoplay, and largely unfiltered comments.",
+            age: "Accounts 13+ | Under-13s should use YouTube Kids",
+            riskLabel: "High",
+            riskTone: "high",
+            riskPercent: 72,
+            metrics: [
+              { value: "80 min/day", label: "Avg teen daily use" },
+              { value: "Extreme", label: "Algorithm power" },
+              { value: "Unmoderated", label: "Comment sections" },
+              { value: "Not fully safe", label: "YouTube Kids" }
+            ],
+            warning: "YouTube's recommendation algorithm is trained to maximize watch time, not wellbeing. A child watching one mildly edgy video can be served increasingly extreme content within 30 minutes, and this can happen on YouTube Kids too.",
+            tip: "Restricted Mode has to be enabled separately on every browser and every device. It does not sync automatically.",
+            risks: [
+              {
+                severity: "critical",
+                title: "Algorithm rabbit holes",
+                description: "A child can move from harmless clips into extremist, violent, or self-harm content quickly because the system rewards continued watching."
+              },
+              {
+                severity: "high",
+                title: "Comment sections expose children to adults and explicit content",
+                description: "Comments often include sexual language, harassment, scams, and direct contact attempts with little meaningful moderation."
+              },
+              {
+                severity: "high",
+                title: "YouTube Kids is not fully safe",
+                description: "The child version reduces risk but still allows age-inappropriate videos, misleading channels, and algorithm mistakes to slip through."
+              },
+              {
+                severity: "high",
+                title: "Autoplay removes natural stopping points",
+                description: "Without a clear stopping cue, a planned short watch can turn into an hour or more of passive viewing."
+              },
+              {
+                severity: "medium",
+                title: "Misleading health and money advice",
+                description: "Confident creators can sound expert while sharing harmful health claims, get-rich promises, or other bad advice."
+              }
+            ],
+            steps: [
+              {
+                title: "Enable Restricted Mode everywhere",
+                instruction: "Account icon → Restricted Mode → ON. Repeat this on every browser and every device because it is not account-wide."
+              },
+              {
+                title: "Use YouTube Kids for children under 13",
+                instruction: "Switch younger children to the YouTube Kids app and review settings at kids.youtube.com/settings."
+              },
+              {
+                title: "Turn off Autoplay",
+                instruction: "Account icon → Settings → Autoplay → OFF so videos stop instead of rolling into the next recommendation."
+              },
+              {
+                title: "Disable Search for younger children",
+                instruction: "YouTube Kids app → profile icon → Settings → disable Search for children under 8 so the app serves a narrower set of videos."
+              },
+              {
+                title: "Review watch history weekly",
+                instruction: "Account → History and look through what the recommendation system has been serving your child."
+              },
+              {
+                title: "Set an app-specific time limit",
+                instruction: "Use iPhone Screen Time or Android Digital Wellbeing and target the YouTube app itself rather than only setting whole-device limits."
               }
             ]
           },
@@ -2013,6 +2083,212 @@
               {
                 title: "Shape the feed actively",
                 instruction: "Long-press unwanted videos → Not Interested so the recommendation engine receives corrective feedback."
+              }
+            ]
+          },
+          discord: {
+            name: "Discord",
+            icon: "🎧",
+            description: "A chat platform centered on servers, gaming communities, voice channels, and direct messages that are hard for parents to see.",
+            age: "Official 13+ | Not recommended under 16 without direct supervision",
+            riskLabel: "Very high",
+            riskTone: "critical",
+            riskPercent: 85,
+            metrics: [
+              { value: "Gaming communities", label: "Primary use" },
+              { value: "On by default", label: "Direct DMs" },
+              { value: "None", label: "Server age verification" },
+              { value: "Inconsistent", label: "Moderation" }
+            ],
+            warning: "Discord has no platform-wide moderation of server content. The safety of any server depends almost entirely on its administrators, and there is no reliable way to verify who your child is speaking to in voice chat.",
+            tip: "Reviewing the full server list matters more than any single setting. One harmful server can outweigh every privacy toggle you enable.",
+            risks: [
+              {
+                severity: "critical",
+                title: "Direct messages from strangers",
+                description: "Children in shared servers can receive private messages from adults or older teens they have never met."
+              },
+              {
+                severity: "critical",
+                title: "Adult or extremist communities",
+                description: "Many servers have no age checks and can host explicit content, hate speech, or harmful communities in plain view."
+              },
+              {
+                severity: "critical",
+                title: "Grooming in game-related servers",
+                description: "Adults can use shared gaming interests to build trust slowly and move conversations into DMs or voice chat."
+              },
+              {
+                severity: "high",
+                title: "File sharing creates malware risk",
+                description: "Children can be sent suspicious files, cracked games, or illegal content directly inside chats and servers."
+              },
+              {
+                severity: "high",
+                title: "Voice chat is unlogged and hard to monitor",
+                description: "Live voice channels create contact risk without a clear record for a parent to review afterward."
+              }
+            ],
+            steps: [
+              {
+                title: "Review every server together",
+                instruction: "Open the server list and leave anything your child cannot explain or that you cannot inspect clearly: left-click server → Leave Server."
+              },
+              {
+                title: "Turn off DMs from server members",
+                instruction: "User Settings → Privacy & Safety → Allow direct messages from server members → OFF."
+              },
+              {
+                title: "Limit friend requests",
+                instruction: "User Settings → Privacy & Safety → Friend Requests and uncheck Everyone so strangers cannot add them easily."
+              },
+              {
+                title: "Disable age-restricted content",
+                instruction: "User Settings → Privacy & Safety → age-restricted content → OFF."
+              },
+              {
+                title: "Enable two-factor authentication",
+                instruction: "User Settings → My Account → Enable Two-Factor Auth so the account is harder to hijack."
+              },
+              {
+                title: "Set a standing review rule",
+                instruction: "Agree that you can check the server list at any time without notice, because server membership is the main safety issue."
+              }
+            ]
+          },
+          fortnite: {
+            name: "Fortnite",
+            icon: "🪂",
+            description: "A fast-paced multiplayer game with open voice chat, heavy cosmetic spending pressure, and long competitive sessions.",
+            age: "Age 12+ | Commonly played younger than the rating",
+            riskLabel: "Medium-high",
+            riskTone: "high",
+            riskPercent: 60,
+            metrics: [
+              { value: "90+ min", label: "Avg session" },
+              { value: "On by default", label: "Voice chat" },
+              { value: "High pressure", label: "V-Bucks spending" },
+              { value: "Significant", label: "Competitive stress" }
+            ],
+            warning: "Voice chat is enabled by default and can place children into matches with random adult players. That is the primary contact risk and should be the first setting you change.",
+            tip: "The Epic Games Parental Controls PIN is the master control. Set it first and keep it private.",
+            risks: [
+              {
+                severity: "high",
+                title: "Voice chat with strangers",
+                description: "Children can hear and talk to random players, including adults, during live matches unless chat is disabled."
+              },
+              {
+                severity: "high",
+                title: "V-Bucks spending pressure",
+                description: "Limited-time cosmetics, battle passes, and social status cues create repeated pressure to spend real money."
+              },
+              {
+                severity: "high",
+                title: "Competitive toxicity",
+                description: "Live matches can include insults, aggressive teammates, and verbal abuse that younger children are not ready for."
+              },
+              {
+                severity: "medium",
+                title: "Free V-Bucks scams",
+                description: "Children are heavily targeted with fake codes, phishing pages, and account-stealing offers built around V-Bucks."
+              },
+              {
+                severity: "medium",
+                title: "Sleep disruption",
+                description: "Matches and social momentum can make it difficult for children to stop at a sensible time without an external limit."
+              }
+            ],
+            steps: [
+              {
+                title: "Turn off voice chat first",
+                instruction: "Settings → Audio → Voice Chat → OFF, or set it to Friends Only if you want to allow limited team communication."
+              },
+              {
+                title: "Enable Epic parental controls",
+                instruction: "Go to epicgames.com/account, open Parental Controls, and set a PIN your child does not know."
+              },
+              {
+                title: "Protect purchases with the PIN",
+                instruction: "Use Epic Parental Controls to require the PIN for all purchases or to place a monthly V-Bucks spending limit."
+              },
+              {
+                title: "Reduce cross-platform stranger contact",
+                instruction: "Turn off Cross-Platform Communication in Parental Controls so random players from other platforms cannot reach them as easily."
+              },
+              {
+                title: "Use device-level stop times",
+                instruction: "Set a firm session end with Screen Time, Family Link, Windows Family Safety, or console controls rather than relying on your child to stop voluntarily."
+              },
+              {
+                title: "Review transaction history monthly",
+                instruction: "Check epicgames.com/account/transactions so spending patterns and surprise charges do not build up quietly."
+              }
+            ]
+          },
+          minecraft: {
+            name: "Minecraft",
+            icon: "⛏️",
+            description: "A creative sandbox game that is low risk in single-player but very different once public servers and downloads enter the picture.",
+            age: "Age 7+ | Multiplayer changes the risk profile",
+            riskLabel: "Medium",
+            riskTone: "medium",
+            riskPercent: 50,
+            metrics: [
+              { value: "Low", label: "Single-player risk" },
+              { value: "High", label: "Public server risk" },
+              { value: "Malware vector", label: "Mod downloads" },
+              { value: "Educational", label: "Creative mode" }
+            ],
+            warning: "Minecraft Realms are far safer than third-party public servers. For many families, the difference between low and high risk is not the game itself but where the child is playing it.",
+            tip: "Restricting multiplayer to private Realms only is the most effective change because it removes stranger contact while keeping the game enjoyable.",
+            risks: [
+              {
+                severity: "high",
+                title: "Public servers expose children to adults",
+                description: "Third-party multiplayer servers allow strangers to join, with little age verification and very mixed moderation."
+              },
+              {
+                severity: "high",
+                title: "Public chat is often unfiltered",
+                description: "Server chat can include sexual language, harassment, scams, and other material far outside the PEGI 7 rating."
+              },
+              {
+                severity: "high",
+                title: "Mods and texture packs can deliver malware",
+                description: "Third-party downloads are a common route for malicious files, fake installers, and account-stealing tools."
+              },
+              {
+                severity: "medium",
+                title: "Free Minecraft scams",
+                description: "Phishing pages and fake account generators often target children who want the game, capes, or premium content for free."
+              },
+              {
+                severity: "low",
+                title: "Marketplace spending",
+                description: "Bedrock edition adds purchases through Minecoins and marketplace content, though this is usually less intense than in live-service shooters."
+              }
+            ],
+            steps: [
+              {
+                title: "Check whether they use Java or Bedrock",
+                instruction: "Java Edition on PC has no meaningful built-in parental controls. Bedrock on consoles, mobile, and Windows can be controlled through Xbox Family Safety."
+              },
+              {
+                title: "Use Xbox Family Safety for Bedrock",
+                instruction: "Go to family.xbox.com and restrict multiplayer, purchases, and screen time for any Bedrock account."
+              },
+              {
+                title: "Keep Java players on Realms only",
+                instruction: "Use minecraft.net/realms and set up a private, invite-only Realm with known friends instead of public servers."
+              },
+              {
+                title: "Limit downloads to trusted mod sites",
+                instruction: "Only allow modrinth.com or curseforge.com for mods or texture packs. Treat other sources as high risk."
+              },
+              {
+                title: "Add a launcher cutoff time",
+                instruction: "Use Windows Family Safety or macOS Screen Time to block the Minecraft launcher after a set hour."
               }
             ]
           },
