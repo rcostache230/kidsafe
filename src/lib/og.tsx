@@ -11,7 +11,7 @@ export const OG_CONTENT_TYPE = "image/png";
 
 const baseText = "#0f172a";
 const mutedText = "#5f6b7a";
-const brandColor = "#17304b";
+const brandColor = "#1e293b";
 
 function legendDot(color: string) {
   return (
@@ -32,20 +32,15 @@ function riskTone(level: Entry["riskLevel"]) {
 
   return {
     label: meta.label,
-    dot:
-      level === "critical"
-        ? "#501313"
-        : level === "high"
-          ? "#A32D2D"
-          : level === "medium"
-            ? "#BA7517"
-            : "#0F6E56",
+    dot: meta.hexColor,
     background:
-      level === "critical" || level === "high"
-        ? "#FCEBEB"
-        : level === "medium"
-          ? "#FAEEDA"
-          : "#E1F5EE"
+      level === "critical"
+        ? "rgba(220, 38, 38, 0.10)"
+        : level === "high"
+          ? "rgba(234, 88, 12, 0.10)"
+          : level === "medium"
+            ? "rgba(217, 119, 6, 0.10)"
+            : "rgba(5, 150, 105, 0.10)"
   };
 }
 
@@ -59,7 +54,7 @@ export function OgBrand({ compact = false }: { compact?: boolean }) {
         color: brandColor
       }}
     >
-      <BrandMarkSvg size={compact ? 42 : 52} color={brandColor} />
+      <BrandMarkSvg size={compact ? 42 : 52} />
       {!compact ? (
         <span
           style={{
@@ -126,10 +121,10 @@ export function HomeOgCard() {
         }}
       >
         {[
-          ["Critical", "#501313"],
-          ["High", "#A32D2D"],
-          ["Medium", "#BA7517"],
-          ["Low", "#0F6E56"]
+          ["Critical", "#DC2626"],
+          ["High", "#EA580C"],
+          ["Medium", "#D97706"],
+          ["Low", "#059669"]
         ].map(([label, color]) => (
           <div
             key={label}

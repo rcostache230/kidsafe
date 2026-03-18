@@ -21,7 +21,7 @@ export function Breadcrumbs({ items }: { items: BreadcrumbItem[] }) {
             ) : (
               <span className="text-slate-900 dark:text-white">{item.label}</span>
             )}
-            {index < items.length - 1 ? <span aria-hidden="true">/</span> : null}
+            {index < items.length - 1 ? <span aria-hidden="true">→</span> : null}
           </li>
         ))}
       </ol>

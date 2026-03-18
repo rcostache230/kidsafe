@@ -34,15 +34,15 @@ export function EntryPage({ entry }: { entry: Entry }) {
 
         <header className="space-y-5">
           <div className="space-y-4">
+            <p className="text-[13px] font-semibold uppercase tracking-[0.18em] text-slate-500 dark:text-slate-400">
+              {categoryLabels[entry.category]}
+            </p>
             <div className="flex flex-wrap items-center gap-3">
-              <p className="text-[13px] font-semibold uppercase tracking-[0.18em] text-slate-500 dark:text-slate-400">
-                {categoryLabels[entry.category]}
-              </p>
+              <h1 className="text-3xl font-semibold tracking-tight text-slate-950 dark:text-white sm:text-4xl">
+                {entry.name}
+              </h1>
               <RiskBadge level={entry.riskLevel} label={entry.riskLabelText} />
             </div>
-            <h1 className="text-3xl font-semibold tracking-tight text-slate-950 dark:text-white sm:text-4xl">
-              {entry.name}
-            </h1>
             <p className="max-w-3xl text-base leading-7 text-slate-600 dark:text-slate-300">
               {entry.description}
             </p>
@@ -57,15 +57,15 @@ export function EntryPage({ entry }: { entry: Entry }) {
                     key={callout.title}
                     className={`rounded-2xl border p-4 ${
                       warning
-                        ? "border-[#A32D2D]/20 bg-[#FCEBEB] dark:border-[#A32D2D]/35 dark:bg-[#A32D2D]/10"
-                        : "border-[#0F6E56]/20 bg-[#E1F5EE] dark:border-[#0F6E56]/35 dark:bg-[#0F6E56]/10"
+                        ? "border-[rgba(220,38,38,0.22)] bg-[rgba(220,38,38,0.08)] dark:border-[rgba(220,38,38,0.35)] dark:bg-[rgba(220,38,38,0.14)]"
+                        : "border-[rgba(5,150,105,0.22)] bg-[rgba(5,150,105,0.08)] dark:border-[rgba(5,150,105,0.35)] dark:bg-[rgba(5,150,105,0.14)]"
                     }`}
                   >
                     <h2
                       className={`text-sm font-semibold ${
                         warning
-                          ? "text-[#7f2020] dark:text-[#f5c5c5]"
-                          : "text-[#0F6E56] dark:text-[#b7eedf]"
+                          ? "text-[#DC2626] dark:text-[#fca5a5]"
+                          : "text-[#059669] dark:text-[#6ee7b7]"
                       }`}
                     >
                       {callout.title}

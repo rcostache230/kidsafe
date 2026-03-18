@@ -1,8 +1,8 @@
 import Link from "next/link";
 
-import { type Entry, getEntryHref } from "@/data/entries";
+import { type Entry, getEntryHref, getRiskMeta } from "@/data/entries";
 
-import { RiskDot } from "./risk-dot";
+import { RiskBadge } from "./risk-badge";
 
 export function EntryCard({
   entry,
@@ -11,15 +11,17 @@ export function EntryCard({
   entry: Entry;
   compact?: boolean;
 }) {
+  const risk = getRiskMeta(entry.riskLevel);
+
   return (
     <Link
       href={getEntryHref(entry)}
-      className="group block rounded-xl border border-slate-200 bg-white p-5 shadow-sm transition-colors hover:border-slate-400 dark:border-slate-800 dark:bg-slate-900/60 dark:hover:border-slate-600"
+      className="group block rounded-xl border border-slate-200 border-l-[3px] bg-white p-5 shadow-sm transition-shadow hover:shadow-[0_2px_8px_rgba(0,0,0,0.06)] dark:border-slate-800 dark:bg-slate-900/60 dark:hover:shadow-[0_2px_10px_rgba(0,0,0,0.24)]"
+      style={{ borderLeftColor: risk.hexColor }}
     >
       <div className="flex items-start justify-between gap-4">
         <div className="min-w-0 space-y-2">
           <div className="flex items-center gap-3">
-            <RiskDot level={entry.riskLevel} />
             <h3 className="text-base font-semibold text-slate-950 dark:text-white">
               {entry.name}
             </h3>
@@ -30,11 +32,8 @@ export function EntryCard({
             </p>
           ) : null}
         </div>
-        <span
-          className="text-lg text-slate-400 transition-transform group-hover:translate-x-0.5 group-hover:text-slate-700 dark:group-hover:text-slate-200"
-          aria-hidden="true"
-        >
-          →
+        <span className="flex-none">
+          <RiskBadge level={entry.riskLevel} compact showDot={false} />
         </span>
       </div>
     </Link>
