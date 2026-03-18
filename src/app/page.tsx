@@ -22,7 +22,7 @@ export default function HomePage() {
 
   return (
     <div className="page-shell py-10 sm:py-14">
-      <div className="space-y-14">
+      <div className="space-y-4 sm:space-y-5">
         <section className="space-y-6">
           <div className="max-w-3xl space-y-4">
             <h1 className="text-4xl font-semibold tracking-tight text-slate-950 dark:text-white sm:text-5xl">
@@ -34,24 +34,15 @@ export default function HomePage() {
               most useful changes.
             </p>
           </div>
-
-          <div className="inline-flex max-w-full flex-wrap gap-3 rounded-full bg-slate-100/90 px-4 py-3 dark:bg-slate-900/70">
-            {legendOrder.map((level) => (
-              <span
-                key={level}
-                className={`inline-flex items-center gap-2 rounded-full px-3 py-1 text-sm font-medium ${riskMeta[level].textClass}`}
-              >
-                <RiskDot level={level} withRing />
-                {riskMeta[level].label}
-              </span>
-            ))}
-          </div>
         </section>
 
-        <section id="devices" className="space-y-5">
-          <div className="flex items-center gap-3">
-            <span className="category-icon inline-flex h-9 w-9 items-center justify-center rounded-lg border border-slate-200 text-slate-600 dark:border-slate-800 dark:text-slate-300">
-              <IconDevices className="h-5 w-5" />
+        <section
+          id="devices"
+          className="space-y-5 rounded-2xl bg-slate-50 p-5 dark:bg-slate-900"
+        >
+          <div className="flex items-center gap-2.5">
+            <span className="category-icon text-slate-500 opacity-50 dark:text-slate-400">
+              <IconDevices className="h-4 w-4" />
             </span>
             <h2 className="text-2xl font-semibold tracking-tight text-slate-950 dark:text-white">
               {categoryLabels.devices}
@@ -64,10 +55,13 @@ export default function HomePage() {
           </div>
         </section>
 
-        <section id="operating-systems" className="space-y-5">
-          <div className="flex items-center gap-3">
-            <span className="category-icon inline-flex h-9 w-9 items-center justify-center rounded-lg border border-slate-200 text-slate-600 dark:border-slate-800 dark:text-slate-300">
-              <IconOS className="h-5 w-5" />
+        <section
+          id="operating-systems"
+          className="space-y-5 rounded-2xl bg-slate-50 p-5 dark:bg-slate-900"
+        >
+          <div className="flex items-center gap-2.5">
+            <span className="category-icon text-slate-500 opacity-50 dark:text-slate-400">
+              <IconOS className="h-4 w-4" />
             </span>
             <h2 className="text-2xl font-semibold tracking-tight text-slate-950 dark:text-white">
               {categoryLabels.os}
@@ -80,14 +74,30 @@ export default function HomePage() {
           </div>
         </section>
 
-        <section id="apps" className="space-y-5">
-          <div className="flex items-center gap-3">
-            <span className="category-icon inline-flex h-9 w-9 items-center justify-center rounded-lg border border-slate-200 text-slate-600 dark:border-slate-800 dark:text-slate-300">
-              <IconApps className="h-5 w-5" />
-            </span>
-            <h2 className="text-2xl font-semibold tracking-tight text-slate-950 dark:text-white">
-              {categoryLabels.apps}
-            </h2>
+        <section
+          id="apps"
+          className="space-y-5 rounded-2xl bg-slate-50 p-5 dark:bg-slate-900"
+        >
+          <div className="space-y-3">
+            <div className="flex items-center gap-2.5">
+              <span className="category-icon text-slate-500 opacity-50 dark:text-slate-400">
+                <IconApps className="h-4 w-4" />
+              </span>
+              <h2 className="text-2xl font-semibold tracking-tight text-slate-950 dark:text-white">
+                {categoryLabels.apps}
+              </h2>
+            </div>
+            <div className="flex flex-wrap gap-1">
+              {legendOrder.map((level) => (
+                <span
+                  key={level}
+                  className="inline-flex items-center gap-1.5 rounded-md border border-slate-200 bg-white px-2 py-0.5 text-xs text-slate-500 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-300"
+                >
+                  <RiskDot level={level} className="h-1.5 w-1.5" />
+                  <span className={riskMeta[level].textClass}>{riskMeta[level].label}</span>
+                </span>
+              ))}
+            </div>
           </div>
           <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
             {apps.map((entry) => (

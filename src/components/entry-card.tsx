@@ -1,8 +1,54 @@
 import Link from "next/link";
 
-import { type Entry, getEntryHref, getRiskMeta } from "@/data/entries";
+import { type Entry, getEntryHref } from "@/data/entries";
 
-import { RiskBadge } from "./risk-badge";
+import {
+  IconDeviceDesktop,
+  IconDeviceLaptop,
+  IconDeviceSmartphone,
+  IconDeviceTablet,
+  IconOSAndroid,
+  IconOSIos,
+  IconOSMac,
+  IconOSWindows
+} from "./category-icons";
+import { RiskDot } from "./risk-dot";
+
+const directorySubtitles: Partial<Record<Entry["slug"], string>> = {
+  smartphone: "Setup guide + 8 risk flags",
+  tablet: "Setup guide + 5 risk flags",
+  laptop: "Setup guide + 6 risk flags",
+  desktop: "Setup guide + 4 risk flags",
+  ios: "Screen Time + Family controls",
+  android: "Family Link + Digital Wellbeing",
+  windows: "Family Safety setup",
+  macos: "Screen Time on desktop"
+};
+
+function CardIcon({ entry }: { entry: Entry }) {
+  const className = "text-slate-600 dark:text-slate-300";
+
+  switch (entry.slug) {
+    case "smartphone":
+      return <IconDeviceSmartphone className={className} />;
+    case "tablet":
+      return <IconDeviceTablet className={className} />;
+    case "laptop":
+      return <IconDeviceLaptop className={className} />;
+    case "desktop":
+      return <IconDeviceDesktop className={className} />;
+    case "ios":
+      return <IconOSIos className={className} />;
+    case "android":
+      return <IconOSAndroid className={className} />;
+    case "windows":
+      return <IconOSWindows className={className} />;
+    case "macos":
+      return <IconOSMac className={className} />;
+    default:
+      return null;
+  }
+}
 
 export function EntryCard({
   entry,
@@ -11,31 +57,37 @@ export function EntryCard({
   entry: Entry;
   compact?: boolean;
 }) {
-  const risk = getRiskMeta(entry.riskLevel);
+  const isAppCard = entry.category === "apps" || compact;
+  const subtitle = directorySubtitles[entry.slug];
+  const cardPadding = isAppCard ? "p-4" : "p-5";
 
   return (
     <Link
       href={getEntryHref(entry)}
-      className="group block rounded-xl border border-slate-200 border-l-[3px] bg-white p-5 shadow-sm transition-shadow hover:shadow-[0_2px_8px_rgba(0,0,0,0.06)] dark:border-slate-800 dark:bg-slate-900/60 dark:hover:shadow-[0_2px_10px_rgba(0,0,0,0.24)]"
-      style={{ borderLeftColor: risk.hexColor }}
+      className={`group block rounded-xl border border-slate-200 bg-white ${cardPadding} transition-all duration-200 hover:-translate-y-px hover:border-slate-300 dark:border-slate-800 dark:bg-slate-950/70 dark:hover:border-slate-700`}
     >
-      <div className="flex items-start justify-between gap-4">
-        <div className="min-w-0 space-y-2">
-          <div className="flex items-center gap-3">
+      {isAppCard ? (
+        <div className="flex items-center gap-3">
+          <RiskDot level={entry.riskLevel} className="h-[7px] w-[7px]" />
+          <h3 className="text-base font-semibold text-slate-950 dark:text-white">
+            {entry.name}
+          </h3>
+        </div>
+      ) : (
+        <div className="flex items-start gap-4">
+          <div className="flex h-9 w-9 flex-none items-center justify-center rounded-lg border border-slate-200 bg-white dark:border-slate-700 dark:bg-slate-950">
+            <CardIcon entry={entry} />
+          </div>
+          <div className="min-w-0 space-y-1.5">
             <h3 className="text-base font-semibold text-slate-950 dark:text-white">
               {entry.name}
             </h3>
-          </div>
-          {!compact ? (
             <p className="text-sm leading-6 text-slate-600 dark:text-slate-300">
-              {entry.summary}
+              {subtitle ?? entry.summary}
             </p>
-          ) : null}
+          </div>
         </div>
-        <span className="flex-none">
-          <RiskBadge level={entry.riskLevel} compact showDot={false} />
-        </span>
-      </div>
+      )}
     </Link>
   );
 }
