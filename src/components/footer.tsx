@@ -1,22 +1,21 @@
 export function Footer() {
   return (
     <footer className="border-t border-slate-200/80 py-10 dark:border-slate-800/80">
-      <div className="page-shell space-y-4 text-sm text-slate-600 dark:text-slate-300">
-        <p>
+      <div className="page-shell space-y-4">
+        <p className="text-[13px] text-slate-600 dark:text-slate-300">
           Settings matter most when they are paired with routines, visible screens,
           and regular conversations.
         </p>
-        <p>
-          Passionate about kids&apos; digital wellbeing?{" "}
+        <div>
           <a
-            className="font-medium text-sky-700 hover:underline dark:text-sky-400"
+            className="inline-flex items-center justify-center rounded-lg bg-slate-800 px-[18px] py-[10px] text-[13px] font-medium text-white transition-colors hover:bg-slate-700 dark:bg-slate-200 dark:text-slate-800 dark:hover:bg-slate-300"
             href="https://www.linkedin.com/in/rcostache/"
             target="_blank"
             rel="noopener noreferrer"
           >
-            Get in touch →
+            Passionate about kids&apos; digital wellbeing? Let&apos;s connect →
           </a>
-        </p>
+        </div>
       </div>
     </footer>
   );

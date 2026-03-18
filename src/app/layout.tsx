@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import type { ReactNode } from "react";
 
-import { BrandLogo } from "@/components/brand";
+import { BrandLogo, BrandMark } from "@/components/brand";
 import { Footer } from "@/components/footer";
 import { SITE_DESCRIPTION, SITE_NAME, SITE_URL } from "@/lib/site";
 
@@ -41,11 +41,14 @@ export default function RootLayout({
             <div className="page-shell flex items-center gap-3 py-5">
               <Link
                 href="/"
-                className="inline-flex items-center text-slate-950 dark:text-white"
+                className="inline-flex items-center sm:hidden"
                 aria-label="Digital Parents"
               >
-                <BrandLogo compact />
+                <BrandMark />
               </Link>
+              <div className="hidden sm:block">
+                <BrandLogo />
+              </div>
             </div>
           </header>
           <main className="flex-1">{children}</main>

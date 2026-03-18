@@ -44,7 +44,10 @@ export const riskMeta: Record<
   RiskLevel,
   {
     label: string;
+    hexColor: string;
+    ringShadow: string;
     dotClass: string;
+    textClass: string;
     badgeClass: string;
     surfaceClass: string;
     borderClass: string;
@@ -52,31 +55,43 @@ export const riskMeta: Record<
 > = {
   "critical": {
     "label": "Critical",
-    "dotClass": "bg-[#501313]",
-    "badgeClass": "bg-[#FCEBEB] text-[#501313] dark:bg-[#501313]/20 dark:text-[#f8d4d4]",
-    "surfaceClass": "bg-[#FCEBEB] dark:bg-[#501313]/10",
-    "borderClass": "border-[#501313]/20 dark:border-[#501313]/40"
+    "hexColor": "#DC2626",
+    "ringShadow": "0 0 0 2px rgba(220, 38, 38, 0.20)",
+    "dotClass": "bg-[#DC2626]",
+    "textClass": "text-[#DC2626] dark:text-[#fca5a5]",
+    "badgeClass": "bg-[rgba(220,38,38,0.10)] text-[#DC2626] dark:bg-[rgba(220,38,38,0.18)] dark:text-[#fca5a5]",
+    "surfaceClass": "bg-[rgba(220,38,38,0.08)] dark:bg-[rgba(220,38,38,0.14)]",
+    "borderClass": "border-[rgba(220,38,38,0.22)] dark:border-[rgba(220,38,38,0.35)]"
   },
   "high": {
     "label": "High",
-    "dotClass": "bg-[#A32D2D]",
-    "badgeClass": "bg-[#FCEBEB] text-[#A32D2D] dark:bg-[#A32D2D]/20 dark:text-[#f8d4d4]",
-    "surfaceClass": "bg-[#FCEBEB] dark:bg-[#A32D2D]/10",
-    "borderClass": "border-[#A32D2D]/20 dark:border-[#A32D2D]/40"
+    "hexColor": "#EA580C",
+    "ringShadow": "0 0 0 2px rgba(234, 88, 12, 0.20)",
+    "dotClass": "bg-[#EA580C]",
+    "textClass": "text-[#EA580C] dark:text-[#fdba74]",
+    "badgeClass": "bg-[rgba(234,88,12,0.10)] text-[#EA580C] dark:bg-[rgba(234,88,12,0.18)] dark:text-[#fdba74]",
+    "surfaceClass": "bg-[rgba(234,88,12,0.08)] dark:bg-[rgba(234,88,12,0.14)]",
+    "borderClass": "border-[rgba(234,88,12,0.22)] dark:border-[rgba(234,88,12,0.35)]"
   },
   "medium": {
     "label": "Medium",
-    "dotClass": "bg-[#BA7517]",
-    "badgeClass": "bg-[#FAEEDA] text-[#8c550f] dark:bg-[#BA7517]/20 dark:text-[#f8ddb3]",
-    "surfaceClass": "bg-[#FAEEDA] dark:bg-[#BA7517]/10",
-    "borderClass": "border-[#BA7517]/20 dark:border-[#BA7517]/40"
+    "hexColor": "#D97706",
+    "ringShadow": "0 0 0 2px rgba(217, 119, 6, 0.20)",
+    "dotClass": "bg-[#D97706]",
+    "textClass": "text-[#D97706] dark:text-[#fcd34d]",
+    "badgeClass": "bg-[rgba(217,119,6,0.10)] text-[#D97706] dark:bg-[rgba(217,119,6,0.18)] dark:text-[#fcd34d]",
+    "surfaceClass": "bg-[rgba(217,119,6,0.08)] dark:bg-[rgba(217,119,6,0.14)]",
+    "borderClass": "border-[rgba(217,119,6,0.22)] dark:border-[rgba(217,119,6,0.35)]"
   },
   "low": {
     "label": "Low",
-    "dotClass": "bg-[#0F6E56]",
-    "badgeClass": "bg-[#E1F5EE] text-[#0F6E56] dark:bg-[#0F6E56]/20 dark:text-[#b7eedf]",
-    "surfaceClass": "bg-[#E1F5EE] dark:bg-[#0F6E56]/10",
-    "borderClass": "border-[#0F6E56]/20 dark:border-[#0F6E56]/40"
+    "hexColor": "#059669",
+    "ringShadow": "0 0 0 2px rgba(5, 150, 105, 0.20)",
+    "dotClass": "bg-[#059669]",
+    "textClass": "text-[#059669] dark:text-[#6ee7b7]",
+    "badgeClass": "bg-[rgba(5,150,105,0.10)] text-[#059669] dark:bg-[rgba(5,150,105,0.18)] dark:text-[#6ee7b7]",
+    "surfaceClass": "bg-[rgba(5,150,105,0.08)] dark:bg-[rgba(5,150,105,0.14)]",
+    "borderClass": "border-[rgba(5,150,105,0.22)] dark:border-[rgba(5,150,105,0.35)]"
   }
 };
 

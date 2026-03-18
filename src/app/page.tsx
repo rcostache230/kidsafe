@@ -25,9 +25,6 @@ export default function HomePage() {
       <div className="space-y-14">
         <section className="space-y-6">
           <div className="max-w-3xl space-y-4">
-            <p className="text-sm font-semibold uppercase tracking-[0.18em] text-slate-500 dark:text-slate-400">
-              Digital safety directory
-            </p>
             <h1 className="text-4xl font-semibold tracking-tight text-slate-950 dark:text-white sm:text-5xl">
               A clearer way to judge digital risk at home.
             </h1>
@@ -38,13 +35,13 @@ export default function HomePage() {
             </p>
           </div>
 
-          <div className="flex flex-wrap gap-4 rounded-2xl border border-slate-200 bg-slate-50/80 p-5 dark:border-slate-800 dark:bg-slate-900/50">
+          <div className="inline-flex max-w-full flex-wrap gap-3 rounded-full bg-slate-100/90 px-4 py-3 dark:bg-slate-900/70">
             {legendOrder.map((level) => (
               <span
                 key={level}
-                className="inline-flex items-center gap-2 text-sm font-medium text-slate-700 dark:text-slate-200"
+                className={`inline-flex items-center gap-2 rounded-full px-3 py-1 text-sm font-medium ${riskMeta[level].textClass}`}
               >
-                <RiskDot level={level} />
+                <RiskDot level={level} withRing />
                 {riskMeta[level].label}
               </span>
             ))}
@@ -92,7 +89,7 @@ export default function HomePage() {
               {categoryLabels.apps}
             </h2>
           </div>
-          <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+          <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
             {apps.map((entry) => (
               <EntryCard key={entry.slug} entry={entry} compact />
             ))}

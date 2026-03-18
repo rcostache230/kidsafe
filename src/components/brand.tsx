@@ -1,73 +1,81 @@
+import Link from "next/link";
+
 type BrandMarkSvgProps = {
   className?: string;
   size?: number;
-  color?: string;
 };
 
-export function BrandMarkSvg({
-  className = "",
-  size = 32,
-  color = "currentColor"
-}: BrandMarkSvgProps) {
+export function BrandMarkSvg({ className, size = 36 }: BrandMarkSvgProps) {
   return (
     <svg
-      aria-hidden="true"
-      className={className}
       width={size}
       height={size}
-      viewBox="0 0 32 32"
+      viewBox="0 0 36 36"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      style={{ color }}
+      className={className}
     >
-      <rect
-        x="4.5"
-        y="4.5"
-        width="23"
-        height="23"
-        rx="6.75"
-        stroke="currentColor"
-        strokeWidth="1.8"
-      />
       <path
-        d="M11.5 9V23M11.5 9H16.1C20.1 9 23 11.8 23 16C23 20.2 20.1 23 16.1 23H11.5"
+        d="M18 3L30 9V18C30 25.2 24.9 31.2 18 33C11.1 31.2 6 25.2 6 18V9L18 3Z"
         stroke="currentColor"
-        strokeWidth="1.8"
-        strokeLinecap="round"
+        strokeWidth="2.2"
+        fill="none"
         strokeLinejoin="round"
       />
-      <circle cx="20.75" cy="11.25" r="1.8" fill="currentColor" />
+      <path
+        d="M18 11L24 14V18C24 22 21.6 25.2 18 26.4C14.4 25.2 12 22 12 18V14L18 11Z"
+        fill="currentColor"
+        stroke="none"
+      />
     </svg>
   );
 }
 
-export function BrandMark({ className = "" }: { className?: string }) {
+export function BrandMark({
+  size = 32,
+  className
+}: {
+  size?: number;
+  className?: string;
+}) {
   return (
-    <span
-      className={`brand-logo inline-flex h-10 w-10 items-center justify-center rounded-xl text-[#17304b] dark:text-slate-100 ${className}`}
-    >
-      <BrandMarkSvg className="h-8 w-8" />
-    </span>
+    <BrandMarkSvg
+      size={size}
+      className={className ?? "text-slate-800 dark:text-slate-200"}
+    />
   );
 }
 
-export function BrandLogo({
-  className = "",
-  compact = true
-}: {
-  className?: string;
-  compact?: boolean;
-}) {
+export function BrandLogo({ className }: { className?: string }) {
   return (
-    <span className={`brand-logo inline-flex items-center gap-3 ${className}`}>
-      <BrandMark className="h-10 w-10" />
-      <span
-        className={`font-semibold tracking-tight text-slate-950 dark:text-white ${
-          compact ? "hidden text-base sm:inline" : "text-base"
-        }`}
+    <Link
+      href="/"
+      className={`flex items-center gap-2.5 no-underline ${className ?? ""}`}
+    >
+      <svg
+        width="32"
+        height="32"
+        viewBox="0 0 36 36"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        className="text-slate-800 dark:text-slate-200"
       >
+        <path
+          d="M18 3L30 9V18C30 25.2 24.9 31.2 18 33C11.1 31.2 6 25.2 6 18V9L18 3Z"
+          stroke="currentColor"
+          strokeWidth="2.2"
+          fill="none"
+          strokeLinejoin="round"
+        />
+        <path
+          d="M18 11L24 14V18C24 22 21.6 25.2 18 26.4C14.4 25.2 12 22 12 18V14L18 11Z"
+          fill="currentColor"
+          stroke="none"
+        />
+      </svg>
+      <span className="text-[17px] font-semibold tracking-tight text-slate-800 dark:text-slate-200">
         Digital Parents
       </span>
-    </span>
+    </Link>
   );
 }
