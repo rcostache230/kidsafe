@@ -37,44 +37,6 @@ export default function HomePage() {
         </section>
 
         <section
-          id="devices"
-          className="space-y-5 rounded-2xl bg-slate-50 p-5 dark:bg-slate-900"
-        >
-          <div className="flex items-center gap-2.5">
-            <span className="category-icon text-slate-500 opacity-50 dark:text-slate-400">
-              <IconDevices className="h-4 w-4" />
-            </span>
-            <h2 className="text-2xl font-semibold tracking-tight text-slate-950 dark:text-white">
-              {categoryLabels.devices}
-            </h2>
-          </div>
-          <div className="grid gap-4 md:grid-cols-2">
-            {devices.map((entry) => (
-              <EntryCard key={entry.slug} entry={entry} />
-            ))}
-          </div>
-        </section>
-
-        <section
-          id="operating-systems"
-          className="space-y-5 rounded-2xl bg-slate-50 p-5 dark:bg-slate-900"
-        >
-          <div className="flex items-center gap-2.5">
-            <span className="category-icon text-slate-500 opacity-50 dark:text-slate-400">
-              <IconOS className="h-4 w-4" />
-            </span>
-            <h2 className="text-2xl font-semibold tracking-tight text-slate-950 dark:text-white">
-              {categoryLabels.os}
-            </h2>
-          </div>
-          <div className="grid gap-4 md:grid-cols-2">
-            {operatingSystems.map((entry) => (
-              <EntryCard key={entry.slug} entry={entry} />
-            ))}
-          </div>
-        </section>
-
-        <section
           id="apps"
           className="space-y-5 rounded-2xl bg-slate-50 p-5 dark:bg-slate-900"
         >
@@ -102,6 +64,44 @@ export default function HomePage() {
           <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
             {apps.map((entry) => (
               <EntryCard key={entry.slug} entry={entry} compact />
+            ))}
+          </div>
+        </section>
+
+        <section
+          id="operating-systems"
+          className="space-y-5 rounded-2xl bg-slate-50 p-5 dark:bg-slate-900"
+        >
+          <div className="flex items-center gap-2.5">
+            <span className="category-icon text-slate-500 opacity-50 dark:text-slate-400">
+              <IconOS className="h-4 w-4" />
+            </span>
+            <h2 className="text-2xl font-semibold tracking-tight text-slate-950 dark:text-white">
+              {categoryLabels.os}
+            </h2>
+          </div>
+          <div className="grid gap-4 md:grid-cols-2">
+            {operatingSystems.map((entry) => (
+              <EntryCard key={entry.slug} entry={entry} />
+            ))}
+          </div>
+        </section>
+
+        <section
+          id="devices"
+          className="space-y-5 rounded-2xl bg-slate-50 p-5 dark:bg-slate-900"
+        >
+          <div className="flex items-center gap-2.5">
+            <span className="category-icon text-slate-500 opacity-50 dark:text-slate-400">
+              <IconDevices className="h-4 w-4" />
+            </span>
+            <h2 className="text-2xl font-semibold tracking-tight text-slate-950 dark:text-white">
+              {categoryLabels.devices}
+            </h2>
+          </div>
+          <div className="grid gap-4 md:grid-cols-2">
+            {devices.map((entry) => (
+              <EntryCard key={entry.slug} entry={entry} />
             ))}
           </div>
         </section>
