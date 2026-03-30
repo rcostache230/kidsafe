@@ -44,6 +44,7 @@ export const riskMeta: Record<
   RiskLevel,
   {
     label: string;
+    parentLabel: string;
     hexColor: string;
     ringShadow: string;
     dotClass: string;
@@ -55,6 +56,7 @@ export const riskMeta: Record<
 > = {
   "critical": {
     "label": "Critical",
+    "parentLabel": "Needs daily attention",
     "hexColor": "#DC2626",
     "ringShadow": "0 0 0 2px rgba(220, 38, 38, 0.20)",
     "dotClass": "bg-[#DC2626]",
@@ -65,6 +67,7 @@ export const riskMeta: Record<
   },
   "high": {
     "label": "High",
+    "parentLabel": "Set up controls first",
     "hexColor": "#EA580C",
     "ringShadow": "0 0 0 2px rgba(234, 88, 12, 0.20)",
     "dotClass": "bg-[#EA580C]",
@@ -75,6 +78,7 @@ export const riskMeta: Record<
   },
   "medium": {
     "label": "Medium",
+    "parentLabel": "Worth monitoring",
     "hexColor": "#D97706",
     "ringShadow": "0 0 0 2px rgba(217, 119, 6, 0.20)",
     "dotClass": "bg-[#D97706]",
@@ -85,6 +89,7 @@ export const riskMeta: Record<
   },
   "low": {
     "label": "Low",
+    "parentLabel": "Low concern",
     "hexColor": "#059669",
     "ringShadow": "0 0 0 2px rgba(5, 150, 105, 0.20)",
     "dotClass": "bg-[#059669]",

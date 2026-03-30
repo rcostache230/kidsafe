@@ -37,7 +37,7 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <div className="flex min-h-screen flex-col">
-          <header className="border-b border-slate-200/80 dark:border-slate-800/80">
+          <header className="border-b border-[rgba(148,163,184,0.16)] bg-[rgba(250,250,248,0.92)] backdrop-blur-sm dark:border-slate-800/80 dark:bg-slate-950/80">
             <div className="page-shell flex items-center gap-3 py-5">
               <Link
                 href="/"
