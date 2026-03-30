@@ -15,6 +15,18 @@ import { RiskBadge } from "./risk-badge";
 import { RiskBar } from "./risk-bar";
 import { RiskDot } from "./risk-dot";
 
+function getCalloutTitle(title: string) {
+  if (title === "Highest concern") {
+    return "What parents worry about most";
+  }
+
+  if (title === "Most impactful action") {
+    return "The one thing to do right now";
+  }
+
+  return title;
+}
+
 export function EntryPage({ entry }: { entry: Entry }) {
   const relatedEntries = getRelatedEntries(entry);
 
@@ -48,6 +60,35 @@ export function EntryPage({ entry }: { entry: Entry }) {
             </p>
           </div>
 
+          <section className="space-y-5" aria-labelledby="quick-actions-title">
+            <h2
+              id="quick-actions-title"
+              className="text-2xl font-semibold tracking-tight text-slate-950 dark:text-white"
+            >
+              Start here — 3 things to do today
+            </h2>
+            <ol className="grid gap-4 sm:grid-cols-3">
+              {entry.quickActions.map((action, index) => (
+                <li
+                  key={action.title}
+                  className="rounded-[24px] border border-[rgba(148,163,184,0.18)] bg-white/92 p-5 shadow-[0_22px_48px_-36px_rgba(15,23,42,0.42)] dark:border-slate-800 dark:bg-slate-900/60"
+                >
+                  <div className="flex items-center gap-3">
+                    <span className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-teal-50 text-sm font-semibold text-teal-700 dark:bg-teal-950/50 dark:text-teal-300">
+                      {index + 1}
+                    </span>
+                    <h3 className="text-base font-semibold text-slate-950 dark:text-white">
+                      {action.title}
+                    </h3>
+                  </div>
+                  <p className="mt-4 text-sm leading-6 text-slate-600 dark:text-slate-300">
+                    {action.description}
+                  </p>
+                </li>
+              ))}
+            </ol>
+          </section>
+
           {entry.callouts?.length ? (
             <div className="grid gap-3 sm:grid-cols-2">
               {entry.callouts.map((callout) => {
@@ -68,7 +109,7 @@ export function EntryPage({ entry }: { entry: Entry }) {
                           : "text-[#059669] dark:text-[#6ee7b7]"
                       }`}
                     >
-                      {callout.title}
+                      {getCalloutTitle(callout.title)}
                     </h2>
                     <p className="mt-2 text-sm leading-6 text-slate-700 dark:text-slate-200">
                       {callout.description}
@@ -80,10 +121,10 @@ export function EntryPage({ entry }: { entry: Entry }) {
           ) : null}
 
           {entry.category === "apps" && entry.riskBarPosition !== undefined ? (
-            <section className="space-y-5 rounded-2xl border border-slate-200 bg-slate-50/80 p-5 dark:border-slate-800 dark:bg-slate-900/50">
+            <section className="space-y-5 rounded-[26px] border border-[rgba(148,163,184,0.18)] bg-white/80 p-5 shadow-[0_20px_55px_-42px_rgba(15,23,42,0.35)] dark:border-slate-800 dark:bg-slate-900/50">
               <div className="space-y-2">
                 <h2 className="text-lg font-semibold text-slate-950 dark:text-white">
-                  Overall risk
+                  Risk level
                 </h2>
                 <RiskBar position={entry.riskBarPosition} />
               </div>
@@ -97,7 +138,7 @@ export function EntryPage({ entry }: { entry: Entry }) {
                 ].map((stat) => (
                   <div
                     key={stat.label}
-                    className="rounded-xl border border-slate-200 bg-white p-4 dark:border-slate-800 dark:bg-slate-950/60"
+                    className="rounded-2xl border border-[rgba(148,163,184,0.16)] bg-white/95 p-4 dark:border-slate-800 dark:bg-slate-950/60"
                   >
                     <p className="text-xs font-semibold uppercase tracking-[0.16em] text-slate-500 dark:text-slate-400">
                       {stat.label}
@@ -114,7 +155,7 @@ export function EntryPage({ entry }: { entry: Entry }) {
                   {entry.appMetrics.map((metric) => (
                     <div
                       key={metric.label}
-                      className="rounded-xl border border-slate-200 bg-white p-4 dark:border-slate-800 dark:bg-slate-950/60"
+                      className="rounded-2xl border border-[rgba(148,163,184,0.16)] bg-white/95 p-4 dark:border-slate-800 dark:bg-slate-950/60"
                     >
                       <p className="text-base font-semibold text-slate-950 dark:text-white">
                         {metric.value}
@@ -130,50 +171,16 @@ export function EntryPage({ entry }: { entry: Entry }) {
           ) : null}
         </header>
 
-        <section className="space-y-5" aria-labelledby="quick-actions-title">
-          <div className="space-y-2">
-            <p className="text-[13px] font-semibold uppercase tracking-[0.18em] text-slate-500 dark:text-slate-400">
-              Start here
-            </p>
-            <h2
-              id="quick-actions-title"
-              className="text-2xl font-semibold tracking-tight text-slate-950 dark:text-white"
-            >
-              Three actions for today
-            </h2>
-          </div>
-          <ol className="grid gap-4 sm:grid-cols-3">
-            {entry.quickActions.map((action, index) => (
-              <li
-                key={action.title}
-                className="rounded-2xl border border-slate-200 bg-white p-5 dark:border-slate-800 dark:bg-slate-900/60"
-              >
-                <div className="flex items-center gap-3">
-                  <span className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-slate-100 text-sm font-semibold text-slate-900 dark:bg-slate-800 dark:text-white">
-                    {index + 1}
-                  </span>
-                  <h3 className="text-base font-semibold text-slate-950 dark:text-white">
-                    {action.title}
-                  </h3>
-                </div>
-                <p className="mt-4 text-sm leading-6 text-slate-600 dark:text-slate-300">
-                  {action.description}
-                </p>
-              </li>
-            ))}
-          </ol>
-        </section>
-
         <section className="space-y-5" aria-labelledby="watch-for-title">
           <div className="space-y-2">
             <p className="text-[13px] font-semibold uppercase tracking-[0.18em] text-slate-500 dark:text-slate-400">
-              Risk awareness
+              Warning signs
             </p>
             <h2
               id="watch-for-title"
               className="text-2xl font-semibold tracking-tight text-slate-950 dark:text-white"
             >
-              What to watch for
+              Warning signs to know
             </h2>
           </div>
 
@@ -211,18 +218,18 @@ export function EntryPage({ entry }: { entry: Entry }) {
         <section className="space-y-5" aria-labelledby="setup-guide-title">
           <div className="space-y-2">
             <p className="text-[13px] font-semibold uppercase tracking-[0.18em] text-slate-500 dark:text-slate-400">
-              Full guide
+              Step-by-step guide
             </p>
             <h2
               id="setup-guide-title"
               className="text-2xl font-semibold tracking-tight text-slate-950 dark:text-white"
             >
-              Full setup guide
+              Complete step-by-step guide
             </h2>
           </div>
 
           {entry.setupGuideIntro ? (
-            <p className="rounded-2xl border border-slate-200 bg-slate-50/80 p-5 text-sm leading-6 text-slate-700 dark:border-slate-800 dark:bg-slate-900/50 dark:text-slate-200">
+            <p className="rounded-[24px] border border-[rgba(148,163,184,0.16)] bg-white/80 p-5 text-sm leading-6 text-slate-700 shadow-[0_20px_44px_-40px_rgba(15,23,42,0.45)] dark:border-slate-800 dark:bg-slate-900/50 dark:text-slate-200">
               {entry.setupGuideIntro}
             </p>
           ) : null}
@@ -231,10 +238,10 @@ export function EntryPage({ entry }: { entry: Entry }) {
             {entry.setupGuide.map((item, index) => (
               <li
                 key={item.title}
-                className="rounded-2xl border border-slate-200 bg-white p-5 dark:border-slate-800 dark:bg-slate-900/60"
+                className="rounded-[24px] border border-[rgba(148,163,184,0.18)] bg-white/92 p-5 shadow-[0_22px_48px_-36px_rgba(15,23,42,0.42)] dark:border-slate-800 dark:bg-slate-900/60"
               >
                 <div className="flex items-start gap-4">
-                  <span className="inline-flex h-9 w-9 flex-none items-center justify-center rounded-full bg-slate-100 text-sm font-semibold text-slate-900 dark:bg-slate-800 dark:text-white">
+                  <span className="inline-flex h-9 w-9 flex-none items-center justify-center rounded-full bg-teal-50 text-sm font-semibold text-teal-700 dark:bg-teal-950/50 dark:text-teal-300">
                     {index + 1}
                   </span>
                   <div className="min-w-0 space-y-2">
@@ -257,22 +264,25 @@ export function EntryPage({ entry }: { entry: Entry }) {
         </section>
 
         {relatedEntries.length ? (
-          <nav className="space-y-5 border-t border-slate-200 pt-8 dark:border-slate-800" aria-labelledby="related-pages-title">
+          <nav
+            className="space-y-5 border-t border-slate-200 pt-8 dark:border-slate-800"
+            aria-labelledby="related-pages-title"
+          >
             <div className="flex items-center justify-between gap-4">
               <div>
                 <p className="text-[13px] font-semibold uppercase tracking-[0.18em] text-slate-500 dark:text-slate-400">
-                  Keep going
+                  Related guides
                 </p>
                 <h2
                   id="related-pages-title"
                   className="mt-2 text-2xl font-semibold tracking-tight text-slate-950 dark:text-white"
                 >
-                  Related pages
+                  Related guides
                 </h2>
               </div>
               <Link
                 href={categoryDirectoryHref[entry.category]}
-                className="text-sm font-medium text-sky-700 hover:text-sky-800 dark:text-sky-400 dark:hover:text-sky-300"
+                className="text-sm font-medium text-teal-700 hover:text-teal-800 dark:text-teal-300 dark:hover:text-teal-200"
               >
                 Back to {categoryLabels[entry.category].toLowerCase()}
               </Link>

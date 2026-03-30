@@ -41,7 +41,7 @@ export function BrandMark({
   return (
     <BrandMarkSvg
       size={size}
-      className={className ?? "text-slate-800 dark:text-slate-200"}
+      className={className ?? "text-teal-700 dark:text-teal-300"}
     />
   );
 }
@@ -58,7 +58,7 @@ export function BrandLogo({ className }: { className?: string }) {
         viewBox="0 0 36 36"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
-        className="text-slate-800 dark:text-slate-200"
+        className="text-teal-700 dark:text-teal-300"
       >
         <path
           d="M18 3L30 9V18C30 25.2 24.9 31.2 18 33C11.1 31.2 6 25.2 6 18V9L18 3Z"
@@ -73,7 +73,7 @@ export function BrandLogo({ className }: { className?: string }) {
           stroke="none"
         />
       </svg>
-      <span className="text-[17px] font-semibold tracking-tight text-slate-800 dark:text-slate-200">
+      <span className="text-[17px] font-semibold tracking-tight text-slate-900 dark:text-slate-100">
         Digital Parents
       </span>
     </Link>

@@ -97,7 +97,8 @@ export function HomeOgCard() {
             letterSpacing: -1.8
           }}
         >
-          A clearer way to judge digital risk at home.
+          Your child&apos;s apps, devices, and settings — explained in plain
+          language.
         </div>
         <div
           style={{
@@ -107,7 +108,7 @@ export function HomeOgCard() {
             maxWidth: 780
           }}
         >
-          Setup guides and risk ratings for the devices, systems, and apps your
+          Step-by-step safety guides for the devices, systems, and apps your
           child uses.
         </div>
       </div>
@@ -227,7 +228,7 @@ export function EntryOgCard({ entry }: { entry: Entry }) {
               color: mutedText
             }}
           >
-            <span>Overall risk</span>
+            <span>Risk level</span>
             <span>{entry.riskBarPosition}%</span>
           </div>
           <div
