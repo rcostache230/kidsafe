@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import { type Entry, getEntryHref } from "@/data/entries";
 
 export const SITE_NAME = "Digital Parents";
-export const SITE_URL = "https://rcostache230-kidsafe.vercel.app";
+export const SITE_URL = "https://digitalparents.xyz";
 export const SITE_DESCRIPTION =
   "A static digital safety directory for parents covering devices, operating systems, and popular apps children use.";
 export const HOME_DESCRIPTION =
