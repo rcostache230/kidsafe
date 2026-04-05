@@ -1,3 +1,6 @@
+import { roEntryTranslations } from "@/data/entries-ro";
+import { type Locale } from "@/lib/locale";
+
 export type RiskLevel = "critical" | "high" | "medium" | "low";
 export type Category = "devices" | "os" | "apps";
 
@@ -34,10 +37,49 @@ export const categoryLabels: Record<Category, string> = {
   "apps": "Apps"
 };
 
+const categoryLabelsByLocale: Record<Locale, Record<Category, string>> = {
+  en: categoryLabels,
+  ro: {
+    devices: "Dispozitive",
+    os: "Sisteme de operare",
+    apps: "Aplicatii"
+  }
+};
+
 export const categoryDirectoryHref: Record<Category, string> = {
   "devices": "/#devices",
   "os": "/#operating-systems",
   "apps": "/#apps"
+};
+
+const localizedRiskLabels: Record<Locale, Record<RiskLevel, string>> = {
+  en: {
+    critical: "Critical",
+    high: "High",
+    medium: "Medium",
+    low: "Low"
+  },
+  ro: {
+    critical: "Critic",
+    high: "Ridicat",
+    medium: "Mediu",
+    low: "Scazut"
+  }
+};
+
+const localizedParentRiskLabels: Record<Locale, Record<RiskLevel, string>> = {
+  en: {
+    critical: "Needs daily attention",
+    high: "Set up controls first",
+    medium: "Worth monitoring",
+    low: "Low concern"
+  },
+  ro: {
+    critical: "Necesita atentie zilnica",
+    high: "Seteaza controalele mai intai",
+    medium: "Merita monitorizat",
+    low: "Nivel redus de ingrijorare"
+  }
 };
 
 export const riskMeta: Record<
@@ -2088,20 +2130,59 @@ export const entries: Entry[] = [
   }
 ];
 
-export function getRiskMeta(level: RiskLevel) {
-  return riskMeta[level];
+function localizeEntry(entry: Entry, locale: Locale): Entry {
+  if (locale === "en") {
+    return entry;
+  }
+
+  const translation = roEntryTranslations[entry.slug];
+
+  if (!translation) {
+    return entry;
+  }
+
+  return {
+    ...entry,
+    ...translation
+  };
 }
 
-export function getEntriesByCategory(category: Category) {
-  return entries.filter((entry) => entry.category === category);
+export function getCategoryLabel(category: Category, locale: Locale = "en") {
+  return categoryLabelsByLocale[locale][category];
 }
 
-export function getEntry(category: Category, slug: string) {
-  return entries.find((entry) => entry.category === category && entry.slug === slug);
+export function getCategoryDirectoryHref(category: Category, locale: Locale = "en") {
+  const href = categoryDirectoryHref[category];
+  return locale === "ro" ? `/ro${href}` : href;
 }
 
-export function getEntryHref(link: Pick<Entry, "category" | "slug"> | EntryLink) {
-  return "/" + link.category + "/" + link.slug;
+export function getRiskMeta(level: RiskLevel, locale: Locale = "en") {
+  const meta = riskMeta[level];
+
+  return {
+    ...meta,
+    label: localizedRiskLabels[locale][level],
+    parentLabel: localizedParentRiskLabels[locale][level]
+  };
+}
+
+export function getEntriesByCategory(category: Category, locale: Locale = "en") {
+  return entries
+    .filter((entry) => entry.category === category)
+    .map((entry) => localizeEntry(entry, locale));
+}
+
+export function getEntry(category: Category, slug: string, locale: Locale = "en") {
+  const entry = entries.find((value) => value.category === category && value.slug === slug);
+  return entry ? localizeEntry(entry, locale) : undefined;
+}
+
+export function getEntryHref(
+  link: Pick<Entry, "category" | "slug"> | EntryLink,
+  locale: Locale = "en"
+) {
+  const href = "/" + link.category + "/" + link.slug;
+  return locale === "ro" ? `/ro${href}` : href;
 }
 
 export function getEntriesForStaticParams(category: Category) {
@@ -2110,8 +2191,8 @@ export function getEntriesForStaticParams(category: Category) {
   }));
 }
 
-export function getRelatedEntries(entry: Entry) {
+export function getRelatedEntries(entry: Entry, locale: Locale = "en") {
   return entry.related
-    .map((link) => getEntry(link.category, link.slug))
+    .map((link) => getEntry(link.category, link.slug, locale))
     .filter((value): value is Entry => Boolean(value));
 }

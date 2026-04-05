@@ -46,10 +46,16 @@ export function BrandMark({
   );
 }
 
-export function BrandLogo({ className }: { className?: string }) {
+export function BrandLogo({
+  className,
+  href = "/"
+}: {
+  className?: string;
+  href?: string;
+}) {
   return (
     <Link
-      href="/"
+      href={href}
       className={`flex items-center gap-2.5 no-underline ${className ?? ""}`}
     >
       <svg

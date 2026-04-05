@@ -1,13 +1,13 @@
 import type { Metadata } from "next";
 
+import { getCopy } from "@/lib/copy";
+import { type Locale } from "@/lib/locale";
 import { type Entry, getEntryHref } from "@/data/entries";
 
 export const SITE_NAME = "Digital Parents";
 export const SITE_URL = "https://digitalparents.xyz";
-export const SITE_DESCRIPTION =
-  "A static digital safety directory for parents covering devices, operating systems, and popular apps children use.";
-export const HOME_DESCRIPTION =
-  "Step-by-step digital safety guides for the apps, devices, and systems your child uses.";
+export const SITE_DESCRIPTION = getCopy("en").metadata.siteDescription;
+export const HOME_DESCRIPTION = getCopy("en").metadata.homeDescription;
 
 function trimDescription(text: string, maxLength = 155) {
   if (text.length <= maxLength) {
@@ -17,11 +17,12 @@ function trimDescription(text: string, maxLength = 155) {
   return `${text.slice(0, maxLength - 1).trimEnd()}…`;
 }
 
-export function createEntryMetadata(entry: Entry): Metadata {
-  const title = `${entry.name} — Digital Safety Guide for Parents | ${SITE_NAME}`;
-  const socialTitle = `${entry.name} — Digital Safety Guide for Parents`;
+export function createEntryMetadata(entry: Entry, locale: Locale = "en"): Metadata {
+  const copy = getCopy(locale);
+  const title = `${entry.name} — ${copy.metadata.entryTitleSuffix} | ${SITE_NAME}`;
+  const socialTitle = `${entry.name} — ${copy.metadata.entryTitleSuffix}`;
   const description = trimDescription(entry.summary || entry.description);
-  const url = `${SITE_URL}${getEntryHref(entry)}`;
+  const url = `${SITE_URL}${getEntryHref(entry, locale)}`;
   const imageUrl = `${url}/opengraph-image`;
 
   return {
@@ -54,34 +55,36 @@ export function createEntryMetadata(entry: Entry): Metadata {
   };
 }
 
-export function createHomeMetadata(): Metadata {
-  const imageUrl = `${SITE_URL}/opengraph-image`;
+export function createHomeMetadata(locale: Locale = "en"): Metadata {
+  const copy = getCopy(locale);
+  const homePath = locale === "ro" ? "/ro" : "";
+  const imageUrl = `${SITE_URL}${homePath}/opengraph-image`;
 
   return {
     title: SITE_NAME,
-    description: HOME_DESCRIPTION,
+    description: copy.metadata.homeDescription,
     alternates: {
-      canonical: SITE_URL
+      canonical: `${SITE_URL}${homePath}`
     },
     openGraph: {
       siteName: SITE_NAME,
       type: "website",
-      title: "Your child's apps, devices, and settings — explained in plain language.",
-      description: HOME_DESCRIPTION,
-      url: SITE_URL,
+      title: copy.metadata.homeTitle,
+      description: copy.metadata.homeDescription,
+      url: `${SITE_URL}${homePath}`,
       images: [
         {
           url: imageUrl,
           width: 1200,
           height: 630,
-          alt: "Digital Parents homepage preview"
+          alt: copy.og.homeAlt
         }
       ]
     },
     twitter: {
       card: "summary_large_image",
-      title: "Your child's apps, devices, and settings — explained in plain language.",
-      description: HOME_DESCRIPTION,
+      title: copy.metadata.homeTitle,
+      description: copy.metadata.homeDescription,
       images: [imageUrl]
     }
   };

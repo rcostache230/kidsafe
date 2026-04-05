@@ -17,7 +17,7 @@ export function generateStaticParams() {
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { slug } = await params;
-  const entry = getEntry("devices", slug);
+  const entry = getEntry("devices", slug, "en");
 
   if (!entry) {
     return {
@@ -25,16 +25,16 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     };
   }
 
-  return createEntryMetadata(entry);
+  return createEntryMetadata(entry, "en");
 }
 
 export default async function DevicePage({ params }: PageProps) {
   const { slug } = await params;
-  const entry = getEntry("devices", slug);
+  const entry = getEntry("devices", slug, "en");
 
   if (!entry) {
     notFound();
   }
 
-  return <EntryPage entry={entry} />;
+  return <EntryPage entry={entry} locale="en" />;
 }

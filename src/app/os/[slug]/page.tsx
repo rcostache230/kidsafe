@@ -17,7 +17,7 @@ export function generateStaticParams() {
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { slug } = await params;
-  const entry = getEntry("os", slug);
+  const entry = getEntry("os", slug, "en");
 
   if (!entry) {
     return {
@@ -25,16 +25,16 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     };
   }
 
-  return createEntryMetadata(entry);
+  return createEntryMetadata(entry, "en");
 }
 
 export default async function OperatingSystemPage({ params }: PageProps) {
   const { slug } = await params;
-  const entry = getEntry("os", slug);
+  const entry = getEntry("os", slug, "en");
 
   if (!entry) {
     notFound();
   }
 
-  return <EntryPage entry={entry} />;
+  return <EntryPage entry={entry} locale="en" />;
 }
