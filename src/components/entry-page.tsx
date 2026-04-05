@@ -1,8 +1,10 @@
 import Link from "next/link";
 
+import { getCopy } from "@/lib/copy";
+import { type Locale } from "@/lib/locale";
 import {
-  categoryDirectoryHref,
-  categoryLabels,
+  getCategoryDirectoryHref,
+  getCategoryLabel,
   getEntryHref,
   getRelatedEntries,
   getRiskMeta,
@@ -15,30 +17,39 @@ import { RiskBadge } from "./risk-badge";
 import { RiskBar } from "./risk-bar";
 import { RiskDot } from "./risk-dot";
 
-function getCalloutTitle(title: string) {
+function getCalloutTitle(title: string, locale: Locale) {
+  const copy = getCopy(locale);
+
   if (title === "Highest concern") {
-    return "What parents worry about most";
+    return copy.entry.calloutConcern;
   }
 
   if (title === "Most impactful action") {
-    return "The one thing to do right now";
+    return copy.entry.calloutAction;
   }
 
   return title;
 }
 
-export function EntryPage({ entry }: { entry: Entry }) {
-  const relatedEntries = getRelatedEntries(entry);
+export function EntryPage({
+  entry,
+  locale = "en"
+}: {
+  entry: Entry;
+  locale?: Locale;
+}) {
+  const copy = getCopy(locale);
+  const relatedEntries = getRelatedEntries(entry, locale);
 
   return (
-    <article className="page-shell py-10 sm:py-14">
+    <article className="page-shell py-10 sm:py-14" lang={locale}>
       <div className="mx-auto max-w-4xl space-y-10">
         <Breadcrumbs
           items={[
-            { label: "Digital Parents", href: "/" },
+            { label: copy.entry.homeBreadcrumb, href: locale === "ro" ? "/ro" : "/" },
             {
-              label: categoryLabels[entry.category],
-              href: categoryDirectoryHref[entry.category]
+              label: getCategoryLabel(entry.category, locale),
+              href: getCategoryDirectoryHref(entry.category, locale)
             },
             { label: entry.name }
           ]}
@@ -47,7 +58,7 @@ export function EntryPage({ entry }: { entry: Entry }) {
         <header className="space-y-5">
           <div className="space-y-4">
             <p className="text-[13px] font-semibold uppercase tracking-[0.18em] text-slate-500 dark:text-slate-400">
-              {categoryLabels[entry.category]}
+              {getCategoryLabel(entry.category, locale)}
             </p>
             <div className="flex flex-wrap items-center gap-3">
               <h1 className="text-3xl font-semibold tracking-tight text-slate-950 dark:text-white sm:text-4xl">
@@ -65,7 +76,7 @@ export function EntryPage({ entry }: { entry: Entry }) {
               id="quick-actions-title"
               className="text-2xl font-semibold tracking-tight text-slate-950 dark:text-white"
             >
-              Start here — 3 things to do today
+              {copy.entry.quickActions}
             </h2>
             <ol className="grid gap-4 sm:grid-cols-3">
               {entry.quickActions.map((action, index) => (
@@ -109,7 +120,7 @@ export function EntryPage({ entry }: { entry: Entry }) {
                           : "text-[#059669] dark:text-[#6ee7b7]"
                       }`}
                     >
-                      {getCalloutTitle(callout.title)}
+                      {getCalloutTitle(callout.title, locale)}
                     </h2>
                     <p className="mt-2 text-sm leading-6 text-slate-700 dark:text-slate-200">
                       {callout.description}
@@ -124,17 +135,17 @@ export function EntryPage({ entry }: { entry: Entry }) {
             <section className="space-y-5 rounded-[26px] border border-[rgba(148,163,184,0.18)] bg-white/80 p-5 shadow-[0_20px_55px_-42px_rgba(15,23,42,0.35)] dark:border-slate-800 dark:bg-slate-900/50">
               <div className="space-y-2">
                 <h2 className="text-lg font-semibold text-slate-950 dark:text-white">
-                  Risk level
+                  {copy.entry.riskLevel}
                 </h2>
-                <RiskBar position={entry.riskBarPosition} />
+                <RiskBar position={entry.riskBarPosition} locale={locale} />
               </div>
 
               <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
                 {[
-                  { label: "Age rating", value: entry.ageRating },
-                  { label: "Users", value: entry.userCount },
-                  { label: "Platform", value: entry.platform },
-                  { label: "Age recommendation", value: entry.ageRecommendation }
+                  { label: copy.entry.ageRating, value: entry.ageRating },
+                  { label: copy.entry.users, value: entry.userCount },
+                  { label: copy.entry.platform, value: entry.platform },
+                  { label: copy.entry.ageRecommendation, value: entry.ageRecommendation }
                 ].map((stat) => (
                   <div
                     key={stat.label}
@@ -174,19 +185,19 @@ export function EntryPage({ entry }: { entry: Entry }) {
         <section className="space-y-5" aria-labelledby="watch-for-title">
           <div className="space-y-2">
             <p className="text-[13px] font-semibold uppercase tracking-[0.18em] text-slate-500 dark:text-slate-400">
-              Warning signs
+              {copy.entry.warningEyebrow}
             </p>
             <h2
               id="watch-for-title"
               className="text-2xl font-semibold tracking-tight text-slate-950 dark:text-white"
             >
-              Warning signs to know
+              {copy.entry.warningTitle}
             </h2>
           </div>
 
           <div className="grid gap-4">
             {entry.watchFor.map((item) => {
-              const meta = getRiskMeta(item.severity);
+              const meta = getRiskMeta(item.severity, locale);
 
               return (
                 <section
@@ -218,13 +229,13 @@ export function EntryPage({ entry }: { entry: Entry }) {
         <section className="space-y-5" aria-labelledby="setup-guide-title">
           <div className="space-y-2">
             <p className="text-[13px] font-semibold uppercase tracking-[0.18em] text-slate-500 dark:text-slate-400">
-              Step-by-step guide
+              {copy.entry.guideEyebrow}
             </p>
             <h2
               id="setup-guide-title"
               className="text-2xl font-semibold tracking-tight text-slate-950 dark:text-white"
             >
-              Complete step-by-step guide
+              {copy.entry.guideTitle}
             </h2>
           </div>
 
@@ -271,28 +282,29 @@ export function EntryPage({ entry }: { entry: Entry }) {
             <div className="flex items-center justify-between gap-4">
               <div>
                 <p className="text-[13px] font-semibold uppercase tracking-[0.18em] text-slate-500 dark:text-slate-400">
-                  Related guides
+                  {copy.entry.relatedEyebrow}
                 </p>
                 <h2
                   id="related-pages-title"
                   className="mt-2 text-2xl font-semibold tracking-tight text-slate-950 dark:text-white"
                 >
-                  Related guides
+                  {copy.entry.relatedTitle}
                 </h2>
               </div>
               <Link
-                href={categoryDirectoryHref[entry.category]}
+                href={getCategoryDirectoryHref(entry.category, locale)}
                 className="text-sm font-medium text-teal-700 hover:text-teal-800 dark:text-teal-300 dark:hover:text-teal-200"
               >
-                Back to {categoryLabels[entry.category].toLowerCase()}
+                {copy.entry.backTo} {getCategoryLabel(entry.category, locale).toLowerCase()}
               </Link>
             </div>
             <div className="grid gap-4 md:grid-cols-3">
               {relatedEntries.map((relatedEntry) => (
                 <EntryCard
-                  key={getEntryHref(relatedEntry)}
+                  key={getEntryHref(relatedEntry, locale)}
                   entry={relatedEntry}
                   compact={relatedEntry.category === "apps"}
+                  locale={locale}
                 />
               ))}
             </div>

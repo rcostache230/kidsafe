@@ -17,7 +17,7 @@ export const dynamicParams = false;
 
 export default async function OpenGraphImage({ params }: ImageProps) {
   const { slug } = await params;
-  const entry = getEntry("os", slug);
+  const entry = getEntry("os", slug, "en");
 
   if (!entry) {
     return new ImageResponse(<div>Not found</div>, {
@@ -25,7 +25,7 @@ export default async function OpenGraphImage({ params }: ImageProps) {
     });
   }
 
-  return new ImageResponse(<EntryOgCard entry={entry} />, {
+  return new ImageResponse(<EntryOgCard entry={entry} locale="en" />, {
     ...OG_SIZE
   });
 }

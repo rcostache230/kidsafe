@@ -12,29 +12,29 @@ type PageProps = {
 };
 
 export function generateStaticParams() {
-  return getEntriesForStaticParams("apps");
+  return getEntriesForStaticParams("devices");
 }
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { slug } = await params;
-  const entry = getEntry("apps", slug, "en");
+  const entry = getEntry("devices", slug, "ro");
 
   if (!entry) {
     return {
-      title: "Not found | Digital Parents"
+      title: "Pagina nu a fost gasita | Digital Parents"
     };
   }
 
-  return createEntryMetadata(entry, "en");
+  return createEntryMetadata(entry, "ro");
 }
 
-export default async function AppPage({ params }: PageProps) {
+export default async function RomanianDevicePage({ params }: PageProps) {
   const { slug } = await params;
-  const entry = getEntry("apps", slug, "en");
+  const entry = getEntry("devices", slug, "ro");
 
   if (!entry) {
     notFound();
   }
 
-  return <EntryPage entry={entry} locale="en" />;
+  return <EntryPage entry={entry} locale="ro" />;
 }

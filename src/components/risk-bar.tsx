@@ -1,5 +1,15 @@
-export function RiskBar({ position }: { position: number }) {
+import { getCopy } from "@/lib/copy";
+import { type Locale } from "@/lib/locale";
+
+export function RiskBar({
+  position,
+  locale = "en"
+}: {
+  position: number;
+  locale?: Locale;
+}) {
   const clamped = Math.max(0, Math.min(100, position));
+  const copy = getCopy(locale);
 
   return (
     <div className="space-y-3">
@@ -16,10 +26,10 @@ export function RiskBar({ position }: { position: number }) {
         />
       </div>
       <div className="grid grid-cols-4 text-[11px] font-semibold uppercase tracking-[0.16em] text-slate-500 dark:text-slate-400">
-        <span>Low</span>
-        <span>Medium</span>
-        <span>High</span>
-        <span>Critical</span>
+        <span>{copy.riskBar.low}</span>
+        <span>{copy.riskBar.medium}</span>
+        <span>{copy.riskBar.high}</span>
+        <span>{copy.riskBar.critical}</span>
       </div>
     </div>
   );

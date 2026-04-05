@@ -1,5 +1,7 @@
 import { BrandMarkSvg } from "@/components/brand";
 import { getRiskMeta, type Entry } from "@/data/entries";
+import { getCopy } from "@/lib/copy";
+import { type Locale } from "@/lib/locale";
 import { SITE_NAME } from "@/lib/site";
 
 export const OG_SIZE = {
@@ -27,8 +29,8 @@ function legendDot(color: string) {
   );
 }
 
-function riskTone(level: Entry["riskLevel"]) {
-  const meta = getRiskMeta(level);
+function riskTone(level: Entry["riskLevel"], locale: Locale) {
+  const meta = getRiskMeta(level, locale);
 
   return {
     label: meta.label,
@@ -71,7 +73,9 @@ export function OgBrand({ compact = false }: { compact?: boolean }) {
   );
 }
 
-export function HomeOgCard() {
+export function HomeOgCard({ locale = "en" }: { locale?: Locale }) {
+  const copy = getCopy(locale);
+
   return (
     <div
       style={{
@@ -97,8 +101,7 @@ export function HomeOgCard() {
             letterSpacing: -1.8
           }}
         >
-          Your child&apos;s apps, devices, and settings — explained in plain
-          language.
+          {copy.og.homeTitle}
         </div>
         <div
           style={{
@@ -108,8 +111,7 @@ export function HomeOgCard() {
             maxWidth: 780
           }}
         >
-          Step-by-step safety guides for the devices, systems, and apps your
-          child uses.
+          {copy.og.homeSubtitle}
         </div>
       </div>
       <div
@@ -122,10 +124,10 @@ export function HomeOgCard() {
         }}
       >
         {[
-          ["Critical", "#DC2626"],
-          ["High", "#EA580C"],
-          ["Medium", "#D97706"],
-          ["Low", "#059669"]
+          [getCopy(locale).riskBar.critical, "#DC2626"],
+          [getCopy(locale).riskBar.high, "#EA580C"],
+          [getCopy(locale).riskBar.medium, "#D97706"],
+          [getCopy(locale).riskBar.low, "#059669"]
         ].map(([label, color]) => (
           <div
             key={label}
@@ -140,14 +142,27 @@ export function HomeOgCard() {
   );
 }
 
-export function EntryOgCard({ entry }: { entry: Entry }) {
-  const tone = riskTone(entry.riskLevel);
+export function EntryOgCard({
+  entry,
+  locale = "en"
+}: {
+  entry: Entry;
+  locale?: Locale;
+}) {
+  const copy = getCopy(locale);
+  const tone = riskTone(entry.riskLevel, locale);
   const categoryLabel =
     entry.category === "devices"
-      ? "Devices"
+      ? locale === "ro"
+        ? "Dispozitive"
+        : "Devices"
       : entry.category === "os"
-        ? "Operating systems"
-        : "Apps";
+        ? locale === "ro"
+          ? "Sisteme de operare"
+          : "Operating systems"
+        : locale === "ro"
+          ? "Aplicatii"
+          : "Apps";
 
   return (
     <div
@@ -228,7 +243,7 @@ export function EntryOgCard({ entry }: { entry: Entry }) {
               color: mutedText
             }}
           >
-            <span>Risk level</span>
+            <span>{copy.og.riskLevel}</span>
             <span>{entry.riskBarPosition}%</span>
           </div>
           <div
@@ -270,7 +285,7 @@ export function EntryOgCard({ entry }: { entry: Entry }) {
             color: mutedText
           }}
         >
-          <span>Digital safety guide for parents</span>
+          <span>{copy.og.parentGuide}</span>
         </div>
       )}
     </div>
