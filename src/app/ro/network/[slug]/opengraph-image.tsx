@@ -17,7 +17,7 @@ export const dynamicParams = false;
 
 export default async function OpenGraphImage({ params }: ImageProps) {
   const { slug } = await params;
-  const guide = getNetworkGuide(slug);
+  const guide = getNetworkGuide(slug, "ro");
 
   if (!guide) {
     return new ImageResponse(<div>Not found</div>, {

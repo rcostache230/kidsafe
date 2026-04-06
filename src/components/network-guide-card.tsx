@@ -1,6 +1,11 @@
 import Link from "next/link";
 
-import { getNetworkCopy, getNetworkGuideHref, type NetworkGuide } from "@/data/network";
+import {
+  getNetworkCopy,
+  getNetworkGuideHref,
+  getNetworkMetricLabel,
+  type NetworkGuide
+} from "@/data/network";
 import { type Locale } from "@/lib/locale";
 
 function getMetric(guide: NetworkGuide, label: string) {
@@ -46,7 +51,7 @@ export function NetworkGuideCard({
           {setupTime ? (
             <div className="rounded-2xl border border-[rgba(148,163,184,0.16)] bg-white/95 p-3 dark:border-slate-800 dark:bg-slate-950/60">
               <p className="text-xs font-semibold uppercase tracking-[0.16em] text-slate-500 dark:text-slate-400">
-                Setup time
+                {getNetworkMetricLabel("Setup time", locale)}
               </p>
               <p className="mt-2 text-sm text-slate-700 dark:text-slate-200">{setupTime}</p>
             </div>
@@ -54,7 +59,7 @@ export function NetworkGuideCard({
           {bypassResistance ? (
             <div className="rounded-2xl border border-[rgba(148,163,184,0.16)] bg-white/95 p-3 dark:border-slate-800 dark:bg-slate-950/60">
               <p className="text-xs font-semibold uppercase tracking-[0.16em] text-slate-500 dark:text-slate-400">
-                Bypass resistance
+                {getNetworkMetricLabel("Bypass resistance", locale)}
               </p>
               <p className="mt-2 text-sm text-slate-700 dark:text-slate-200">
                 {bypassResistance}

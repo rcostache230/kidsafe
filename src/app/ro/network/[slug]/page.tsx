@@ -17,7 +17,7 @@ export function generateStaticParams() {
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { slug } = await params;
-  const guide = getNetworkGuide(slug);
+  const guide = getNetworkGuide(slug, "ro");
 
   if (!guide) {
     return {
@@ -62,7 +62,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
 export default async function RomanianNetworkPage({ params }: PageProps) {
   const { slug } = await params;
-  const guide = getNetworkGuide(slug);
+  const guide = getNetworkGuide(slug, "ro");
 
   if (!guide) {
     notFound();

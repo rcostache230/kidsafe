@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
 
 import { NetworkOverview } from "@/components/network-overview";
+import { getNetworkCopy } from "@/data/network";
 import { SITE_NAME, SITE_URL } from "@/lib/site";
 
-const title = `Home Network & Router Controls | ${SITE_NAME}`;
-const description =
-  "Router, DNS, and ISP parental control guides that protect every device on your home network at once.";
+const copy = getNetworkCopy("ro");
+const title = `${copy.overviewTitle} | ${SITE_NAME}`;
+const description = copy.overviewSubtitle;
 
 type PageProps = {
   searchParams: Promise<{

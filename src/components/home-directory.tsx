@@ -33,7 +33,7 @@ const quickPicks = [
     icon: "💻"
   },
   {
-    href: "https://digitalparents.xyz/network",
+    href: "/network",
     icon: "📶"
   }
 ];
@@ -47,7 +47,7 @@ function filterEntries(entries: Entry[], query: string) {
   return entries.filter((entry) => entry.name.toLowerCase().includes(normalized));
 }
 
-function filterNetworkApproaches(approaches: NetworkApproach[], query: string) {
+function filterNetworkApproaches(approaches: NetworkApproach[], query: string, locale: Locale) {
   if (!query.trim()) {
     return approaches;
   }
@@ -55,7 +55,7 @@ function filterNetworkApproaches(approaches: NetworkApproach[], query: string) {
   const normalized = query.trim().toLowerCase();
 
   return approaches.filter((approach) => {
-    const guideNames = getNetworkGuidesByApproach(approach.id)
+    const guideNames = getNetworkGuidesByApproach(approach.id, locale)
       .map((guide) => guide.name)
       .join(" ")
       .toLowerCase();
@@ -72,7 +72,7 @@ export function HomeDirectory({ locale = "en" }: { locale?: Locale }) {
   const apps = filterEntries(getEntriesByCategory("apps", locale), query);
   const operatingSystems = filterEntries(getEntriesByCategory("os", locale), query);
   const devices = filterEntries(getEntriesByCategory("devices", locale), query);
-  const networks = filterNetworkApproaches(getNetworkApproaches(), query);
+  const networks = filterNetworkApproaches(getNetworkApproaches(locale), query, locale);
   const hasResults =
     apps.length > 0 || operatingSystems.length > 0 || devices.length > 0 || networks.length > 0;
 

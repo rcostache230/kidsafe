@@ -1,3 +1,4 @@
+import { roNetworkApproachTranslations, roNetworkGuideTranslations } from "@/data/network-ro";
 import { type Locale } from "@/lib/locale";
 
 export type NetworkApproachId =
@@ -69,21 +70,21 @@ const networkUiCopy = {
   },
   ro: {
     categoryLabel: "Reteaua de acasa",
-    overviewTitle: "Home Network & Router Controls",
+    overviewTitle: "Reteaua de acasa si controalele routerului",
     overviewSubtitle:
-      "The most powerful parental control layer most parents never use — applies to every device in your home simultaneously.",
-    selectorEyebrow: "Alege abordarea",
+      "Cel mai puternic strat de control parental pe care majoritatea parintilor nu il folosesc niciodata — se aplica simultan tuturor dispozitivelor din casa.",
+    selectorEyebrow: "Alege traseul potrivit",
     selectorTitle:
-      "Alege stratul de control care se potriveste routerului tau si nivelului de control de care ai nevoie.",
+      "Alege stratul care se potriveste routerului tau, rabdarii tale si nivelului de control de care ai nevoie.",
     selectorLevelOne: "1. Alege o abordare",
     selectorLevelTwo: "2. Alege un ghid concret",
     overviewGridTitle: "Ghiduri disponibile pentru aceasta abordare",
     overviewGridSubtitle:
       "Deschide ghidul care se potriveste routerului sau stilului tau de filtrare. Detaliile de configurare difera suficient de mult incat merita sa alegi varianta corecta.",
     infoBanner:
-      "Router and DNS controls apply to every device on your home network simultaneously — phones, tablets, laptops, smart TVs, and gaming consoles — without installing anything on each device. They are the highest-leverage parental control layer available to parents.",
+      "Controalele din router si filtrele DNS se aplica simultan tuturor dispozitivelor din reteaua de acasa — telefoane, tablete, laptopuri, smart TV-uri si console — fara sa instalezi nimic pe fiecare dispozitiv in parte. Sunt stratul de control parental cu cel mai mare efect pentru un parinte.",
     warningBanner:
-      "⚠️ What network controls cannot do: They do not work when children switch to mobile data (4G/5G) instead of home WiFi. A VPN app on a child's phone bypasses DNS filtering. HTTPS prevents routers from reading page content — they can only block or allow entire domains, not individual pieces of content within a site.",
+      "⚠️ Ce nu pot face controalele de retea: nu functioneaza cand copiii trec pe date mobile (4G/5G) in loc de WiFi-ul de acasa. O aplicatie VPN de pe telefonul copilului ocoleste filtrarea DNS. HTTPS impiedica routerele sa citeasca continutul paginilor — pot doar sa blocheze sau sa permita domenii intregi, nu bucati individuale de continut din interiorul unui site.",
     difficultyLabel: "Dificultate",
     costLabel: "Cost",
     approachLabel: "Abordare",
@@ -95,14 +96,29 @@ const networkUiCopy = {
     tipTitle: "Sfat util",
     warningTitle: "Limitare importanta",
     highlightedTitle: "Ghidare evidentiata",
-    backToOverview: "Inapoi la overview-ul de retea",
+    backToOverview: "Inapoi la reteaua de acasa",
     openGuide: "Deschide ghidul complet",
-    guideCount: (count: number) => `${count} ghid${count === 1 ? "" : "uri"}`,
+    guideCount: (count: number) => `${count} ${count === 1 ? "ghid" : "ghiduri"}`,
     breadcrumbHome: "Digital Parents",
     breadcrumbOverview: "Reteaua de acasa",
     browseAll: "Vezi toate ghidurile de retea"
   }
 } as const;
+
+const networkMetricLabels: Record<Locale, Record<string, string>> = {
+  en: {
+    "All WiFi devices": "All WiFi devices",
+    "Mobile data": "Mobile data",
+    "Bypass resistance": "Bypass resistance",
+    "Setup time": "Setup time"
+  },
+  ro: {
+    "All WiFi devices": "Toate dispozitivele pe WiFi",
+    "Mobile data": "Date mobile",
+    "Bypass resistance": "Rezistenta la ocolire",
+    "Setup time": "Timp de configurare"
+  }
+};
 
 export const networkApproaches: NetworkApproach[] = [
   {
@@ -579,8 +595,30 @@ export function getNetworkCopy(locale: Locale = "en") {
   return networkUiCopy[locale];
 }
 
-export function getNetworkApproaches() {
-  return networkApproaches;
+function localizeNetworkApproach(approach: NetworkApproach, locale: Locale) {
+  if (locale === "en") {
+    return approach;
+  }
+
+  const translation = roNetworkApproachTranslations[approach.id];
+  return translation ? { ...approach, ...translation } : approach;
+}
+
+function localizeNetworkGuide(guide: NetworkGuide, locale: Locale) {
+  if (locale === "en") {
+    return guide;
+  }
+
+  const translation = roNetworkGuideTranslations[guide.slug];
+  return translation ? { ...guide, ...translation } : guide;
+}
+
+export function getNetworkMetricLabel(label: string, locale: Locale = "en") {
+  return networkMetricLabels[locale][label] ?? label;
+}
+
+export function getNetworkApproaches(locale: Locale = "en") {
+  return networkApproaches.map((approach) => localizeNetworkApproach(approach, locale));
 }
 
 export function isNetworkApproach(value?: string): value is NetworkApproachId {
@@ -604,16 +642,23 @@ export function getNetworkGuideHref(slug: string, locale: Locale = "en") {
   return `${base}/${slug}`;
 }
 
-export function getNetworkGuide(slug: string) {
-  return networkGuides.find((guide) => guide.slug === slug);
+export function getNetworkGuide(slug: string, locale: Locale = "en") {
+  const guide = networkGuides.find((value) => value.slug === slug);
+  return guide ? localizeNetworkGuide(guide, locale) : undefined;
 }
 
-export function getNetworkGuidesByApproach(approach: NetworkApproachId) {
-  return networkGuides.filter((guide) => guide.approach === approach);
+export function getNetworkGuidesByApproach(
+  approach: NetworkApproachId,
+  locale: Locale = "en"
+) {
+  return networkGuides
+    .filter((guide) => guide.approach === approach)
+    .map((guide) => localizeNetworkGuide(guide, locale));
 }
 
-export function getNetworkApproach(approach: NetworkApproachId) {
-  return networkApproaches.find((value) => value.id === approach);
+export function getNetworkApproach(approach: NetworkApproachId, locale: Locale = "en") {
+  const value = networkApproaches.find((item) => item.id === approach);
+  return value ? localizeNetworkApproach(value, locale) : undefined;
 }
 
 export function getNetworkGuideStaticParams() {
@@ -622,6 +667,9 @@ export function getNetworkGuideStaticParams() {
   }));
 }
 
-export function getFirstGuideForApproach(approach: NetworkApproachId) {
-  return getNetworkGuidesByApproach(approach)[0];
+export function getFirstGuideForApproach(
+  approach: NetworkApproachId,
+  locale: Locale = "en"
+) {
+  return getNetworkGuidesByApproach(approach, locale)[0];
 }
