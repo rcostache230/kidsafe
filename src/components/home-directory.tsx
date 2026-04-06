@@ -31,6 +31,10 @@ const quickPicks = [
   {
     href: "/devices/laptop",
     icon: "💻"
+  },
+  {
+    href: "https://digitalparents.xyz/network",
+    icon: "📶"
   }
 ];
 
@@ -76,7 +80,7 @@ export function HomeDirectory({ locale = "en" }: { locale?: Locale }) {
     <div className="page-shell py-10 sm:py-14" lang={locale}>
       <div className="space-y-8 sm:space-y-10">
         <section className="overflow-hidden rounded-[32px] border border-[rgba(20,184,166,0.10)] bg-[linear-gradient(135deg,rgba(255,255,255,0.98),rgba(240,253,250,0.92))] p-6 shadow-[0_28px_80px_-40px_rgba(15,23,42,0.35)] dark:border-slate-800 dark:bg-[linear-gradient(135deg,rgba(15,23,42,0.98),rgba(15,118,110,0.18))] sm:p-8 lg:p-10">
-          <div className="max-w-4xl space-y-6">
+          <div className="max-w-5xl space-y-6">
             <div className="space-y-4">
               <p className="text-[13px] font-semibold uppercase tracking-[0.18em] text-teal-700 dark:text-teal-300">
                 {copy.home.eyebrow}
@@ -89,12 +93,12 @@ export function HomeDirectory({ locale = "en" }: { locale?: Locale }) {
               </p>
             </div>
 
-            <div className="grid grid-cols-2 gap-3 lg:grid-cols-4">
+            <div className="grid grid-cols-2 gap-3 lg:grid-cols-5">
               {quickPicks.map((item, index) => (
                 <Link
                   key={item.href}
-                  href={localizeHref(item.href, locale)}
-                  className="flex min-h-[76px] items-center gap-3 rounded-[22px] border border-[rgba(20,184,166,0.14)] bg-white/90 px-4 py-3 text-left text-sm font-medium text-slate-800 shadow-[0_18px_45px_-35px_rgba(15,23,42,0.5)] transition-all duration-200 hover:-translate-y-0.5 hover:border-teal-300 hover:bg-white dark:border-slate-700 dark:bg-slate-900/80 dark:text-slate-100 dark:hover:border-teal-400"
+                  href={item.href.startsWith("http") ? item.href : localizeHref(item.href, locale)}
+                  className="flex min-h-[76px] items-center gap-3 rounded-[24px] border border-[rgba(148,163,184,0.18)] bg-white/92 px-4 py-3 text-left text-[15px] font-medium text-slate-800 shadow-[0_22px_48px_-36px_rgba(15,23,42,0.4)] transition-all duration-200 hover:-translate-y-0.5 hover:border-teal-300 hover:shadow-[0_30px_60px_-42px_rgba(13,148,136,0.45)] dark:border-slate-800 dark:bg-slate-950/72 dark:text-slate-100 dark:hover:border-teal-500"
                 >
                   <span className="text-xl" aria-hidden="true">
                     {item.icon}

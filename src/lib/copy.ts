@@ -11,7 +11,8 @@ export const uiCopy = {
         "My child just got an iPhone",
         "My child just got an Android phone",
         "My child just got a tablet",
-        "My child just got a laptop"
+        "My child just got a laptop",
+        "Secure my home router & network"
       ],
       searchLabel: "Find the guide you need",
       searchPlaceholder: "Search for an app, device, or system...",
@@ -113,7 +114,8 @@ export const uiCopy = {
         "Copilul meu tocmai a primit un iPhone",
         "Copilul meu tocmai a primit un telefon Android",
         "Copilul meu tocmai a primit o tableta",
-        "Copilul meu tocmai a primit un laptop"
+        "Copilul meu tocmai a primit un laptop",
+        "Securizeaza routerul si reteaua de acasa"
       ],
       searchLabel: "Gaseste ghidul de care ai nevoie",
       searchPlaceholder: "Cauta o aplicatie, un dispozitiv sau un sistem...",
