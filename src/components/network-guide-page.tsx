@@ -3,6 +3,7 @@ import Link from "next/link";
 import {
   getNetworkApproach,
   getNetworkCopy,
+  getNetworkMetricLabel,
   getNetworkOverviewHref,
   type NetworkGuide
 } from "@/data/network";
@@ -20,7 +21,7 @@ export function NetworkGuidePage({
   locale?: Locale;
 }) {
   const copy = getNetworkCopy(locale);
-  const approach = getNetworkApproach(guide.approach);
+  const approach = getNetworkApproach(guide.approach, locale);
 
   return (
     <article className="page-shell py-10 sm:py-14" lang={locale}>
@@ -87,7 +88,7 @@ export function NetworkGuidePage({
                   {metric.value}
                 </p>
                 <p className="mt-2 text-xs font-semibold uppercase tracking-[0.16em] text-slate-500 dark:text-slate-400">
-                  {metric.label}
+                  {getNetworkMetricLabel(metric.label, locale)}
                 </p>
               </div>
             ))}

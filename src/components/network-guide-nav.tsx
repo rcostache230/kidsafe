@@ -19,9 +19,9 @@ export function NetworkGuideNav({
   locale?: Locale;
 }) {
   const copy = getNetworkCopy(locale);
-  const approaches = getNetworkApproaches();
-  const currentApproach = getNetworkApproach(guide.approach);
-  const siblingGuides = getNetworkGuidesByApproach(guide.approach);
+  const approaches = getNetworkApproaches(locale);
+  const currentApproach = getNetworkApproach(guide.approach, locale);
+  const siblingGuides = getNetworkGuidesByApproach(guide.approach, locale);
 
   return (
     <section className="space-y-5">
@@ -40,7 +40,7 @@ export function NetworkGuideNav({
         </p>
         <div className="grid gap-3 md:grid-cols-3">
           {approaches.map((approach) => {
-            const firstGuide = getFirstGuideForApproach(approach.id);
+            const firstGuide = getFirstGuideForApproach(approach.id, locale);
             const active = approach.id === guide.approach;
 
             return firstGuide ? (

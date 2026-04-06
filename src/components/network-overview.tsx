@@ -29,7 +29,7 @@ export function NetworkOverview({
 }) {
   const router = useRouter();
   const copy = getNetworkCopy(locale);
-  const approaches = getNetworkApproaches();
+  const approaches = getNetworkApproaches(locale);
   const defaultApproach = getDefaultNetworkApproach();
   const initialValue = isNetworkApproach(initialApproach) ? initialApproach : defaultApproach;
   const [selectedApproach, setSelectedApproach] = useState<NetworkApproachId>(initialValue);
@@ -48,7 +48,7 @@ export function NetworkOverview({
     return () => window.clearTimeout(timeoutId);
   }, [selectedApproach]);
 
-  const selectedGuides = getNetworkGuidesByApproach(selectedApproach);
+  const selectedGuides = getNetworkGuidesByApproach(selectedApproach, locale);
 
   function handleApproachChange(approach: NetworkApproachId) {
     if (approach === selectedApproach) {

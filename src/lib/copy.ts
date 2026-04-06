@@ -109,7 +109,7 @@ export const uiCopy = {
       title:
         "Aplicatiile, dispozitivele si setarile copilului tau — explicate pe intelesul tuturor.",
       subtitle:
-        "Ghiduri de siguranta pas cu pas, scrise de un profesionist in securitate cibernetica si parinte. Fara jargon, fara tactici de speriere — doar ce merita facut mai intai.",
+        "Ghiduri de siguranta pas cu pas, de la un parinte cu experienta in securitate cibernetică. Fara jargon, fara panică — doar ce merita facut mai intai.",
       quickPicks: [
         "Copilul meu tocmai a primit un iPhone",
         "Copilul meu tocmai a primit un telefon Android",
@@ -131,9 +131,9 @@ export const uiCopy = {
         devicesTitle: "Ghiduri de configurare pentru dispozitive",
         devicesDescription:
           "Foloseste aceste liste de verificare cand intra in casa un dispozitiv nou.",
-        networkTitle: "Home Network & Router Controls",
+        networkTitle: "Reteaua de acasa si controalele routerului",
         networkDescription:
-          "The most powerful parental control layer most parents never use — applies to every device in your home simultaneously."
+          "Cel mai puternic strat de control parental pe care majoritatea parintilor nu il folosesc niciodata — se aplica simultan tuturor dispozitivelor din casa."
       },
       aboutTitle: "Creat de un parinte care lucreaza in securitate cibernetica",
       aboutBodyOne:

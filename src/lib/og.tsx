@@ -1,6 +1,11 @@
 import { BrandMarkSvg } from "@/components/brand";
 import { getCategoryLabel, getRiskMeta, type Entry } from "@/data/entries";
-import { getNetworkApproach, getNetworkCopy, type NetworkGuide } from "@/data/network";
+import {
+  getNetworkApproach,
+  getNetworkCopy,
+  getNetworkMetricLabel,
+  type NetworkGuide
+} from "@/data/network";
 import { getCopy } from "@/lib/copy";
 import { type Locale } from "@/lib/locale";
 import { SITE_NAME } from "@/lib/site";
@@ -294,7 +299,7 @@ export function NetworkGuideOgCard({
   locale?: Locale;
 }) {
   const copy = getNetworkCopy(locale);
-  const approach = getNetworkApproach(guide.approach);
+  const approach = getNetworkApproach(guide.approach, locale);
   const setupTime = getNetworkCoverageMetric(guide, "Setup time");
   const bypassResistance = getNetworkCoverageMetric(guide, "Bypass resistance");
 
@@ -393,7 +398,7 @@ export function NetworkGuideOgCard({
             }}
           >
             <div style={{ fontSize: 16, color: mutedText, textTransform: "uppercase" }}>
-              Setup time
+              {getNetworkMetricLabel("Setup time", locale)}
             </div>
             <div style={{ marginTop: 8, fontSize: 26, fontWeight: 600 }}>{setupTime}</div>
           </div>
@@ -408,7 +413,7 @@ export function NetworkGuideOgCard({
             }}
           >
             <div style={{ fontSize: 16, color: mutedText, textTransform: "uppercase" }}>
-              Bypass resistance
+              {getNetworkMetricLabel("Bypass resistance", locale)}
             </div>
             <div style={{ marginTop: 8, fontSize: 26, fontWeight: 600 }}>
               {bypassResistance}
