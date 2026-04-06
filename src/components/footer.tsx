@@ -47,6 +47,7 @@ export function Footer() {
           <Link href={localizeHref("/#apps", locale)}>{copy.footer.apps}</Link>
           <Link href={localizeHref("/#operating-systems", locale)}>{copy.footer.os}</Link>
           <Link href={localizeHref("/#devices", locale)}>{copy.footer.devices}</Link>
+          <Link href={localizeHref("/#network", locale)}>{copy.footer.network}</Link>
           <Link href={localizeHref("/#about", locale)}>{copy.footer.about}</Link>
         </nav>
 

@@ -19,7 +19,7 @@ export function EntryCard({
   const isAppCard = entry.category === "apps" || compact;
   const subtitle = getDirectorySubtitle(entry.slug, locale);
   const cardPadding = isAppCard ? "p-4" : "p-5";
-  const parentFriendlyRiskLabel = getRiskMeta(entry.riskLevel, locale).parentLabel;
+  const parentFriendlyRiskLabel = entry.homeBadgeLabel ?? getRiskMeta(entry.riskLevel, locale).parentLabel;
 
   return (
     <Link
