@@ -3,11 +3,17 @@
 import Link from "next/link";
 import { useState } from "react";
 
-import { IconApps, IconDevices, IconOS } from "@/components/category-icons";
+import { IconApps, IconDevices, IconNetwork, IconOS } from "@/components/category-icons";
 import { EntryCard } from "@/components/entry-card";
+import { NetworkApproachCard } from "@/components/network-approach-card";
 import { getCopy } from "@/lib/copy";
 import { localizeHref, type Locale } from "@/lib/locale";
 import { getEntriesByCategory, type Entry } from "@/data/entries";
+import {
+  getNetworkApproaches,
+  getNetworkGuidesByApproach,
+  type NetworkApproach
+} from "@/data/network";
 
 const quickPicks = [
   {
@@ -37,6 +43,24 @@ function filterEntries(entries: Entry[], query: string) {
   return entries.filter((entry) => entry.name.toLowerCase().includes(normalized));
 }
 
+function filterNetworkApproaches(approaches: NetworkApproach[], query: string) {
+  if (!query.trim()) {
+    return approaches;
+  }
+
+  const normalized = query.trim().toLowerCase();
+
+  return approaches.filter((approach) => {
+    const guideNames = getNetworkGuidesByApproach(approach.id)
+      .map((guide) => guide.name)
+      .join(" ")
+      .toLowerCase();
+
+    const haystack = `${approach.name} ${approach.description} ${guideNames}`.toLowerCase();
+    return haystack.includes(normalized);
+  });
+}
+
 export function HomeDirectory({ locale = "en" }: { locale?: Locale }) {
   const [query, setQuery] = useState("");
   const copy = getCopy(locale);
@@ -44,7 +68,9 @@ export function HomeDirectory({ locale = "en" }: { locale?: Locale }) {
   const apps = filterEntries(getEntriesByCategory("apps", locale), query);
   const operatingSystems = filterEntries(getEntriesByCategory("os", locale), query);
   const devices = filterEntries(getEntriesByCategory("devices", locale), query);
-  const hasResults = apps.length > 0 || operatingSystems.length > 0 || devices.length > 0;
+  const networks = filterNetworkApproaches(getNetworkApproaches(), query);
+  const hasResults =
+    apps.length > 0 || operatingSystems.length > 0 || devices.length > 0 || networks.length > 0;
 
   return (
     <div className="page-shell py-10 sm:py-14" lang={locale}>
@@ -184,6 +210,32 @@ export function HomeDirectory({ locale = "en" }: { locale?: Locale }) {
             <div className="grid gap-4 md:grid-cols-2">
               {devices.map((entry) => (
                 <EntryCard key={entry.slug} entry={entry} locale={locale} />
+              ))}
+            </div>
+          </section>
+        ) : null}
+
+        {networks.length ? (
+          <section
+            id="network"
+            className="scroll-mt-24 space-y-5 rounded-[28px] border border-[rgba(148,163,184,0.14)] bg-white/80 p-5 shadow-[0_20px_60px_-42px_rgba(15,23,42,0.38)] backdrop-blur-sm dark:border-slate-800 dark:bg-slate-900/55 sm:p-6"
+          >
+            <div className="flex items-center gap-3">
+              <span className="category-icon inline-flex h-10 w-10 items-center justify-center rounded-2xl bg-teal-50 text-teal-700 dark:bg-teal-950/50 dark:text-teal-300">
+                <IconNetwork className="h-4 w-4" />
+              </span>
+              <div>
+                <h2 className="text-2xl font-semibold tracking-tight text-slate-950 dark:text-white">
+                  {copy.home.sections.networkTitle}
+                </h2>
+                <p className="text-sm leading-6 text-slate-600 dark:text-slate-300">
+                  {copy.home.sections.networkDescription}
+                </p>
+              </div>
+            </div>
+            <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+              {networks.map((approach) => (
+                <NetworkApproachCard key={approach.id} approach={approach} locale={locale} />
               ))}
             </div>
           </section>

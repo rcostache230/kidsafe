@@ -26,7 +26,10 @@ export const uiCopy = {
           "These built-in controls do the most work before any app-specific setting does.",
         devicesTitle: "Device setup guides",
         devicesDescription:
-          "Use these first-time setup checklists when a new device enters the house."
+          "Use these first-time setup checklists when a new device enters the house.",
+        networkTitle: "Home Network & Router Controls",
+        networkDescription:
+          "The most powerful parental control layer most parents never use — applies to every device in your home simultaneously."
       },
       aboutTitle: "Built by a parent who works in cybersecurity",
       aboutBodyOne:
@@ -59,6 +62,7 @@ export const uiCopy = {
       apps: "Apps",
       os: "Operating Systems",
       devices: "Devices",
+      network: "Network",
       about: "About",
       shareTitle: "Know a parent who needs this? Share this site.",
       shareBody:
@@ -124,7 +128,10 @@ export const uiCopy = {
           "Aceste controale integrate fac cea mai multa munca inaintea oricarei setari specifice unei aplicatii.",
         devicesTitle: "Ghiduri de configurare pentru dispozitive",
         devicesDescription:
-          "Foloseste aceste liste de verificare cand intra in casa un dispozitiv nou."
+          "Foloseste aceste liste de verificare cand intra in casa un dispozitiv nou.",
+        networkTitle: "Home Network & Router Controls",
+        networkDescription:
+          "The most powerful parental control layer most parents never use — applies to every device in your home simultaneously."
       },
       aboutTitle: "Creat de un parinte care lucreaza in securitate cibernetica",
       aboutBodyOne:
@@ -157,6 +164,7 @@ export const uiCopy = {
       apps: "Aplicatii",
       os: "Sisteme de operare",
       devices: "Dispozitive",
+      network: "Retea",
       about: "Despre",
       shareTitle: "Stii un parinte care are nevoie de asta? Distribuie site-ul.",
       shareBody:

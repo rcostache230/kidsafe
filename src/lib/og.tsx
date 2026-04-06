@@ -1,5 +1,6 @@
 import { BrandMarkSvg } from "@/components/brand";
-import { getRiskMeta, type Entry } from "@/data/entries";
+import { getCategoryLabel, getRiskMeta, type Entry } from "@/data/entries";
+import { getNetworkApproach, getNetworkCopy, type NetworkGuide } from "@/data/network";
 import { getCopy } from "@/lib/copy";
 import { type Locale } from "@/lib/locale";
 import { SITE_NAME } from "@/lib/site";
@@ -44,6 +45,10 @@ function riskTone(level: Entry["riskLevel"], locale: Locale) {
             ? "rgba(217, 119, 6, 0.10)"
             : "rgba(5, 150, 105, 0.10)"
   };
+}
+
+function getNetworkCoverageMetric(guide: NetworkGuide, label: string) {
+  return guide.coverageMetrics.find((metric) => metric.label === label)?.value;
 }
 
 export function OgBrand({ compact = false }: { compact?: boolean }) {
@@ -151,18 +156,7 @@ export function EntryOgCard({
 }) {
   const copy = getCopy(locale);
   const tone = riskTone(entry.riskLevel, locale);
-  const categoryLabel =
-    entry.category === "devices"
-      ? locale === "ro"
-        ? "Dispozitive"
-        : "Devices"
-      : entry.category === "os"
-        ? locale === "ro"
-          ? "Sisteme de operare"
-          : "Operating systems"
-        : locale === "ro"
-          ? "Aplicatii"
-          : "Apps";
+  const categoryLabel = getCategoryLabel(entry.category, locale);
 
   return (
     <div
@@ -288,6 +282,140 @@ export function EntryOgCard({
           <span>{copy.og.parentGuide}</span>
         </div>
       )}
+    </div>
+  );
+}
+
+export function NetworkGuideOgCard({
+  guide,
+  locale = "en"
+}: {
+  guide: NetworkGuide;
+  locale?: Locale;
+}) {
+  const copy = getNetworkCopy(locale);
+  const approach = getNetworkApproach(guide.approach);
+  const setupTime = getNetworkCoverageMetric(guide, "Setup time");
+  const bypassResistance = getNetworkCoverageMetric(guide, "Bypass resistance");
+
+  return (
+    <div
+      style={{
+        width: "100%",
+        height: "100%",
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "space-between",
+        background: "#ffffff",
+        padding: "52px 60px",
+        color: baseText,
+        fontFamily:
+          "system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif"
+      }}
+    >
+      <OgBrand compact />
+      <div style={{ display: "flex", flexDirection: "column", gap: 20, maxWidth: 920 }}>
+        <div
+          style={{
+            display: "flex",
+            alignItems: "center",
+            gap: 10,
+            fontSize: 22,
+            color: mutedText
+          }}
+        >
+          <span>{copy.categoryLabel}</span>
+          <span>→</span>
+          <span>{approach?.name ?? guide.name}</span>
+        </div>
+        <div
+          style={{
+            fontSize: 60,
+            lineHeight: 1.04,
+            fontWeight: 700,
+            letterSpacing: -1.8
+          }}
+        >
+          {guide.name}
+        </div>
+        <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
+          {approach ? (
+            <span
+              style={{
+                display: "flex",
+                alignItems: "center",
+                borderRadius: 999,
+                background: "rgba(20, 184, 166, 0.10)",
+                color: brandColor,
+                padding: "10px 16px",
+                fontSize: 20,
+                fontWeight: 600
+              }}
+            >
+              {copy.approachLabel}: {approach.name}
+            </span>
+          ) : null}
+          <span
+            style={{
+              display: "flex",
+              alignItems: "center",
+              borderRadius: 999,
+              background: "rgba(148, 163, 184, 0.12)",
+              color: brandColor,
+              padding: "10px 16px",
+              fontSize: 20,
+              fontWeight: 600
+            }}
+          >
+            {copy.difficultyLabel}: {guide.difficulty}
+          </span>
+        </div>
+        <div
+          style={{
+            fontSize: 28,
+            lineHeight: 1.35,
+            color: mutedText,
+            maxWidth: 860
+          }}
+        >
+          {guide.description}
+        </div>
+      </div>
+
+      <div style={{ display: "flex", gap: 18 }}>
+        {setupTime ? (
+          <div
+            style={{
+              flex: 1,
+              borderRadius: 24,
+              border: "1px solid rgba(148,163,184,0.24)",
+              padding: "18px 20px"
+            }}
+          >
+            <div style={{ fontSize: 16, color: mutedText, textTransform: "uppercase" }}>
+              Setup time
+            </div>
+            <div style={{ marginTop: 8, fontSize: 26, fontWeight: 600 }}>{setupTime}</div>
+          </div>
+        ) : null}
+        {bypassResistance ? (
+          <div
+            style={{
+              flex: 1,
+              borderRadius: 24,
+              border: "1px solid rgba(148,163,184,0.24)",
+              padding: "18px 20px"
+            }}
+          >
+            <div style={{ fontSize: 16, color: mutedText, textTransform: "uppercase" }}>
+              Bypass resistance
+            </div>
+            <div style={{ marginTop: 8, fontSize: 26, fontWeight: 600 }}>
+              {bypassResistance}
+            </div>
+          </div>
+        ) : null}
+      </div>
     </div>
   );
 }

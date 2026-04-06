@@ -2,7 +2,7 @@ import { roEntryTranslations } from "@/data/entries-ro";
 import { type Locale } from "@/lib/locale";
 
 export type RiskLevel = "critical" | "high" | "medium" | "low";
-export type Category = "devices" | "os" | "apps";
+export type Category = "devices" | "os" | "apps" | "network";
 
 export interface EntryLink {
   category: Category;
@@ -15,6 +15,7 @@ export interface Entry {
   category: Category;
   riskLevel: RiskLevel;
   riskLabelText: string;
+  homeBadgeLabel?: string;
   summary: string;
   description: string;
   quickActions: Array<{ title: string; description: string }>;
@@ -34,7 +35,8 @@ export interface Entry {
 export const categoryLabels: Record<Category, string> = {
   "devices": "Devices",
   "os": "Operating systems",
-  "apps": "Apps"
+  "apps": "Apps",
+  "network": "Home network"
 };
 
 const categoryLabelsByLocale: Record<Locale, Record<Category, string>> = {
@@ -42,14 +44,16 @@ const categoryLabelsByLocale: Record<Locale, Record<Category, string>> = {
   ro: {
     devices: "Dispozitive",
     os: "Sisteme de operare",
-    apps: "Aplicatii"
+    apps: "Aplicatii",
+    network: "Retea de acasa"
   }
 };
 
 export const categoryDirectoryHref: Record<Category, string> = {
   "devices": "/#devices",
   "os": "/#operating-systems",
-  "apps": "/#apps"
+  "apps": "/#apps",
+  "network": "/#network"
 };
 
 const localizedRiskLabels: Record<Locale, Record<RiskLevel, string>> = {
@@ -2127,7 +2131,559 @@ export const entries: Entry[] = [
         "slug": "macos"
       }
     ]
-  }
+  },
+  {
+    "slug": "character-ai",
+    "name": "Character.AI",
+    "category": "apps",
+    "riskLevel": "critical",
+    "riskLabelText": "Very high risk",
+    "homeBadgeLabel": "Urgent attention needed",
+    "summary": "An AI roleplay platform where users chat with custom characters — including romantic and emotional relationship simulations with no age verification.",
+    "description": "An AI roleplay platform where users chat with custom characters — including romantic and emotional relationship simulations with no age verification.",
+    "quickActions": [
+      {
+        "title": "Check whether it is already installed",
+        "description": "Search the app library for Character.AI and C.AI, then check the App Store purchase history and the home screen."
+      },
+      {
+        "title": "Turn on Safe Messaging Mode",
+        "description": "Settings → Feed → Safe Messaging Settings → ON. This adds crisis prompts but does not filter adult content."
+      },
+      {
+        "title": "Review the character list",
+        "description": "Open the account together and review the characters they follow or revisit, especially anything framed as romantic or emotionally dependent."
+      }
+    ],
+    "watchFor": [
+      {
+        "title": "Romantic and sexual roleplay normalisation",
+        "description": "Adults and minors use the platform to simulate romantic and sexual relationships with AI characters. For developing adolescents this normalises deeply inappropriate relationship dynamics.",
+        "severity": "critical"
+      },
+      {
+        "title": "Documented fatal crisis failure",
+        "description": "A 2024 lawsuit directly linked the suicide of a 14-year-old boy to extended romantic interaction with a Character.AI chatbot. The platform failed to intervene despite clear distress signals. This is not a hypothetical risk.",
+        "severity": "critical"
+      },
+      {
+        "title": "Emotional over-reliance replacing human connection",
+        "description": "Teens report preferring the chatbot to real relationships. Extended use is associated with worsening social isolation and reduced ability to tolerate the friction of real human interaction.",
+        "severity": "high"
+      },
+      {
+        "title": "Unvetted user-created characters",
+        "description": "Any user can create a character with any persona. Adult-themed, violent, and ideologically extreme bots are freely accessible despite the platform's stated policies.",
+        "severity": "high"
+      },
+      {
+        "title": "Disclosure of personal trauma to an inadequate system",
+        "description": "Children share genuine mental health crises, abuse disclosures, and suicidal ideation with bots that are not equipped to respond safely and do not alert anyone.",
+        "severity": "high"
+      }
+    ],
+    "setupGuide": [
+      {
+        "title": "Check if it is installed",
+        "steps": [
+          "Search the app library for Character.AI and C.AI, because it is sometimes hidden under the shorter name. Check both the App Store purchase history and the home screen."
+        ]
+      },
+      {
+        "title": "Enable Safe Messaging Mode",
+        "steps": [
+          "Inside the app go to Settings → Feed → Safe Messaging Settings → ON. This adds crisis resource prompts but does not filter content. It is a partial measure, not a fix."
+        ]
+      },
+      {
+        "title": "Review the character list",
+        "steps": [
+          "Open their account and review which characters they follow and interact with. User-created characters have no vetting. Any romantic, adult, or relationship-simulation character is a red flag regardless of how it is labelled."
+        ]
+      },
+      {
+        "title": "Have the conversation before applying controls",
+        "steps": [
+          "Ask what they use it for before deciding on restrictions. Creative writing use is different from emotional dependency use. Understanding the reason shapes the right response."
+        ]
+      },
+      {
+        "title": "Set app-level daily time limits",
+        "steps": [
+          "iOS: Settings → Screen Time → App Limits → add Character.AI → set daily maximum. Android: Digital Wellbeing → Dashboard → Character.AI → set timer."
+        ]
+      },
+      {
+        "title": "Address the underlying need directly",
+        "steps": [
+          "If they are using it primarily for emotional support or because they feel lonely, that is important information. Connect them with a school counsellor, a hobby group, or a trusted adult. Blocking the app without addressing the underlying need will not solve the problem."
+        ]
+      }
+    ],
+    "ageRating": "17+ App Store rating",
+    "userCount": "Widely used by ages 12-16 despite the rating",
+    "platform": "iOS, Android, Web",
+    "ageRecommendation": "Not recommended for minors",
+    "riskBarPosition": 88,
+    "appMetrics": [
+      {
+        "label": "Primary use",
+        "value": "Roleplay & emotional chat"
+      },
+      {
+        "label": "Age verification",
+        "value": "None whatsoever"
+      },
+      {
+        "label": "Romantic roleplay",
+        "value": "Extremely common"
+      },
+      {
+        "label": "Crisis response history",
+        "value": "Has failed fatally"
+      }
+    ],
+    "callouts": [
+      {
+        "type": "warning",
+        "title": "Highest concern",
+        "description": "Character.AI is the highest-risk AI platform for children. A 2024 lawsuit linked the death of a 14-year-old to extended romantic chatbot use. Safe Messaging Mode adds crisis prompts but does not remove adult content or relationship simulation."
+      },
+      {
+        "type": "tip",
+        "title": "Most impactful action",
+        "description": "Safe Messaging Mode is not a content filter. The only meaningful protection is an open conversation about what they are doing on the app and why — followed by a joint decision about limits."
+      }
+    ],
+    "related": [
+      {
+        "category": "devices",
+        "slug": "smartphone"
+      },
+      {
+        "category": "devices",
+        "slug": "laptop"
+      },
+      {
+        "category": "apps",
+        "slug": "chatgpt"
+      }
+    ]
+  },
+  {
+    "slug": "whatsapp",
+    "name": "WhatsApp",
+    "category": "apps",
+    "riskLevel": "high",
+    "riskLabelText": "Medium-high risk",
+    "homeBadgeLabel": "Set up controls first",
+    "summary": "The dominant messaging app for European teenagers — end-to-end encrypted, school-group heavy, and nearly impossible for parents to monitor.",
+    "description": "The dominant messaging app for European teenagers — end-to-end encrypted, school-group heavy, and nearly impossible for parents to monitor.",
+    "quickActions": [
+      {
+        "title": "Restrict who can add them to groups",
+        "description": "Settings → Privacy → Groups → change from Everyone to My Contacts or My Contacts Except.... This is the most important WhatsApp setting for children."
+      },
+      {
+        "title": "Lock down profile visibility",
+        "description": "Set Last Seen, Profile Photo, About, and Status to My Contacts so strangers and loose contacts cannot see personal details."
+      },
+      {
+        "title": "Review their groups together",
+        "description": "Open each group, check the members, and leave any group that includes people your child cannot identify in real life."
+      }
+    ],
+    "watchFor": [
+      {
+        "title": "Anyone with their number can add them to any group",
+        "description": "There is no consent mechanism for group additions. A child can be placed in a humiliating, harassing, or inappropriate group by anyone who has their phone number, including people they do not know.",
+        "severity": "high"
+      },
+      {
+        "title": "End-to-end encryption means zero platform visibility",
+        "description": "WhatsApp cannot see message content and neither can you. Unlike Instagram DMs or Snapchat, there is no reporting mechanism for content — only for contacts.",
+        "severity": "high"
+      },
+      {
+        "title": "Image and video spread in groups",
+        "description": "Inappropriate, humiliating, or explicit content shared in a group reaches everyone simultaneously. Screenshots and forwards mean content spreads beyond the original group within minutes.",
+        "severity": "high"
+      },
+      {
+        "title": "Status visible to all contacts by default",
+        "description": "The Status feature shares photos and videos with every saved contact, including adults, distant relatives, or people added through groups who are not real friends.",
+        "severity": "medium"
+      },
+      {
+        "title": "Unknown contact messaging if number is exposed",
+        "description": "If a child's number appears in a group chat, anyone in that group can message them directly. This is a direct stranger-contact vector.",
+        "severity": "medium"
+      }
+    ],
+    "setupGuide": [
+      {
+        "title": "Change who can add them to groups",
+        "steps": [
+          "Settings → Privacy → Groups → change from Everyone to My Contacts or My Contacts Except.... This is OFF by default and is the single most important WhatsApp setting for children. Do it now."
+        ]
+      },
+      {
+        "title": "Lock down profile visibility",
+        "steps": [
+          "Settings → Privacy → set Last Seen, Profile Photo, About, and Status each to My Contacts. Go through each one individually because they are set separately."
+        ]
+      },
+      {
+        "title": "Disable Read Receipts if social pressure around replies is an issue",
+        "steps": [
+          "Settings → Privacy → Read Receipts → OFF. This removes the double blue tick and can reduce anxiety around response expectations in group dynamics."
+        ]
+      },
+      {
+        "title": "Review their group list together",
+        "steps": [
+          "Open WhatsApp → Chats → scroll through groups. For every group, tap it and view Members. Any group containing people they cannot name in real life should be left immediately."
+        ]
+      },
+      {
+        "title": "Enable two-step verification to protect the account",
+        "steps": [
+          "Settings → Account → Two-Step Verification → Enable → set a 6-digit PIN. This helps prevent account hijacking through SIM swap or device theft."
+        ]
+      },
+      {
+        "title": "Remind them regularly that nothing on WhatsApp is private",
+        "steps": [
+          "Despite the encryption, anyone they message can screenshot or forward what they send. The encryption protects the transmission, not what happens after it arrives."
+        ]
+      }
+    ],
+    "ageRating": "16+ in the EU, 13+ elsewhere",
+    "userCount": "Near-universal teen use across Europe",
+    "platform": "iOS, Android, Web, Desktop",
+    "ageRecommendation": "Expect use from age 11-12 and set controls before the first class group",
+    "riskBarPosition": 65,
+    "appMetrics": [
+      {
+        "label": "Encryption",
+        "value": "End-to-end (unmonitorable)"
+      },
+      {
+        "label": "Group chats",
+        "value": "Primary bullying vector in Romanian schools"
+      },
+      {
+        "label": "Romania usage",
+        "value": "Near-universal for teens"
+      },
+      {
+        "label": "School use",
+        "value": "Mandatory for many class groups"
+      }
+    ],
+    "callouts": [
+      {
+        "type": "warning",
+        "title": "Highest concern",
+        "description": "WhatsApp group chats are the primary digital bullying vector in Romanian schools. A child can be added to a humiliating group, bombarded with messages for hours, and then removed — all with no record available to the platform or to parents."
+      },
+      {
+        "type": "tip",
+        "title": "Most impactful action",
+        "description": "Who can add me to groups is set to Everyone by default. Changing it to My Contacts takes 10 seconds and immediately removes the most common stranger-contact vector. Do this before any other setting."
+      }
+    ],
+    "related": [
+      {
+        "category": "devices",
+        "slug": "smartphone"
+      },
+      {
+        "category": "os",
+        "slug": "ios"
+      },
+      {
+        "category": "os",
+        "slug": "android"
+      }
+    ]
+  },
+  {
+    "slug": "twitch",
+    "name": "Twitch",
+    "category": "apps",
+    "riskLevel": "high",
+    "riskLabelText": "Medium-high risk",
+    "homeBadgeLabel": "Worth monitoring",
+    "summary": "A live video streaming platform dominated by gaming content — but with real-time unmoderated chat, gambling streams, and heavy parasocial relationship dynamics.",
+    "description": "A live video streaming platform dominated by gaming content — but with real-time unmoderated chat, gambling streams, and heavy parasocial relationship dynamics.",
+    "quickActions": [
+      {
+        "title": "Enable Mature Content filtering",
+        "description": "Require a confirmation click before any stream flagged as mature can be watched. It is not perfect, but it adds useful friction."
+      },
+      {
+        "title": "Build a pre-approved streamer list",
+        "description": "Pick 5 to 10 streamers together and watch from Following rather than Browse or Discovery."
+      },
+      {
+        "title": "Remove saved payment methods",
+        "description": "Delete stored cards so subscriptions and Bits purchases cannot happen impulsively."
+      }
+    ],
+    "watchFor": [
+      {
+        "title": "Live chat exposes children to unmoderated adult content in real time",
+        "description": "Popular streams move thousands of messages per minute. Hate speech, sexual content, grooming attempts, and harassment appear and disappear before any moderation system can act. A child sees it before it is removed.",
+        "severity": "high"
+      },
+      {
+        "title": "Gambling and sports betting content normalises gambling for minors",
+        "description": "Gambling streams are a significant content category on Twitch. Regular exposure to gambling presented as entertainment normalises it for young viewers during a formative period.",
+        "severity": "high"
+      },
+      {
+        "title": "Twitch raids flood a channel with unexpected users",
+        "description": "A raid sends a streamer's entire audience to another channel simultaneously. This can expose children watching smaller streamers to sudden, uncontrolled, and often hostile audiences.",
+        "severity": "medium"
+      },
+      {
+        "title": "Subscription and donation spending pressure",
+        "description": "Streamers actively encourage viewers to subscribe and send Bits. Children develop loyalty to streamers and feel social pressure to financially support them.",
+        "severity": "medium"
+      },
+      {
+        "title": "Parasocial relationships with streamers create susceptibility",
+        "description": "Children feel they know streamers personally. This creates trust that streamers and anyone who appears on their streams do not merit and makes children susceptible to influence, products, and ideologies promoted by people they feel attached to.",
+        "severity": "medium"
+      }
+    ],
+    "setupGuide": [
+      {
+        "title": "Enable Mature Content filtering on the account",
+        "steps": [
+          "Log into the Twitch account → Settings → Security and Privacy → Mature Content → require a manual confirmation click before any stream flagged as mature can be watched. This is not perfect but adds friction."
+        ]
+      },
+      {
+        "title": "Build a list of pre-approved streamers and bookmark them",
+        "steps": [
+          "Together with your child, identify 5 to 10 specific streamers whose content you have watched and found appropriate. Add them to Following. Direct viewing to this list rather than Browse or Discovery."
+        ]
+      },
+      {
+        "title": "Disable open browsing of the Discover and Browse pages",
+        "steps": [
+          "There is no parental lock for Browse, so the practical solution is an agreement: watched content comes from the Following list, not from browsing. Frame it as a starting point, not a permanent restriction."
+        ]
+      },
+      {
+        "title": "Remove saved payment methods from the account",
+        "steps": [
+          "Settings → Payments → remove all cards. Without a saved payment method, subscriptions and Bits purchases require re-entering card details, which creates a natural pause that eliminates impulse spending."
+        ]
+      },
+      {
+        "title": "Discuss parasocial relationships directly",
+        "steps": [
+          "Explain that streamers are entertainers, not friends. They do not know your child exists. The relationship is one-directional. This conversation is more protective than any setting Twitch offers."
+        ]
+      },
+      {
+        "title": "Set viewing time using device-level controls",
+        "steps": [
+          "Use iOS Screen Time or Android Digital Wellbeing to set a daily limit on the Twitch app itself. Sixty to ninety minutes is a reasonable ceiling for a school day."
+        ]
+      }
+    ],
+    "ageRating": "13+ official",
+    "userCount": "Massive live-streaming audience",
+    "platform": "Web, iOS, Android, Smart TV, Console",
+    "ageRecommendation": "Only with a curated streamer list and device-level time limits",
+    "riskBarPosition": 62,
+    "appMetrics": [
+      {
+        "label": "Content moderation",
+        "value": "Real-time — effectively impossible to pre-screen"
+      },
+      {
+        "label": "Gambling streams",
+        "value": "Common and normalising"
+      },
+      {
+        "label": "Chat speed (popular streams)",
+        "value": "Unreadable, unmoderable"
+      },
+      {
+        "label": "Spending pressure",
+        "value": "Subscriptions + Bits donations"
+      }
+    ],
+    "callouts": [
+      {
+        "type": "warning",
+        "title": "Highest concern",
+        "description": "Twitch live chat moves too fast for any moderation system to catch harmful content before a child sees it. There is no pre-screening of live content. What appears in chat cannot be un-seen."
+      },
+      {
+        "type": "tip",
+        "title": "Most impactful action",
+        "description": "Directing your child to a curated list of pre-approved streamers and removing saved payment methods are the two most effective actions. Twitch's own settings offer very limited parental control."
+      }
+    ],
+    "related": [
+      {
+        "category": "devices",
+        "slug": "desktop"
+      },
+      {
+        "category": "devices",
+        "slug": "laptop"
+      },
+      {
+        "category": "apps",
+        "slug": "discord"
+      }
+    ]
+  },
+  {
+    "slug": "steam",
+    "name": "Steam",
+    "category": "apps",
+    "riskLevel": "high",
+    "riskLabelText": "Medium-high risk",
+    "homeBadgeLabel": "Set up controls first",
+    "summary": "The world's largest PC gaming platform — with adult content accessible via a checkbox, unmoderated community forums, and a thriving scam ecosystem targeting young players.",
+    "description": "The world's largest PC gaming platform — with adult content accessible via a checkbox, unmoderated community forums, and a thriving scam ecosystem targeting young players.",
+    "quickActions": [
+      {
+        "title": "Enable Steam Family Controls",
+        "description": "Set the parental PIN from a parent account before the child starts browsing the store or adding friends."
+      },
+      {
+        "title": "Block Steam Community access",
+        "description": "Turn off Steam Community and Online Features because those are the highest-risk surfaces and children do not need them to play local games."
+      },
+      {
+        "title": "Remove saved payment methods",
+        "description": "Delete stored cards and use gift cards or wallet credit instead so spending stays inside a fixed budget."
+      }
+    ],
+    "watchFor": [
+      {
+        "title": "Adult and violent game content accessible via false birthdate",
+        "description": "Steam's adult content filter requires only clicking I am over 18 to bypass. There is no verification. Explicitly sexual games are available in the same store a 10-year-old can browse.",
+        "severity": "high"
+      },
+      {
+        "title": "Steam Community forums contain unmoderated content",
+        "description": "Game discussion boards, community hubs, and Workshop comments contain adult content, hate speech, extremist rhetoric, and contact attempts. These are not separated from the core game experience.",
+        "severity": "high"
+      },
+      {
+        "title": "Trading and marketplace scams specifically target young players",
+        "description": "Fake item trade offers, Steam Support impersonation, and phishing links shared in game chat or Community are specifically engineered to target young players who do not recognise the patterns. Account takeover and item theft are common.",
+        "severity": "high"
+      },
+      {
+        "title": "Sale mechanics and bundle design drive compulsive spending",
+        "description": "Steam sales like Summer Sale and Winter Sale create artificial urgency. Children with access to stored payment methods regularly spend significant amounts during sale events without fully registering the real-money cost.",
+        "severity": "medium"
+      },
+      {
+        "title": "Friend requests from strangers in multiplayer games",
+        "description": "Players from shared game lobbies can send friend requests. Strangers on a child's friend list can then message them, see their game activity, and invite them to other games.",
+        "severity": "medium"
+      }
+    ],
+    "setupGuide": [
+      {
+        "title": "Set up Steam Family Controls from a parent account",
+        "steps": [
+          "On your own Steam account go to Steam menu → Settings → Family → Manage → enable Family View and set a PIN. This controls what the child's account can access on the same machine. Alternatively, go to store.steampowered.com/parental from the child's account and set parental controls directly."
+        ]
+      },
+      {
+        "title": "Block Steam Community and forums entirely",
+        "steps": [
+          "In Family View or Parental Controls, uncheck Online Features and Steam Community access. These are the highest-risk areas and children do not need them to play games."
+        ]
+      },
+      {
+        "title": "Remove all saved payment methods from their account",
+        "steps": [
+          "Open Steam → account name → Account Details → remove all payment methods. Establish a gift card system by buying Steam Wallet cards with a set monthly value so they keep autonomy within a fixed budget."
+        ]
+      },
+      {
+        "title": "Review the Friends list together",
+        "steps": [
+          "Open Steam → profile → Friends and remove anyone they cannot identify by name from real life or from a confirmed mutual gaming context."
+        ]
+      },
+      {
+        "title": "Restrict new game installations using Family View",
+        "steps": [
+          "In Family View settings, require the PIN for any new game launch. That means you review any game before it is played for the first time."
+        ]
+      },
+      {
+        "title": "Check installed games against their age ratings",
+        "steps": [
+          "Open the Library, right-click any game, then open its store page to check the PEGI or ESRB rating. Games above the child's age should be discussed, not ignored."
+        ]
+      }
+    ],
+    "ageRating": "13+ for accounts",
+    "userCount": "The largest PC gaming platform",
+    "platform": "PC, Mac, Linux, Mobile companion app",
+    "ageRecommendation": "Treat adult content access as open until Family Controls are enabled",
+    "riskBarPosition": 63,
+    "appMetrics": [
+      {
+        "label": "Adult content gate",
+        "value": "Checkbox birthdate only"
+      },
+      {
+        "label": "Community forums",
+        "value": "Largely unmoderated"
+      },
+      {
+        "label": "Scam targeting",
+        "value": "Young players are primary targets"
+      },
+      {
+        "label": "Spending triggers",
+        "value": "Sales, bundles, limited-time offers"
+      }
+    ],
+    "callouts": [
+      {
+        "type": "warning",
+        "title": "Highest concern",
+        "description": "Steam's adult content toggle is a checkbox that any child can tick. There is no technical barrier between a child's account and explicit content — only a yes or no prompt they can answer themselves."
+      },
+      {
+        "type": "tip",
+        "title": "Most impactful action",
+        "description": "The Steam Parental PIN and the removal of saved payment methods are the two controls that matter most. Set the PIN first because it locks purchasing and Community access independently of anything else."
+      }
+    ],
+    "related": [
+      {
+        "category": "devices",
+        "slug": "desktop"
+      },
+      {
+        "category": "os",
+        "slug": "windows"
+      },
+      {
+        "category": "apps",
+        "slug": "minecraft"
+      }
+    ]
+  },
 ];
 
 function localizeEntry(entry: Entry, locale: Locale): Entry {

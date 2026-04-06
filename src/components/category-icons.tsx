@@ -217,3 +217,25 @@ export function IconApps({ className = "" }: IconProps) {
     </svg>
   );
 }
+
+export function IconNetwork({ className = "" }: IconProps) {
+  return (
+    <svg
+      width="16"
+      height="16"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.8"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className={className}
+      aria-hidden="true"
+    >
+      <path d="M2.5 8.5A15.5 15.5 0 0 1 12 5c3.7 0 7.1 1.3 9.5 3.5" />
+      <path d="M5.5 12a10.7 10.7 0 0 1 13 0" />
+      <path d="M8.8 15.4a5.9 5.9 0 0 1 6.4 0" />
+      <circle cx="12" cy="18.3" r="1.2" fill="currentColor" stroke="none" />
+    </svg>
+  );
+}
