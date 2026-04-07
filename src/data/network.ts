@@ -61,6 +61,8 @@ const networkUiCopy = {
     tipTitle: "Tip",
     warningTitle: "Warning",
     highlightedTitle: "Highlighted guidance",
+    siblingNavLabel: (approachName: string) => `${approachName} guides:`,
+    contextSummaryLabel: "About home network controls",
     backToOverview: "Back to network overview",
     openGuide: "Open full guide",
     guideCount: (count: number) => `${count} ${count === 1 ? "guide" : "guides"}`,
@@ -96,6 +98,8 @@ const networkUiCopy = {
     tipTitle: "Sfat util",
     warningTitle: "Limitare importanta",
     highlightedTitle: "Informatii importante",
+    siblingNavLabel: (approachName: string) => `Ghiduri din categoria ${approachName}:`,
+    contextSummaryLabel: "Despre controalele pentru reteaua de acasa",
     backToOverview: "Inapoi la ghidurile pentru reteaua de acasa",
     openGuide: "Deschide ghidul complet",
     guideCount: (count: number) => `${count} ${count === 1 ? "ghid" : "ghiduri"}`,
@@ -104,6 +108,12 @@ const networkUiCopy = {
     browseAll: "Vezi toate ghidurile pentru reteaua de acasa"
   }
 } as const;
+
+const networkOverviewOrder: NetworkApproachId[] = [
+  "dns-filtering",
+  "built-in-router-controls",
+  "isp-controls"
+];
 
 const networkMetricLabels: Record<Locale, Record<string, string>> = {
   en: {
@@ -619,6 +629,12 @@ export function getNetworkMetricLabel(label: string, locale: Locale = "en") {
 
 export function getNetworkApproaches(locale: Locale = "en") {
   return networkApproaches.map((approach) => localizeNetworkApproach(approach, locale));
+}
+
+export function getNetworkOverviewApproaches(locale: Locale = "en") {
+  return networkOverviewOrder
+    .map((approachId) => getNetworkApproach(approachId, locale))
+    .filter((approach): approach is NetworkApproach => Boolean(approach));
 }
 
 export function isNetworkApproach(value?: string): value is NetworkApproachId {
