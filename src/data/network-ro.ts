@@ -13,23 +13,23 @@ export const roNetworkApproachTranslations: Record<
   "built-in-router-controls": {
     name: "Controale integrate in router",
     description:
-      "Foloseste controalele parentale deja integrate in routerul tau TP-Link, ASUS sau Netgear. Sunt gratuite si surprinzator de puternice.",
+      "Foloseste controalele parentale deja incluse in routerul tau TP-Link, ASUS sau Netgear. Sunt gratuite si surprinzator de eficiente.",
     homepageDescription:
-      "Foloseste controalele parentale deja integrate in routerul tau TP-Link, ASUS sau Netgear. Sunt gratuite si surprinzator de puternice."
+      "Foloseste controalele parentale deja incluse in routerul tau TP-Link, ASUS sau Netgear. Sunt gratuite si surprinzator de eficiente."
   },
   "dns-filtering": {
     name: "Filtrare DNS",
     description:
-      "Schimba doua numere in setarile routerului ca sa blochezi continutul pentru adulti pe toate dispozitivele din casa. Este gratuit si dureaza 5 minute.",
+      "Schimba doua adrese DNS in setarile routerului ca sa blochezi continutul pentru adulti pe toate dispozitivele din casa. Este gratuit si dureaza 5 minute.",
     homepageDescription:
-      "Schimba doua numere in setarile routerului ca sa blochezi continutul pentru adulti pe toate dispozitivele din casa. Este gratuit si dureaza 5 minute."
+      "Schimba doua adrese DNS in setarile routerului ca sa blochezi continutul pentru adulti pe toate dispozitivele din casa. Este gratuit si dureaza 5 minute."
   },
   "isp-controls": {
     name: "Controale oferite de furnizorul de internet",
     description:
-      "Furnizorul tau de internet are, cel mai probabil, controale parentale gratuite pe care nu le-ai activat niciodata. Incepe aici daca vrei cea mai simpla prima etapa.",
+      "Furnizorul tau de internet are, cel mai probabil, controale parentale gratuite pe care nu le-ai activat niciodata. Incepe aici daca vrei cea mai simpla varianta.",
     homepageDescription:
-      "Furnizorul tau de internet are, cel mai probabil, controale parentale gratuite pe care nu le-ai activat niciodata. Incepe aici daca vrei cea mai simpla prima etapa."
+      "Furnizorul tau de internet are, cel mai probabil, controale parentale gratuite pe care nu le-ai activat niciodata. Incepe aici daca vrei cea mai simpla varianta."
   }
 };
 
@@ -51,15 +51,15 @@ export const roNetworkGuideTranslations: Partial<Record<string, LocalizedNetwork
     ],
     whatItBlocks: [
       "Continut pentru adulti prin filtrul de categorii integrat.",
-      "Site-uri personalizate pe care le adaugi manual in lista de blocare.",
+      "Site-urile pe care le adaugi manual in lista de blocare.",
       "Acces la internet in intervale programate, precum orele de scoala sau culcare.",
-      "Pauza de internet pe fiecare dispozitiv, pentru opriri imediate."
+      "Pauza de internet pentru fiecare dispozitiv, atunci cand vrei sa opresti accesul imediat."
     ],
     whatItCannotBlock: [
       "Aplicatii VPN instalate pe dispozitivul copilului.",
       "Folosirea datelor mobile in afara WiFi-ului de acasa.",
       "Continutul din interiorul domeniilor HTTPS permise.",
-      "Aplicatii care folosesc DNS hardcodat."
+      "Aplicatii care folosesc servere DNS hardcodate."
     ],
     setupSteps: [
       {
@@ -70,7 +70,7 @@ export const roNetworkGuideTranslations: Partial<Record<string, LocalizedNetwork
       {
         title: "Mergi la Parental Controls",
         action:
-          "In Tether, apasa pe router → Parental Controls. Daca nu vezi aceasta optiune, modelul tau ar putea folosi interfata mai veche la tplinkwifi.net in browser."
+          "In Tether, apasa pe router → Parental Controls. Daca nu vezi optiunea, modelul tau ar putea folosi interfata mai veche de la tplinkwifi.net in browser."
       },
       {
         title: "Creeaza un profil pentru copil",
@@ -78,19 +78,19 @@ export const roNetworkGuideTranslations: Partial<Record<string, LocalizedNetwork
           "Apasa pe + ca sa creezi un profil nou. Pune-i numele copilului. Atribuie-i dispozitivele selectandu-le din lista celor conectate. Identifica-le dupa nume, de exemplu iPhone-ul lui Luca."
       },
       {
-        title: "Activeaza Content Filtering",
+        title: "Activeaza filtrarea de continut",
         action:
-          "In profil, activeaza Content Filtering si selecteaza macar Adult Content. Daca filtrul presetat rateaza ceva, poti adauga manual site-uri in lista de blocare."
+          "In profil, activeaza Content Filtering si selecteaza macar Adult Content. Daca filtrul standard scapa ceva, poti adauga manual site-uri in lista de blocare."
       },
       {
-        title: "Seteaza programul de Time Limit",
+        title: "Seteaza programul de acces",
         action:
           "Configureaza separat orele de scoala, de exemplu 8:00–15:00 blocate in timpul saptamanii, si ora de culcare, de exemplu 22:00–7:00. Dispozitivele copilului pierd accesul la internet in aceste intervale."
       },
       {
-        title: "Pune Pause Internet la indemana",
+        title: "Pune butonul Pause Internet la indemana",
         action:
-          "Butonul Pause opreste instant internetul pentru un profil. Adauga-l ca widget sau shortcut. Inlocuieste discutiile lungi despre ecran cu o singura atingere la cina, teme sau culcare."
+          "Butonul Pause opreste instant internetul pentru un profil. Adauga-l ca widget sau shortcut. In loc de discutii lungi despre ecran, ai o singura atingere la cina, la teme sau la culcare."
       }
     ],
     tip:
@@ -101,7 +101,7 @@ export const roNetworkGuideTranslations: Partial<Record<string, LocalizedNetwork
   "router-asus": {
     name: "ASUS (AiProtection / Family Zone)",
     description:
-      "Routerele ASUS cu AiProtection (alimentat de Trend Micro) ofera unul dintre cele mai puternice sisteme de filtrare integrate din zona de consumer.",
+      "Routerele ASUS cu AiProtection (oferit de Trend Micro) au unul dintre cele mai bune sisteme de filtrare integrate pentru uz casnic.",
     difficulty: "Mediu",
     cost:
       "Gratuit pe routerele care includ AiProtection — verifica modelul tau la asus.com/aiprotection",
@@ -113,7 +113,7 @@ export const roNetworkGuideTranslations: Partial<Record<string, LocalizedNetwork
     ],
     whatItBlocks: [
       "Site-uri maliioase si malware pe toate dispozitivele.",
-      "Continut pentru adulti, violenta, gambling, phishing si blocari pe categorii personalizate.",
+      "Continut pentru adulti, violenta, jocuri de noroc, phishing si categorii personalizate.",
       "Acces bazat pe timp pentru fiecare dispozitiv, cu program separat pe zile."
     ],
     whatItCannotBlock: [
@@ -138,14 +138,14 @@ export const roNetworkGuideTranslations: Partial<Record<string, LocalizedNetwork
           "Creeaza un profil nou, pune numele copilului si atribuie-i dispozitivele potrivite."
       },
       {
-        title: "Seteaza un Time Schedule",
+        title: "Seteaza programul orar",
         action:
           "Configureaza intervalele blocate pentru orele de scoala si noaptea. ASUS iti permite programe diferite pentru fiecare zi, asa ca poti seta alta ora de culcare in weekend."
       },
       {
         title: "Activeaza Web Filtering",
         action:
-          "Selecteaza categoriile de continut pe care vrei sa le blochezi. Minim: Adult, Gambling si Violence. ASUS foloseste baza de date Trend Micro, deci nu trebuie sa intretii manual o lista lunga de site-uri."
+          "Selecteaza categoriile de continut pe care vrei sa le blochezi. Minim: Adult, Gambling si Violence. ASUS foloseste baza de date Trend Micro, asa ca nu trebuie sa intretii manual o lista lunga de site-uri."
       },
       {
         title: "Activeaza Instant Guard daca exista",
@@ -161,7 +161,7 @@ export const roNetworkGuideTranslations: Partial<Record<string, LocalizedNetwork
   "router-netgear": {
     name: "NETGEAR (Smart Parental Controls / integrare Circle)",
     description:
-      "Routerele Netgear Nighthawk si Orbi se integreaza cu Circle, oferindu-ti limite pe aplicatii, categorii de continut si ore de culcare impuse dintr-o aplicatie bine facuta.",
+      "Routerele Netgear Nighthawk si Orbi se integreaza cu Circle, oferindu-ti limite pe aplicatii, categorii de continut si ore de culcare administrate dintr-o aplicatie bine gandita.",
     difficulty: "Mediu",
     cost:
       "Nivelul de baza este gratuit prin integrarea Circle; Circle Premium costa 9,99 USD/luna pentru limite per aplicatie si acoperire pe date mobile",
@@ -195,9 +195,9 @@ export const roNetworkGuideTranslations: Partial<Record<string, LocalizedNetwork
           "Adauga un profil pentru fiecare copil. Atribuie-le dispozitivele selectandu-le din lista detectata in retea. Daca exista optiunea, foloseste asocierea dupa adresa MAC pentru mai multa precizie."
       },
       {
-        title: "Seteaza un Filter Level de baza",
+        title: "Alege un nivel de filtrare de baza",
         action:
-          "Alege presetul Little Kid, Kid sau Teen pentru profil. Acesta creeaza nivelul initial de restrictie peste care poti ajusta mai fin ulterior."
+          "Alege presetul Little Kid, Kid sau Teen pentru profil. Este punctul de pornire, peste care poti ajusta apoi setarile mai fin."
       },
       {
         title: "Seteaza limite de timp pe fiecare aplicatie",
@@ -205,7 +205,7 @@ export const roNetworkGuideTranslations: Partial<Record<string, LocalizedNetwork
           "Pune YouTube la 45 de minute pe zi, TikTok la 30 de minute, gamingul la 90 de minute si asa mai departe. Circle le urmareste si le impune separat de timpul total petrecut pe ecran."
       },
       {
-        title: "Seteaza Bedtime pe profil",
+        title: "Seteaza ora de culcare pentru profil",
         action:
           "Accesul la internet este taiat automat pentru toate dispozitivele din acel profil la ora stabilita. Fara negocieri si fara exceptii."
       },
@@ -221,13 +221,13 @@ export const roNetworkGuideTranslations: Partial<Record<string, LocalizedNetwork
   "dns-cloudflare": {
     name: "Cloudflare for Families (1.1.1.3)",
     description:
-      "Schimba doua numere in setarile routerului ca sa blochezi continutul pentru adulti si malware pe toate dispozitivele din casa. Este gratuit, dureaza 5 minute si nu cere mentenanta.",
+      "Schimba doua adrese DNS in setarile routerului ca sa blochezi continutul pentru adulti si malware pe toate dispozitivele din casa. Este gratuit, dureaza 5 minute si nu cere mentenanta.",
     difficulty: "Usor",
     cost: "Gratuit",
     coverageMetrics: [
       {
         label: "All WiFi devices",
-        value: "Da — inclusiv smart TV-uri, console si tablete"
+        value: "Da — inclusiv televizoare smart, console si tablete"
       },
       { label: "Mobile data", value: "Nu" },
       { label: "Bypass resistance", value: "Medie" },
@@ -273,11 +273,11 @@ export const roNetworkGuideTranslations: Partial<Record<string, LocalizedNetwork
       {
         title: "Spune-i copilului despre limitare",
         action:
-          "Explica-i copilului ca WiFi-ul de acasa filtreaza acum continutul pentru adulti. Pune-l in ramă de regula a casei, nu de pedeapsa. Cel mai probabil va observa singur, asa ca e mai bine sa auda asta de la tine."
+          "Explica-i copilului ca WiFi-ul de acasa filtreaza acum continutul pentru adulti. Prezinta asta ca pe o regula a casei, nu ca pe o pedeapsa. Cel mai probabil va observa singur, asa ca e mai bine sa auda asta de la tine."
       }
     ],
     tip:
-      "Este actiunea cu cel mai mare impact din toata aceasta sectiune raportat la efort: cinci minute, gratuit si protejeaza toate dispozitivele simultan, inclusiv PlayStation-ul si smart TV-ul unde controalele pe aplicatie nu ajung.",
+      "Este una dintre cele mai eficiente actiuni de pe toata pagina raportat la efort: cinci minute, gratuit, si protejeaza toate dispozitivele simultan, inclusiv PlayStation-ul si televizorul smart unde controalele pe aplicatie nu ajung.",
     warning:
       "Cloudflare for Families nu functioneaza cand copilul trece pe date mobile. Nici nu poate inspecta continutul din interiorul unui site — blocheaza sau permite domenii intregi. Un copil aflat pe WiFi filtrat poate vedea in continuare videoclipuri nepotrivite pe YouTube pentru ca domeniul YouTube este permis."
   },
@@ -326,28 +326,28 @@ export const roNetworkGuideTranslations: Partial<Record<string, LocalizedNetwork
           "Incearca un site cunoscut pentru adulti. Ar trebui sa te redirectioneze catre pagina de blocare OpenDNS, semn ca filtrul este activ."
       },
       {
-        title: "Creeaza un cont gratuit OpenDNS pentru dashboard",
+        title: "Creeaza un cont gratuit OpenDNS pentru panoul de control",
         action:
           "Mergi la opendns.com/home-internet-security si creeaza un cont gratuit. Leaga-l de IP-ul casei urmand pasii de pe ecran. Asta iti ofera un jurnal in timp real al cererilor blocate si control pe categorii."
       },
       {
-        title: "Foloseste dashboard-ul pentru blocari personalizate",
+        title: "Foloseste panoul de control pentru blocari personalizate",
         action:
           "In panoul OpenDNS, adauga site-uri specifice pe care vrei sa le blochezi si care nu sunt deja acoperite de categoriile standard."
       },
       {
-        title: "Pune pe whitelist site-urile de scoala blocate din greseala",
+        title: "Pune pe lista de exceptii site-urile de scoala blocate din greseala",
         action:
-          "Unele site-uri educationale legitime sunt uneori blocate prea agresiv. Dashboard-ul iti permite sa pui domenii specifice pe lista de permisiuni fara sa slabesti restul filtrarii."
+          "Unele site-uri educationale legitime sunt uneori blocate prea agresiv. Panoul de control iti permite sa pui domenii specifice pe lista de permisiuni fara sa slabesti restul filtrarii."
       }
     ],
     tip:
-      "OpenDNS blocheaza implicit site-urile proxy si anonimizatoarele — exact instrumentele pe care copiii le folosesc cel mai des pentru a ocoli filtrele simple. Asta il face mai greu de fentat decat Cloudflare for Families singur."
+      "OpenDNS blocheaza implicit site-urile proxy si anonimizatoarele — exact instrumentele pe care copiii le folosesc cel mai des pentru a ocoli filtrele simple. Asta il face mai greu de ocolit decat Cloudflare for Families singur."
   },
   "dns-nextdns": {
     name: "NextDNS",
     description:
-      "Cea mai personalizabila optiune de filtrare DNS disponibila. Poti bloca aplicatii precum TikTok sau Instagram la nivel de retea dintr-un singur toggle si poti vedea fiecare domeniu contactat de dispozitivele din casa.",
+      "Cea mai personalizabila optiune de filtrare DNS de pe pagina. Poti bloca aplicatii precum TikTok sau Instagram direct din retea si poti vedea ce domenii contacteaza dispozitivele din casa.",
     difficulty: "Mediu",
     cost:
       "Gratuit pana la 300.000 de interogari pe luna (suficient pentru majoritatea familiilor). 19,90 USD pe an pentru nelimitat.",
@@ -358,9 +358,9 @@ export const roNetworkGuideTranslations: Partial<Record<string, LocalizedNetwork
       { label: "Setup time", value: "20–30 de minute" }
     ],
     whatItBlocks: [
-      "Continut pentru adulti, malware, tracking si publicitate prin blocare de retea.",
-      "Aplicatii individuale precum TikTok, Instagram, Snapchat si Discord, fiecare cu propriul toggle.",
-      "Phishing, gambling, site-uri de dating si scripturi de crypto-mining.",
+      "Continut pentru adulti, malware, urmarire online si publicitate, prin blocare la nivel de retea.",
+      "Aplicatii individuale precum TikTok, Instagram, Snapchat si Discord, fiecare blocata separat.",
+      "Phishing, jocuri de noroc, site-uri de dating si scripturi de crypto-mining.",
       "Liste personalizate de domenii alese de tine."
     ],
     whatItCannotBlock: [
@@ -371,38 +371,38 @@ export const roNetworkGuideTranslations: Partial<Record<string, LocalizedNetwork
       {
         title: "Creeaza un cont gratuit NextDNS",
         action:
-          "Mergi la nextdns.io si creeaza un cont. Vei primi un ID unic de configurare, de exemplu abc123. Pastreaza dashboard-ul deschis pentru restul configurarii."
+          "Mergi la nextdns.io si creeaza un cont. Vei primi un ID unic de configurare, de exemplu abc123. Pastreaza panoul NextDNS deschis pentru restul configurarii."
       },
       {
         title: "Introdu adresele NextDNS in router",
         action:
-          "Mergi la 192.168.1.1 → DNS settings. Adresele exacte NextDNS apar in dashboard la Setup → Router. Introdu-le ca Primary si Secondary DNS, apoi salveaza si reporneste routerul."
+          "Mergi la 192.168.1.1 → DNS settings. Adresele exacte NextDNS apar in panou la Setup → Router. Introdu-le ca Primary si Secondary DNS, apoi salveaza si reporneste routerul."
       },
       {
-        title: "Configureaza setarile de securitate din dashboard",
+        title: "Configureaza setarile de securitate din panou",
         action:
-          "In tabul Security, activeaza Threat Intelligence Feeds, Google Safe Browsing, Cryptojacking Protection si DNS Rebinding Protection. Se activeaza automat si nu necesita mentenanta continua."
+          "In fila Security, activeaza Threat Intelligence Feeds, Google Safe Browsing, Cryptojacking Protection si DNS Rebinding Protection. Se activeaza automat si nu necesita mentenanta continua."
       },
       {
-        title: "Adauga blocklists in tabul Privacy",
+        title: "Adauga liste de blocare in fila Privacy",
         action:
-          "Deschide Privacy → Blocklists → Add, apoi adauga OISD Full si Steven Black Unified. Acestea blocheaza automat milioane de domenii cunoscute pentru reclame, tracking si continut daunator."
+          "Deschide Privacy → Blocklists → Add, apoi adauga OISD Full si Steven Black Unified. Acestea blocheaza automat milioane de domenii cunoscute pentru reclame, urmarire online si continut daunator."
       },
       {
-        title: "Configureaza Parental Controls",
+        title: "Configureaza Parental Control",
         action:
-          "Deschide tabul Parental Control si foloseste toggle-urile pe fiecare aplicatie. Poti bloca TikTok, Snapchat, Instagram sau Discord la nivel DNS cu un singur click."
+          "Deschide fila Parental Control si foloseste controalele pentru fiecare aplicatie. Poti bloca TikTok, Snapchat, Instagram sau Discord la nivel DNS cu o singura apasare."
       },
       {
-        title: "Activeaza Logs si verifica saptamanal",
+        title: "Activeaza jurnalizarea si verifica saptamanal",
         action:
-          "Porneste Logs in tabul Analytics. Vei vedea fiecare domeniu pe care l-a contactat fiecare dispozitiv din casa, organizat dupa dispozitiv si moment. Foloseste datele ca punct de discutie, nu ca supraveghere ascunsa."
+          "Porneste Logs in fila Analytics. Vei vedea fiecare domeniu pe care l-a contactat fiecare dispozitiv din casa, organizat dupa dispozitiv si moment. Foloseste aceste date ca punct de pornire pentru discutii, nu ca supraveghere ascunsa."
       }
     ],
     tip:
-      "Blocarea per aplicatie din tabul Parental Control este motivul pentru care NextDNS merita timpul de configurare. Fara TikTok pe WiFi-ul de acasa devine un singur toggle, nu o discutie despre sters aplicatia.",
+      "Blocarea pe fiecare aplicatie din fila Parental Control este motivul pentru care NextDNS merita timpul de configurare. Regula fara TikTok pe WiFi-ul de acasa devine o singura apasare, nu o discutie despre sters aplicatia.",
     warning:
-      "NextDNS inregistreaza fiecare interogare DNS facuta de fiecare dispozitiv din retea. Fii transparent cu copilul tau ca reteaua de acasa are monitorizare. Foloseste-o ca instrument de conversatie, nu ca supraveghere ascunsa."
+      "NextDNS inregistreaza fiecare interogare DNS facuta de fiecare dispozitiv din retea. Fii transparent cu copilul tau ca reteaua de acasa este monitorizata. Foloseste informatia ca instrument de conversatie, nu ca supraveghere ascunsa."
   },
   "isp-controls": {
     name: "Controale parentale ISP",
@@ -418,8 +418,8 @@ export const roNetworkGuideTranslations: Partial<Record<string, LocalizedNetwork
     ],
     whatItBlocks: [
       "Categorii de baza de continut pentru adulti, pe baza listei furnizorului.",
-      "Unele adaugari manuale de site-uri daca routerul sau dashboard-ul ISP-ului permite asta.",
-      "Programare simpla pe intervale orare la providerii care expun aceasta optiune."
+      "Unele site-uri adaugate manual, daca routerul sau panoul ISP-ului permite asta.",
+      "Programare simpla pe intervale orare, daca furnizorul ofera aceasta optiune."
     ],
     whatItCannotBlock: [
       "Aplicatii VPN.",
@@ -432,7 +432,7 @@ export const roNetworkGuideTranslations: Partial<Record<string, LocalizedNetwork
       {
         title: "Acceseaza panoul routerului",
         action:
-          "Deschide un browser si tasteaza 192.168.1.1 sau 192.168.0.1. Numele de utilizator si parola sunt de obicei pe stickerul de pe spatele sau de sub router. Valorile comune sunt admin/admin sau admin plus parola WiFi."
+          "Deschide un browser si tasteaza 192.168.1.1 sau 192.168.0.1. Numele de utilizator si parola sunt de obicei pe eticheta de pe spatele sau de sub router. Datele de autentificare frecvente sunt admin/admin sau admin plus parola WiFi."
       },
       {
         title: "Gaseste Parental Controls in meniu",
@@ -442,10 +442,10 @@ export const roNetworkGuideTranslations: Partial<Record<string, LocalizedNetwork
       {
         title: "Activeaza filtrul si alege presetul cel mai strict",
         action:
-          "Alege cel mai puternic preset disponibil, de obicei Family, Child Safe sau Strict. Salveaza setarea pentru ca blocklist-ul de baza al ISP-ului sa se aplice tuturor dispozitivelor din reteaua ta."
+          "Alege cea mai stricta varianta disponibila, de obicei Family, Child Safe sau Strict. Salveaza setarea pentru ca lista de blocare de baza a ISP-ului sa se aplice tuturor dispozitivelor din reteaua ta."
       },
       {
-        title: "Adauga manual site-uri specifice in blocklist",
+        title: "Adauga manual site-uri specifice in lista de blocare",
         action:
           "Daca panoul de administrare suporta blocari personalizate, adauga site-urile sau platformele la care copilul nu ar trebui sa aiba acces. Asta completeaza lista proprie a ISP-ului."
       },
@@ -463,9 +463,9 @@ export const roNetworkGuideTranslations: Partial<Record<string, LocalizedNetwork
     tip:
       "Controalele ISP sunt usor de ocolit daca sunt folosite singure. Dar combinate cu Cloudflare for Families DNS, in aceeasi sesiune de configurare, acopera cele mai comune metode prin care copiii trec peste filtrele simple.",
     warning:
-      "Controalele parentale oferite de ISP sunt cea mai slaba optiune de pe aceasta pagina. Foloseste-le ca strat de pornire, alaturi de filtrare DNS, nu ca solutie de sine statatoare.",
+      "Controalele parentale oferite de ISP sunt cea mai slaba optiune de pe aceasta pagina. Foloseste-le ca prim nivel de protectie, alaturi de filtrare DNS, nu ca solutie de sine statatoare.",
     highlightedSection: {
-      title: "Ghid specific pentru Romania",
+      title: "Indicatii pentru Romania",
       items: [
         "DIGI Romania / RCS&RDS: Intra in administrarea routerului la 192.168.1.1 → Advanced Settings → Parental Control. Asigneaza dispozitivele unui profil filtrat. Astfel activezi un filtru de baza pentru continut adult si un program orar.",
         "Orange Romania: Foloseste aplicatia My Orange → Router Settings → Parental Control ca sa activezi filtrul de baza si limitele de timp pe dispozitiv.",

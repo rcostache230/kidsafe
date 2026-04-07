@@ -131,9 +131,9 @@ export const uiCopy = {
         devicesTitle: "Ghiduri de configurare pentru dispozitive",
         devicesDescription:
           "Foloseste aceste liste de verificare cand intra in casa un dispozitiv nou.",
-        networkTitle: "Reteaua de acasa si controalele routerului",
+        networkTitle: "Controale pentru router si reteaua de acasa",
         networkDescription:
-          "Cel mai puternic strat de control parental pe care majoritatea parintilor nu il folosesc niciodata — se aplica simultan tuturor dispozitivelor din casa."
+          "Cel mai puternic strat de control parental pe care cei mai multi parinti nu il folosesc, desi se aplica simultan tuturor dispozitivelor din casa."
       },
       aboutTitle: "Creat de un parinte care lucreaza in securitate cibernetica",
       aboutBodyOne:

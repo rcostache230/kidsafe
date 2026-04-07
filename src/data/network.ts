@@ -70,21 +70,21 @@ const networkUiCopy = {
   },
   ro: {
     categoryLabel: "Reteaua de acasa",
-    overviewTitle: "Reteaua de acasa si controalele routerului",
+    overviewTitle: "Controale pentru router si reteaua de acasa",
     overviewSubtitle:
-      "Cel mai puternic strat de control parental pe care majoritatea parintilor nu il folosesc niciodata — se aplica simultan tuturor dispozitivelor din casa.",
-    selectorEyebrow: "Alege traseul potrivit",
+      "Cel mai puternic strat de control parental pe care cei mai multi parinti nu il folosesc, desi se aplica simultan tuturor dispozitivelor din casa.",
+    selectorEyebrow: "Alege varianta potrivita",
     selectorTitle:
-      "Alege stratul care se potriveste routerului tau, rabdarii tale si nivelului de control de care ai nevoie.",
+      "Alege varianta potrivita in functie de routerul pe care il ai si de cat control vrei sa ai.",
     selectorLevelOne: "1. Alege o abordare",
-    selectorLevelTwo: "2. Alege un ghid concret",
+    selectorLevelTwo: "2. Alege ghidul potrivit",
     overviewGridTitle: "Ghiduri disponibile pentru aceasta abordare",
     overviewGridSubtitle:
-      "Deschide ghidul care se potriveste routerului sau stilului tau de filtrare. Detaliile de configurare difera suficient de mult incat merita sa alegi varianta corecta.",
+      "Deschide ghidul potrivit pentru modelul de router sau pentru metoda de filtrare pe care vrei s-o folosesti. Pasii difera suficient de mult incat merita sa alegi varianta corecta.",
     infoBanner:
-      "Controalele din router si filtrele DNS se aplica simultan tuturor dispozitivelor din reteaua de acasa — telefoane, tablete, laptopuri, smart TV-uri si console — fara sa instalezi nimic pe fiecare dispozitiv in parte. Sunt stratul de control parental cu cel mai mare efect pentru un parinte.",
+      "Controalele din router si filtrele DNS se aplica simultan tuturor dispozitivelor din reteaua de acasa — telefoane, tablete, laptopuri, televizoare smart si console — fara sa instalezi nimic pe fiecare dispozitiv in parte. Pentru un parinte, sunt cel mai eficient strat de control.",
     warningBanner:
-      "⚠️ Ce nu pot face controalele de retea: nu functioneaza cand copiii trec pe date mobile (4G/5G) in loc de WiFi-ul de acasa. O aplicatie VPN de pe telefonul copilului ocoleste filtrarea DNS. HTTPS impiedica routerele sa citeasca continutul paginilor — pot doar sa blocheze sau sa permita domenii intregi, nu bucati individuale de continut din interiorul unui site.",
+      "⚠️ Ce nu pot face controalele de retea: nu functioneaza cand copilul trece pe date mobile (4G/5G) in loc de WiFi-ul de acasa. O aplicatie VPN instalata pe telefon poate ocoli filtrarea DNS. Din cauza HTTPS, routerul nu poate vedea continutul paginii — poate doar sa blocheze sau sa permita domenii intregi, nu elemente individuale dintr-un site.",
     difficultyLabel: "Dificultate",
     costLabel: "Cost",
     approachLabel: "Abordare",
@@ -95,13 +95,13 @@ const networkUiCopy = {
     guideTitle: "Ghid complet de configurare",
     tipTitle: "Sfat util",
     warningTitle: "Limitare importanta",
-    highlightedTitle: "Ghidare evidentiata",
-    backToOverview: "Inapoi la reteaua de acasa",
+    highlightedTitle: "Informatii importante",
+    backToOverview: "Inapoi la ghidurile pentru reteaua de acasa",
     openGuide: "Deschide ghidul complet",
     guideCount: (count: number) => `${count} ${count === 1 ? "ghid" : "ghiduri"}`,
     breadcrumbHome: "Digital Parents",
     breadcrumbOverview: "Reteaua de acasa",
-    browseAll: "Vezi toate ghidurile de retea"
+    browseAll: "Vezi toate ghidurile pentru reteaua de acasa"
   }
 } as const;
 
