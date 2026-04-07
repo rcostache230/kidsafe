@@ -21,7 +21,6 @@ export function NetworkGuideCard({
 }) {
   const copy = getNetworkCopy(locale);
   const setupTime = getMetric(guide, "Setup time");
-  const bypassResistance = getMetric(guide, "Bypass resistance");
 
   return (
     <Link
@@ -47,23 +46,13 @@ export function NetworkGuideCard({
           </p>
         </div>
 
-        <div className="grid gap-3 sm:grid-cols-2">
+        <div className="grid gap-3">
           {setupTime ? (
             <div className="rounded-2xl border border-[rgba(148,163,184,0.16)] bg-white/95 p-3 dark:border-slate-800 dark:bg-slate-950/60">
               <p className="text-xs font-semibold uppercase tracking-[0.16em] text-slate-500 dark:text-slate-400">
                 {getNetworkMetricLabel("Setup time", locale)}
               </p>
               <p className="mt-2 text-sm text-slate-700 dark:text-slate-200">{setupTime}</p>
-            </div>
-          ) : null}
-          {bypassResistance ? (
-            <div className="rounded-2xl border border-[rgba(148,163,184,0.16)] bg-white/95 p-3 dark:border-slate-800 dark:bg-slate-950/60">
-              <p className="text-xs font-semibold uppercase tracking-[0.16em] text-slate-500 dark:text-slate-400">
-                {getNetworkMetricLabel("Bypass resistance", locale)}
-              </p>
-              <p className="mt-2 text-sm text-slate-700 dark:text-slate-200">
-                {bypassResistance}
-              </p>
             </div>
           ) : null}
         </div>

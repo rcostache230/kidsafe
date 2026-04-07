@@ -69,10 +69,9 @@ export function NetworkGuidePage({
             </Link>
           </div>
 
-          <NetworkBanners locale={locale} />
+          <NetworkGuideNav guide={guide} locale={locale} />
+          <NetworkBanners locale={locale} collapsible />
         </header>
-
-        <NetworkGuideNav guide={guide} locale={locale} />
 
         <section className="space-y-5 rounded-[26px] border border-[rgba(148,163,184,0.18)] bg-white/80 p-5 shadow-[0_20px_55px_-42px_rgba(15,23,42,0.35)] dark:border-slate-800 dark:bg-slate-900/50">
           <h2 className="text-lg font-semibold text-slate-950 dark:text-white">
