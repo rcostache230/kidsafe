@@ -1,0 +1,57 @@
+---
+import { getCollection } from "astro:content";
+import Base from "../layouts/Base.astro";
+
+const allPosts = await getCollection("posts", (entry) => entry.data.lang === "en" && !entry.data.draft);
+const posts = allPosts.sort(
+  (a, b) => b.data.publishedAt.valueOf() - a.data.publishedAt.valueOf()
+);
+
+function formatDate(date: Date) {
+  return new Intl.DateTimeFormat("en-US", {
+    year: "numeric",
+    month: "long",
+    day: "numeric"
+  }).format(date);
+}
+---
+
+<Base
+  title="Articles for parents"
+  description="Short, practical reads on raising kids in a connected world — from a parent who works in cybersecurity."
+  lang="en"
+>
+  <section class="blog-hero shell">
+    <p class="eyebrow">Articles</p>
+    <h1>Short reads for parents navigating the digital world.</h1>
+    <p>
+      Plain-language pieces on screen time, privacy, app risks, and what actually
+      works at home — written from experience and grounded in research.
+    </p>
+  </section>
+
+  <section class="shell">
+    {posts.length === 0 ? (
+      <div class="card" style="padding:1.5rem; margin:1rem 0;">
+        <p>No articles yet. Come back soon.</p>
+      </div>
+    ) : (
+      <div class="post-list">
+        {posts.map((post) => (
+          <a class="post-card card" href={`/blog/${post.id}`}>
+            <div class="meta">
+              <time datetime={post.data.publishedAt.toISOString()}>
+                {formatDate(post.data.publishedAt)}
+              </time>
+              {post.data.tags.slice(0, 2).map((tag) => (
+                <span class="tag">{tag}</span>
+              ))}
+            </div>
+            <h2>{post.data.title}</h2>
+            <p class="excerpt">{post.data.description}</p>
+          </a>
+        ))}
+      </div>
+    )}
+  </section>
+</Base>

@@ -21,25 +21,26 @@ export function NetworkApproachCard({
   return (
     <Link
       href={getNetworkOverviewHref(locale, approach.id)}
-      className="group block rounded-[24px] border border-[rgba(148,163,184,0.18)] bg-white/92 p-4 shadow-[0_22px_48px_-36px_rgba(15,23,42,0.4)] transition-all duration-200 hover:-translate-y-0.5 hover:border-teal-300 hover:shadow-[0_30px_60px_-42px_rgba(13,148,136,0.45)] dark:border-slate-800 dark:bg-slate-950/72 dark:hover:border-teal-500"
+      className="card card-hover block p-5 no-underline"
+      style={{ textDecoration: "none" }}
     >
       <div className="space-y-4">
         <div className="flex items-start justify-between gap-4">
           <span
-            className="inline-flex h-12 w-12 items-center justify-center rounded-2xl border border-white/80 bg-[linear-gradient(180deg,rgba(255,255,255,0.96),rgba(236,253,250,0.92))] text-2xl shadow-[0_16px_30px_-22px_rgba(15,23,42,0.45)] dark:border-slate-700 dark:bg-[linear-gradient(180deg,rgba(15,23,42,0.94),rgba(15,118,110,0.18))]"
+            className="inline-flex h-12 w-12 items-center justify-center rounded-2xl border border-paper-line bg-paper-50 text-2xl"
             aria-hidden="true"
           >
             {approach.icon}
           </span>
-          <span className="inline-flex items-center rounded-[10px] bg-[rgba(20,184,166,0.10)] px-2.5 py-1 text-[11px] font-semibold text-teal-700 dark:bg-[rgba(20,184,166,0.18)] dark:text-teal-300">
+          <span className="inline-flex items-center rounded-[10px] bg-brand-50 px-2.5 py-1 text-[11px] font-semibold text-brand-700">
             {copy.guideCount(guideCount)}
           </span>
         </div>
         <div className="space-y-2">
-          <h3 className="text-lg font-semibold tracking-tight text-slate-950 dark:text-white">
+          <h3 className="font-display text-xl font-semibold tracking-tight text-paper-ink">
             {approach.name}
           </h3>
-          <p className="text-sm leading-6 text-slate-600 dark:text-slate-300">
+          <p className="text-[15px] leading-7 text-paper-ink/75">
             {approach.homepageDescription}
           </p>
         </div>

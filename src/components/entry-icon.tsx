@@ -46,7 +46,7 @@ export function EntryIcon({
 
   return (
     <span
-      className={`inline-flex items-center justify-center rounded-2xl border border-white/80 bg-[linear-gradient(180deg,rgba(255,255,255,0.96),rgba(236,253,250,0.92))] shadow-[0_16px_30px_-22px_rgba(15,23,42,0.45)] dark:border-slate-700 dark:bg-[linear-gradient(180deg,rgba(15,23,42,0.94),rgba(15,118,110,0.18))] ${sizeClass} ${className}`}
+      className={`inline-flex items-center justify-center rounded-2xl border border-paper-line bg-paper-50 ${sizeClass} ${className}`}
       aria-hidden="true"
       title={entry.name}
     >

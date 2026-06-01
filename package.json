@@ -4,9 +4,13 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build --webpack",
+    "dev:blog": "npm --prefix apps/blog run dev",
+    "build:blog": "npm --prefix apps/blog run build",
+    "build:next": "next build --webpack",
+    "build": "npm run build:blog && npm run build:next",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "install:all": "npm install && npm --prefix apps/blog install"
   },
   "dependencies": {
     "@vercel/analytics": "^2.0.1",

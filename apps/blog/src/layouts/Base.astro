@@ -1,0 +1,76 @@
+---
+import "../styles/global.css";
+
+interface Props {
+  title: string;
+  description: string;
+  lang?: "en" | "ro";
+  canonical?: string;
+}
+
+const { title, description, lang = "en", canonical } = Astro.props;
+const siteName = "Digital Parents";
+const homeHref = lang === "ro" ? "/ro" : "/";
+const blogHref = lang === "ro" ? "/blog/ro" : "/blog";
+const switchLangHref = lang === "ro" ? "/blog" : "/blog/ro";
+const switchLangLabel = lang === "ro" ? "EN" : "RO";
+const navGuides = lang === "ro" ? "Ghiduri" : "Guides";
+const navArticles = lang === "ro" ? "Articole" : "Articles";
+const navAbout = lang === "ro" ? "Despre" : "About";
+const footerCopy =
+  lang === "ro"
+    ? "© 2026 Digital Parents. Proiect independent realizat de Razvan Costache."
+    : "© 2026 Digital Parents. Independent project by Razvan Costache.";
+---
+
+<!doctype html>
+<html lang={lang}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    {canonical ? <link rel="canonical" href={canonical} /> : null}
+    <title>{title} — {siteName}</title>
+    <link rel="icon" href="/icon.svg" type="image/svg+xml" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="article" />
+    <meta name="twitter:card" content="summary_large_image" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="shell row">
+        <a class="brand" href={homeHref}>
+          <svg width="28" height="28" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M18 3L30 9V18C30 25.2 24.9 31.2 18 33C11.1 31.2 6 25.2 6 18V9L18 3Z" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linejoin="round" />
+            <path d="M18 11L24 14V18C24 22 21.6 25.2 18 26.4C14.4 25.2 12 22 12 18V14L18 11Z" fill="currentColor" />
+          </svg>
+          <span>Digital Parents</span>
+        </a>
+        <nav class="nav" aria-label="Primary">
+          <a href={homeHref}>{navGuides}</a>
+          <a href={blogHref} aria-current={Astro.url.pathname === blogHref ? "page" : undefined}>{navArticles}</a>
+          <a href={`${homeHref}#about`}>{navAbout}</a>
+        </nav>
+        <a class="lang-switch" href={switchLangHref} style="text-decoration:none; border:1px solid var(--paper-line); border-radius:999px; padding:0.4rem 0.75rem; font-size:14px; font-weight:600; color:var(--brand-700); background:#fff;" aria-label={switchLangLabel === "RO" ? "Switch to Romanian" : "Switch to English"}>
+          {switchLangLabel}
+        </a>
+      </div>
+    </header>
+
+    <main>
+      <slot />
+    </main>
+
+    <footer class="site-footer">
+      <div class="shell">
+        <p>{footerCopy}</p>
+        <p style="margin-top:0.5rem;">
+          <a href={homeHref}>{lang === "ro" ? "Înapoi la ghiduri" : "Back to guides"}</a>
+          ·
+          <a href="https://www.linkedin.com/in/rcostache/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>
