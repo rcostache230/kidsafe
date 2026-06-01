@@ -1,13 +1,18 @@
 export type Locale = "en" | "ro";
 
-export const defaultLocale: Locale = "en";
+export const defaultLocale: Locale = "ro";
 
 export function getLocaleFromPathname(pathname?: string | null): Locale {
-  if (pathname === "/ro" || pathname?.startsWith("/ro/")) {
-    return "ro";
+  if (
+    pathname === "/en" ||
+    pathname?.startsWith("/en/") ||
+    pathname === "/blog/en" ||
+    pathname?.startsWith("/blog/en/")
+  ) {
+    return "en";
   }
 
-  return "en";
+  return "ro";
 }
 
 export function stripLocalePrefix(pathname?: string | null) {
@@ -15,27 +20,47 @@ export function stripLocalePrefix(pathname?: string | null) {
     return "/";
   }
 
-  if (pathname === "/ro") {
+  if (pathname === "/en" || pathname === "/ro") {
     return "/";
+  }
+
+  if (pathname.startsWith("/en/")) {
+    return pathname.slice(3);
   }
 
   if (pathname.startsWith("/ro/")) {
     return pathname.slice(3);
   }
 
+  if (pathname === "/blog/en") {
+    return "/blog";
+  }
+
+  if (pathname.startsWith("/blog/en/")) {
+    return `/blog${pathname.slice(8)}`;
+  }
+
   return pathname;
 }
 
 export function localizeHref(href: string, locale: Locale) {
-  if (locale === "en") {
-    return href;
+  if (href === "/blog" || href.startsWith("/blog/")) {
+    if (locale === "en") {
+      return href === "/blog" ? "/blog/en" : href.replace(/^\/blog/, "/blog/en");
+    }
+
+    return href.replace(/^\/blog\/en/, "/blog").replace(/^\/blog\/ro/, "/blog");
   }
 
   if (href === "/") {
-    return "/ro";
+    return locale === "en" ? "/en" : "/";
   }
 
-  return href.startsWith("/ro") ? href : `/ro${href}`;
+  if (locale === "en") {
+    return href.startsWith("/en") ? href : `/en${href}`;
+  }
+
+  return href.replace(/^\/en/, "").replace(/^\/ro/, "") || "/";
 }
 
 export function getOppositeLocale(locale: Locale): Locale {

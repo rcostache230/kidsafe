@@ -649,12 +649,12 @@ export function getNetworkOverviewHref(
   locale: Locale = "en",
   approach?: NetworkApproachId
 ) {
-  const base = locale === "ro" ? "/ro/network" : "/network";
+  const base = locale === "en" ? "/en/network" : "/network";
   return approach ? `${base}?approach=${approach}` : base;
 }
 
 export function getNetworkGuideHref(slug: string, locale: Locale = "en") {
-  const base = locale === "ro" ? "/ro/network" : "/network";
+  const base = locale === "en" ? "/en/network" : "/network";
   return `${base}/${slug}`;
 }
 

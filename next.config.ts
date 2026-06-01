@@ -8,7 +8,7 @@ import type { NextConfig } from "next";
  * The Astro blog under `apps/blog` builds static HTML/CSS/JS into
  * `public/blog/` (see apps/blog/astro.config.mjs). Anything in
  * `public/` is served by Next.js as-is. The rewrites below map clean
- * blog URLs such as `/blog`, `/blog/<post>` and `/blog/ro/<post>` to
+ * blog URLs such as `/blog`, `/blog/<post>` and `/blog/en/<post>` to
  * Astro's generated `index.html` files while keeping real static files
  * such as `/blog/rss.xml` and hashed assets untouched.
  *
@@ -19,6 +19,14 @@ const BLOG_ORIGIN = process.env.BLOG_ORIGIN; // e.g. https://blog-prod.example.c
 
 const nextConfig: NextConfig = {
   reactStrictMode: true,
+  async redirects() {
+    return [
+      { source: "/ro", destination: "/", permanent: true },
+      { source: "/ro/:path*", destination: "/:path*", permanent: true },
+      { source: "/blog/ro", destination: "/blog", permanent: true },
+      { source: "/blog/ro/:path*", destination: "/blog/:path*", permanent: true }
+    ];
+  },
   async rewrites() {
     if (!BLOG_ORIGIN) {
       return {

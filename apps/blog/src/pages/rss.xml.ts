@@ -13,13 +13,20 @@ export async function GET(context: APIContext) {
     description:
       "Short, practical reads on raising kids in a connected world. EN + RO.",
     site: context.site ?? "https://digitalparents.xyz/blog",
-    items: sorted.map((post) => ({
-      title: post.data.title,
-      pubDate: post.data.publishedAt,
-      description: post.data.description,
-      link: `/blog/${post.id}`,
-      categories: post.data.tags
-    })),
+    items: sorted.map((post) => {
+      const path =
+        post.data.lang === "ro"
+          ? post.id.replace(/^ro\//, "")
+          : `en/${post.id}`;
+
+      return {
+        title: post.data.title,
+        pubDate: post.data.publishedAt,
+        description: post.data.description,
+        link: `/blog/${path}`,
+        categories: post.data.tags
+      };
+    }),
     customData: `<language>en-us</language>`
   });
 }

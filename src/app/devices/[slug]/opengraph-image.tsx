@@ -1,7 +1,7 @@
 import { ImageResponse } from "next/og";
 
-import { EntryOgCard, OG_CONTENT_TYPE, OG_SIZE } from "@/lib/og";
 import { getEntry } from "@/data/entries";
+import { EntryOgCard, OG_CONTENT_TYPE, OG_SIZE } from "@/lib/og";
 
 type ImageProps = {
   params: Promise<{
@@ -9,15 +9,15 @@ type ImageProps = {
   }>;
 };
 
-export const alt = "Digital Parents device guide preview";
+export const alt = "Previzualizare ghid dispozitiv Digital Parents";
 export const size = OG_SIZE;
 export const contentType = OG_CONTENT_TYPE;
 export const dynamic = "force-static";
 export const dynamicParams = false;
 
-export default async function OpenGraphImage({ params }: ImageProps) {
+export default async function RomanianOpenGraphImage({ params }: ImageProps) {
   const { slug } = await params;
-  const entry = getEntry("devices", slug, "en");
+  const entry = getEntry("devices", slug, "ro");
 
   if (!entry) {
     return new ImageResponse(<div>Not found</div>, {
@@ -25,7 +25,7 @@ export default async function OpenGraphImage({ params }: ImageProps) {
     });
   }
 
-  return new ImageResponse(<EntryOgCard entry={entry} locale="en" />, {
+  return new ImageResponse(<EntryOgCard entry={entry} locale="ro" />, {
     ...OG_SIZE
   });
 }

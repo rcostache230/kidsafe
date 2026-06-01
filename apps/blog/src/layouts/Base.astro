@@ -8,11 +8,11 @@ interface Props {
   canonical?: string;
 }
 
-const { title, description, lang = "en", canonical } = Astro.props;
+const { title, description, lang = "ro", canonical } = Astro.props;
 const siteName = "Digital Parents";
-const homeHref = lang === "ro" ? "/ro" : "/";
-const blogHref = lang === "ro" ? "/blog/ro" : "/blog";
-const switchLangHref = lang === "ro" ? "/blog" : "/blog/ro";
+const homeHref = lang === "ro" ? "/" : "/en";
+const blogHref = lang === "ro" ? "/blog" : "/blog/en";
+const switchLangHref = lang === "ro" ? "/blog/en" : "/blog";
 const switchLangLabel = lang === "ro" ? "EN" : "RO";
 const navGuides = lang === "ro" ? "Ghiduri" : "Guides";
 const navArticles = lang === "ro" ? "Articole" : "Articles";
@@ -48,7 +48,7 @@ const footerCopy =
           <span>Digital Parents</span>
         </a>
         <nav class="nav" aria-label="Primary">
-          <a href={homeHref}>{navGuides}</a>
+          <a href={`${homeHref}#apps`}>{navGuides}</a>
           <a href={blogHref} aria-current={Astro.url.pathname === blogHref ? "page" : undefined}>{navArticles}</a>
           <a href={`${homeHref}#about`}>{navAbout}</a>
         </nav>

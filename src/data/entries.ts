@@ -2709,7 +2709,7 @@ export function getCategoryLabel(category: Category, locale: Locale = "en") {
 
 export function getCategoryDirectoryHref(category: Category, locale: Locale = "en") {
   const href = categoryDirectoryHref[category];
-  return locale === "ro" ? `/ro${href}` : href;
+  return locale === "en" ? `/en${href}` : href;
 }
 
 export function getRiskMeta(level: RiskLevel, locale: Locale = "en") {
@@ -2738,7 +2738,7 @@ export function getEntryHref(
   locale: Locale = "en"
 ) {
   const href = "/" + link.category + "/" + link.slug;
-  return locale === "ro" ? `/ro${href}` : href;
+  return locale === "en" ? `/en${href}` : href;
 }
 
 export function getEntriesForStaticParams(category: Category) {

@@ -28,7 +28,7 @@ export function NetworkGuidePage({
       <div className="mx-auto max-w-4xl space-y-12">
         <Breadcrumbs
           items={[
-            { label: copy.breadcrumbHome, href: locale === "ro" ? "/ro" : "/" },
+            { label: copy.breadcrumbHome, href: locale === "en" ? "/en" : "/" },
             { label: copy.breadcrumbOverview, href: getNetworkOverviewHref(locale) },
             { label: guide.name }
           ]}

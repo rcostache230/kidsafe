@@ -17,24 +17,24 @@ export function generateStaticParams() {
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { slug } = await params;
-  const entry = getEntry("devices", slug, "ro");
+  const entry = getEntry("devices", slug, "en");
 
   if (!entry) {
     return {
-      title: "Pagina nu a fost gasita | Digital Parents"
+      title: "Not found | Digital Parents"
     };
   }
 
-  return createEntryMetadata(entry, "ro");
+  return createEntryMetadata(entry, "en");
 }
 
-export default async function RomanianDevicePage({ params }: PageProps) {
+export default async function DevicePage({ params }: PageProps) {
   const { slug } = await params;
-  const entry = getEntry("devices", slug, "ro");
+  const entry = getEntry("devices", slug, "en");
 
   if (!entry) {
     notFound();
   }
 
-  return <EntryPage entry={entry} locale="ro" />;
+  return <EntryPage entry={entry} locale="en" />;
 }

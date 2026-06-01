@@ -42,8 +42,8 @@ Set `draft: true` to keep a post hidden from listings until you're ready.
 
 ## Languages
 
-- `/blog` lists EN posts
-- `/blog/ro` lists RO posts
+- `/blog` lists RO posts
+- `/blog/en` lists EN posts
 - Switching languages in the header toggles between the two listings
 
 ## Scripts
