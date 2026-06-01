@@ -1,0 +1,108 @@
+media:
+  - name: blog_images
+    label: Blog images
+    input: public/uploads/blog
+    output: /uploads/blog
+    rename: safe
+    extensions: [jpg, jpeg, png, webp, avif, svg]
+
+settings:
+  content:
+    merge: true
+  commit:
+    identity: app
+    templates:
+      create: "cms(create): {path}"
+      update: "cms(update): {path}"
+      delete: "cms(delete): {path}"
+      rename: "cms(rename): {oldPath} -> {newPath}"
+
+content:
+  - name: blog_ro
+    label: Blog posts (Romanian)
+    type: collection
+    path: apps/blog/src/content/posts/ro
+    format: yaml-frontmatter
+    filename:
+      template: "{title}.mdx"
+      field: create
+    fields: &blog_post_fields
+      - name: title
+        label: Title
+        type: string
+        required: true
+      - name: description
+        label: Description
+        type: text
+        required: true
+      - name: lang
+        label: Language
+        type: select
+        required: true
+        options:
+          values:
+            - name: ro
+              label: Romanian
+            - name: en
+              label: English
+      - name: publishedAt
+        label: Published date
+        type: date
+        required: true
+      - name: updatedAt
+        label: Updated date
+        type: date
+      - name: author
+        label: Author
+        type: string
+      - name: tags
+        label: Tags
+        type: string
+        list: true
+      - name: cover
+        label: Cover image
+        type: image
+        options:
+          media: blog_images
+      - name: featured
+        label: Featured
+        type: boolean
+      - name: draft
+        label: Draft
+        type: boolean
+      - name: body
+        label: Body
+        type: rich-text
+        required: true
+        options:
+          format: markdown
+          media: blog_images
+          rename: safe
+          switcher: true
+    view:
+      fields: [title, publishedAt, featured, draft]
+      primary: title
+      sort: [publishedAt, title]
+      search: [title, description, tags]
+      default:
+        sort: publishedAt
+        order: desc
+
+  - name: blog_en
+    label: Blog posts (English)
+    type: collection
+    path: apps/blog/src/content/posts
+    format: yaml-frontmatter
+    subfolders: false
+    filename:
+      template: "{title}.mdx"
+      field: create
+    fields: *blog_post_fields
+    view:
+      fields: [title, publishedAt, featured, draft]
+      primary: title
+      sort: [publishedAt, title]
+      search: [title, description, tags]
+      default:
+        sort: publishedAt
+        order: desc
