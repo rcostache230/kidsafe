@@ -12,6 +12,7 @@ export function Footer() {
   const pathname = usePathname();
   const locale = getLocaleFromPathname(pathname);
   const copy = getCopy(locale);
+  const blogLabel = locale === "ro" ? "Articole" : "Articles";
 
   useEffect(() => {
     if (copyState === "idle") {
@@ -37,26 +38,66 @@ export function Footer() {
   }
 
   return (
-    <footer className="border-t border-[rgba(148,163,184,0.16)] bg-[rgba(236,253,250,0.48)] py-10 dark:border-slate-800/80 dark:bg-slate-950/90">
-      <div className="page-shell space-y-6">
-        <p className="max-w-3xl text-sm italic leading-7 text-slate-700 dark:text-slate-200">
+    <footer className="mt-16 border-t border-paper-line bg-paper-200/40">
+      <div className="page-shell space-y-8 py-12">
+        <p className="max-w-3xl font-display text-xl italic leading-relaxed text-paper-ink/90">
           {copy.footer.quote}
         </p>
 
-        <nav className="flex flex-col gap-3 text-sm font-medium sm:flex-row sm:flex-wrap sm:items-center sm:gap-5">
-          <Link href={localizeHref("/#apps", locale)}>{copy.footer.apps}</Link>
-          <Link href={localizeHref("/#operating-systems", locale)}>{copy.footer.os}</Link>
-          <Link href={localizeHref("/#devices", locale)}>{copy.footer.devices}</Link>
-          <Link href={localizeHref("/#network", locale)}>{copy.footer.network}</Link>
-          <Link href={localizeHref("/#about", locale)}>{copy.footer.about}</Link>
+        <nav
+          aria-label="Footer"
+          className="flex flex-col gap-3 text-sm font-medium sm:flex-row sm:flex-wrap sm:items-center sm:gap-6"
+        >
+          <Link
+            href={localizeHref("/#apps", locale)}
+            className="text-paper-ink/85 no-underline hover:text-brand-700"
+            style={{ textDecoration: "none" }}
+          >
+            {copy.footer.apps}
+          </Link>
+          <Link
+            href={localizeHref("/#operating-systems", locale)}
+            className="text-paper-ink/85 no-underline hover:text-brand-700"
+            style={{ textDecoration: "none" }}
+          >
+            {copy.footer.os}
+          </Link>
+          <Link
+            href={localizeHref("/#devices", locale)}
+            className="text-paper-ink/85 no-underline hover:text-brand-700"
+            style={{ textDecoration: "none" }}
+          >
+            {copy.footer.devices}
+          </Link>
+          <Link
+            href={localizeHref("/#network", locale)}
+            className="text-paper-ink/85 no-underline hover:text-brand-700"
+            style={{ textDecoration: "none" }}
+          >
+            {copy.footer.network}
+          </Link>
+          <Link
+            href={localizeHref("/blog", locale)}
+            className="text-paper-ink/85 no-underline hover:text-brand-700"
+            style={{ textDecoration: "none" }}
+          >
+            {blogLabel}
+          </Link>
+          <Link
+            href={localizeHref("/#about", locale)}
+            className="text-paper-ink/85 no-underline hover:text-brand-700"
+            style={{ textDecoration: "none" }}
+          >
+            {copy.footer.about}
+          </Link>
         </nav>
 
-        <div className="flex flex-col gap-4 rounded-[24px] border border-[rgba(20,184,166,0.14)] bg-white/88 p-4 shadow-[0_18px_42px_-34px_rgba(15,23,42,0.42)] dark:border-slate-800 dark:bg-slate-900/60 sm:flex-row sm:items-center sm:justify-between sm:gap-6">
+        <div className="flex flex-col gap-4 rounded-card border border-paper-line bg-white p-5 shadow-soft sm:flex-row sm:items-center sm:justify-between sm:gap-6">
           <div className="space-y-1">
-            <p className="text-sm font-semibold text-slate-900 dark:text-white">
+            <p className="font-display text-lg font-semibold text-paper-ink">
               {copy.footer.shareTitle}
             </p>
-            <p className="text-sm text-slate-600 dark:text-slate-300">
+            <p className="text-sm text-paper-ink/75">
               {copy.footer.shareBody}
             </p>
           </div>
@@ -64,7 +105,7 @@ export function Footer() {
             <button
               type="button"
               onClick={handleCopy}
-              className="inline-flex items-center justify-center rounded-full bg-teal-700 px-4 py-2.5 text-sm font-medium text-white transition-colors hover:bg-teal-800 dark:bg-teal-500 dark:text-slate-950 dark:hover:bg-teal-400"
+              className="btn-primary"
             >
               {copy.footer.copy}
             </button>
@@ -72,7 +113,7 @@ export function Footer() {
               <span
                 role="status"
                 aria-live="polite"
-                className="absolute right-0 top-full mt-2 whitespace-nowrap rounded-full bg-slate-900 px-3 py-1 text-xs font-medium text-white shadow-lg dark:bg-white dark:text-slate-900"
+                className="absolute right-0 top-full mt-2 whitespace-nowrap rounded-full bg-paper-ink px-3 py-1 text-xs font-medium text-white shadow-lift"
               >
                 {copyState === "copied" ? copy.footer.copied : copy.footer.copyFailed}
               </span>
@@ -80,13 +121,14 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="flex flex-col gap-3 border-t border-[rgba(148,163,184,0.16)] pt-5 text-sm text-slate-600 dark:border-slate-800 dark:text-slate-300 sm:flex-row sm:items-center sm:justify-between">
+        <div className="flex flex-col gap-3 border-t border-paper-line pt-6 text-sm text-paper-ink/70 sm:flex-row sm:items-center sm:justify-between">
           <p>{copy.footer.copyright}</p>
           <a
-            className="font-medium"
+            className="font-medium text-brand-700 no-underline hover:text-brand-600"
             href="https://www.linkedin.com/in/rcostache/"
             target="_blank"
             rel="noopener noreferrer"
+            style={{ textDecoration: "none" }}
           >
             {copy.footer.linkedin}
           </a>

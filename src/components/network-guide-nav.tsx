@@ -27,25 +27,26 @@ export function NetworkGuideNav({
   return (
     <nav
       aria-label={copy.siblingNavLabel(approach.name)}
-      className="rounded-[22px] border border-[rgba(148,163,184,0.16)] bg-white/80 px-4 py-3 text-sm shadow-[0_16px_44px_-38px_rgba(15,23,42,0.45)] dark:border-slate-800 dark:bg-slate-900/50"
+      className="rounded-2xl border border-paper-line bg-white px-5 py-3 text-sm shadow-soft"
     >
       <div className="flex flex-wrap items-center gap-x-2 gap-y-2 leading-6">
-        <span className="font-semibold text-slate-950 dark:text-white">
+        <span className="font-semibold text-paper-ink">
           {copy.siblingNavLabel(approach.name)}
         </span>
         {siblingGuides.map((item, index) => (
           <span key={item.slug} className="inline-flex items-center gap-2">
             {index > 0 ? (
-              <span className="text-slate-300 dark:text-slate-600" aria-hidden="true">
+              <span className="text-paper-ink/30" aria-hidden="true">
                 ·
               </span>
             ) : null}
             {item.slug === guide.slug ? (
-              <span className="font-semibold text-slate-950 dark:text-white">{item.name}</span>
+              <span className="font-semibold text-paper-ink">{item.name}</span>
             ) : (
               <Link
                 href={getNetworkGuideHref(item.slug, locale)}
-                className="text-slate-700 transition-colors hover:text-teal-800 dark:text-slate-300 dark:hover:text-teal-200"
+                className="text-paper-ink/80 no-underline hover:text-brand-700"
+                style={{ textDecoration: "none" }}
               >
                 {item.name}
               </Link>

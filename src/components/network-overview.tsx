@@ -32,17 +32,13 @@ export function NetworkOverview({
         />
 
         <header className="space-y-5">
-          <div className="space-y-4">
-            <p className="text-[13px] font-semibold uppercase tracking-[0.18em] text-slate-500 dark:text-slate-400">
-              {copy.categoryLabel}
-            </p>
-            <h1 className="text-3xl font-semibold tracking-tight text-slate-950 dark:text-white sm:text-4xl">
-              {copy.overviewTitle}
-            </h1>
-            <p className="max-w-4xl text-base leading-7 text-slate-600 dark:text-slate-300">
-              {copy.overviewSubtitle}
-            </p>
-          </div>
+          <p className="eyebrow">{copy.categoryLabel}</p>
+          <h1 className="font-display text-[40px] font-semibold leading-[1.05] tracking-tight text-paper-ink sm:text-[48px]">
+            {copy.overviewTitle}
+          </h1>
+          <p className="max-w-3xl text-lg leading-relaxed text-paper-ink/80">
+            {copy.overviewSubtitle}
+          </p>
 
           <NetworkBanners locale={locale} />
         </header>
@@ -55,19 +51,17 @@ export function NetworkOverview({
             return (
               <section
                 key={approach.id}
-                className={`space-y-5 rounded-[28px] border bg-white/80 p-5 shadow-[0_20px_60px_-42px_rgba(15,23,42,0.38)] backdrop-blur-sm dark:bg-slate-900/55 sm:p-6 ${
+                className={`space-y-5 rounded-card border bg-white p-6 shadow-soft sm:p-7 ${
                   highlighted
-                    ? "border-teal-300 shadow-[0_24px_60px_-40px_rgba(13,148,136,0.35)] dark:border-teal-500"
-                    : "border-[rgba(148,163,184,0.14)] dark:border-slate-800"
+                    ? "border-brand-600"
+                    : "border-paper-line"
                 }`}
               >
                 <div className="space-y-2">
-                  <h2 className="text-2xl font-semibold tracking-tight text-slate-950 dark:text-white">
+                  <h2 className="font-display text-2xl font-semibold tracking-tight text-paper-ink">
                     {approach.name}
                   </h2>
-                  <p className="max-w-3xl text-sm leading-6 text-slate-600 dark:text-slate-300">
-                    {approach.description}
-                  </p>
+                  <p className="max-w-3xl text-paper-ink/75">{approach.description}</p>
                 </div>
 
                 <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">

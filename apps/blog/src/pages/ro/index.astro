@@ -1,0 +1,58 @@
+---
+import { getCollection } from "astro:content";
+import Base from "../../layouts/Base.astro";
+
+const allPosts = await getCollection("posts", (entry) => entry.data.lang === "ro" && !entry.data.draft);
+const posts = allPosts.sort(
+  (a, b) => b.data.publishedAt.valueOf() - a.data.publishedAt.valueOf()
+);
+
+function formatDate(date: Date) {
+  return new Intl.DateTimeFormat("ro-RO", {
+    year: "numeric",
+    month: "long",
+    day: "numeric"
+  }).format(date);
+}
+---
+
+<Base
+  title="Articole pentru părinți"
+  description="Lecturi scurte, practice, despre creșterea copiilor într-o lume conectată — de la un părinte care lucrează în securitate cibernetică."
+  lang="ro"
+>
+  <section class="blog-hero shell">
+    <p class="eyebrow">Articole</p>
+    <h1>Lecturi scurte pentru părinți, despre lumea digitală a copiilor.</h1>
+    <p>
+      Texte pe înțelesul tuturor despre timpul petrecut în fața ecranului,
+      confidențialitate, riscuri ale aplicațiilor și ce funcționează cu adevărat
+      acasă — scrise din experiență și bazate pe cercetare.
+    </p>
+  </section>
+
+  <section class="shell">
+    {posts.length === 0 ? (
+      <div class="card" style="padding:1.5rem; margin:1rem 0;">
+        <p>Nu există încă articole. Revino curând.</p>
+      </div>
+    ) : (
+      <div class="post-list">
+        {posts.map((post) => (
+          <a class="post-card card" href={`/blog/ro/${post.id.replace(/^ro\//, "")}`}>
+            <div class="meta">
+              <time datetime={post.data.publishedAt.toISOString()}>
+                {formatDate(post.data.publishedAt)}
+              </time>
+              {post.data.tags.slice(0, 2).map((tag) => (
+                <span class="tag">{tag}</span>
+              ))}
+            </div>
+            <h2>{post.data.title}</h2>
+            <p class="excerpt">{post.data.description}</p>
+          </a>
+        ))}
+      </div>
+    )}
+  </section>
+</Base>

@@ -1,0 +1,69 @@
+---
+import { getCollection, render } from "astro:content";
+import Base from "../layouts/Base.astro";
+
+export async function getStaticPaths() {
+  const posts = await getCollection("posts", (entry) => !entry.data.draft);
+  return posts.map((post) => {
+    // EN posts: id like "first-post" → /blog/first-post
+    // RO posts: id like "ro/primul-articol" → /blog/ro/primul-articol
+    const slug = post.id;
+    return {
+      params: { slug },
+      props: { post }
+    };
+  });
+}
+
+const { post } = Astro.props;
+const { Content } = await render(post);
+const lang = post.data.lang;
+const indexHref = lang === "ro" ? "/blog/ro" : "/blog";
+const indexLabel = lang === "ro" ? "Articole" : "Articles";
+const dateLocale = lang === "ro" ? "ro-RO" : "en-US";
+
+function formatDate(date: Date) {
+  return new Intl.DateTimeFormat(dateLocale, {
+    year: "numeric",
+    month: "long",
+    day: "numeric"
+  }).format(date);
+}
+---
+
+<Base
+  title={post.data.title}
+  description={post.data.description}
+  lang={lang}
+  canonical={`https://digitalparents.xyz/blog/${post.id}`}
+>
+  <article class="article shell">
+    <nav class="crumbs" aria-label="Breadcrumb">
+      <a href={lang === "ro" ? "/ro" : "/"}>Digital Parents</a>
+      <span aria-hidden="true"> › </span>
+      <a href={indexHref}>{indexLabel}</a>
+      <span aria-hidden="true"> › </span>
+      <span>{post.data.title}</span>
+    </nav>
+
+    <header class="post-header">
+      <p class="eyebrow">{indexLabel}</p>
+      <h1>{post.data.title}</h1>
+      <div class="meta">
+        <time datetime={post.data.publishedAt.toISOString()}>
+          {formatDate(post.data.publishedAt)}
+        </time>
+        <span>·</span>
+        <span>{post.data.author}</span>
+        {post.data.tags.map((tag) => (
+          <span class="tag">{tag}</span>
+        ))}
+      </div>
+      <p class="lede">{post.data.description}</p>
+    </header>
+
+    <div class="prose">
+      <Content />
+    </div>
+  </article>
+</Base>

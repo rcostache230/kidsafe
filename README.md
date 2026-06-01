@@ -14,34 +14,41 @@ Live site: [https://digitalparents.xyz](https://digitalparents.xyz)
 
 ## Tech stack
 
-- Next.js 16
-- React 19
-- TypeScript
-- Tailwind CSS
-- Static generation with App Router
+- Next.js 16, React 19, TypeScript, Tailwind CSS (App Router, static generation)
+- Astro 5 + Content Collections (MDX) for the `/blog` section, under `apps/blog`
+- Editorial light theme (Fraunces + Inter) with a warm-paper palette
 
 ## Getting started
 
-1. Install dependencies:
+1. Install dependencies for both apps:
 
 ```bash
-npm install
+npm run install:all
 ```
 
-2. Start the development server:
+2. Start the main Next.js site:
 
 ```bash
 npm run dev
 ```
 
-3. Open [http://localhost:3000](http://localhost:3000)
+3. (Optional) Run the Astro blog in dev mode on a separate port:
+
+```bash
+npm run dev:blog
+```
+
+4. Open [http://localhost:3000](http://localhost:3000)
 
 ## Available scripts
 
 ```bash
-npm run dev
-npm run build
-npm run start
+npm run dev          # Next.js dev server
+npm run dev:blog     # Astro dev server (apps/blog)
+npm run build        # Builds the blog into public/blog, then builds Next
+npm run build:blog   # Astro build only → public/blog
+npm run build:next   # Next build only
+npm run start        # Next production server
 ```
 
 Note: `npm run lint` is currently wired to `next lint`, which is no longer valid in this repo's current Next.js 16 setup and will need to be updated before it can be used.
@@ -49,24 +56,58 @@ Note: `npm run lint` is currently wired to `next lint`, which is no longer valid
 ## Project structure
 
 ```text
-src/
+src/                            # Next.js app (guides directory)
   app/
-    page.tsx                    # homepage
+    page.tsx                    # EN homepage
+    ro/page.tsx                 # RO homepage
     apps/[slug]/page.tsx        # app detail pages
     os/[slug]/page.tsx          # OS detail pages
     devices/[slug]/page.tsx     # device detail pages
-    opengraph-image.tsx         # homepage OG image
+    network/[slug]/page.tsx     # network/router guides
+    globals.css                 # design tokens (paper/brand/accent) + base styles
   components/
-    home-directory.tsx          # homepage hero, search, and directory sections
+    site-header.tsx             # primary nav with Articles link + RO/EN switch
+    home-directory.tsx          # hero, search, partner tips, category sections
+    partner-tips.tsx            # "Be a partner, not a guard" tip set (PDF-inspired)
     entry-page.tsx              # shared detail-page layout
-    entry-card.tsx              # homepage cards
-    footer.tsx                  # footer and share button
-  data/
-    entries.ts                  # all guide content and metadata
-  lib/
-    site.ts                     # site metadata helpers
-    og.tsx                      # OG image components
+    entry-card.tsx              # cards for apps/devices/OS
+    footer.tsx                  # editorial footer with share + Articles link
+  data/                         # all guide content
+  lib/                          # site metadata + locale helpers
+
+apps/blog/                      # Astro 5 blog (Content Collections, MDX)
+  astro.config.mjs              # outputs to ../../public/blog with base /blog
+  src/content/posts/            # EN posts at root, RO posts under ro/
+  src/layouts/Base.astro        # shared header/footer for the blog
+  src/pages/
+    index.astro                 # EN article index
+    ro/index.astro              # RO article index
+    [...slug].astro             # individual post page (EN + RO)
+    rss.xml.ts                  # RSS feed
+
+next.config.ts                  # rewrites + cache headers for /blog
 ```
+
+## Visual design
+
+The site uses a warm-paper, editorial light theme inspired by the
+Salvați Copiii / EU te iubesc parent-safety guide:
+
+- Background: cream paper (`#FBF7EF`) with soft warm/teal radial accents
+- Typography: Fraunces (display serif) + Inter (body) at 17px / 1.7
+- Palette: deep brand teal (`#106B5A`), warm coral accent (`#E8794B`), sage + sun for callouts
+- Dark mode is intentionally disabled — parents browsing on phones with
+  OS-level dark mode were getting an unreadable layout. The site is
+  light-only.
+
+Tokens live in `tailwind.config.ts` and `src/app/globals.css`. The blog
+mirrors them in `apps/blog/src/styles/global.css`.
+
+## Adding a blog post
+
+Drop an MDX file into `apps/blog/src/content/posts/` (EN) or
+`apps/blog/src/content/posts/ro/` (RO). Frontmatter schema is in
+`apps/blog/src/content.config.ts`. See `apps/blog/README.md` for details.
 
 ## Where the content lives
 
