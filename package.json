@@ -2,6 +2,9 @@
   "name": "digital-parents",
   "version": "1.0.0",
   "private": true,
+  "workspaces": [
+    "apps/blog"
+  ],
   "scripts": {
     "dev": "next dev",
     "dev:blog": "npm --prefix apps/blog run dev",
