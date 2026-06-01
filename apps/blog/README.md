@@ -40,6 +40,17 @@ default styling lives in `src/styles/global.css` under `.prose`.
 
 Set `draft: true` to keep a post hidden from listings until you're ready.
 
+## Editing in Pages CMS
+
+The root `.pages.yml` file exposes the blog to Pages CMS:
+
+- `Blog posts (Romanian)` edits `src/content/posts/ro`.
+- `Blog posts (English)` edits `src/content/posts`.
+- Blog image uploads are stored in `../../public/uploads/blog`.
+
+Open https://app.pagescms.org, sign in with GitHub, install the Pages CMS
+GitHub App on this repository, and choose the collection you want to edit.
+
 ## Languages
 
 - `/blog` lists RO posts

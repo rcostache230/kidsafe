@@ -109,6 +109,19 @@ Drop an MDX file into `apps/blog/src/content/posts/` (EN) or
 `apps/blog/src/content/posts/ro/` (RO). Frontmatter schema is in
 `apps/blog/src/content.config.ts`. See `apps/blog/README.md` for details.
 
+## Editing with Pages CMS
+
+This repository includes a Pages CMS config at `.pages.yml`. Use
+https://app.pagescms.org, sign in with GitHub, install the Pages CMS GitHub App
+for this repository, then open the repo from the dashboard.
+
+Editable collections:
+
+- `Blog posts (Romanian)` writes MDX files to `apps/blog/src/content/posts/ro`.
+- `Blog posts (English)` writes MDX files to `apps/blog/src/content/posts`.
+- Uploaded blog images go to `public/uploads/blog` and are referenced as
+  `/uploads/blog/...`.
+
 ## Where the content lives
 
 All guide content is stored in [`src/data/entries.ts`](./src/data/entries.ts).
