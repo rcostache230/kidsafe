@@ -2,13 +2,13 @@
 import { getCollection } from "astro:content";
 import Base from "../../layouts/Base.astro";
 
-const allPosts = await getCollection("posts", (entry) => entry.data.lang === "ro" && !entry.data.draft);
+const allPosts = await getCollection("posts", (entry) => entry.data.lang === "en" && !entry.data.draft);
 const posts = allPosts.sort(
   (a, b) => b.data.publishedAt.valueOf() - a.data.publishedAt.valueOf()
 );
 
 function formatDate(date: Date) {
-  return new Intl.DateTimeFormat("ro-RO", {
+  return new Intl.DateTimeFormat("en-US", {
     year: "numeric",
     month: "long",
     day: "numeric"
@@ -17,29 +17,28 @@ function formatDate(date: Date) {
 ---
 
 <Base
-  title="Articole pentru părinți"
-  description="Lecturi scurte, practice, despre creșterea copiilor într-o lume conectată — de la un părinte care lucrează în securitate cibernetică."
-  lang="ro"
+  title="Articles for parents"
+  description="Short, practical reads on raising kids in a connected world — from a parent who works in cybersecurity."
+  lang="en"
 >
   <section class="blog-hero shell">
-    <p class="eyebrow">Articole</p>
-    <h1>Lecturi scurte pentru părinți, despre lumea digitală a copiilor.</h1>
+    <p class="eyebrow">Articles</p>
+    <h1>Short reads for parents navigating the digital world.</h1>
     <p>
-      Texte pe înțelesul tuturor despre timpul petrecut în fața ecranului,
-      confidențialitate, riscuri ale aplicațiilor și ce funcționează cu adevărat
-      acasă — scrise din experiență și bazate pe cercetare.
+      Plain-language pieces on screen time, privacy, app risks, and what actually
+      works at home — written from experience and grounded in research.
     </p>
   </section>
 
   <section class="shell">
     {posts.length === 0 ? (
       <div class="card" style="padding:1.5rem; margin:1rem 0;">
-        <p>Nu există încă articole. Revino curând.</p>
+        <p>No articles yet. Come back soon.</p>
       </div>
     ) : (
       <div class="post-list">
         {posts.map((post) => (
-          <a class="post-card card" href={`/blog/${post.id.replace(/^ro\//, "")}`}>
+          <a class="post-card card" href={`/blog/en/${post.id}`}>
             <div class="meta">
               <time datetime={post.data.publishedAt.toISOString()}>
                 {formatDate(post.data.publishedAt)}

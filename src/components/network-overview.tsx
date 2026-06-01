@@ -26,7 +26,7 @@ export function NetworkOverview({
       <div className="mx-auto max-w-5xl space-y-10">
         <Breadcrumbs
           items={[
-            { label: copy.breadcrumbHome, href: locale === "ro" ? "/ro" : "/" },
+            { label: copy.breadcrumbHome, href: locale === "en" ? "/en" : "/" },
             { label: copy.breadcrumbOverview }
           ]}
         />

@@ -1,13 +1,13 @@
 import type { Metadata } from "next";
 
 import { getCopy } from "@/lib/copy";
-import { type Locale } from "@/lib/locale";
+import { defaultLocale, type Locale } from "@/lib/locale";
 import { type Entry, getEntryHref } from "@/data/entries";
 
 export const SITE_NAME = "Digital Parents";
 export const SITE_URL = "https://digitalparents.xyz";
-export const SITE_DESCRIPTION = getCopy("en").metadata.siteDescription;
-export const HOME_DESCRIPTION = getCopy("en").metadata.homeDescription;
+export const SITE_DESCRIPTION = getCopy(defaultLocale).metadata.siteDescription;
+export const HOME_DESCRIPTION = getCopy(defaultLocale).metadata.homeDescription;
 
 function trimDescription(text: string, maxLength = 155) {
   if (text.length <= maxLength) {
@@ -17,7 +17,7 @@ function trimDescription(text: string, maxLength = 155) {
   return `${text.slice(0, maxLength - 1).trimEnd()}…`;
 }
 
-export function createEntryMetadata(entry: Entry, locale: Locale = "en"): Metadata {
+export function createEntryMetadata(entry: Entry, locale: Locale = defaultLocale): Metadata {
   const copy = getCopy(locale);
   const title = `${entry.name} — ${copy.metadata.entryTitleSuffix} | ${SITE_NAME}`;
   const socialTitle = `${entry.name} — ${copy.metadata.entryTitleSuffix}`;
@@ -55,9 +55,9 @@ export function createEntryMetadata(entry: Entry, locale: Locale = "en"): Metada
   };
 }
 
-export function createHomeMetadata(locale: Locale = "en"): Metadata {
+export function createHomeMetadata(locale: Locale = defaultLocale): Metadata {
   const copy = getCopy(locale);
-  const homePath = locale === "ro" ? "/ro" : "";
+  const homePath = locale === "en" ? "/en" : "";
   const imageUrl = `${SITE_URL}${homePath}/opengraph-image`;
 
   return {

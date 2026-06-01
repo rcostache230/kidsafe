@@ -5,9 +5,10 @@ import Base from "../layouts/Base.astro";
 export async function getStaticPaths() {
   const posts = await getCollection("posts", (entry) => !entry.data.draft);
   return posts.map((post) => {
-    // EN posts: id like "first-post" → /blog/first-post
-    // RO posts: id like "ro/primul-articol" → /blog/ro/primul-articol
-    const slug = post.id;
+    // RO is the default language: /blog/<slug>
+    // EN posts live under the explicit English prefix: /blog/en/<slug>
+    const slug =
+      post.data.lang === "ro" ? post.id.replace(/^ro\//, "") : `en/${post.id}`;
     return {
       params: { slug },
       props: { post }
@@ -18,7 +19,8 @@ export async function getStaticPaths() {
 const { post } = Astro.props;
 const { Content } = await render(post);
 const lang = post.data.lang;
-const indexHref = lang === "ro" ? "/blog/ro" : "/blog";
+const postPath = lang === "ro" ? post.id.replace(/^ro\//, "") : `en/${post.id}`;
+const indexHref = lang === "ro" ? "/blog" : "/blog/en";
 const indexLabel = lang === "ro" ? "Articole" : "Articles";
 const dateLocale = lang === "ro" ? "ro-RO" : "en-US";
 
@@ -35,11 +37,11 @@ function formatDate(date: Date) {
   title={post.data.title}
   description={post.data.description}
   lang={lang}
-  canonical={`https://digitalparents.xyz/blog/${post.id}`}
+  canonical={`https://digitalparents.xyz/blog/${postPath}`}
 >
   <article class="article shell">
     <nav class="crumbs" aria-label="Breadcrumb">
-      <a href={lang === "ro" ? "/ro" : "/"}>Digital Parents</a>
+      <a href={lang === "ro" ? "/" : "/en"}>Digital Parents</a>
       <span aria-hidden="true"> › </span>
       <a href={indexHref}>{indexLabel}</a>
       <span aria-hidden="true"> › </span>

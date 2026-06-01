@@ -1,12 +1,11 @@
 import type { Metadata } from "next";
 
 import { NetworkOverview } from "@/components/network-overview";
-import { getNetworkCopy } from "@/data/network";
 import { SITE_NAME, SITE_URL } from "@/lib/site";
 
-const copy = getNetworkCopy("ro");
-const title = `${copy.overviewTitle} | ${SITE_NAME}`;
-const description = copy.overviewSubtitle;
+const title = `Home Network & Router Controls | ${SITE_NAME}`;
+const description =
+  "Router, DNS, and ISP parental control guides that protect every device on your home network at once.";
 
 type PageProps = {
   searchParams: Promise<{
@@ -18,14 +17,14 @@ export const metadata: Metadata = {
   title,
   description,
   alternates: {
-    canonical: `${SITE_URL}/network`
+    canonical: `${SITE_URL}/en/network`
   },
   openGraph: {
     siteName: SITE_NAME,
     type: "website",
     title,
     description,
-    url: `${SITE_URL}/network`
+    url: `${SITE_URL}/en/network`
   },
   twitter: {
     card: "summary_large_image",
@@ -34,8 +33,8 @@ export const metadata: Metadata = {
   }
 };
 
-export default async function RomanianNetworkOverviewPage({ searchParams }: PageProps) {
+export default async function NetworkOverviewPage({ searchParams }: PageProps) {
   const { approach } = await searchParams;
 
-  return <NetworkOverview locale="ro" initialApproach={approach} />;
+  return <NetworkOverview locale="en" initialApproach={approach} />;
 }

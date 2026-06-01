@@ -34,13 +34,13 @@ export default function RootLayout({
   children: ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="ro">
       <body className="bg-paper text-paper-ink">
         <a
           href="#main"
           className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50 focus:rounded-full focus:bg-brand-700 focus:px-4 focus:py-2 focus:text-sm focus:font-semibold focus:text-white"
         >
-          Skip to content
+          Sari la continut
         </a>
         <div className="flex min-h-screen flex-col">
           <SiteHeader />

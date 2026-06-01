@@ -46,7 +46,7 @@ export function EntryPage({
       <div className="mx-auto max-w-3xl space-y-12">
         <Breadcrumbs
           items={[
-            { label: copy.entry.homeBreadcrumb, href: locale === "ro" ? "/ro" : "/" },
+            { label: copy.entry.homeBreadcrumb, href: locale === "en" ? "/en" : "/" },
             {
               label: getCategoryLabel(entry.category, locale),
               href: getCategoryDirectoryHref(entry.category, locale)

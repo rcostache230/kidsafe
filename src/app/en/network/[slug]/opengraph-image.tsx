@@ -1,7 +1,7 @@
 import { ImageResponse } from "next/og";
 
-import { getEntry } from "@/data/entries";
-import { EntryOgCard, OG_CONTENT_TYPE, OG_SIZE } from "@/lib/og";
+import { NetworkGuideOgCard, OG_CONTENT_TYPE, OG_SIZE } from "@/lib/og";
+import { getNetworkGuide } from "@/data/network";
 
 type ImageProps = {
   params: Promise<{
@@ -9,23 +9,23 @@ type ImageProps = {
   }>;
 };
 
-export const alt = "Previzualizare ghid sistem de operare Digital Parents";
+export const alt = "Digital Parents home network guide preview";
 export const size = OG_SIZE;
 export const contentType = OG_CONTENT_TYPE;
 export const dynamic = "force-static";
 export const dynamicParams = false;
 
-export default async function RomanianOpenGraphImage({ params }: ImageProps) {
+export default async function OpenGraphImage({ params }: ImageProps) {
   const { slug } = await params;
-  const entry = getEntry("os", slug, "ro");
+  const guide = getNetworkGuide(slug);
 
-  if (!entry) {
+  if (!guide) {
     return new ImageResponse(<div>Not found</div>, {
       ...OG_SIZE
     });
   }
 
-  return new ImageResponse(<EntryOgCard entry={entry} locale="ro" />, {
+  return new ImageResponse(<NetworkGuideOgCard guide={guide} locale="en" />, {
     ...OG_SIZE
   });
 }

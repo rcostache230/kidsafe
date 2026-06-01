@@ -9,7 +9,7 @@ type ImageProps = {
   }>;
 };
 
-export const alt = "Digital Parents home network guide preview";
+export const alt = "Previzualizare ghid retea de acasa Digital Parents";
 export const size = OG_SIZE;
 export const contentType = OG_CONTENT_TYPE;
 export const dynamic = "force-static";
@@ -17,7 +17,7 @@ export const dynamicParams = false;
 
 export default async function OpenGraphImage({ params }: ImageProps) {
   const { slug } = await params;
-  const guide = getNetworkGuide(slug);
+  const guide = getNetworkGuide(slug, "ro");
 
   if (!guide) {
     return new ImageResponse(<div>Not found</div>, {
@@ -25,7 +25,7 @@ export default async function OpenGraphImage({ params }: ImageProps) {
     });
   }
 
-  return new ImageResponse(<NetworkGuideOgCard guide={guide} locale="en" />, {
+  return new ImageResponse(<NetworkGuideOgCard guide={guide} locale="ro" />, {
     ...OG_SIZE
   });
 }

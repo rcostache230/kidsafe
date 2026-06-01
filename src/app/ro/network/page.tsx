@@ -18,14 +18,14 @@ export const metadata: Metadata = {
   title,
   description,
   alternates: {
-    canonical: `${SITE_URL}/ro/network`
+    canonical: `${SITE_URL}/network`
   },
   openGraph: {
     siteName: SITE_NAME,
     type: "website",
     title,
     description,
-    url: `${SITE_URL}/ro/network`
+    url: `${SITE_URL}/network`
   },
   twitter: {
     card: "summary_large_image",

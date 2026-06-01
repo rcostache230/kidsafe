@@ -17,17 +17,17 @@ export function generateStaticParams() {
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { slug } = await params;
-  const guide = getNetworkGuide(slug, "ro");
+  const guide = getNetworkGuide(slug);
 
   if (!guide) {
     return {
-      title: "Pagina nu a fost gasita | Digital Parents"
+      title: "Not found | Digital Parents"
     };
   }
 
   const title = `${guide.name} | ${SITE_NAME}`;
   const description = guide.description;
-  const url = `${SITE_URL}${getNetworkGuideHref(guide.slug, "ro")}`;
+  const url = `${SITE_URL}${getNetworkGuideHref(guide.slug, "en")}`;
   const imageUrl = `${url}/opengraph-image`;
 
   return {
@@ -60,13 +60,13 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   };
 }
 
-export default async function RomanianNetworkPage({ params }: PageProps) {
+export default async function NetworkPage({ params }: PageProps) {
   const { slug } = await params;
-  const guide = getNetworkGuide(slug, "ro");
+  const guide = getNetworkGuide(slug);
 
   if (!guide) {
     notFound();
   }
 
-  return <NetworkGuidePage guide={guide} locale="ro" />;
+  return <NetworkGuidePage guide={guide} locale="en" />;
 }
