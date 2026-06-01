@@ -38,6 +38,7 @@ function formatDate(date: Date) {
   description={post.data.description}
   lang={lang}
   canonical={`https://digitalparents.xyz/blog/${postPath}`}
+  image={post.data.cover}
 >
   <article class="article shell">
     <nav class="crumbs" aria-label="Breadcrumb">
@@ -63,6 +64,17 @@ function formatDate(date: Date) {
       </div>
       <p class="lede">{post.data.description}</p>
     </header>
+
+    {post.data.cover ? (
+      <figure class="post-cover">
+        <img
+          src={post.data.cover}
+          alt=""
+          loading="eager"
+          decoding="async"
+        />
+      </figure>
+    ) : null}
 
     <div class="prose">
       <Content />

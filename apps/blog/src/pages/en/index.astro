@@ -39,6 +39,15 @@ function formatDate(date: Date) {
       <div class="post-list">
         {posts.map((post) => (
           <a class="post-card card" href={`/blog/en/${post.id}`}>
+            {post.data.cover ? (
+              <img
+                class="post-card-cover"
+                src={post.data.cover}
+                alt=""
+                loading="lazy"
+                decoding="async"
+              />
+            ) : null}
             <div class="meta">
               <time datetime={post.data.publishedAt.toISOString()}>
                 {formatDate(post.data.publishedAt)}

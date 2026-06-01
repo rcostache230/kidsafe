@@ -6,10 +6,14 @@ interface Props {
   description: string;
   lang?: "en" | "ro";
   canonical?: string;
+  image?: string;
 }
 
-const { title, description, lang = "ro", canonical } = Astro.props;
+const { title, description, lang = "ro", canonical, image } = Astro.props;
 const siteName = "Digital Parents";
+const imageUrl = image
+  ? new URL(image, "https://digitalparents.xyz").toString()
+  : undefined;
 const homeHref = lang === "ro" ? "/" : "/en";
 const blogHref = lang === "ro" ? "/blog" : "/blog/en";
 const switchLangHref = lang === "ro" ? "/blog/en" : "/blog";
@@ -35,7 +39,9 @@ const footerCopy =
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:type" content="article" />
+    {imageUrl ? <meta property="og:image" content={imageUrl} /> : null}
     <meta name="twitter:card" content="summary_large_image" />
+    {imageUrl ? <meta name="twitter:image" content={imageUrl} /> : null}
   </head>
   <body>
     <header class="site-header">
