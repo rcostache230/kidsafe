@@ -1,5 +1,7 @@
 import Link from "next/link";
 
+const logoMarkSrc = "/brand/digitalparents-logo-mark.png";
+
 type BrandMarkSvgProps = {
   className?: string;
   size?: number;
@@ -32,17 +34,27 @@ export function BrandMarkSvg({ className, size = 36 }: BrandMarkSvgProps) {
 }
 
 export function BrandMark({
-  size = 32,
+  size = 40,
   className
 }: {
   size?: number;
   className?: string;
 }) {
   return (
-    <BrandMarkSvg
-      size={size}
-      className={className ?? "text-brand-700"}
-    />
+    <span
+      className={`inline-flex shrink-0 items-center justify-center overflow-visible rounded-2xl border border-paper-line bg-white/80 p-1 shadow-soft ${className ?? ""}`}
+      style={{ width: size, height: size }}
+      aria-hidden="true"
+    >
+      <img
+        src={logoMarkSrc}
+        alt=""
+        width={size}
+        height={size}
+        className="h-full w-full object-contain"
+        draggable={false}
+      />
+    </span>
   );
 }
 
@@ -56,14 +68,24 @@ export function BrandLogo({
   return (
     <Link
       href={href}
-      className={`inline-flex items-center gap-2.5 no-underline ${className ?? ""}`}
+      aria-label="digitalparents.xyz"
+      className={`group inline-flex items-center gap-2.5 no-underline ${className ?? ""}`}
       style={{ textDecoration: "none" }}
     >
-      <BrandMarkSvg size={30} className="text-brand-700" />
+      <span className="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl border border-paper-line bg-white/80 p-1 shadow-soft transition group-hover:border-brand-200 group-hover:bg-white">
+        <img
+          src={logoMarkSrc}
+          alt=""
+          width={40}
+          height={40}
+          className="h-full w-full object-contain"
+          draggable={false}
+        />
+      </span>
       <span
-        className="font-display text-[19px] font-semibold tracking-tight text-paper-ink"
+        className="font-display text-[20px] font-semibold leading-none tracking-normal text-brand-700"
       >
-        Digital Parents
+        digitalparents<span className="text-accent-500">.xyz</span>
       </span>
     </Link>
   );
