@@ -925,6 +925,10 @@ export const entries: Entry[] = [
       {
         "title": "Add a parent PIN for spending and settings",
         "description": "Settings → Parent Controls and create a PIN so purchases and privacy changes need your approval."
+      },
+      {
+        "title": "Set up the parent dashboard at roblox.com/parents",
+        "description": "Link your email and open the expanded Parental Controls to block specific games, set daily screen-time limits, and cap monthly spending (rolled out 2025-2026)."
       }
     ],
     "watchFor": [
@@ -986,6 +990,24 @@ export const entries: Entry[] = [
         ]
       },
       {
+        "title": "Understand the new age check for chat",
+        "steps": [
+          "Since early 2026 Roblox requires a facial age estimate (or ID for 13+) before any chat works, and it sorts users into age bands so adults can no longer freely message much younger players. If your child cannot chat, this check is why — decide together whether to complete it."
+        ]
+      },
+      {
+        "title": "Use the right account type for their age",
+        "steps": [
+          "Roblox now offers Roblox Kids (ages 5-8) and Roblox Select (ages 9-15) accounts that limit experiences to age-appropriate maturity levels and auto-transition as the child gets older (rolling out June 2026). Choose the matching account rather than a standard one for younger children."
+        ]
+      },
+      {
+        "title": "Use the expanded parent dashboard",
+        "steps": [
+          "At roblox.com/parents you can now block specific games, approve individual experiences, manage chat settings, and set screen-time and spending limits through age 15 — review these alongside the on-device controls below."
+        ]
+      },
+      {
         "title": "Set device-level time limits",
         "steps": [
           "Use iPhone Screen Time, Android Family Link, Windows Family Safety, or macOS Screen Time to put Roblox on a hard stop."
@@ -1025,6 +1047,11 @@ export const entries: Entry[] = [
         "type": "tip",
         "title": "Most impactful action",
         "description": "Account Restrictions plus Friends-only chat removes most casual stranger contact risk immediately."
+      },
+      {
+        "type": "tip",
+        "title": "New in 2026",
+        "description": "Chat now requires a facial age check and is grouped by estimated age, and new Roblox Kids and Select account types keep younger children inside age-rated experiences. Pick the account type that matches your child's age."
       }
     ],
     "related": [
@@ -1062,6 +1089,10 @@ export const entries: Entry[] = [
       {
         "title": "Turn off Autoplay",
         "description": "Account icon → Settings → Autoplay → OFF so videos stop instead of rolling into the next recommendation."
+      },
+      {
+        "title": "Limit or switch off the Shorts feed",
+        "description": "For supervised teen accounts, open Family Center → your child → Time management and set a daily Shorts limit. Setting it to 0 minutes removes the Shorts feed entirely (added January 2026)."
       }
     ],
     "watchFor": [
@@ -1123,6 +1154,18 @@ export const entries: Entry[] = [
         ]
       },
       {
+        "title": "Limit or switch off the Shorts feed",
+        "steps": [
+          "On a supervised teen account, open Family Center → select your child → Time management and set a daily limit on the Shorts feed. Setting it to 0 minutes removes the endless Shorts feed from their app (rolled out January 2026)."
+        ]
+      },
+      {
+        "title": "Know the new live-streaming age rule",
+        "steps": [
+          "Since July 2025, YouTube only lets 16+ users livestream. Children aged 13-15 can stream only while visibly supervised by an adult on the same channel, so check before allowing any live broadcasts."
+        ]
+      },
+      {
         "title": "Set an app-specific time limit",
         "steps": [
           "Use iPhone Screen Time or Android Digital Wellbeing and target the YouTube app itself rather than only setting whole-device limits."
@@ -1162,6 +1205,11 @@ export const entries: Entry[] = [
         "type": "tip",
         "title": "Most impactful action",
         "description": "Restricted Mode has to be enabled separately on every browser and every device. It does not sync automatically."
+      },
+      {
+        "type": "tip",
+        "title": "New in 2026",
+        "description": "Parents of supervised teen accounts can now cap the Shorts feed by the minute — set it to 0 in Family Center → Time management to remove the endless short-video feed completely."
       }
     ],
     "related": [
@@ -1199,6 +1247,10 @@ export const entries: Entry[] = [
       {
         "title": "Purge the friend list",
         "description": "Profile → My Friends and remove anyone your child cannot clearly identify offline."
+      },
+      {
+        "title": "Set up Family Center",
+        "description": "From your own (18+) account link to your teen's account in Family Center to see recent contacts, filter sensitive Stories, and turn off the My AI chatbot."
       }
     ],
     "watchFor": [
@@ -1257,6 +1309,18 @@ export const entries: Entry[] = [
         "title": "Teach that screenshots are permanent",
         "steps": [
           "Open any chat together and explain that disappearing is a design feature, not a guarantee."
+        ]
+      },
+      {
+        "title": "Link Family Center and use the new insights",
+        "steps": [
+          "From your own account (18+) open Family Center and invite your teen (13-17) to link. As of January 2026 you can see their weekly average screen time broken down by feature and get trust signals showing how they may know each new friend they add."
+        ]
+      },
+      {
+        "title": "Turn on Content Controls and disable My AI",
+        "steps": [
+          "Inside Family Center, enable Content Controls to filter out Stories from creators flagged as sensitive or suggestive, and switch off the My AI chatbot if you do not want your child chatting with it."
         ]
       },
       {
@@ -1336,6 +1400,10 @@ export const entries: Entry[] = [
       {
         "title": "Turn on Family Centre supervision",
         "description": "Settings → Family Centre and connect the parent account for under-18 supervision tools."
+      },
+      {
+        "title": "Confirm they are on a Teen Account",
+        "description": "All under-18 users now default to a protected Teen Account (private, restricted DMs, PG-13 content). Check the birthday is correct so the protections actually apply."
       }
     ],
     "watchFor": [
@@ -1385,6 +1453,18 @@ export const entries: Entry[] = [
         ]
       },
       {
+        "title": "Verify the Teen Account protections",
+        "steps": [
+          "Since 2024 every under-18 account defaults to a Teen Account: private by default, strictest message settings, and (from October 2025) a PG-13 content default. Under-16s cannot loosen these without a linked parent approving via Family Centre, so make sure supervision is connected. Instagram also now uses age-detection to move accounts that listed an adult birthday back into Teen protections."
+        ]
+      },
+      {
+        "title": "Turn on the strictest content setting",
+        "steps": [
+          "In Family Centre you can keep the PG-13 default or switch on the stricter Limited Content setting, which filters more material and removes the ability to see or leave comments. Parents are also alerted if a teen repeatedly searches suicide or self-harm terms (added February 2026)."
+        ]
+      },
+      {
         "title": "Clear search history monthly",
         "steps": [
           "Settings → Your Activity → Recent Searches or Clear Search History and review what the algorithm has been learning."
@@ -1414,16 +1494,16 @@ export const entries: Entry[] = [
         "value": "Very high"
       },
       {
-        "label": "Algorithm by default",
-        "value": "Unfiltered"
+        "label": "Content default (teens)",
+        "value": "PG-13"
       },
       {
-        "label": "Stranger DMs",
-        "value": "Allowed"
+        "label": "Stranger DMs (teens)",
+        "value": "Restricted by default"
       },
       {
-        "label": "Explore page",
-        "value": "Uncontrolled"
+        "label": "Teen Accounts",
+        "value": "Default for under-18s"
       }
     ],
     "callouts": [
@@ -1436,6 +1516,11 @@ export const entries: Entry[] = [
         "type": "tip",
         "title": "Most impactful action",
         "description": "A private account plus restricted DMs closes most stranger contact routes right away."
+      },
+      {
+        "type": "tip",
+        "title": "New since 2024",
+        "description": "Teen Accounts are now the default for everyone under 18 and apply private mode, strict DMs, and PG-13 content automatically. Link a parent account in Family Centre so under-16s cannot turn the protections off."
       }
     ],
     "related": [
@@ -1534,6 +1619,12 @@ export const entries: Entry[] = [
         ]
       },
       {
+        "title": "Use the newer Family Pairing controls",
+        "steps": [
+          "Family Pairing now (since July 2025) lets you schedule Time Away windows that block the app during school or night hours, get notified when your teen posts a public video, block specific accounts, and see who they follow, who follows them, and which topics shape their feed. Review these together in Family Pairing settings."
+        ]
+      },
+      {
         "title": "Shape the feed actively",
         "steps": [
           "Long-press unwanted videos → Not Interested so the recommendation engine receives corrective feedback."
@@ -1573,6 +1664,11 @@ export const entries: Entry[] = [
         "type": "tip",
         "title": "Most impactful action",
         "description": "Family Pairing gives parents meaningful control without taking the child's password. Set it up before anything else."
+      },
+      {
+        "type": "tip",
+        "title": "New since 2025",
+        "description": "Family Pairing added Time Away scheduling, alerts when your teen posts publicly, the ability to block specific accounts, and visibility into who they follow and what shapes their feed. Under-16 accounts are also private by default with a 60-minute daily limit."
       }
     ],
     "related": [
@@ -1610,6 +1706,10 @@ export const entries: Entry[] = [
       {
         "title": "Limit friend requests",
         "description": "User Settings → Privacy & Safety → Friend Requests and uncheck Everyone so strangers cannot add them easily."
+      },
+      {
+        "title": "Link Discord's Family Center",
+        "description": "User Settings → Family Center → enable the tab, then connect to your teen via QR code in the mobile app to see their servers, contacts, and weekly activity."
       }
     ],
     "watchFor": [
@@ -1671,6 +1771,18 @@ export const entries: Entry[] = [
         ]
       },
       {
+        "title": "Connect Family Center",
+        "steps": [
+          "Discord now has a parent dashboard. Go to User Settings → Family Center, enable the tab, then on mobile link to your teen by QR code (parent picks Connect with Teen, teen picks Connect with Parent). You will see recent contacts, the servers they are active in, time on calls, and — since November 2025 — their weekly purchases, plus options to restrict who can DM them. Message content stays private."
+        ]
+      },
+      {
+        "title": "Check the teen-by-default safety filters",
+        "steps": [
+          "As of 2026 Discord applies teen-appropriate settings by default worldwide: sensitive media in DMs from non-friends is blocked, media from friends and in servers is blurred, and teens cannot fully switch the filters off without passing an adult age check. Confirm the account birthday is set correctly so these defaults apply."
+        ]
+      },
+      {
         "title": "Set a standing review rule",
         "steps": [
           "Agree that you can check the server list at any time without notice, because server membership is the main safety issue."
@@ -1692,12 +1804,12 @@ export const entries: Entry[] = [
         "value": "On by default"
       },
       {
-        "label": "Server age verification",
-        "value": "None"
+        "label": "Teen content filters",
+        "value": "On by default (2026)"
       },
       {
-        "label": "Moderation",
-        "value": "Inconsistent"
+        "label": "Parent dashboard",
+        "value": "Family Center"
       }
     ],
     "callouts": [
@@ -1710,6 +1822,11 @@ export const entries: Entry[] = [
         "type": "tip",
         "title": "Most impactful action",
         "description": "Reviewing the full server list matters more than any single setting. One harmful server can outweigh every privacy toggle you enable."
+      },
+      {
+        "type": "tip",
+        "title": "New since 2025",
+        "description": "Discord now has a Family Center parent dashboard (User Settings → Family Center) showing servers, contacts, call time, and weekly purchases, and teen-appropriate content filters are on by default for under-18s worldwide."
       }
     ],
     "related": [
@@ -1808,6 +1925,12 @@ export const entries: Entry[] = [
         ]
       },
       {
+        "title": "Know how Cabined Accounts work for under-13s",
+        "steps": [
+          "If a child registers as under 13 (or the local digital-consent age), Epic creates a Cabined Account: they can still play, but voice chat, free text chat, friend-adds, and linking to social or streaming apps stay disabled until a parent gives consent from the Epic Account Portal. Under-13 accounts also have a $100/day spending cap. Only enable the extra features deliberately."
+        ]
+      },
+      {
         "title": "Review transaction history monthly",
         "steps": [
           "Check epicgames.com/account/transactions so spending patterns and surprise charges do not build up quietly."
@@ -1878,8 +2001,8 @@ export const entries: Entry[] = [
         "description": "Java Edition on PC has no meaningful built-in parental controls. Bedrock on consoles, mobile, and Windows can be controlled through Xbox Family Safety."
       },
       {
-        "title": "Use Xbox Family Safety for Bedrock",
-        "description": "Go to family.xbox.com and restrict multiplayer, purchases, and screen time for any Bedrock account."
+        "title": "Use Microsoft Family Safety for Bedrock",
+        "description": "Go to family.microsoft.com (the controls moved here) and restrict multiplayer, purchases, and screen time for any Bedrock account."
       },
       {
         "title": "Keep Java players on Realms only",
@@ -1921,9 +2044,9 @@ export const entries: Entry[] = [
         ]
       },
       {
-        "title": "Use Xbox Family Safety for Bedrock",
+        "title": "Use Microsoft Family Safety for Bedrock",
         "steps": [
-          "Go to family.xbox.com and restrict multiplayer, purchases, and screen time for any Bedrock account."
+          "Minecraft's controls now live in Microsoft Family Safety (family.microsoft.com) and Xbox account settings, not inside the game. Under the Online Safety tab allow or block multiplayer and clubs (this also gates Realms); under the Privacy tab set who can communicate by voice, text, or invite; and turn on Needs approval to buy things for purchases. Settings apply across Windows, mobile, and console."
         ]
       },
       {
@@ -2013,6 +2136,10 @@ export const entries: Entry[] = [
         "description": "Settings → Personalization → Memory → OFF if you want fewer saved details across chats."
       },
       {
+        "title": "Link a parent account",
+        "description": "Settings → Parental controls → Add family member to link your account to your teen's (13-18). This unlocks quiet hours, content protections, and distress alerts (launched September 2025)."
+      },
+      {
         "title": "Agree on school rules first",
         "description": "Check your child's school AI policy and write simple family rules for homework, citations, and when AI help is allowed."
       }
@@ -2070,6 +2197,18 @@ export const entries: Entry[] = [
         ]
       },
       {
+        "title": "Set up the new parental controls",
+        "steps": [
+          "OpenAI launched native parental controls in September 2025. In ChatGPT go to Settings → Parental controls → Add family member and send your teen (13-18) an invite they accept. Once linked, content protections (less graphic content, no sexual/violent roleplay) turn on automatically and your teen cannot switch them off. You can also set Quiet hours, turn off Voice mode, Memory, and image generation, and opt out of model training."
+        ]
+      },
+      {
+        "title": "Understand the distress-alert system",
+        "steps": [
+          "With a linked account, if OpenAI's systems detect possible signs of acute distress or self-harm, trained reviewers may notify you by email, text, or push. You can opt out, but for many families it is worth leaving on. There is a parent guide at chatgpt.com/parent-resources."
+        ]
+      },
+      {
         "title": "Disable optional browsing tools if enabled",
         "steps": [
           "Settings → Beta Features and turn off extras you do not want the child using independently."
@@ -2115,6 +2254,11 @@ export const entries: Entry[] = [
         "type": "tip",
         "title": "Most impactful action",
         "description": "A clear family rule about homework and fact-checking is usually more effective than trying to ban the tool entirely."
+      },
+      {
+        "type": "tip",
+        "title": "New since 2025",
+        "description": "ChatGPT now has real parental controls: link a teen account in Settings → Parental controls to apply content protections they cannot disable, set quiet hours, and receive alerts if signs of distress are detected."
       }
     ],
     "related": [
@@ -2139,8 +2283,8 @@ export const entries: Entry[] = [
     "riskLevel": "critical",
     "riskLabelText": "Very high risk",
     "homeBadgeLabel": "Urgent attention needed",
-    "summary": "An AI roleplay platform where users chat with custom characters — including romantic and emotional relationship simulations with no age verification.",
-    "description": "An AI roleplay platform where users chat with custom characters — including romantic and emotional relationship simulations with no age verification.",
+    "summary": "An AI roleplay platform where users chat with custom characters. As of late 2025 it has removed open-ended chat for under-18s and is rolling out age checks — but verifying your child's real age still matters.",
+    "description": "An AI roleplay platform where users chat with custom characters. As of late 2025 it has removed open-ended chat for under-18s and is rolling out age checks — but verifying your child's real age still matters.",
     "quickActions": [
       {
         "title": "Check whether it is already installed",
@@ -2202,6 +2346,12 @@ export const entries: Entry[] = [
         ]
       },
       {
+        "title": "Know that under-18 chat has been removed",
+        "steps": [
+          "In November 2025 Character.AI removed open-ended chat for users under 18 and began using age-assurance technology (an in-house model plus tools like Persona) to detect minors. Accounts identified as under 18 now get only non-chat creative features (Feed, Imagine, Avatar FX, Streams, video and story creation). Make sure your child's birthday is accurate — if an older birthday was entered, the chat block will not apply."
+        ]
+      },
+      {
         "title": "Have the conversation before applying controls",
         "steps": [
           "Ask what they use it for before deciding on restrictions. Creative writing use is different from emotional dependency use. Understanding the reason shapes the right response."
@@ -2231,12 +2381,12 @@ export const entries: Entry[] = [
         "value": "Roleplay & emotional chat"
       },
       {
-        "label": "Age verification",
-        "value": "None whatsoever"
+        "label": "Age assurance",
+        "value": "Rolling out (2025-2026)"
       },
       {
-        "label": "Romantic roleplay",
-        "value": "Extremely common"
+        "label": "Under-18 open chat",
+        "value": "Removed (Nov 2025)"
       },
       {
         "label": "Crisis response history",
@@ -2253,6 +2403,11 @@ export const entries: Entry[] = [
         "type": "tip",
         "title": "Most impactful action",
         "description": "Safe Messaging Mode is not a content filter. The only meaningful protection is an open conversation about what they are doing on the app and why — followed by a joint decision about limits."
+      },
+      {
+        "type": "tip",
+        "title": "New since late 2025",
+        "description": "Character.AI has removed open-ended chat for under-18s and now uses age checks. Confirm your child's birthday is set correctly, because the protection only applies if the account is identified as a minor."
       }
     ],
     "related": [
@@ -2352,6 +2507,12 @@ export const entries: Entry[] = [
         ]
       },
       {
+        "title": "Consider a parent-managed account for under-13s",
+        "steps": [
+          "Since March 2026 WhatsApp offers parent-managed accounts for pre-teens under 13, rolling out gradually by region. You link the child's device to yours and then control who can contact them and which groups they can join; Channels, location sharing, and Meta AI are excluded. Note the limits: it is account-level only, so there is no built-in screen-time cap or bedtime lock, you cannot read their messages (end-to-end encryption is preserved), and a child could uninstall the app."
+        ]
+      },
+      {
         "title": "Remind them regularly that nothing on WhatsApp is private",
         "steps": [
           "Despite the encryption, anyone they message can screenshot or forward what they send. The encryption protects the transmission, not what happens after it arrives."
@@ -2419,8 +2580,8 @@ export const entries: Entry[] = [
     "description": "A live video streaming platform dominated by gaming content — but with real-time unmoderated chat, gambling streams, and heavy parasocial relationship dynamics.",
     "quickActions": [
       {
-        "title": "Enable Mature Content filtering",
-        "description": "Require a confirmation click before any stream flagged as mature can be watched. It is not perfect, but it adds useful friction."
+        "title": "Set Content Preferences and the right age",
+        "description": "Confirm the account birthday is under 18 so labelled mature streams are hidden by default, then keep each Content Classification Label filtered under Settings → Content Preferences."
       },
       {
         "title": "Build a pre-approved streamer list",
@@ -2460,9 +2621,15 @@ export const entries: Entry[] = [
     ],
     "setupGuide": [
       {
-        "title": "Enable Mature Content filtering on the account",
+        "title": "Set Content Preferences and check the age on the account",
         "steps": [
-          "Log into the Twitch account → Settings → Security and Privacy → Mature Content → require a manual confirmation click before any stream flagged as mature can be watched. This is not perfect but adds friction."
+          "Twitch now uses Content Classification Labels (Sexual Themes; Drugs/Intoxication; Violent/Graphic; Gambling; Mature-rated Game). For accounts registered as under 18, streams carrying those labels are hidden by default. Confirm the birthday is set correctly, then open Settings → Content Preferences to keep each labelled category filtered. The catch: labels rely on streamers self-tagging, so 'hidden by default' is not a guarantee."
+        ]
+      },
+      {
+        "title": "Block whispers from strangers",
+        "steps": [
+          "Settings → Security and Privacy → Block Whispers from Strangers stops private messages from users who do not follow each other. This is on by default, but verify it is still enabled."
         ]
       },
       {
@@ -2557,8 +2724,8 @@ export const entries: Entry[] = [
     "description": "The world's largest PC gaming platform — with adult content accessible via a checkbox, unmoderated community forums, and a thriving scam ecosystem targeting young players.",
     "quickActions": [
       {
-        "title": "Enable Steam Family Controls",
-        "description": "Set the parental PIN from a parent account before the child starts browsing the store or adding friends."
+        "title": "Set up Steam Families",
+        "description": "Steam Families (which replaced Family View and Family Sharing in 2024-2025) lets a parent account set playtime limits, restrict store and community access, and approve purchase requests for a child member."
       },
       {
         "title": "Block Steam Community access",
@@ -2598,15 +2765,15 @@ export const entries: Entry[] = [
     ],
     "setupGuide": [
       {
-        "title": "Set up Steam Family Controls from a parent account",
+        "title": "Set up Steam Families (this replaced Family View)",
         "steps": [
-          "On your own Steam account go to Steam menu → Settings → Family → Manage → enable Family View and set a PIN. This controls what the child's account can access on the same machine. Alternatively, go to store.steampowered.com/parental from the child's account and set parental controls directly."
+          "Steam now uses Steam Families instead of the old PIN-based Family View. From your own adult account go to Steam menu → Settings → Family and create a Family (up to 6 members), then add your child as a child-role member. Restrictions are now tied to the child's account role rather than a guessable PIN, and you can set playtime/screentime limits, restrict store and community features, and approve or deny each purchase request. Any old Family View settings carry over automatically when you migrate."
         ]
       },
       {
         "title": "Block Steam Community and forums entirely",
         "steps": [
-          "In Family View or Parental Controls, uncheck Online Features and Steam Community access. These are the highest-risk areas and children do not need them to play games."
+          "In the Steam Families parental controls, restrict access to Online Features and the Steam Community. These are the highest-risk areas and children do not need them to play games."
         ]
       },
       {
@@ -2622,9 +2789,9 @@ export const entries: Entry[] = [
         ]
       },
       {
-        "title": "Restrict new game installations using Family View",
+        "title": "Restrict which games the child can launch",
         "steps": [
-          "In Family View settings, require the PIN for any new game launch. That means you review any game before it is played for the first time."
+          "In Steam Families parental controls, limit the child's access to an approved set of games so you review any title before it is played for the first time. Children can send a request to add a new game, which you approve or deny."
         ]
       },
       {
@@ -2666,7 +2833,7 @@ export const entries: Entry[] = [
       {
         "type": "tip",
         "title": "Most impactful action",
-        "description": "The Steam Parental PIN and the removal of saved payment methods are the two controls that matter most. Set the PIN first because it locks purchasing and Community access independently of anything else."
+        "description": "Setting up Steam Families (the system that replaced Family View) and removing saved payment methods are the two controls that matter most. Steam Families restrictions are tied to the child's account role, so they are harder to bypass than the old PIN."
       }
     ],
     "related": [

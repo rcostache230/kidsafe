@@ -721,6 +721,11 @@ export const roEntryTranslations: Partial<Record<Entry["slug"], Partial<Localize
         title: "Adauga un PIN de parinte pentru cheltuieli si setari",
         description:
           "Settings → Parent Controls si creeaza un PIN astfel incat cumparaturile si schimbarile de confidentialitate sa aiba nevoie de aprobarea ta."
+      },
+      {
+        title: "Configureaza panoul de parinte pe roblox.com/parents",
+        description:
+          "Leaga emailul si deschide noile Parental Controls pentru a bloca jocuri anume, a seta limite zilnice de timp si a limita cheltuielile lunare (introduse in 2025-2026)."
       }
     ],
     watchFor: [
@@ -787,6 +792,24 @@ export const roEntryTranslations: Partial<Record<Entry["slug"], Partial<Localize
         ]
       },
       {
+        title: "Intelege noua verificare a varstei pentru chat",
+        steps: [
+          "De la inceputul lui 2026 Roblox cere o estimare faciala a varstei (sau act de identitate pentru 13+) inainte ca chatul sa functioneze, si grupeaza utilizatorii pe categorii de varsta, astfel incat adultii nu mai pot scrie liber copiilor mult mai mici. Daca copilul nu poate folosi chatul, asta este motivul - decideti impreuna daca finalizati verificarea."
+        ]
+      },
+      {
+        title: "Foloseste tipul de cont potrivit varstei",
+        steps: [
+          "Roblox ofera acum conturi Roblox Kids (5-8 ani) si Roblox Select (9-15 ani) care limiteaza experientele la niveluri de maturitate adecvate varstei si trec automat la urmatorul tip pe masura ce copilul creste (lansare iunie 2026). Alege contul potrivit, nu unul standard, pentru copiii mai mici."
+        ]
+      },
+      {
+        title: "Foloseste panoul extins de parinte",
+        steps: [
+          "Pe roblox.com/parents poti acum bloca jocuri anume, aproba experiente individuale, gestiona setarile de chat si seta limite de timp si de cheltuieli pana la 15 ani - revizuieste-le alaturi de controalele de pe dispozitiv de mai jos."
+        ]
+      },
+      {
         title: "Seteaza limite de timp la nivel de dispozitiv",
         steps: [
           "Foloseste iPhone Screen Time, Android Family Link, Windows Family Safety sau macOS Screen Time pentru a opri ferm Roblox la ora stabilita."
@@ -814,6 +837,12 @@ export const roEntryTranslations: Partial<Record<Entry["slug"], Partial<Localize
         title: "Most impactful action",
         description:
           "Account Restrictions plus chat doar pentru Friends elimina imediat mare parte din riscul de contact casual cu straini."
+      },
+      {
+        type: "tip",
+        title: "Nou in 2026",
+        description:
+          "Chatul cere acum o verificare faciala a varstei si este grupat pe varsta estimata, iar noile tipuri de cont Roblox Kids si Select tin copiii mai mici in experiente potrivite varstei. Alege tipul de cont care se potriveste varstei copilului."
       }
     ]
   },
@@ -838,6 +867,11 @@ export const roEntryTranslations: Partial<Record<Entry["slug"], Partial<Localize
         title: "Opreste Autoplay",
         description:
           "Account icon → Settings → Autoplay → OFF, astfel incat videoclipurile sa se opreasca in loc sa curga spre urmatoarea recomandare."
+      },
+      {
+        title: "Limiteaza sau opreste feedul Shorts",
+        description:
+          "Pentru conturile de adolescent supravegheate, deschide Family Center → copilul tau → Time management si seteaza o limita zilnica pentru Shorts. Setarea pe 0 minute elimina complet feedul Shorts (introdus in ianuarie 2026)."
       }
     ],
     watchFor: [
@@ -904,6 +938,18 @@ export const roEntryTranslations: Partial<Record<Entry["slug"], Partial<Localize
         ]
       },
       {
+        title: "Limiteaza sau opreste feedul Shorts",
+        steps: [
+          "Pe un cont de adolescent supravegheat, deschide Family Center → selecteaza copilul → Time management si seteaza o limita zilnica pentru feedul Shorts. Setarea pe 0 minute scoate feedul nesfarsit de Shorts din aplicatia lor (lansat in ianuarie 2026)."
+        ]
+      },
+      {
+        title: "Cunoaste noua regula de varsta pentru live streaming",
+        steps: [
+          "Din iulie 2025 YouTube permite live streaming doar utilizatorilor de 16+. Copiii de 13-15 ani pot transmite live doar daca sunt supravegheati vizibil de un adult pe acelasi canal, deci verifica inainte de a permite orice transmisiune live."
+        ]
+      },
+      {
         title: "Seteaza o limita de timp specifica aplicatiei",
         steps: [
           "Foloseste iPhone Screen Time sau Android Digital Wellbeing si tinteste aplicatia YouTube, nu doar limita generala a dispozitivului."
@@ -931,6 +977,12 @@ export const roEntryTranslations: Partial<Record<Entry["slug"], Partial<Localize
         title: "Most impactful action",
         description:
           "Restricted Mode trebuie activat separat pe fiecare browser si pe fiecare dispozitiv. Nu se sincronizeaza automat."
+      },
+      {
+        type: "tip",
+        title: "Nou in 2026",
+        description:
+          "Parintii conturilor de adolescent supravegheate pot acum limita feedul Shorts la minut - seteaza-l pe 0 in Family Center → Time management pentru a elimina complet feedul nesfarsit de clipuri scurte."
       }
     ]
   },
@@ -955,6 +1007,11 @@ export const roEntryTranslations: Partial<Record<Entry["slug"], Partial<Localize
         title: "Curata lista de prieteni",
         description:
           "Profile → My Friends si elimina pe oricine copilul nu poate identifica clar offline."
+      },
+      {
+        title: "Configureaza Family Center",
+        description:
+          "Din contul tau (18+) leaga contul adolescentului in Family Center pentru a vedea contactele recente, a filtra Story-urile sensibile si a opri chatbotul My AI."
       }
     ],
     watchFor: [
@@ -1021,6 +1078,18 @@ export const roEntryTranslations: Partial<Record<Entry["slug"], Partial<Localize
         ]
       },
       {
+        title: "Leaga Family Center si foloseste noile informatii",
+        steps: [
+          "Din contul tau (18+) deschide Family Center si invita adolescentul (13-17) sa se conecteze. Din ianuarie 2026 poti vedea media saptamanala a timpului petrecut, defalcata pe functii, si primesti semnale de incredere care arata cum ar putea cunoaste fiecare prieten nou pe care il adauga."
+        ]
+      },
+      {
+        title: "Activeaza Content Controls si dezactiveaza My AI",
+        steps: [
+          "In Family Center, activeaza Content Controls pentru a filtra Story-urile de la creatori marcati ca sensibili sau sugestivi, si opreste chatbotul My AI daca nu vrei ca cel mic sa converseze cu el."
+        ]
+      },
+      {
         title: "Verifica Memories in mod regulat",
         steps: [
           "Memories tab → verificati impreuna snap-urile salvate pentru ca materialul privat sa nu se stranga pe nesimtite."
@@ -1071,6 +1140,11 @@ export const roEntryTranslations: Partial<Record<Entry["slug"], Partial<Localize
         title: "Porneste Family Centre supervision",
         description:
           "Settings → Family Centre si conecteaza contul parintelui pentru instrumentele de supraveghere sub 18 ani."
+      },
+      {
+        title: "Confirma ca este pe un Teen Account",
+        description:
+          "Toti utilizatorii sub 18 ani trec acum implicit pe un Teen Account protejat (privat, DM-uri restrictionate, continut PG-13). Verifica daca data nasterii este corecta pentru ca protectiile sa se aplice efectiv."
       }
     ],
     watchFor: [
@@ -1125,6 +1199,18 @@ export const roEntryTranslations: Partial<Record<Entry["slug"], Partial<Localize
         ]
       },
       {
+        title: "Verifica protectiile Teen Account",
+        steps: [
+          "Din 2024 fiecare cont sub 18 ani trece implicit pe un Teen Account: privat in mod implicit, setari stricte de mesaje si (din octombrie 2025) continut PG-13 implicit. Cei sub 16 ani nu pot relaxa aceste setari fara aprobarea unui parinte conectat in Family Centre, deci asigura-te ca supravegherea este activa. Instagram foloseste acum si detectia varstei pentru a muta inapoi in protectiile pentru adolescenti conturile care au declarat o data de nastere de adult."
+        ]
+      },
+      {
+        title: "Activeaza setarea de continut cea mai stricta",
+        steps: [
+          "In Family Centre poti pastra setarea implicita PG-13 sau poti activa setarea mai stricta Limited Content, care filtreaza mai mult material si elimina posibilitatea de a vedea sau lasa comentarii. Parintii sunt avertizati si daca un adolescent cauta repetat termeni legati de suicid sau autovatamare (adaugat in februarie 2026)."
+        ]
+      },
+      {
         title: "Sterge istoricul cautarilor lunar",
         steps: [
           "Settings → Your Activity → Recent Searches sau Clear Search History si verifica ce a invatat algoritmul."
@@ -1147,9 +1233,9 @@ export const roEntryTranslations: Partial<Record<Entry["slug"], Partial<Localize
     ageRecommendation: "Nerecomandat sub 16 ani fara supraveghere",
     appMetrics: [
       { label: "Risc imagine corporala", value: "Foarte ridicat" },
-      { label: "Algoritm implicit", value: "Nefiltrat" },
-      { label: "DM-uri de la straini", value: "Permise" },
-      { label: "Explore page", value: "Necontrolat" }
+      { label: "Continut implicit (adolescenti)", value: "PG-13" },
+      { label: "DM-uri de la straini (adolescenti)", value: "Restrictionate implicit" },
+      { label: "Teen Accounts", value: "Implicit sub 18 ani" }
     ],
     callouts: [
       {
@@ -1163,6 +1249,12 @@ export const roEntryTranslations: Partial<Record<Entry["slug"], Partial<Localize
         title: "Most impactful action",
         description:
           "Un cont privat plus DM-uri restrictionate inchid imediat majoritatea rutelor de contact cu straini."
+      },
+      {
+        type: "tip",
+        title: "Nou din 2024",
+        description:
+          "Teen Accounts sunt acum setarea implicita pentru toti sub 18 ani si aplica automat modul privat, DM-uri stricte si continut PG-13. Conecteaza un cont de parinte in Family Centre pentru ca cei sub 16 ani sa nu poata opri protectiile."
       }
     ]
   },
@@ -1253,6 +1345,12 @@ export const roEntryTranslations: Partial<Record<Entry["slug"], Partial<Localize
         ]
       },
       {
+        title: "Foloseste noile controale Family Pairing",
+        steps: [
+          "Family Pairing permite acum (din iulie 2025) sa programezi intervale Time Away care blocheaza aplicatia in timpul orelor de scoala sau noaptea, sa primesti notificari cand adolescentul posteaza un clip public, sa blochezi conturi anume si sa vezi pe cine urmareste, cine il urmareste si ce subiecte ii modeleaza feedul. Revizuieste-le impreuna in setarile Family Pairing."
+        ]
+      },
+      {
         title: "Modeleaza feedul activ",
         steps: [
           "Tine apasat pe clipurile nedorite → Not Interested, astfel incat motorul de recomandare sa primeasca feedback corectiv."
@@ -1279,6 +1377,12 @@ export const roEntryTranslations: Partial<Record<Entry["slug"], Partial<Localize
         title: "Most impactful action",
         description:
           "Family Pairing le ofera parintilor control real fara a cere parola copilului. Seteaza-l inainte de orice altceva."
+      },
+      {
+        type: "tip",
+        title: "Nou din 2025",
+        description:
+          "Family Pairing a adaugat programarea Time Away, alerte cand adolescentul posteaza public, posibilitatea de a bloca conturi anume si vizibilitate asupra celor pe care ii urmareste si a ceea ce ii modeleaza feedul. Conturile sub 16 ani sunt si ele private implicit, cu o limita zilnica de 60 de minute."
       }
     ]
   },
@@ -1303,6 +1407,11 @@ export const roEntryTranslations: Partial<Record<Entry["slug"], Partial<Localize
         title: "Limiteaza cererile de prietenie",
         description:
           "User Settings → Privacy & Safety → Friend Requests si debifeaza Everyone, astfel incat strainii sa nu il poata adauga usor."
+      },
+      {
+        title: "Conecteaza Family Center din Discord",
+        description:
+          "User Settings → Family Center → activeaza tabul, apoi conecteaza-te cu adolescentul prin cod QR in aplicatia mobila pentru a-i vedea serverele, contactele si activitatea saptamanala."
       }
     ],
     watchFor: [
@@ -1369,6 +1478,18 @@ export const roEntryTranslations: Partial<Record<Entry["slug"], Partial<Localize
         ]
       },
       {
+        title: "Conecteaza Family Center",
+        steps: [
+          "Discord are acum un panou de parinte. Mergi la User Settings → Family Center, activeaza tabul, apoi pe mobil conecteaza-te cu adolescentul prin cod QR (parintele alege Connect with Teen, adolescentul alege Connect with Parent). Vei vedea contactele recente, serverele in care e activ, timpul petrecut in apeluri si - din noiembrie 2025 - cumparaturile sale saptamanale, plus optiuni de a restrictiona cine ii poate scrie. Continutul mesajelor ramane privat."
+        ]
+      },
+      {
+        title: "Verifica filtrele de siguranta teen-by-default",
+        steps: [
+          "Din 2026 Discord aplica implicit setari potrivite adolescentilor in toata lumea: media sensibila in DM-uri de la non-prieteni este blocata, media de la prieteni si din servere este incetosata, iar adolescentii nu pot opri complet filtrele fara o verificare de varsta de adult. Confirma ca data nasterii este setata corect pentru ca aceste setari implicite sa se aplice."
+        ]
+      },
+      {
         title: "Stabileste o regula permanenta de verificare",
         steps: [
           "Agreaza faptul ca poti verifica oricand lista de servere, fiindca apartenenta la servere este problema principala de siguranta."
@@ -1380,8 +1501,8 @@ export const roEntryTranslations: Partial<Record<Entry["slug"], Partial<Localize
     appMetrics: [
       { label: "Utilizare principala", value: "Comunitati de gaming" },
       { label: "Mesaje directe", value: "Pornite implicit" },
-      { label: "Verificare de varsta pe servere", value: "Nu exista" },
-      { label: "Moderare", value: "Inconsistenta" }
+      { label: "Filtre de continut pentru adolescenti", value: "Pornite implicit (2026)" },
+      { label: "Panou de parinte", value: "Family Center" }
     ],
     callouts: [
       {
@@ -1395,6 +1516,12 @@ export const roEntryTranslations: Partial<Record<Entry["slug"], Partial<Localize
         title: "Most impactful action",
         description:
           "Revizuirea listei complete de servere conteaza mai mult decat orice setare singulara. Un singur server toxic poate anula orice alt control de confidentialitate."
+      },
+      {
+        type: "tip",
+        title: "Nou din 2025",
+        description:
+          "Discord are acum un panou de parinte Family Center (User Settings → Family Center) care arata serverele, contactele, timpul in apeluri si cumparaturile saptamanale, iar filtrele de continut potrivite adolescentilor sunt pornite implicit pentru cei sub 18 ani in toata lumea."
       }
     ]
   },
@@ -1485,6 +1612,12 @@ export const roEntryTranslations: Partial<Record<Entry["slug"], Partial<Localize
         ]
       },
       {
+        title: "Intelege cum functioneaza Cabined Accounts pentru cei sub 13 ani",
+        steps: [
+          "Daca un copil se inregistreaza ca avand sub 13 ani (sau varsta locala de consimtamant digital), Epic creeaza un Cabined Account: poate juca in continuare, dar voice chat-ul, chatul text liber, adaugarea de prieteni si conectarea la aplicatii sociale sau de streaming raman dezactivate pana cand un parinte isi da acordul din Epic Account Portal. Conturile sub 13 ani au si o limita de cheltuieli de 100 USD pe zi. Activeaza functiile suplimentare doar in mod deliberat."
+        ]
+      },
+      {
         title: "Verifica istoricul tranzactiilor lunar",
         steps: [
           "Consulta epicgames.com/account/transactions astfel incat obiceiurile de cheltuire si costurile surpriza sa nu se acumuleze pe nesimtite."
@@ -1527,9 +1660,9 @@ export const roEntryTranslations: Partial<Record<Entry["slug"], Partial<Localize
           "Java Edition pe PC nu are controale parentale relevante. Bedrock pe console, mobil si Windows poate fi controlat prin Xbox Family Safety."
       },
       {
-        title: "Foloseste Xbox Family Safety pentru Bedrock",
+        title: "Foloseste Microsoft Family Safety pentru Bedrock",
         description:
-          "Mergi la family.xbox.com si restrictioneaza multiplayer-ul, cumparaturile si timpul pentru orice cont Bedrock."
+          "Mergi la family.microsoft.com (controalele s-au mutat aici) si restrictioneaza multiplayer-ul, cumparaturile si timpul pentru orice cont Bedrock."
       },
       {
         title: "Tine jucatorii Java doar pe Realms",
@@ -1577,9 +1710,9 @@ export const roEntryTranslations: Partial<Record<Entry["slug"], Partial<Localize
         ]
       },
       {
-        title: "Foloseste Xbox Family Safety pentru Bedrock",
+        title: "Foloseste Microsoft Family Safety pentru Bedrock",
         steps: [
-          "Mergi la family.xbox.com si restrictioneaza multiplayer-ul, cumparaturile si timpul pentru orice cont Bedrock."
+          "Controalele Minecraft sunt acum in Microsoft Family Safety (family.microsoft.com) si in setarile contului Xbox, nu in joc. In tabul Online Safety permite sau blocheaza multiplayer-ul si cluburile (asta controleaza si accesul la Realms); in tabul Privacy stabileste cine poate comunica prin voce, text sau invitatii; si activeaza Needs approval to buy things pentru cumparaturi. Setarile se aplica pe Windows, mobil si console."
         ]
       },
       {
@@ -1640,6 +1773,11 @@ export const roEntryTranslations: Partial<Record<Entry["slug"], Partial<Localize
         title: "Dezactiveaza Memory",
         description:
           "Settings → Personalization → Memory → OFF daca vrei sa fie salvate mai putine detalii intre conversatii."
+      },
+      {
+        title: "Leaga un cont de parinte",
+        description:
+          "Settings → Parental controls → Add family member pentru a lega contul tau de cel al adolescentului (13-18). Asta deblocheaza ore linistite, protectii de continut si alerte de risc (lansate in septembrie 2025)."
       },
       {
         title: "Stabileste mai intai reguli pentru scoala",
@@ -1705,6 +1843,18 @@ export const roEntryTranslations: Partial<Record<Entry["slug"], Partial<Localize
         ]
       },
       {
+        title: "Configureaza noile controale parentale",
+        steps: [
+          "OpenAI a lansat controale parentale native in septembrie 2025. In ChatGPT mergi la Settings → Parental controls → Add family member si trimite adolescentului (13-18) o invitatie pe care o accepta. Odata legat, protectiile de continut (mai putin continut grafic, fara joc de rol sexual sau violent) se activeaza automat si adolescentul nu le poate opri. Poti seta si Quiet hours, opri modul Voice, Memory si generarea de imagini, si renunta la antrenarea modelului."
+        ]
+      },
+      {
+        title: "Intelege sistemul de alerte de risc",
+        steps: [
+          "Cu un cont legat, daca sistemele OpenAI detecteaza posibile semne de suferinta acuta sau autovatamare, evaluatori instruiti te pot anunta prin email, SMS sau notificare. Poti renunta, dar pentru multe familii merita lasat activ. Exista un ghid pentru parinti la chatgpt.com/parent-resources."
+        ]
+      },
+      {
         title: "Dezactiveaza instrumentele optionale de navigare daca sunt active",
         steps: [
           "Settings → Beta Features si opreste extensiile suplimentare pe care nu vrei sa le foloseasca independent."
@@ -1737,6 +1887,12 @@ export const roEntryTranslations: Partial<Record<Entry["slug"], Partial<Localize
         title: "Most impactful action",
         description:
           "O regula clara in familie despre teme si fact-checking este de obicei mai eficienta decat o interdictie completa."
+      },
+      {
+        type: "tip",
+        title: "Nou din 2025",
+        description:
+          "ChatGPT are acum controale parentale reale: leaga un cont de adolescent in Settings → Parental controls pentru a aplica protectii de continut pe care nu le pot dezactiva, a seta ore linistite si a primi alerte daca sunt detectate semne de suferinta."
       }
     ]
   }
