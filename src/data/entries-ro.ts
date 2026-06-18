@@ -1757,6 +1757,137 @@ export const roEntryTranslations: Partial<Record<Entry["slug"], Partial<Localize
       }
     ]
   },
+  "character-ai": {
+    riskLabelText: "Risc foarte ridicat",
+    homeBadgeLabel: "Necesita atentie urgenta",
+    summary:
+      "O platforma de joc de rol cu inteligenta artificiala unde utilizatorii discuta cu personaje personalizate. De la finalul lui 2025, chatul deschis pentru sub 18 ani a fost eliminat si sunt introduse verificari de varsta, dar varsta reala din cont ramane esentiala.",
+    description:
+      "O platforma de joc de rol cu inteligenta artificiala unde utilizatorii discuta cu personaje personalizate. De la finalul lui 2025, chatul deschis pentru sub 18 ani a fost eliminat si sunt introduse verificari de varsta, dar varsta reala din cont ramane esentiala.",
+    quickActions: [
+      {
+        title: "Verifica daca este deja instalata",
+        description:
+          "Cauta in biblioteca de aplicatii dupa Character.AI si C.AI, apoi verifica istoricul descarcarilor din App Store si ecranul principal."
+      },
+      {
+        title: "Activeaza modul de mesagerie sigura",
+        description:
+          "Settings → Feed → Safe Messaging Settings → ON. Asta adauga indicii pentru situatii de criza, dar nu filtreaza continutul pentru adulti."
+      },
+      {
+        title: "Revizuieste lista de personaje",
+        description:
+          "Deschideti contul impreuna si verificati personajele urmarite sau accesate repetat, mai ales cele prezentate ca romantice sau dependente emotional."
+      }
+    ],
+    watchFor: [
+      {
+        title: "Normalizarea jocurilor de rol romantice si sexuale",
+        description:
+          "Adulti si minori folosesc platforma pentru a simula relatii romantice si sexuale cu personaje generate de inteligenta artificiala. Pentru adolescentii in dezvoltare, asta normalizeaza dinamici relationale profund nepotrivite.",
+        severity: "critical"
+      },
+      {
+        title: "Esec fatal documentat intr-o criza",
+        description:
+          "Un proces din 2024 a legat direct sinuciderea unui baiat de 14 ani de interactiunea romantica prelungita cu un robot conversational Character.AI. Platforma nu a intervenit, desi existau semnale clare de suferinta. Nu este un risc ipotetic.",
+        severity: "critical"
+      },
+      {
+        title: "Dependenta emotionala in locul conexiunii umane",
+        description:
+          "Unii adolescenti spun ca prefera robotul conversational relatiilor reale. Folosirea prelungita este asociata cu izolare sociala mai mare si cu o toleranta mai scazuta la frictiunea normala a interactiunilor umane.",
+        severity: "high"
+      },
+      {
+        title: "Personaje create de utilizatori, fara verificare reala",
+        description:
+          "Orice utilizator poate crea un personaj cu aproape orice personalitate. Roboti cu teme pentru adulti, violente sau ideologic extreme pot fi accesibili in ciuda politicilor declarate ale platformei.",
+        severity: "high"
+      },
+      {
+        title: "Traume personale impartasite unui sistem nepotrivit",
+        description:
+          "Copiii pot impartasi crize reale de sanatate mintala, abuzuri sau ganduri suicidare unor roboti conversationali care nu sunt echipati sa raspunda in siguranta si nu alerteaza pe nimeni.",
+        severity: "high"
+      }
+    ],
+    setupGuide: [
+      {
+        title: "Verifica daca este instalata",
+        steps: [
+          "Cauta in biblioteca de aplicatii dupa Character.AI si C.AI, pentru ca uneori apare sub numele mai scurt. Verifica atat istoricul descarcarilor din App Store, cat si ecranul principal."
+        ]
+      },
+      {
+        title: "Activeaza modul de mesagerie sigura",
+        steps: [
+          "In aplicatie mergi la Settings → Feed → Safe Messaging Settings → ON. Asta adauga indicii catre resurse de criza, dar nu filtreaza continutul. Este o masura partiala, nu o rezolvare."
+        ]
+      },
+      {
+        title: "Revizuieste lista de personaje",
+        steps: [
+          "Deschide contul copilului si verifica ce personaje urmareste si cu care interactioneaza. Personajele create de utilizatori nu sunt verificate. Orice personaj romantic, adult sau de simulare a unei relatii este un semnal de alarma, indiferent cum este etichetat."
+        ]
+      },
+      {
+        title: "Tine cont ca chatul pentru sub 18 ani a fost eliminat",
+        steps: [
+          "In noiembrie 2025, Character.AI a eliminat chatul deschis pentru utilizatorii sub 18 ani si a inceput sa foloseasca tehnologii de verificare a varstei, inclusiv un model intern si instrumente precum Persona, pentru a detecta minorii. Conturile identificate ca fiind sub 18 ani primesc acum doar functii creative fara chat, precum Feed, Imagine, Avatar FX, Streams, video si creare de povesti. Asigura-te ca data nasterii copilului este corecta; daca a fost introdusa o varsta mai mare, blocarea chatului nu se aplica."
+        ]
+      },
+      {
+        title: "Discutati inainte sa aplici controale",
+        steps: [
+          "Intreaba pentru ce foloseste aplicatia inainte sa decizi restrictiile. Folosirea pentru scriere creativa este diferita de folosirea din dependenta emotionala. Motivul real schimba raspunsul potrivit."
+        ]
+      },
+      {
+        title: "Seteaza limite zilnice pentru aplicatie",
+        steps: [
+          "iOS: Settings → Screen Time → App Limits → adauga Character.AI → seteaza limita zilnica. Android: Digital Wellbeing → Dashboard → Character.AI → seteaza timer."
+        ]
+      },
+      {
+        title: "Raspunde direct nevoii din spate",
+        steps: [
+          "Daca aplicatia este folosita mai ales pentru sprijin emotional sau pentru ca se simte singur, informatia conteaza. Ajuta-l sa ajunga la consilierul scolii, la un grup de hobby sau la un adult de incredere. Blocarea aplicatiei fara a raspunde nevoii din spate nu rezolva problema."
+        ]
+      }
+    ],
+    ageRating: "17+ in App Store",
+    userCount: "Folosita des de copii de 12-16 ani in ciuda ratingului",
+    platform: "iOS, Android, Web",
+    ageRecommendation: "Nu este recomandata minorilor",
+    appMetrics: [
+      { label: "Utilizare principala", value: "Joc de rol si conversatii emotionale" },
+      { label: "Verificarea varstei", value: "In extindere (2025-2026)" },
+      { label: "Chat deschis sub 18 ani", value: "Eliminat (nov. 2025)" },
+      { label: "Istoric raspuns la crize", value: "A esuat fatal" }
+    ],
+    callouts: [
+      {
+        type: "warning",
+        title: "Highest concern",
+        description:
+          "Character.AI este platforma cu inteligenta artificiala cu cel mai mare risc pentru copii. Un proces din 2024 a legat moartea unui baiat de 14 ani de folosirea prelungita a unui robot conversational romantic. Modul de mesagerie sigura adauga indicii pentru criza, dar nu elimina continutul pentru adulti sau simularea relatiilor."
+      },
+      {
+        type: "tip",
+        title: "Most impactful action",
+        description:
+          "Modul de mesagerie sigura nu este un filtru de continut. Protectia reala inseamna o conversatie deschisa despre ce face copilul in aplicatie si de ce, urmata de o decizie comuna despre limite."
+      },
+      {
+        type: "tip",
+        title: "Nou de la finalul lui 2025",
+        description:
+          "Character.AI a eliminat chatul deschis pentru utilizatorii sub 18 ani si foloseste acum verificari de varsta. Confirma ca data nasterii copilului este setata corect, pentru ca protectia se aplica doar daca acel cont este identificat ca minor."
+      }
+    ]
+  },
   chatgpt: {
     riskLabelText: "Risc mediu",
     summary:
