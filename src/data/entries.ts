@@ -29,6 +29,11 @@ export interface Entry {
   riskBarPosition?: number;
   appMetrics?: Array<{ label: string; value: string }>;
   callouts?: Array<{ type: "warning" | "tip"; title: string; description: string }>;
+  editorialReview?: {
+    checkedAt: string;
+    availability: string;
+    sources: Array<{ title: string; url: string }>;
+  };
   related: EntryLink[];
 }
 
@@ -911,147 +916,115 @@ export const entries: Entry[] = [
     "category": "apps",
     "riskLevel": "high",
     "riskLabelText": "High risk",
-    "summary": "A game platform built on user-created worlds, chat, and constant social interaction.",
-    "description": "A game platform built on user-created worlds, chat, and constant social interaction.",
+    "summary": "A platform of user-created games. Start with a linked parent account, then review games, communication and spending for your child’s age.",
+    "description": "A platform of user-created games. Start with a linked parent account, then review games, communication and spending for your child’s age.",
     "quickActions": [
       {
-        "title": "Enable Account Restrictions",
-        "description": "Settings → Privacy → Account Restrictions. Turn this on before your child starts adding friends or exploring new games."
+        "title": "Link your own parent account",
+        "description": "On the child’s account, open Settings → Parental Controls → Add parent and follow the invitation."
       },
       {
-        "title": "Set chat to friends only",
-        "description": "Settings → Privacy → Contact Settings and reduce chat and messaging access to Friends only."
+        "title": "Review communication",
+        "description": "From your linked account, select your child and review Communication. Turn off chat options you do not want them using."
       },
       {
-        "title": "Add a parent PIN for spending and settings",
-        "description": "Settings → Parent Controls and create a PIN so purchases and privacy changes need your approval."
-      },
-      {
-        "title": "Set up the parent dashboard at roblox.com/parents",
-        "description": "Link your email and open the expanded Parental Controls to block specific games, set daily screen-time limits, and cap monthly spending (rolled out 2025-2026)."
+        "title": "Agree on games and a budget",
+        "description": "Choose games together. Review the available content, time and spending controls before buying Robux."
       }
     ],
     "watchFor": [
       {
-        "title": "Grooming through in-game chat",
-        "description": "Children can be approached in chat, private messages, or friend requests by adults pretending to be other children.",
+        "title": "Contact beyond the game",
+        "description": "An online player may ask for secrets or try to move a conversation to another app. Make it easy for your child to tell you.",
         "severity": "critical"
       },
       {
-        "title": "Inappropriate user-created content",
-        "description": "Because users build the worlds, humor, language, themes, and visuals can shift far beyond what a parent expects from the age label.",
+        "title": "Unexpected game content",
+        "description": "Review a game together when its theme or behaviour surprises your child.",
         "severity": "high"
       },
       {
-        "title": "Robux spending pressure",
-        "description": "Cosmetics, upgrades, and social status cues push children toward repeated spending and requests for more currency.",
+        "title": "Robux pressure and scams",
+        "description": "Treat promises of free currency in exchange for a password or login code as a reason to stop.",
         "severity": "high"
       },
       {
-        "title": "Fake free Robux scams",
-        "description": "Children are commonly targeted with phishing links, fake codes, and promises that ask for passwords or personal details.",
+        "title": "Sessions running late",
+        "description": "Agree on stopping points and check whether play is displacing sleep or other activities.",
         "severity": "medium"
-      },
-      {
-        "title": "Sleep disruption",
-        "description": "The game loop and social pull make it easy for sessions to stretch far past the planned stop time.",
-        "severity": "low"
       }
     ],
     "setupGuide": [
       {
-        "title": "Enable Account Restrictions",
+        "title": "Connect parent and child accounts",
         "steps": [
-          "Settings → Privacy → Account Restrictions. Turn this on before your child starts adding friends or exploring new games."
+          "Accept the invitation using your own Roblox account and complete the parent verification. Manage the child from Settings → Parental Controls."
         ]
       },
       {
-        "title": "Set chat to friends only",
+        "title": "Understand Kids and Select",
         "steps": [
-          "Settings → Privacy → Contact Settings and reduce chat and messaging access to Friends only."
+          "Roblox announced global availability on 16 June 2026. Placement uses age information; it is not simply a tier you choose. Age-checked children aged 5–8 use Kids, and ages 9–15 use Select. Self-declared accounts have more restrictions, including no chat."
         ]
       },
       {
-        "title": "Add a parent PIN for spending and settings",
+        "title": "Check chat permissions",
         "steps": [
-          "Settings → Parent Controls and create a PIN so purchases and privacy changes need your approval."
+          "Chat requires an age check. Review the communication options shown for your child rather than assuming all chat is friends-only. Available controls depend on age and region."
         ]
       },
       {
-        "title": "Link your parent email",
+        "title": "Review games",
         "steps": [
-          "Visit roblox.com/parents and attach a parent email so you receive account notices and recovery options."
+          "Under Content restrictions, review Content maturity and Blocked games. Check any requests to allow a game together."
         ]
       },
       {
-        "title": "Review the friend list every month",
+        "title": "Check spending and time limits",
         "steps": [
-          "Friends tab → open the full friend list together and remove anyone your child cannot identify in real life."
+          "Review Spending and Screen time where available. Monthly spending limits do not cover gift-card redemption. Do not assume every control continues through age 15; availability differs by control and region."
         ]
       },
       {
-        "title": "Understand the new age check for chat",
+        "title": "Keep checking in",
         "steps": [
-          "Since early 2026 Roblox requires a facial age estimate (or ID for 13+) before any chat works, and it sorts users into age bands so adults can no longer freely message much younger players. If your child cannot chat, this check is why — decide together whether to complete it."
-        ]
-      },
-      {
-        "title": "Use the right account type for their age",
-        "steps": [
-          "Roblox now offers Roblox Kids (ages 5-8) and Roblox Select (ages 9-15) accounts that limit experiences to age-appropriate maturity levels and auto-transition as the child gets older (rolling out June 2026). Choose the matching account rather than a standard one for younger children."
-        ]
-      },
-      {
-        "title": "Use the expanded parent dashboard",
-        "steps": [
-          "At roblox.com/parents you can now block specific games, approve individual experiences, manage chat settings, and set screen-time and spending limits through age 15 — review these alongside the on-device controls below."
-        ]
-      },
-      {
-        "title": "Set device-level time limits",
-        "steps": [
-          "Use iPhone Screen Time, Android Family Link, Windows Family Safety, or macOS Screen Time to put Roblox on a hard stop."
+          "Ask what they played and who they met. Agree that requests for passwords, gifts or private contact elsewhere are reasons to pause and tell you."
         ]
       }
     ],
-    "ageRating": "7+ official",
-    "userCount": "Huge child and teen player base",
+    "ageRating": "Experience ratings vary; Kids 5–8 / Select 9–15",
+    "userCount": "Children, teens and adults",
     "platform": "iOS, Android, Xbox, PlayStation, PC",
-    "ageRecommendation": "Recommended 10+ with active supervision",
+    "ageRecommendation": "Our recommendation: 10+ with active supervision",
     "riskBarPosition": 75,
     "appMetrics": [
       {
-        "label": "Avg daily use",
-        "value": "2.5h"
+        "label": "Younger accounts",
+        "value": "Kids / Select"
       },
       {
-        "label": "Stranger exposure",
-        "value": "Millions"
+        "label": "Chat access",
+        "value": "Age check required"
       },
       {
-        "label": "In-app purchases",
-        "value": "Robux"
+        "label": "Parent access",
+        "value": "Linked account"
       },
       {
-        "label": "Moderation",
-        "value": "Weak"
+        "label": "Purchases",
+        "value": "Robux and subscriptions"
       }
     ],
     "callouts": [
       {
         "type": "warning",
-        "title": "Highest concern",
-        "description": "Roblox moderation cannot catch all predatory behaviour. Controls reduce risk, but regular conversations about chat, gifts, and strangers still matter."
+        "title": "What controls cannot do",
+        "description": "Age checks and filters are not guarantees about another player’s identity or behaviour. Keep reporting and conversations part of the routine."
       },
       {
         "type": "tip",
         "title": "Most impactful action",
-        "description": "Account Restrictions plus Friends-only chat removes most casual stranger contact risk immediately."
-      },
-      {
-        "type": "tip",
-        "title": "New in 2026",
-        "description": "Chat now requires a facial age check and is grouped by estimated age, and new Roblox Kids and Select account types keep younger children inside age-rated experiences. Pick the account type that matches your child's age."
+        "description": "Use your own linked parent account to review the settings that actually apply to your child."
       }
     ],
     "related": [
@@ -1067,7 +1040,25 @@ export const entries: Entry[] = [
         "category": "os",
         "slug": "windows"
       }
-    ]
+    ],
+    "editorialReview": {
+      "checkedAt": "2026-09-03",
+      "availability": "Kids and Select are globally available. Individual controls vary by age, account and region.",
+      "sources": [
+        {
+          "title": "Roblox: parental controls",
+          "url": "https://about.roblox.com/parental-controls"
+        },
+        {
+          "title": "Roblox: Kids and Select availability",
+          "url": "https://about.roblox.com/newsroom/2026/06/age-based-roblox-kids-and-select-accounts-now-globally-available"
+        },
+        {
+          "title": "Roblox: monthly spending limits",
+          "url": "https://en.help.roblox.com/hc/en-us/articles/4409558125460-Monthly-Spending-Limits-and-Notifications-FAQ"
+        }
+      ]
+    }
   },
   {
     "slug": "youtube",
@@ -1692,141 +1683,115 @@ export const entries: Entry[] = [
     "category": "apps",
     "riskLevel": "critical",
     "riskLabelText": "Very high risk",
-    "summary": "A chat platform centered on servers, gaming communities, voice channels, and direct messages that are hard for parents to see.",
-    "description": "A chat platform centered on servers, gaming communities, voice channels, and direct messages that are hard for parents to see.",
+    "summary": "A service for group communities, direct messages and voice calls. Link Family Center and review who can contact your teen alongside the servers they use.",
+    "description": "A service for group communities, direct messages and voice calls. Link Family Center and review who can contact your teen alongside the servers they use.",
     "quickActions": [
       {
-        "title": "Review every server together",
-        "description": "Open the server list and leave anything your child cannot explain or that you cannot inspect clearly: left-click server → Leave Server."
+        "title": "Connect Family Center",
+        "description": "Open Family Center in account settings. Complete the link together in the mobile app; your teen needs to accept."
       },
       {
-        "title": "Turn off DMs from server members",
-        "description": "User Settings → Privacy & Safety → Allow direct messages from server members → OFF."
+        "title": "Restrict direct messages",
+        "description": "In Content & Social, turn off Direct messages from server members and apply the change to existing servers when prompted."
       },
       {
-        "title": "Limit friend requests",
-        "description": "User Settings → Privacy & Safety → Friend Requests and uncheck Everyone so strangers cannot add them easily."
-      },
-      {
-        "title": "Link Discord's Family Center",
-        "description": "User Settings → Family Center → enable the tab, then connect to your teen via QR code in the mobile app to see their servers, contacts, and weekly activity."
+        "title": "Review servers together",
+        "description": "Ask what each community is for, who runs it and what your teen enjoys there. Leave communities that feel unsafe."
       }
     ],
     "watchFor": [
       {
-        "title": "Direct messages from strangers",
-        "description": "Children in shared servers can receive private messages from adults or older teens they have never met.",
+        "title": "Private approaches",
+        "description": "A shared community is not proof that someone is trustworthy. Pay attention to requests for secrecy or a move to another service.",
         "severity": "critical"
       },
       {
-        "title": "Adult or extremist communities",
-        "description": "Many servers have no age checks and can host explicit content, hate speech, or harmful communities in plain view.",
-        "severity": "critical"
-      },
-      {
-        "title": "Grooming in game-related servers",
-        "description": "Adults can use shared gaming interests to build trust slowly and move conversations into DMs or voice chat.",
-        "severity": "critical"
-      },
-      {
-        "title": "File sharing creates malware risk",
-        "description": "Children can be sent suspicious files, cracked games, or illegal content directly inside chats and servers.",
+        "title": "Harmful communities",
+        "description": "Leave and report communities that encourage harassment, exploitation or violence.",
         "severity": "high"
       },
       {
-        "title": "Voice chat is unlogged and hard to monitor",
-        "description": "Live voice channels create contact risk without a clear record for a parent to review afterward.",
+        "title": "Unfamiliar links and downloads",
+        "description": "Pause before opening a promised gift or game download. Never share login codes.",
+        "severity": "high"
+      },
+      {
+        "title": "Uncomfortable calls",
+        "description": "Agree that your teen can leave a call immediately if someone pressures or frightens them.",
         "severity": "high"
       }
     ],
     "setupGuide": [
       {
-        "title": "Review every server together",
+        "title": "Link supervision",
         "steps": [
-          "Open the server list and leave anything your child cannot explain or that you cannot inspect clearly: left-click server → Leave Server."
+          "Use the Family Center linking instructions below. Explain that it shows recent activity and selected settings, not the contents of private conversations."
         ]
       },
       {
-        "title": "Turn off DMs from server members",
+        "title": "Review contact settings",
         "steps": [
-          "User Settings → Privacy & Safety → Allow direct messages from server members → OFF."
+          "Open Settings → Content & Social. Review Direct messages, individual server permissions and Friend Requests; limit who can send requests."
         ]
       },
       {
-        "title": "Limit friend requests",
+        "title": "Check sensitive-media settings",
         "steps": [
-          "User Settings → Privacy & Safety → Friend Requests and uncheck Everyone so strangers cannot add them easily."
+          "Review the sexual and graphic media filters. Use blocking in DMs where available and blurring in servers. Filters can miss content; blurring is not the same as blocking."
         ]
       },
       {
-        "title": "Disable age-restricted content",
+        "title": "Separate teen protections from the global rollout",
         "steps": [
-          "User Settings → Privacy & Safety → age-restricted content → OFF."
+          "Discord’s February update delayed global age assurance to the second half of 2026. That announcement does not establish completion. Check the current account’s settings and country-specific requirements; not everyone is asked for ID or a face scan."
         ]
       },
       {
-        "title": "Enable two-factor authentication",
+        "title": "Review activity and limits",
         "steps": [
-          "User Settings → My Account → Enable Two-Factor Auth so the account is harder to hijack."
+          "Use Family Center to discuss recent activity. Where shown, check Screen Downtime and the monthly spending cap; the cap excludes subscriptions. Review those separately."
         ]
       },
       {
-        "title": "Connect Family Center",
+        "title": "Practice reporting",
         "steps": [
-          "Discord now has a parent dashboard. Go to User Settings → Family Center, enable the tab, then on mobile link to your teen by QR code (parent picks Connect with Teen, teen picks Connect with Parent). You will see recent contacts, the servers they are active in, time on calls, and — since November 2025 — their weekly purchases, plus options to restrict who can DM them. Message content stays private."
-        ]
-      },
-      {
-        "title": "Check the teen-by-default safety filters",
-        "steps": [
-          "As of 2026 Discord applies teen-appropriate settings by default worldwide: sensitive media in DMs from non-friends is blocked, media from friends and in servers is blurred, and teens cannot fully switch the filters off without passing an adult age check. Confirm the account birthday is set correctly so these defaults apply."
-        ]
-      },
-      {
-        "title": "Set a standing review rule",
-        "steps": [
-          "Agree that you can check the server list at any time without notice, because server membership is the main safety issue."
+          "Agree that your teen can show you a troubling message without being blamed. Review the in-app report and block options together."
         ]
       }
     ],
-    "ageRating": "13+ official",
-    "userCount": "Large gaming and community audience",
+    "ageRating": "13+ or the higher minimum in your country",
+    "userCount": "Community and gaming users",
     "platform": "iOS, Android, PC, Console",
-    "ageRecommendation": "Not recommended under 16 without direct supervision",
+    "ageRecommendation": "Our recommendation: direct supervision for younger teens",
     "riskBarPosition": 85,
     "appMetrics": [
       {
-        "label": "Primary use",
-        "value": "Gaming communities"
-      },
-      {
-        "label": "Direct DMs",
-        "value": "On by default"
-      },
-      {
-        "label": "Teen content filters",
-        "value": "On by default (2026)"
-      },
-      {
-        "label": "Parent dashboard",
+        "label": "Parent tools",
         "value": "Family Center"
+      },
+      {
+        "label": "Message content",
+        "value": "Private"
+      },
+      {
+        "label": "Media filters",
+        "value": "Check account settings"
+      },
+      {
+        "label": "Global age assurance",
+        "value": "Rollout status varies"
       }
     ],
     "callouts": [
       {
         "type": "warning",
-        "title": "Highest concern",
-        "description": "Discord has no platform-wide moderation of server content. The safety of any server depends almost entirely on its administrators, and there is no reliable way to verify who your child is speaking to in voice chat."
+        "title": "What controls cannot do",
+        "description": "A family dashboard is not a full conversation history. Keep discussing the people and communities behind the activity."
       },
       {
         "type": "tip",
         "title": "Most impactful action",
-        "description": "Reviewing the full server list matters more than any single setting. One harmful server can outweigh every privacy toggle you enable."
-      },
-      {
-        "type": "tip",
-        "title": "New since 2025",
-        "description": "Discord now has a Family Center parent dashboard (User Settings → Family Center) showing servers, contacts, call time, and weekly purchases, and teen-appropriate content filters are on by default for under-18s worldwide."
+        "description": "Connect Family Center and review contact permissions together before joining more servers."
       }
     ],
     "related": [
@@ -1842,7 +1807,29 @@ export const entries: Entry[] = [
         "category": "os",
         "slug": "windows"
       }
-    ]
+    ],
+    "editorialReview": {
+      "checkedAt": "2026-09-03",
+      "availability": "Global age assurance was postponed to the second half of 2026; completion is not confirmed by the cited announcement. Check local availability.",
+      "sources": [
+        {
+          "title": "Discord: age-assurance rollout update",
+          "url": "https://discord.com/safety/how-discord-is-building-safer-experiences-for-teens"
+        },
+        {
+          "title": "Discord: Family Center for parents",
+          "url": "https://support.discord.com/hc/en-us/articles/14155043715735-Family-Center-for-Parents-and-Guardians"
+        },
+        {
+          "title": "Discord: privacy and contact settings",
+          "url": "https://support.discord.com/hc/en-us/articles/217916488-Blocking-Privacy-Settings"
+        },
+        {
+          "title": "Discord: sensitive-content filters",
+          "url": "https://support.discord.com/hc/en-us/articles/18210995019671-Discord-Sensitive-Content-Filters"
+        }
+      ]
+    }
   },
   {
     "slug": "fortnite",
@@ -1850,126 +1837,115 @@ export const entries: Entry[] = [
     "category": "apps",
     "riskLevel": "high",
     "riskLabelText": "Medium-high risk",
-    "summary": "A fast-paced multiplayer game with open voice chat, heavy cosmetic spending pressure, and long competitive sessions.",
-    "description": "A fast-paced multiplayer game with open voice chat, heavy cosmetic spending pressure, and long competitive sessions.",
+    "summary": "A multiplayer game with player communication and purchases. Check both the Epic account and the console or store used to pay.",
+    "description": "A multiplayer game with player communication and purchases. Check both the Epic account and the console or store used to pay.",
     "quickActions": [
       {
-        "title": "Turn off voice chat first",
-        "description": "Settings → Audio → Voice Chat → OFF, or set it to Friends Only if you want to allow limited team communication."
+        "title": "Set an Epic parent PIN",
+        "description": "Open Parental Controls in the Epic Account Portal and keep the PIN private."
       },
       {
-        "title": "Enable Epic parental controls",
-        "description": "Go to epicgames.com/account, open Parental Controls, and set a PIN your child does not know."
+        "title": "Restrict communication",
+        "description": "Choose Nobody or a limited friends option for voice and text chat in Epic parental controls."
       },
       {
-        "title": "Protect purchases with the PIN",
-        "description": "Use Epic Parental Controls to require the PIN for all purchases or to place a monthly V-Bucks spending limit."
+        "title": "Check each payment route",
+        "description": "Review Epic payment approval and the console’s own purchase controls. Agree on a budget for existing V-Bucks too."
       }
     ],
     "watchFor": [
       {
-        "title": "Voice chat with strangers",
-        "description": "Children can hear and talk to random players, including adults, during live matches unless chat is disabled.",
+        "title": "Pressure from other players",
+        "description": "Your child should be able to mute or leave a conversation that becomes threatening or uncomfortable.",
         "severity": "high"
       },
       {
-        "title": "V-Bucks spending pressure",
-        "description": "Limited-time cosmetics, battle passes, and social status cues create repeated pressure to spend real money.",
+        "title": "Currency feels less like money",
+        "description": "Discuss the real cost before buying currency and before spending it.",
         "severity": "high"
       },
       {
-        "title": "Competitive toxicity",
-        "description": "Live matches can include insults, aggressive teammates, and verbal abuse that younger children are not ready for.",
-        "severity": "high"
-      },
-      {
-        "title": "Free V-Bucks scams",
-        "description": "Children are heavily targeted with fake codes, phishing pages, and account-stealing offers built around V-Bucks.",
+        "title": "Fake reward offers",
+        "description": "Do not enter passwords or login codes on pages promising free V-Bucks.",
         "severity": "medium"
       },
       {
-        "title": "Sleep disruption",
-        "description": "Matches and social momentum can make it difficult for children to stop at a sensible time without an external limit.",
+        "title": "One more match",
+        "description": "Check whether matches repeatedly push bedtime later than agreed.",
         "severity": "medium"
       }
     ],
     "setupGuide": [
       {
-        "title": "Turn off voice chat first",
+        "title": "Review the account age",
         "steps": [
-          "Settings → Audio → Voice Chat → OFF, or set it to Friends Only if you want to allow limited team communication."
+          "Below 13 or the local digital-consent age, whichever is higher, Epic uses a Cabined Account. Voice and free-text chat remain unavailable pending parental consent. Review permissions before consenting."
         ]
       },
       {
-        "title": "Enable Epic parental controls",
+        "title": "Set contact boundaries",
         "steps": [
-          "Go to epicgames.com/account, open Parental Controls, and set a PIN your child does not know."
+          "In Epic parental controls, review voice chat, text chat and the PIN requirement for adding friends. Agree who your child may play and talk with."
         ]
       },
       {
-        "title": "Protect purchases with the PIN",
+        "title": "Protect real-money purchases",
         "steps": [
-          "Use Epic Parental Controls to require the PIN for all purchases or to place a monthly V-Bucks spending limit."
+          "Enable the PIN requirement for Epic payments. It does not control purchases through other platform stores or spending existing V-Bucks; review those separately."
         ]
       },
       {
-        "title": "Reduce cross-platform stranger contact",
+        "title": "Understand the $100 threshold",
         "steps": [
-          "Turn off Cross-Platform Communication in Parental Controls so random players from other platforms cannot reach them as easily."
+          "For under-13 accounts, Epic describes a $100 daily Epic-payment threshold that a parent PIN can override. It excludes other platform payments and in-game currency. It is not your family’s spending budget."
         ]
       },
       {
-        "title": "Use device-level stop times",
+        "title": "Review random-item spending",
         "steps": [
-          "Set a firm session end with Screen Time, Family Link, Windows Family Safety, or console controls rather than relying on your child to stop voluntarily."
+          "Where offered, turn off Allow Paid Random Items if you do not want V-Bucks spent on random rewards. This is not a block on every V-Bucks purchase."
         ]
       },
       {
-        "title": "Know how Cabined Accounts work for under-13s",
+        "title": "Agree on stopping points",
         "steps": [
-          "If a child registers as under 13 (or the local digital-consent age), Epic creates a Cabined Account: they can still play, but voice chat, free text chat, friend-adds, and linking to social or streaming apps stay disabled until a parent gives consent from the Epic Account Portal. Under-13 accounts also have a $100/day spending cap. Only enable the extra features deliberately."
-        ]
-      },
-      {
-        "title": "Review transaction history monthly",
-        "steps": [
-          "Check epicgames.com/account/transactions so spending patterns and surprise charges do not build up quietly."
+          "Choose session end times and review spending together. Check the store used for each payment when investigating an unexpected charge."
         ]
       }
     ],
-    "ageRating": "12+ / Teen",
-    "userCount": "Huge cross-platform player base",
+    "ageRating": "12+ / Teen; experience ratings vary",
+    "userCount": "Players across PC, consoles and mobile",
     "platform": "PC, Console, Mobile",
-    "ageRecommendation": "Treat it as 12+ even if younger children are already playing",
+    "ageRecommendation": "Our recommendation: 12+ with agreed chat and spending rules",
     "riskBarPosition": 60,
     "appMetrics": [
       {
-        "label": "Avg session",
-        "value": "90+ min"
+        "label": "Parent access",
+        "value": "Epic PIN"
       },
       {
-        "label": "Voice chat",
-        "value": "On by default"
+        "label": "Chat",
+        "value": "Review permissions"
       },
       {
-        "label": "V-Bucks spending",
-        "value": "High pressure"
+        "label": "Epic payment PIN",
+        "value": "Not all payment routes"
       },
       {
-        "label": "Competitive stress",
-        "value": "Significant"
+        "label": "V-Bucks",
+        "value": "Separate spending rules"
       }
     ],
     "callouts": [
       {
         "type": "warning",
-        "title": "Highest concern",
-        "description": "Voice chat is enabled by default and can place children into matches with random adult players. That is the primary contact risk and should be the first setting you change."
+        "title": "What controls cannot do",
+        "description": "A purchase PIN for one store does not cover every way of paying. Review the console store and currency already in the account."
       },
       {
         "type": "tip",
         "title": "Most impactful action",
-        "description": "The Epic Games Parental Controls PIN is the master control. Set it first and keep it private."
+        "description": "Set the Epic parent PIN, then agree on chat permissions and a real-money budget together."
       }
     ],
     "related": [
@@ -1985,7 +1961,21 @@ export const entries: Entry[] = [
         "category": "apps",
         "slug": "discord"
       }
-    ]
+    ],
+    "editorialReview": {
+      "checkedAt": "2026-09-03",
+      "availability": "Epic controls and other platform-store controls are separate. Some options depend on age and region.",
+      "sources": [
+        {
+          "title": "Epic: payment, chat and parental controls",
+          "url": "https://safety.epicgames.com/en-US/parental-controls"
+        },
+        {
+          "title": "Epic: Cabined Accounts",
+          "url": "https://www.epicgames.com/site/cabinedaccounts?lang=en"
+        }
+      ]
+    }
   },
   {
     "slug": "minecraft",
@@ -2283,131 +2273,115 @@ export const entries: Entry[] = [
     "riskLevel": "critical",
     "riskLabelText": "Very high risk",
     "homeBadgeLabel": "Urgent attention needed",
-    "summary": "An AI roleplay platform where users chat with custom characters. As of late 2025 it has removed open-ended chat for under-18s and is rolling out age checks — but verifying your child's real age still matters.",
-    "description": "An AI roleplay platform where users chat with custom characters. As of late 2025 it has removed open-ended chat for under-18s and is rolling out age checks — but verifying your child's real age still matters.",
+    "summary": "An AI character and entertainment service. Character.AI says it has removed open-ended character chat for under-18s; review the account’s age and the experience actually available to your child.",
+    "description": "An AI character and entertainment service. Character.AI says it has removed open-ended character chat for under-18s; review the account’s age and the experience actually available to your child.",
     "quickActions": [
       {
-        "title": "Check whether it is already installed",
-        "description": "Search the app library for Character.AI and C.AI, then check the App Store purchase history and the home screen."
+        "title": "Check the account together",
+        "description": "Ask how your child accesses Character.AI, including the website, and check that their age information is accurate."
       },
       {
-        "title": "Turn on Safe Messaging Mode",
-        "description": "Settings → Feed → Safe Messaging Settings → ON. This adds crisis prompts but does not filter adult content."
+        "title": "Review the available experience",
+        "description": "If a minor can still access open-ended character chat, contact official support about the account’s age protections."
       },
       {
-        "title": "Review the character list",
-        "description": "Open the account together and review the characters they follow or revisit, especially anything framed as romantic or emotionally dependent."
+        "title": "Ask what they get from it",
+        "description": "Discuss creative use, companionship and anything that makes them uncomfortable. Agree on boundaries together."
       }
     ],
     "watchFor": [
       {
-        "title": "Romantic and sexual roleplay normalisation",
-        "description": "Adults and minors use the platform to simulate romantic and sexual relationships with AI characters. For developing adolescents this normalises deeply inappropriate relationship dynamics.",
-        "severity": "critical"
-      },
-      {
-        "title": "Documented fatal crisis failure",
-        "description": "A 2024 lawsuit directly linked the suicide of a 14-year-old boy to extended romantic interaction with a Character.AI chatbot. The platform failed to intervene despite clear distress signals. This is not a hypothetical risk.",
-        "severity": "critical"
-      },
-      {
-        "title": "Emotional over-reliance replacing human connection",
-        "description": "Teens report preferring the chatbot to real relationships. Extended use is associated with worsening social isolation and reduced ability to tolerate the friction of real human interaction.",
+        "title": "Replacing everyday relationships",
+        "description": "Pay attention if AI conversations repeatedly displace friends, family or ordinary activities.",
         "severity": "high"
       },
       {
-        "title": "Unvetted user-created characters",
-        "description": "Any user can create a character with any persona. Adult-themed, violent, and ideologically extreme bots are freely accessible despite the platform's stated policies.",
+        "title": "Pressure to keep secrets",
+        "description": "Encourage your child to show you responses that request secrecy or make them feel dependent.",
         "severity": "high"
       },
       {
-        "title": "Disclosure of personal trauma to an inadequate system",
-        "description": "Children share genuine mental health crises, abuse disclosures, and suicidal ideation with bots that are not equipped to respond safely and do not alert anyone.",
+        "title": "Advice treated as authority",
+        "description": "AI responses can be wrong. Important personal decisions deserve human help and reliable information.",
+        "severity": "high"
+      },
+      {
+        "title": "Different access than expected",
+        "description": "If the account offers features intended for adults, pause and review the age information and support options.",
         "severity": "high"
       }
     ],
     "setupGuide": [
       {
-        "title": "Check if it is installed",
+        "title": "Start with a conversation",
         "steps": [
-          "Search the app library for Character.AI and C.AI, because it is sometimes hidden under the shorter name. Check both the App Store purchase history and the home screen."
+          "Ask your child to show you what they use and why. Avoid treating disclosure as a reason for punishment."
         ]
       },
       {
-        "title": "Enable Safe Messaging Mode",
+        "title": "Check age protections",
         "steps": [
-          "Inside the app go to Settings → Feed → Safe Messaging Settings → ON. This adds crisis resource prompts but does not filter content. It is a partial measure, not a fix."
+          "The company’s September 2026 update reaffirms the under-18 open-chat removal. Do not enter an adult birthday to obtain access."
         ]
       },
       {
-        "title": "Review the character list",
+        "title": "Review more than the installed app",
         "steps": [
-          "Open their account and review which characters they follow and interact with. User-created characters have no vetting. Any romantic, adult, or relationship-simulation character is a red flag regardless of how it is labelled."
+          "Look together at browser access and any other accounts. A device limit on one app is not a family agreement about every service."
         ]
       },
       {
-        "title": "Know that under-18 chat has been removed",
+        "title": "Set privacy boundaries",
         "steps": [
-          "In November 2025 Character.AI removed open-ended chat for users under 18 and began using age-assurance technology (an in-house model plus tools like Persona) to detect minors. Accounts identified as under 18 now get only non-chat creative features (Feed, Imagine, Avatar FX, Streams, video and story creation). Make sure your child's birthday is accurate — if an older birthday was entered, the chat block will not apply."
+          "Agree not to share passwords, identifying school details or private images with a chatbot."
         ]
       },
       {
-        "title": "Have the conversation before applying controls",
+        "title": "Set time boundaries",
         "steps": [
-          "Ask what they use it for before deciding on restrictions. Creative writing use is different from emotional dependency use. Understanding the reason shapes the right response."
+          "Use the parent-managed limits on the child’s device and agree on time away from AI, especially before bed."
         ]
       },
       {
-        "title": "Set app-level daily time limits",
+        "title": "Keep human support available",
         "steps": [
-          "iOS: Settings → Screen Time → App Limits → add Character.AI → set daily maximum. Android: Digital Wellbeing → Dashboard → Character.AI → set timer."
-        ]
-      },
-      {
-        "title": "Address the underlying need directly",
-        "steps": [
-          "If they are using it primarily for emotional support or because they feel lonely, that is important information. Connect them with a school counsellor, a hobby group, or a trusted adult. Blocking the app without addressing the underlying need will not solve the problem."
+          "If the child describes distress, listen and help them reach a trusted person or appropriate professional support. Do not rely on a chatbot to manage a crisis."
         ]
       }
     ],
-    "ageRating": "17+ App Store rating",
-    "userCount": "Widely used by ages 12-16 despite the rating",
+    "ageRating": "Open-ended character chat: 18+",
+    "userCount": "AI character and creative-tool users",
     "platform": "iOS, Android, Web",
-    "ageRecommendation": "Not recommended for minors",
+    "ageRecommendation": "Our recommendation: no AI relationship chat for minors",
     "riskBarPosition": 88,
     "appMetrics": [
       {
-        "label": "Primary use",
-        "value": "Roleplay & emotional chat"
-      },
-      {
-        "label": "Age assurance",
-        "value": "Rolling out (2025-2026)"
-      },
-      {
         "label": "Under-18 open chat",
-        "value": "Removed (Nov 2025)"
+        "value": "Removed by platform"
       },
       {
-        "label": "Crisis response history",
-        "value": "Has failed fatally"
+        "label": "Age information",
+        "value": "Check together"
+      },
+      {
+        "label": "Other access",
+        "value": "Review browser too"
+      },
+      {
+        "label": "Support",
+        "value": "Keep people involved"
       }
     ],
     "callouts": [
       {
         "type": "warning",
-        "title": "Highest concern",
-        "description": "Character.AI is the highest-risk AI platform for children. A 2024 lawsuit linked the death of a 14-year-old to extended romantic chatbot use. Safe Messaging Mode adds crisis prompts but does not remove adult content or relationship simulation."
+        "title": "What controls cannot do",
+        "description": "An age check or a safety response is not a guarantee that every interaction is appropriate. A chatbot cannot replace trusted human support."
       },
       {
         "type": "tip",
         "title": "Most impactful action",
-        "description": "Safe Messaging Mode is not a content filter. The only meaningful protection is an open conversation about what they are doing on the app and why — followed by a joint decision about limits."
-      },
-      {
-        "type": "tip",
-        "title": "New since late 2025",
-        "description": "Character.AI has removed open-ended chat for under-18s and now uses age checks. Confirm your child's birthday is set correctly, because the protection only applies if the account is identified as a minor."
+        "description": "Check the child’s actual account experience together and agree what AI is useful for in your family."
       }
     ],
     "related": [
@@ -2423,7 +2397,25 @@ export const entries: Entry[] = [
         "category": "apps",
         "slug": "chatgpt"
       }
-    ]
+    ],
+    "editorialReview": {
+      "checkedAt": "2026-09-03",
+      "availability": "The platform confirms removal of under-18 open-ended character chat. Review age assurance and account access with official support if needed.",
+      "sources": [
+        {
+          "title": "Character.AI: under-18 chat announcement",
+          "url": "https://blog.character.ai/u18-chat-announcement/"
+        },
+        {
+          "title": "Character.AI: September 2026 safety update",
+          "url": "https://blog.character.ai/continuing-to-build-upon-our-safety-priorities/"
+        },
+        {
+          "title": "eSafety: AI companion guidance",
+          "url": "https://www.esafety.gov.au/educators/training-for-professionals/professional-learning-program-teachers/ai-companions-information-sheet"
+        }
+      ]
+    }
   },
   {
     "slug": "whatsapp",
@@ -2432,126 +2424,115 @@ export const entries: Entry[] = [
     "riskLevel": "high",
     "riskLabelText": "Medium-high risk",
     "homeBadgeLabel": "Set up controls first",
-    "summary": "The dominant messaging app for European teenagers — end-to-end encrypted, school-group heavy, and nearly impossible for parents to monitor.",
-    "description": "The dominant messaging app for European teenagers — end-to-end encrypted, school-group heavy, and nearly impossible for parents to monitor.",
+    "summary": "A messaging and calling app used for family and group conversations. Check whether the account is standard or parent-managed, then review contacts, group invitations and reporting.",
+    "description": "A messaging and calling app used for family and group conversations. Check whether the account is standard or parent-managed, then review contacts, group invitations and reporting.",
     "quickActions": [
       {
-        "title": "Restrict who can add them to groups",
-        "description": "Settings → Privacy → Groups → change from Everyone to My Contacts or My Contacts Except.... This is the most important WhatsApp setting for children."
+        "title": "Check the account type",
+        "description": "For a pre-teen, check whether parent-managed setup is available in your region. Do not use an older birthday to create a standard account."
       },
       {
-        "title": "Lock down profile visibility",
-        "description": "Set Last Seen, Profile Photo, About, and Status to My Contacts so strangers and loose contacts cannot see personal details."
+        "title": "Restrict group additions",
+        "description": "On a standard account, review Settings → Privacy → Groups and choose My Contacts or My Contacts Except…. Review invitations together."
       },
       {
-        "title": "Review their groups together",
-        "description": "Open each group, check the members, and leave any group that includes people your child cannot identify in real life."
+        "title": "Know how to report",
+        "description": "Show your child the report and block options in a chat. They can ask for help even if the conversation started with someone they know."
       }
     ],
     "watchFor": [
       {
-        "title": "Anyone with their number can add them to any group",
-        "description": "There is no consent mechanism for group additions. A child can be placed in a humiliating, harassing, or inappropriate group by anyone who has their phone number, including people they do not know.",
+        "title": "Unwanted invitations",
+        "description": "Restricting group additions does not mean every invitation or known contact is safe.",
         "severity": "high"
       },
       {
-        "title": "End-to-end encryption means zero platform visibility",
-        "description": "WhatsApp cannot see message content and neither can you. Unlike Instagram DMs or Snapchat, there is no reporting mechanism for content — only for contacts.",
+        "title": "Humiliating messages or images",
+        "description": "Help your child avoid forwarding harmful material and ask for support when a group turns against someone.",
         "severity": "high"
       },
       {
-        "title": "Image and video spread in groups",
-        "description": "Inappropriate, humiliating, or explicit content shared in a group reaches everyone simultaneously. Screenshots and forwards mean content spreads beyond the original group within minutes.",
+        "title": "Impersonation and login-code requests",
+        "description": "Verify unusual requests through another trusted channel. Do not share login codes.",
         "severity": "high"
       },
       {
-        "title": "Status visible to all contacts by default",
-        "description": "The Status feature shares photos and videos with every saved contact, including adults, distant relatives, or people added through groups who are not real friends.",
-        "severity": "medium"
-      },
-      {
-        "title": "Unknown contact messaging if number is exposed",
-        "description": "If a child's number appears in a group chat, anyone in that group can message them directly. This is a direct stranger-contact vector.",
+        "title": "Pressure to be always available",
+        "description": "Agree that family and class messages do not require replies throughout the night.",
         "severity": "medium"
       }
     ],
     "setupGuide": [
       {
-        "title": "Change who can add them to groups",
+        "title": "Check age eligibility",
         "steps": [
-          "Settings → Privacy → Groups → change from Everyone to My Contacts or My Contacts Except.... This is OFF by default and is the single most important WhatsApp setting for children. Do it now."
+          "Standard registration requires at least 13, or a higher local minimum. Parent-managed accounts have a separate route for younger children; availability is rolling out."
         ]
       },
       {
-        "title": "Lock down profile visibility",
+        "title": "Set up supervision where available",
         "steps": [
-          "Settings → Privacy → set Last Seen, Profile Photo, About, and Status each to My Contacts. Go through each one individually because they are set separately."
+          "Follow the official parent-managed instructions with both phones present. Protect the parent PIN and review contact requests and group invitations. If setup is unavailable, use another age-appropriate way to stay in touch."
         ]
       },
       {
-        "title": "Disable Read Receipts if social pressure around replies is an issue",
+        "title": "Review group invitations",
         "steps": [
-          "Settings → Privacy → Read Receipts → OFF. This removes the double blue tick and can reduce anxiety around response expectations in group dynamics."
+          "For standard accounts, restrict who can add the child in Privacy → Groups. People outside the allowed set may still send private invitations, so discuss which to accept."
         ]
       },
       {
-        "title": "Review their group list together",
+        "title": "Review profile visibility",
         "steps": [
-          "Open WhatsApp → Chats → scroll through groups. For every group, tap it and view Members. Any group containing people they cannot name in real life should be left immediately."
+          "Check the audience for profile details and Status. Agree what is appropriate to share with classmates and wider groups."
         ]
       },
       {
-        "title": "Enable two-step verification to protect the account",
+        "title": "Report abusive contact",
         "steps": [
-          "Settings → Account → Two-Step Verification → Enable → set a 6-digit PIN. This helps prevent account hijacking through SIM swap or device theft."
+          "Reporting an individual chat can send WhatsApp up to five recent messages from the reported person. Read the report prompt together; encryption does not prevent reporting."
         ]
       },
       {
-        "title": "Consider a parent-managed account for under-13s",
+        "title": "Agree on quiet time",
         "steps": [
-          "Since March 2026 WhatsApp offers parent-managed accounts for pre-teens under 13, rolling out gradually by region. You link the child's device to yours and then control who can contact them and which groups they can join; Channels, location sharing, and Meta AI are excluded. Note the limits: it is account-level only, so there is no built-in screen-time cap or bedtime lock, you cannot read their messages (end-to-end encryption is preserved), and a child could uninstall the app."
-        ]
-      },
-      {
-        "title": "Remind them regularly that nothing on WhatsApp is private",
-        "steps": [
-          "Despite the encryption, anyone they message can screenshot or forward what they send. The encryption protects the transmission, not what happens after it arrives."
+          "Use the device’s parent-managed time limits where needed. Make it clear that your child can leave a distressing group and come to you for help."
         ]
       }
     ],
-    "ageRating": "16+ in the EU, 13+ elsewhere",
-    "userCount": "Near-universal teen use across Europe",
+    "ageRating": "Standard accounts: 13+ or higher locally; managed accounts differ",
+    "userCount": "Family, school and community groups",
     "platform": "iOS, Android, Web, Desktop",
-    "ageRecommendation": "Expect use from age 11-12 and set controls before the first class group",
+    "ageRecommendation": "Use an age-eligible account; review groups together",
     "riskBarPosition": 65,
     "appMetrics": [
       {
-        "label": "Encryption",
-        "value": "End-to-end (unmonitorable)"
+        "label": "Personal conversations",
+        "value": "End-to-end encrypted"
       },
       {
-        "label": "Group chats",
-        "value": "Primary bullying vector in Romanian schools"
+        "label": "Reporting",
+        "value": "Messages can be submitted"
       },
       {
-        "label": "Romania usage",
-        "value": "Near-universal for teens"
+        "label": "Parent-managed accounts",
+        "value": "Regional rollout"
       },
       {
-        "label": "School use",
-        "value": "Mandatory for many class groups"
+        "label": "Group additions",
+        "value": "Privacy controls"
       }
     ],
     "callouts": [
       {
         "type": "warning",
-        "title": "Highest concern",
-        "description": "WhatsApp group chats are the primary digital bullying vector in Romanian schools. A child can be added to a humiliating group, bombarded with messages for hours, and then removed — all with no record available to the platform or to parents."
+        "title": "What controls cannot do",
+        "description": "Parent-managed accounts do not let a parent read private conversations through a dashboard. Keep discussing who your child talks with and how they feel."
       },
       {
         "type": "tip",
         "title": "Most impactful action",
-        "description": "Who can add me to groups is set to Everyone by default. Changing it to My Contacts takes 10 seconds and immediately removes the most common stranger-contact vector. Do this before any other setting."
+        "description": "Check the account type and group permissions before joining the first class group."
       }
     ],
     "related": [
@@ -2567,7 +2548,33 @@ export const entries: Entry[] = [
         "category": "os",
         "slug": "android"
       }
-    ]
+    ],
+    "editorialReview": {
+      "checkedAt": "2026-09-03",
+      "availability": "Parent-managed accounts are rolling out. Availability in Romania is not confirmed by the global announcement.",
+      "sources": [
+        {
+          "title": "WhatsApp: registration requirements",
+          "url": "https://faq.whatsapp.com/240694875565320"
+        },
+        {
+          "title": "WhatsApp: parent-managed accounts",
+          "url": "https://blog.whatsapp.com/introducing-parent-managed-accounts-on-whatsapp"
+        },
+        {
+          "title": "WhatsApp: managed-account help",
+          "url": "https://faq.whatsapp.com/899820539143195/"
+        },
+        {
+          "title": "WhatsApp: group invitations",
+          "url": "https://faq.whatsapp.com/1139252413769848/"
+        },
+        {
+          "title": "WhatsApp: reporting and blocking",
+          "url": "https://faq.whatsapp.com/414631957536067/"
+        }
+      ]
+    }
   },
   {
     "slug": "twitch",

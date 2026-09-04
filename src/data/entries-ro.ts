@@ -3,6 +3,276 @@ import type { Entry } from "@/data/entries";
 type LocalizedEntry = Omit<Entry, "slug" | "category" | "riskLevel" | "riskBarPosition" | "related">;
 
 export const roEntryTranslations: Partial<Record<Entry["slug"], Partial<LocalizedEntry>>> = {
+  "whatsapp": {
+    "summary": "O aplicație de mesagerie și apeluri pentru familie și grupuri. Verifică dacă este un cont standard sau gestionat de părinte, apoi verifică persoanele de contact, invitațiile și raportarea.",
+    "description": "O aplicație de mesagerie și apeluri pentru familie și grupuri. Verifică dacă este un cont standard sau gestionat de părinte, apoi verifică persoanele de contact, invitațiile și raportarea.",
+    "ageRating": "Cont standard: 13+ sau mai mult local; conturile gestionate au alte reguli",
+    "userCount": "Grupuri de familie, școală și comunitate",
+    "ageRecommendation": "Folosește un cont permis vârstei; verificați grupurile împreună",
+    "quickActions": [
+      {
+        "title": "Verifică tipul contului",
+        "description": "Pentru un preadolescent, verifică dacă poți configura un cont gestionat de părinte în regiunea ta. Nu folosi o vârstă mai mare pentru un cont standard."
+      },
+      {
+        "title": "Restricționează adăugarea în grupuri",
+        "description": "Pe un cont standard, verifică Settings → Privacy → Groups și alege My Contacts sau My Contacts Except…. Verificați invitațiile împreună."
+      },
+      {
+        "title": "Învață cum se raportează",
+        "description": "Arată copilului opțiunile de raportare și blocare din chat. Poate cere ajutor chiar dacă discuția a început cu cineva cunoscut."
+      }
+    ],
+    "setupGuide": [
+      {
+        "title": "Verifică vârsta permisă",
+        "steps": [
+          "Înregistrarea standard cere cel puțin 13 ani sau o vârstă locală mai mare. Conturile gestionate de părinte au o cale separată pentru copiii mai mici; disponibilitatea se extinde treptat."
+        ]
+      },
+      {
+        "title": "Configurează supravegherea unde este disponibilă",
+        "steps": [
+          "Urmează instrucțiunile oficiale pentru conturi gestionate, cu ambele telefoane prezente. Protejează PIN-ul părintelui și verifică cererile de contact și invitațiile în grupuri. Dacă opțiunea lipsește, alege altă cale potrivită vârstei pentru a păstra legătura."
+        ]
+      },
+      {
+        "title": "Verifică invitațiile în grupuri",
+        "steps": [
+          "La conturile standard, restricționează cine poate adăuga copilul din Privacy → Groups. Persoanele din afara listei permise pot trimite invitații private; discutați pe care să le accepte."
+        ]
+      },
+      {
+        "title": "Verifică vizibilitatea profilului",
+        "steps": [
+          "Consultă cine poate vedea detaliile profilului și Status. Stabiliți ce poate fi împărtășit cu colegii și cu grupurile mai largi."
+        ]
+      },
+      {
+        "title": "Raportează contactul abuziv",
+        "steps": [
+          "Raportarea unui chat individual poate trimite către WhatsApp până la cinci mesaje recente ale persoanei raportate. Citiți împreună explicația din ecranul de raportare; criptarea nu împiedică raportarea."
+        ]
+      },
+      {
+        "title": "Stabiliți timp de liniște",
+        "steps": [
+          "Folosește limitele de timp gestionate de părinte pe dispozitiv, dacă este nevoie. Explică faptul că poate părăsi un grup supărător și poate veni la tine pentru ajutor."
+        ]
+      }
+    ],
+    "watchFor": [
+      {
+        "title": "Invitații nedorite",
+        "description": "Restricționarea adăugării în grupuri nu înseamnă că fiecare invitație sau contact cunoscut este sigur.",
+        "severity": "high"
+      },
+      {
+        "title": "Mesaje sau imagini umilitoare",
+        "description": "Ajută copilul să nu redistribuie materiale dăunătoare și să ceară sprijin când grupul se întoarce împotriva cuiva.",
+        "severity": "high"
+      },
+      {
+        "title": "Identități false și cereri de coduri",
+        "description": "Verificați cererile neobișnuite pe alt canal de încredere. Nu împărtășiți coduri de conectare.",
+        "severity": "high"
+      },
+      {
+        "title": "Presiunea de a fi mereu disponibil",
+        "description": "Stabiliți că mesajele familiei și clasei nu necesită răspunsuri pe tot parcursul nopții.",
+        "severity": "medium"
+      }
+    ],
+    "appMetrics": [
+      {
+        "label": "Conversații personale",
+        "value": "Criptate integral"
+      },
+      {
+        "label": "Raportare",
+        "value": "Se pot trimite mesaje"
+      },
+      {
+        "label": "Conturi gestionate",
+        "value": "Lansare regională"
+      },
+      {
+        "label": "Adăugare în grupuri",
+        "value": "Controale de confidențialitate"
+      }
+    ],
+    "callouts": [
+      {
+        "type": "warning",
+        "title": "Ce nu pot face controalele",
+        "description": "Conturile gestionate nu permit părintelui să citească discuțiile private dintr-un panou. Discutați în continuare cu cine vorbește copilul și cum se simte."
+      },
+      {
+        "type": "tip",
+        "title": "Most impactful action",
+        "description": "Verifică tipul contului și permisiunile pentru grupuri înainte de a intra în primul grup al clasei."
+      }
+    ],
+    "riskLabelText": "Risc mediu-ridicat",
+    "homeBadgeLabel": "Setează controalele mai întâi",
+    "editorialReview": {
+      "checkedAt": "2026-09-03",
+      "availability": "Conturile gestionate de părinte se lansează treptat. Anunțul global nu confirmă disponibilitatea în România.",
+      "sources": [
+        {
+          "title": "WhatsApp: condiții de înregistrare",
+          "url": "https://faq.whatsapp.com/240694875565320"
+        },
+        {
+          "title": "WhatsApp: conturi gestionate de părinte",
+          "url": "https://blog.whatsapp.com/introducing-parent-managed-accounts-on-whatsapp"
+        },
+        {
+          "title": "WhatsApp: ajutor pentru conturi gestionate",
+          "url": "https://faq.whatsapp.com/899820539143195/"
+        },
+        {
+          "title": "WhatsApp: invitații în grupuri",
+          "url": "https://faq.whatsapp.com/1139252413769848/"
+        },
+        {
+          "title": "WhatsApp: raportare și blocare",
+          "url": "https://faq.whatsapp.com/414631957536067/"
+        }
+      ]
+    }
+  },
+  "character-ai": {
+    "summary": "Un serviciu de divertisment cu personaje AI. Character.AI spune că a eliminat chatul deschis cu personaje pentru cei sub 18 ani; verifică vârsta contului și experiența disponibilă copilului.",
+    "description": "Un serviciu de divertisment cu personaje AI. Character.AI spune că a eliminat chatul deschis cu personaje pentru cei sub 18 ani; verifică vârsta contului și experiența disponibilă copilului.",
+    "ageRating": "Chat deschis cu personaje: 18+",
+    "userCount": "Utilizatori de personaje AI și instrumente creative",
+    "ageRecommendation": "Recomandarea noastră: fără chat de relație cu AI pentru minori",
+    "quickActions": [
+      {
+        "title": "Verificați contul împreună",
+        "description": "Întreabă cum accesează copilul Character.AI, inclusiv site-ul, și verifică dacă informațiile despre vârstă sunt corecte."
+      },
+      {
+        "title": "Verifică experiența disponibilă",
+        "description": "Dacă un minor poate accesa în continuare chatul deschis cu personaje, contactează suportul oficial despre protecțiile de vârstă."
+      },
+      {
+        "title": "Întreabă ce îi oferă serviciul",
+        "description": "Discutați utilizarea creativă, compania și orice îl face să se simtă inconfortabil. Stabiliți limite împreună."
+      }
+    ],
+    "setupGuide": [
+      {
+        "title": "Începe cu o conversație",
+        "steps": [
+          "Roagă copilul să îți arate ce folosește și de ce. Nu transforma destăinuirea într-un motiv de pedeapsă."
+        ]
+      },
+      {
+        "title": "Verifică protecțiile de vârstă",
+        "steps": [
+          "Actualizarea companiei din septembrie 2026 reconfirmă eliminarea chatului deschis pentru cei sub 18 ani. Nu introduce o dată de naștere de adult pentru a obține acces."
+        ]
+      },
+      {
+        "title": "Verifică și alte căi de acces",
+        "steps": [
+          "Priviți împreună accesul din browser și alte conturi. Limita unei singure aplicații nu înlocuiește acordul familiei despre toate serviciile."
+        ]
+      },
+      {
+        "title": "Stabiliți limite de confidențialitate",
+        "steps": [
+          "Stabiliți să nu împărtășească unui chatbot parole, detalii care identifică școala sau imagini private."
+        ]
+      },
+      {
+        "title": "Stabiliți limite de timp",
+        "steps": [
+          "Folosește limitele gestionate de părinte pe dispozitiv și stabiliți timp fără AI, mai ales înainte de culcare."
+        ]
+      },
+      {
+        "title": "Păstrează sprijinul uman",
+        "steps": [
+          "Dacă copilul descrie suferință, ascultă-l și ajută-l să ajungă la o persoană de încredere sau la sprijin profesional potrivit. Nu te baza pe un chatbot pentru gestionarea unei crize."
+        ]
+      }
+    ],
+    "watchFor": [
+      {
+        "title": "Înlocuirea relațiilor obișnuite",
+        "description": "Observă dacă discuțiile cu AI înlocuiesc repetat prietenii, familia sau activitățile obișnuite.",
+        "severity": "high"
+      },
+      {
+        "title": "Presiune pentru secrete",
+        "description": "Încurajează copilul să îți arate răspunsuri care cer secrete sau îl fac să se simtă dependent.",
+        "severity": "high"
+      },
+      {
+        "title": "Sfaturi tratate ca autoritate",
+        "description": "Răspunsurile AI pot fi greșite. Deciziile personale importante merită ajutor uman și informații de încredere.",
+        "severity": "high"
+      },
+      {
+        "title": "Acces diferit de cel așteptat",
+        "description": "Dacă sunt oferite funcții pentru adulți, opriți-vă și verificați vârsta declarată și opțiunile de suport.",
+        "severity": "high"
+      }
+    ],
+    "appMetrics": [
+      {
+        "label": "Chat deschis sub 18 ani",
+        "value": "Eliminat de platformă"
+      },
+      {
+        "label": "Informații despre vârstă",
+        "value": "Verificați împreună"
+      },
+      {
+        "label": "Alte căi de acces",
+        "value": "Verifică și browserul"
+      },
+      {
+        "label": "Sprijin",
+        "value": "Păstrează legătura cu oamenii"
+      }
+    ],
+    "callouts": [
+      {
+        "type": "warning",
+        "title": "Ce nu pot face controalele",
+        "description": "Verificarea vârstei sau un răspuns de siguranță nu garantează că fiecare interacțiune este potrivită. Un chatbot nu poate înlocui sprijinul uman de încredere."
+      },
+      {
+        "type": "tip",
+        "title": "Most impactful action",
+        "description": "Verificați împreună experiența reală a contului și stabiliți la ce este util AI în familia voastră."
+      }
+    ],
+    "riskLabelText": "Risc foarte ridicat",
+    "homeBadgeLabel": "Necesită atenție sporită",
+    "editorialReview": {
+      "checkedAt": "2026-09-03",
+      "availability": "Platforma confirmă eliminarea chatului deschis cu personaje sub 18 ani. Verifică vârsta și accesul contului cu suportul oficial, dacă este nevoie.",
+      "sources": [
+        {
+          "title": "Character.AI: anunțul despre chat sub 18 ani",
+          "url": "https://blog.character.ai/u18-chat-announcement/"
+        },
+        {
+          "title": "Character.AI: siguranță, septembrie 2026",
+          "url": "https://blog.character.ai/continuing-to-build-upon-our-safety-priorities/"
+        },
+        {
+          "title": "eSafety: ghid despre companioni AI",
+          "url": "https://www.esafety.gov.au/educators/training-for-professionals/professional-learning-program-teachers/ai-companions-information-sheet"
+        }
+      ]
+    }
+  },
   smartphone: {
     name: "Telefon",
     riskLabelText: "Risc critic",
@@ -700,151 +970,135 @@ export const roEntryTranslations: Partial<Record<Entry["slug"], Partial<Localize
       }
     ]
   },
-  roblox: {
-    riskLabelText: "Risc ridicat",
-    summary:
-      "O platforma de joc construita pe lumi create de utilizatori, chat si interactiune sociala constanta.",
-    description:
-      "O platforma de joc construita pe lumi create de utilizatori, chat si interactiune sociala constanta.",
-    quickActions: [
+  "roblox": {
+    "riskLabelText": "Risc ridicat",
+    "summary": "O platformă cu jocuri create de utilizatori. Începe cu un cont de părinte conectat, apoi verifică jocurile, comunicarea și cheltuielile pentru vârsta copilului.",
+    "description": "O platformă cu jocuri create de utilizatori. Începe cu un cont de părinte conectat, apoi verifică jocurile, comunicarea și cheltuielile pentru vârsta copilului.",
+    "ageRating": "Clasificarea diferă după joc; Kids 5–8 / Select 9–15",
+    "userCount": "Copii, adolescenți și adulți",
+    "ageRecommendation": "Recomandarea noastră: 10+ cu supraveghere activă",
+    "quickActions": [
       {
-        title: "Activeaza Account Restrictions",
-        description:
-          "Settings → Privacy → Account Restrictions. Porneste asta inainte ca copilul sa inceapa sa adauge prieteni sau sa exploreze jocuri noi."
+        "title": "Conectează contul tău de părinte",
+        "description": "Din contul copilului, deschide Settings → Parental Controls → Add parent și urmează invitația."
       },
       {
-        title: "Seteaza chatul doar pentru prieteni",
-        description:
-          "Settings → Privacy → Contact Settings si reduce accesul la chat si mesagerie la Friends only."
+        "title": "Verifică opțiunile de comunicare",
+        "description": "Din contul tău conectat, selectează copilul și verifică Communication. Dezactivează opțiunile de chat pe care nu vrei să le folosească."
       },
       {
-        title: "Adauga un PIN de parinte pentru cheltuieli si setari",
-        description:
-          "Settings → Parent Controls si creeaza un PIN astfel incat cumparaturile si schimbarile de confidentialitate sa aiba nevoie de aprobarea ta."
-      },
-      {
-        title: "Configureaza panoul de parinte pe roblox.com/parents",
-        description:
-          "Leaga emailul si deschide noile Parental Controls pentru a bloca jocuri anume, a seta limite zilnice de timp si a limita cheltuielile lunare (introduse in 2025-2026)."
+        "title": "Stabiliți jocurile și bugetul",
+        "description": "Alegeți jocuri împreună. Verifică opțiunile disponibile pentru conținut, timp și cheltuieli înainte de a cumpăra Robux."
       }
     ],
-    watchFor: [
+    "setupGuide": [
       {
-        title: "Grooming prin chatul din joc",
-        description:
-          "Copiii pot fi abordati prin chat, mesaje private sau cereri de prietenie de adulti care pretind ca sunt alti copii.",
-        severity: "critical"
-      },
-      {
-        title: "Continut nepotrivit creat de utilizatori",
-        description:
-          "Pentru ca utilizatorii construiesc lumile, umorul, limbajul, temele si imaginile pot depasi mult ceea ce se asteapta un parinte de la eticheta de varsta.",
-        severity: "high"
-      },
-      {
-        title: "Presiune de a cheltui Robux",
-        description:
-          "Obiectele cosmetice, upgrade-urile si semnalele de statut social imping copiii spre cheltuieli repetate si cereri pentru mai multa moneda.",
-        severity: "high"
-      },
-      {
-        title: "Escrocherii cu Robux gratuit",
-        description:
-          "Copiii sunt vizati frecvent cu linkuri de phishing, coduri false si promisiuni care cer parole sau date personale.",
-        severity: "medium"
-      },
-      {
-        title: "Somn perturbat",
-        description:
-          "Bucla de joc si atractia sociala fac usor ca sesiunile sa se prelungeasca peste ora stabilita.",
-        severity: "low"
-      }
-    ],
-    setupGuide: [
-      {
-        title: "Activeaza Account Restrictions",
-        steps: [
-          "Settings → Privacy → Account Restrictions. Porneste asta inainte ca copilul sa inceapa sa adauge prieteni sau sa exploreze jocuri noi."
+        "title": "Conectează conturile",
+        "steps": [
+          "Acceptă invitația folosind propriul cont Roblox și parcurge verificarea pentru părinte. Gestionează contul copilului din Settings → Parental Controls."
         ]
       },
       {
-        title: "Seteaza chatul doar pentru prieteni",
-        steps: [
-          "Settings → Privacy → Contact Settings si reduce accesul la chat si mesagerie la Friends only."
+        "title": "Înțelege Kids și Select",
+        "steps": [
+          "Roblox a anunțat disponibilitatea globală pe 16 iunie 2026. Încadrarea folosește informațiile despre vârstă; nu este doar un nivel ales de părinte. Copiii cu vârsta verificată de 5–8 ani folosesc Kids, iar cei de 9–15 ani, Select. Conturile cu vârstă doar declarată au restricții suplimentare, inclusiv lipsa chatului."
         ]
       },
       {
-        title: "Adauga un PIN de parinte pentru cheltuieli si setari",
-        steps: [
-          "Settings → Parent Controls si creeaza un PIN astfel incat cumparaturile si schimbarile de confidentialitate sa aiba nevoie de aprobarea ta."
+        "title": "Verifică permisiunile de chat",
+        "steps": [
+          "Chatul necesită verificarea vârstei. Consultă opțiunile afișate pentru copil, fără să presupui că toate conversațiile sunt limitate la prieteni. Controalele disponibile depind de vârstă și regiune."
         ]
       },
       {
-        title: "Leaga emailul parintelui",
-        steps: [
-          "Intra pe roblox.com/parents si adauga un email de parinte pentru notificari si optiuni de recuperare a contului."
+        "title": "Verifică jocurile",
+        "steps": [
+          "În Content restrictions, consultă Content maturity și Blocked games. Analizați împreună cererile de acces la un joc."
         ]
       },
       {
-        title: "Revizuieste lista de prieteni lunar",
-        steps: [
-          "Friends tab → deschideti impreuna lista completa de prieteni si scoateti pe oricine copilul nu poate identifica in viata reala."
+        "title": "Verifică limitele de bani și timp",
+        "steps": [
+          "Consultă Spending și Screen time acolo unde sunt disponibile. Limitele lunare de cheltuieli nu acoperă valorificarea cardurilor cadou. Nu presupune că toate controalele se păstrează până la 15 ani; disponibilitatea diferă după control și regiune."
         ]
       },
       {
-        title: "Intelege noua verificare a varstei pentru chat",
-        steps: [
-          "De la inceputul lui 2026 Roblox cere o estimare faciala a varstei (sau act de identitate pentru 13+) inainte ca chatul sa functioneze, si grupeaza utilizatorii pe categorii de varsta, astfel incat adultii nu mai pot scrie liber copiilor mult mai mici. Daca copilul nu poate folosi chatul, asta este motivul - decideti impreuna daca finalizati verificarea."
-        ]
-      },
-      {
-        title: "Foloseste tipul de cont potrivit varstei",
-        steps: [
-          "Roblox ofera acum conturi Roblox Kids (5-8 ani) si Roblox Select (9-15 ani) care limiteaza experientele la niveluri de maturitate adecvate varstei si trec automat la urmatorul tip pe masura ce copilul creste (lansare iunie 2026). Alege contul potrivit, nu unul standard, pentru copiii mai mici."
-        ]
-      },
-      {
-        title: "Foloseste panoul extins de parinte",
-        steps: [
-          "Pe roblox.com/parents poti acum bloca jocuri anume, aproba experiente individuale, gestiona setarile de chat si seta limite de timp si de cheltuieli pana la 15 ani - revizuieste-le alaturi de controalele de pe dispozitiv de mai jos."
-        ]
-      },
-      {
-        title: "Seteaza limite de timp la nivel de dispozitiv",
-        steps: [
-          "Foloseste iPhone Screen Time, Android Family Link, Windows Family Safety sau macOS Screen Time pentru a opri ferm Roblox la ora stabilita."
+        "title": "Discutați regulat",
+        "steps": [
+          "Întreabă ce a jucat și pe cine a întâlnit. Stabiliți că solicitările de parole, cadouri sau conversații private în altă parte sunt motive să se oprească și să îți spună."
         ]
       }
     ],
-    ageRating: "7+ oficial",
-    userCount: "Baza uriasa de copii si adolescenti",
-    ageRecommendation: "Recomandat 10+ cu supraveghere activa",
-    appMetrics: [
-      { label: "Utilizare medie zilnica", value: "2.5h" },
-      { label: "Expunere la straini", value: "Milioane" },
-      { label: "Cumparaturi in joc", value: "Robux" },
-      { label: "Moderare", value: "Slaba" }
-    ],
-    callouts: [
+    "watchFor": [
       {
-        type: "warning",
-        title: "Highest concern",
-        description:
-          "Moderarea Roblox nu poate opri tot comportamentul pradalnic. Controalele reduc riscul, dar conversatiile regulate despre chat, cadouri si straini raman esentiale."
+        "title": "Contact în afara jocului",
+        "description": "Un jucător poate cere secrete sau mutarea conversației într-o altă aplicație. Ajută copilul să îți poată spune fără teamă.",
+        "severity": "critical"
       },
       {
-        type: "tip",
-        title: "Most impactful action",
-        description:
-          "Account Restrictions plus chat doar pentru Friends elimina imediat mare parte din riscul de contact casual cu straini."
+        "title": "Conținut neașteptat",
+        "description": "Verificați un joc împreună când tema sau comportamentul celorlalți îl surprinde pe copil.",
+        "severity": "high"
       },
       {
-        type: "tip",
-        title: "Nou in 2026",
-        description:
-          "Chatul cere acum o verificare faciala a varstei si este grupat pe varsta estimata, iar noile tipuri de cont Roblox Kids si Select tin copiii mai mici in experiente potrivite varstei. Alege tipul de cont care se potriveste varstei copilului."
+        "title": "Presiune pentru Robux și fraude",
+        "description": "O promisiune de monedă gratuită în schimbul parolei sau al unui cod de conectare este un motiv să se oprească.",
+        "severity": "high"
+      },
+      {
+        "title": "Sesiuni prea lungi",
+        "description": "Stabiliți când se termină jocul și verificați dacă înlocuiește somnul sau alte activități.",
+        "severity": "medium"
       }
-    ]
+    ],
+    "appMetrics": [
+      {
+        "label": "Conturi pentru copii",
+        "value": "Kids / Select"
+      },
+      {
+        "label": "Acces la chat",
+        "value": "Vârstă verificată"
+      },
+      {
+        "label": "Acces pentru părinte",
+        "value": "Cont conectat"
+      },
+      {
+        "label": "Cumpărături",
+        "value": "Robux și abonamente"
+      }
+    ],
+    "callouts": [
+      {
+        "type": "warning",
+        "title": "Ce nu pot face controalele",
+        "description": "Verificarea vârstei și filtrele nu garantează identitatea sau comportamentul altui jucător. Păstrați raportarea și discuțiile în rutina familiei."
+      },
+      {
+        "type": "tip",
+        "title": "Most impactful action",
+        "description": "Folosește propriul cont de părinte conectat pentru a verifica setările aplicabile copilului tău."
+      }
+    ],
+    "editorialReview": {
+      "checkedAt": "2026-09-03",
+      "availability": "Kids și Select sunt disponibile global. Controalele individuale diferă după vârstă, cont și regiune.",
+      "sources": [
+        {
+          "title": "Roblox: controale parentale",
+          "url": "https://about.roblox.com/parental-controls"
+        },
+        {
+          "title": "Roblox: disponibilitatea Kids și Select",
+          "url": "https://about.roblox.com/newsroom/2026/06/age-based-roblox-kids-and-select-accounts-now-globally-available"
+        },
+        {
+          "title": "Roblox: limite lunare de cheltuieli",
+          "url": "https://en.help.roblox.com/hc/en-us/articles/4409558125460-Monthly-Spending-Limits-and-Notifications-FAQ"
+        }
+      ]
+    }
   },
   youtube: {
     riskLabelText: "Risc ridicat",
@@ -1386,266 +1640,265 @@ export const roEntryTranslations: Partial<Record<Entry["slug"], Partial<Localize
       }
     ]
   },
-  discord: {
-    riskLabelText: "Risc foarte ridicat",
-    summary:
-      "O platforma de chat centrata pe servere, comunitati de gaming, canale vocale si mesaje directe greu de vazut de catre parinti.",
-    description:
-      "O platforma de chat centrata pe servere, comunitati de gaming, canale vocale si mesaje directe greu de vazut de catre parinti.",
-    quickActions: [
+  "discord": {
+    "riskLabelText": "Risc foarte ridicat",
+    "summary": "Un serviciu pentru comunități, mesaje directe și apeluri vocale. Conectează Family Center și verifică cine poate contacta adolescentul, alături de serverele folosite.",
+    "description": "Un serviciu pentru comunități, mesaje directe și apeluri vocale. Conectează Family Center și verifică cine poate contacta adolescentul, alături de serverele folosite.",
+    "ageRating": "13+ sau vârsta minimă mai mare din țara ta",
+    "userCount": "Utilizatori de comunități și jocuri",
+    "ageRecommendation": "Recomandarea noastră: supraveghere directă pentru adolescenții mai mici",
+    "quickActions": [
       {
-        title: "Revizuieste impreuna fiecare server",
-        description:
-          "Deschide lista de servere si iesi din tot ce copilul nu poate explica sau nu poti inspecta clar: left-click server → Leave Server."
+        "title": "Conectează Family Center",
+        "description": "Deschide Family Center din setările contului. Finalizați conectarea împreună în aplicația mobilă; adolescentul trebuie să accepte."
       },
       {
-        title: "Opreste DMs de la membrii serverelor",
-        description:
-          "User Settings → Privacy & Safety → Allow direct messages from server members → OFF."
+        "title": "Restricționează mesajele directe",
+        "description": "În Content & Social, oprește Direct messages de la membrii serverelor și aplică schimbarea serverelor existente când apare solicitarea."
       },
       {
-        title: "Limiteaza cererile de prietenie",
-        description:
-          "User Settings → Privacy & Safety → Friend Requests si debifeaza Everyone, astfel incat strainii sa nu il poata adauga usor."
-      },
-      {
-        title: "Conecteaza Family Center din Discord",
-        description:
-          "User Settings → Family Center → activeaza tabul, apoi conecteaza-te cu adolescentul prin cod QR in aplicatia mobila pentru a-i vedea serverele, contactele si activitatea saptamanala."
+        "title": "Verificați serverele împreună",
+        "description": "Întreabă care este scopul fiecărei comunități, cine o administrează și ce îi place acolo. Părăsiți comunitățile în care nu se simte în siguranță."
       }
     ],
-    watchFor: [
+    "setupGuide": [
       {
-        title: "Mesaje directe de la straini",
-        description:
-          "Copiii aflati pe servere comune pot primi mesaje private de la adulti sau adolescenti mai mari pe care nu i-au intalnit niciodata.",
-        severity: "critical"
-      },
-      {
-        title: "Comunitati adulte sau extremiste",
-        description:
-          "Multe servere nu au verificare reala de varsta si pot gazdui continut explicit, discurs al urii sau comunitati daunatoare la vedere.",
-        severity: "critical"
-      },
-      {
-        title: "Grooming in servere legate de jocuri",
-        description:
-          "Adultii pot folosi interesele de gaming comune pentru a construi incredere lent si a muta conversatiile in DMs sau voice chat.",
-        severity: "critical"
-      },
-      {
-        title: "Partajarea de fisiere aduce risc de malware",
-        description:
-          "Copiii pot primi fisiere suspecte, jocuri piratate sau continut ilegal direct in chat-uri si servere.",
-        severity: "high"
-      },
-      {
-        title: "Voice chat-ul nu lasa urme clare si e greu de monitorizat",
-        description:
-          "Canalele vocale live creeaza risc de contact fara un istoric clar pe care un parinte sa il poata verifica dupa aceea.",
-        severity: "high"
-      }
-    ],
-    setupGuide: [
-      {
-        title: "Revizuieste impreuna fiecare server",
-        steps: [
-          "Deschide lista de servere si iesi din tot ce copilul nu poate explica sau nu poti inspecta clar: left-click server → Leave Server."
+        "title": "Conectează supravegherea",
+        "steps": [
+          "Urmează instrucțiunile Family Center din sursele de mai jos. Explică faptul că arată activitatea recentă și anumite setări, nu conținutul conversațiilor private."
         ]
       },
       {
-        title: "Opreste DMs de la membrii serverelor",
-        steps: [
-          "User Settings → Privacy & Safety → Allow direct messages from server members → OFF."
+        "title": "Verifică setările de contact",
+        "steps": [
+          "Deschide Settings → Content & Social. Verifică Direct messages, permisiunile fiecărui server și Friend Requests; limitează cine poate trimite cereri."
         ]
       },
       {
-        title: "Limiteaza cererile de prietenie",
-        steps: [
-          "User Settings → Privacy & Safety → Friend Requests si debifeaza Everyone, astfel incat strainii sa nu il poata adauga usor."
+        "title": "Verifică filtrele pentru imagini",
+        "steps": [
+          "Consultă filtrele pentru conținut sexual și violent. Folosește blocarea în mesaje directe unde este disponibilă și estomparea în servere. Filtrele pot rata conținut; estomparea nu înseamnă blocare."
         ]
       },
       {
-        title: "Dezactiveaza continutul cu restrictie de varsta",
-        steps: [
-          "User Settings → Privacy & Safety → age-restricted content → OFF."
+        "title": "Separă protecțiile de lansarea globală",
+        "steps": [
+          "Actualizarea Discord din februarie a amânat verificarea globală a vârstei pentru a doua jumătate a lui 2026. Anunțul nu confirmă finalizarea. Verifică setările contului și cerințele țării; nu tuturor li se cere un act sau o scanare facială."
         ]
       },
       {
-        title: "Activeaza autentificarea in doi pasi",
-        steps: [
-          "User Settings → My Account → Enable Two-Factor Auth, astfel incat contul sa fie mai greu de compromis."
+        "title": "Verifică activitatea și limitele",
+        "steps": [
+          "Discutați activitatea recentă din Family Center. Unde apar, verifică Screen Downtime și plafonul lunar de cheltuieli; plafonul exclude abonamentele. Verifică-le separat."
         ]
       },
       {
-        title: "Conecteaza Family Center",
-        steps: [
-          "Discord are acum un panou de parinte. Mergi la User Settings → Family Center, activeaza tabul, apoi pe mobil conecteaza-te cu adolescentul prin cod QR (parintele alege Connect with Teen, adolescentul alege Connect with Parent). Vei vedea contactele recente, serverele in care e activ, timpul petrecut in apeluri si - din noiembrie 2025 - cumparaturile sale saptamanale, plus optiuni de a restrictiona cine ii poate scrie. Continutul mesajelor ramane privat."
-        ]
-      },
-      {
-        title: "Verifica filtrele de siguranta teen-by-default",
-        steps: [
-          "Din 2026 Discord aplica implicit setari potrivite adolescentilor in toata lumea: media sensibila in DM-uri de la non-prieteni este blocata, media de la prieteni si din servere este incetosata, iar adolescentii nu pot opri complet filtrele fara o verificare de varsta de adult. Confirma ca data nasterii este setata corect pentru ca aceste setari implicite sa se aplice."
-        ]
-      },
-      {
-        title: "Stabileste o regula permanenta de verificare",
-        steps: [
-          "Agreaza faptul ca poti verifica oricand lista de servere, fiindca apartenenta la servere este problema principala de siguranta."
+        "title": "Exersați raportarea",
+        "steps": [
+          "Stabiliți că adolescentul îți poate arăta un mesaj îngrijorător fără să fie învinovățit. Verificați împreună opțiunile de raportare și blocare."
         ]
       }
     ],
-    userCount: "Audienta mare in zona de gaming si comunitati",
-    ageRecommendation: "Nerecomandat sub 16 ani fara supraveghere directa",
-    appMetrics: [
-      { label: "Utilizare principala", value: "Comunitati de gaming" },
-      { label: "Mesaje directe", value: "Pornite implicit" },
-      { label: "Filtre de continut pentru adolescenti", value: "Pornite implicit (2026)" },
-      { label: "Panou de parinte", value: "Family Center" }
-    ],
-    callouts: [
+    "watchFor": [
       {
-        type: "warning",
-        title: "Highest concern",
-        description:
-          "Discord nu are moderare la nivel de platforma pentru continutul serverelor. Siguranta oricarui server depinde aproape complet de administratori si nu exista o metoda fiabila de a verifica cu cine vorbeste copilul tau in voice chat."
+        "title": "Abordări în privat",
+        "description": "Apartenența la aceeași comunitate nu dovedește că cineva este de încredere. Observă cererile de secret sau mutare pe alt serviciu.",
+        "severity": "critical"
       },
       {
-        type: "tip",
-        title: "Most impactful action",
-        description:
-          "Revizuirea listei complete de servere conteaza mai mult decat orice setare singulara. Un singur server toxic poate anula orice alt control de confidentialitate."
+        "title": "Comunități dăunătoare",
+        "description": "Părăsiți și raportați comunitățile care încurajează hărțuirea, exploatarea sau violența.",
+        "severity": "high"
       },
       {
-        type: "tip",
-        title: "Nou din 2025",
-        description:
-          "Discord are acum un panou de parinte Family Center (User Settings → Family Center) care arata serverele, contactele, timpul in apeluri si cumparaturile saptamanale, iar filtrele de continut potrivite adolescentilor sunt pornite implicit pentru cei sub 18 ani in toata lumea."
+        "title": "Linkuri și descărcări necunoscute",
+        "description": "Opriți-vă înainte de a deschide un cadou promis sau un joc de descărcat. Nu împărtășiți coduri de conectare.",
+        "severity": "high"
+      },
+      {
+        "title": "Apeluri inconfortabile",
+        "description": "Stabiliți că adolescentul poate părăsi imediat un apel dacă cineva îl presează sau îl sperie.",
+        "severity": "high"
       }
-    ]
+    ],
+    "appMetrics": [
+      {
+        "label": "Instrumente pentru părinte",
+        "value": "Family Center"
+      },
+      {
+        "label": "Conținutul mesajelor",
+        "value": "Privat"
+      },
+      {
+        "label": "Filtre media",
+        "value": "Verifică setările"
+      },
+      {
+        "label": "Verificare globală a vârstei",
+        "value": "Lansare variabilă"
+      }
+    ],
+    "callouts": [
+      {
+        "type": "warning",
+        "title": "Ce nu pot face controalele",
+        "description": "Panoul pentru familie nu este un istoric complet al conversațiilor. Discutați în continuare despre oamenii și comunitățile din spatele activității."
+      },
+      {
+        "type": "tip",
+        "title": "Most impactful action",
+        "description": "Conectează Family Center și verificați permisiunile de contact înainte de a intra pe alte servere."
+      }
+    ],
+    "editorialReview": {
+      "checkedAt": "2026-09-03",
+      "availability": "Verificarea globală a vârstei a fost amânată pentru a doua jumătate a lui 2026; anunțul citat nu confirmă finalizarea. Verifică disponibilitatea locală.",
+      "sources": [
+        {
+          "title": "Discord: actualizarea verificării vârstei",
+          "url": "https://discord.com/safety/how-discord-is-building-safer-experiences-for-teens"
+        },
+        {
+          "title": "Discord: Family Center pentru părinți",
+          "url": "https://support.discord.com/hc/en-us/articles/14155043715735-Family-Center-for-Parents-and-Guardians"
+        },
+        {
+          "title": "Discord: confidențialitate și contact",
+          "url": "https://support.discord.com/hc/en-us/articles/217916488-Blocking-Privacy-Settings"
+        },
+        {
+          "title": "Discord: filtre pentru conținut sensibil",
+          "url": "https://support.discord.com/hc/en-us/articles/18210995019671-Discord-Sensitive-Content-Filters"
+        }
+      ]
+    }
   },
-  fortnite: {
-    riskLabelText: "Risc mediu-ridicat",
-    summary:
-      "Un joc multiplayer rapid, cu voice chat deschis, presiune mare de cumparare pentru cosmetice si sesiuni competitive lungi.",
-    description:
-      "Un joc multiplayer rapid, cu voice chat deschis, presiune mare de cumparare pentru cosmetice si sesiuni competitive lungi.",
-    quickActions: [
+  "fortnite": {
+    "riskLabelText": "Risc mediu-ridicat",
+    "summary": "Un joc multiplayer cu comunicare între jucători și cumpărături. Verifică atât contul Epic, cât și consola sau magazinul folosit la plată.",
+    "description": "Un joc multiplayer cu comunicare între jucători și cumpărături. Verifică atât contul Epic, cât și consola sau magazinul folosit la plată.",
+    "ageRating": "12+ / Teen; clasificarea diferă după experiență",
+    "userCount": "Jucători pe PC, console și mobil",
+    "ageRecommendation": "Recomandarea noastră: 12+ cu reguli de chat și cheltuieli",
+    "quickActions": [
       {
-        title: "Opreste mai intai voice chat-ul",
-        description:
-          "Settings → Audio → Voice Chat → OFF, sau seteaza Friends Only daca vrei sa permiti comunicare limitata in echipa."
+        "title": "Setează PIN-ul de părinte Epic",
+        "description": "Deschide Parental Controls în Epic Account Portal și păstrează PIN-ul privat."
       },
       {
-        title: "Activeaza controalele parentale Epic",
-        description:
-          "Intra pe epicgames.com/account, deschide Parental Controls si seteaza un PIN pe care copilul nu il cunoaste."
+        "title": "Restricționează comunicarea",
+        "description": "Alege Nobody sau o opțiune limitată la prieteni pentru chatul vocal și text din controalele parentale Epic."
       },
       {
-        title: "Protejeaza cumparaturile cu PIN-ul",
-        description:
-          "Foloseste Epic Parental Controls pentru a cere PIN la fiecare cumparatura sau pentru a pune o limita lunara la V-Bucks."
+        "title": "Verifică fiecare metodă de plată",
+        "description": "Verifică aprobarea plăților Epic și controalele de cumpărare ale consolei. Stabiliți un buget și pentru V-Bucks existenți."
       }
     ],
-    watchFor: [
+    "setupGuide": [
       {
-        title: "Voice chat cu straini",
-        description:
-          "Copiii pot auzi si pot vorbi cu jucatori aleatori, inclusiv adulti, in timpul meciurilor live daca chat-ul nu este dezactivat.",
-        severity: "high"
-      },
-      {
-        title: "Presiune de a cheltui V-Bucks",
-        description:
-          "Cosmeticele limitate in timp, battle pass-urile si semnalele de statut social creeaza presiune repetata de cheltuire a banilor reali.",
-        severity: "high"
-      },
-      {
-        title: "Toxicitate competitiva",
-        description:
-          "Meciurile live pot include injurii, coechipieri agresivi si abuz verbal pentru care copiii mai mici nu sunt pregatiti.",
-        severity: "high"
-      },
-      {
-        title: "Escrocherii cu V-Bucks gratuit",
-        description:
-          "Copiii sunt tinta constanta a codurilor false, paginilor de phishing si ofertelor de furt de cont construite in jurul V-Bucks.",
-        severity: "medium"
-      },
-      {
-        title: "Perturbarea somnului",
-        description:
-          "Meciurile si momentum-ul social pot face foarte greu sa se opreasca la o ora rezonabila fara o limita externa.",
-        severity: "medium"
-      }
-    ],
-    setupGuide: [
-      {
-        title: "Opreste mai intai voice chat-ul",
-        steps: [
-          "Settings → Audio → Voice Chat → OFF, sau seteaza Friends Only daca vrei sa permiti comunicare limitata in echipa."
+        "title": "Verifică vârsta contului",
+        "steps": [
+          "Sub 13 ani sau vârsta locală de consimțământ digital, dacă aceasta este mai mare, Epic folosește un Cabined Account. Chatul vocal și textul liber rămân indisponibile până la acordul părintelui. Verifică permisiunile înainte să accepți."
         ]
       },
       {
-        title: "Activeaza controalele parentale Epic",
-        steps: [
-          "Intra pe epicgames.com/account, deschide Parental Controls si seteaza un PIN pe care copilul nu il cunoaste."
+        "title": "Stabilește limitele de contact",
+        "steps": [
+          "În controalele parentale Epic, verifică chatul vocal, textul și cerința de PIN pentru adăugarea prietenilor. Stabiliți cu cine poate juca și vorbi copilul."
         ]
       },
       {
-        title: "Protejeaza cumparaturile cu PIN-ul",
-        steps: [
-          "Foloseste Epic Parental Controls pentru a cere PIN la fiecare cumparatura sau pentru a pune o limita lunara la V-Bucks."
+        "title": "Protejează plățile cu bani reali",
+        "steps": [
+          "Activează cerința de PIN pentru plățile Epic. Nu controlează cumpărăturile din alte magazine sau cheltuirea V-Bucks existenți; verifică-le separat."
         ]
       },
       {
-        title: "Redu contactul cu straini intre platforme",
-        steps: [
-          "Opreste Cross-Platform Communication din Parental Controls pentru ca jucatorii aleatori de pe alte platforme sa ajunga mai greu la copil."
+        "title": "Înțelege pragul de 100 USD",
+        "steps": [
+          "Pentru conturile sub 13 ani, Epic descrie un prag zilnic de 100 USD pentru plățile Epic, care poate fi depășit cu PIN-ul părintelui. Nu include plățile altor platforme sau moneda din joc. Nu reprezintă bugetul familiei."
         ]
       },
       {
-        title: "Foloseste ore de oprire la nivel de dispozitiv",
-        steps: [
-          "Seteaza o ora ferma de final cu Screen Time, Family Link, Windows Family Safety sau controalele consolei, in loc sa te bazezi doar pe autocontrol."
+        "title": "Verifică recompensele aleatorii",
+        "steps": [
+          "Unde apare opțiunea, dezactivează Allow Paid Random Items dacă nu vrei cheltuirea V-Bucks pe recompense aleatorii. Aceasta nu blochează toate cumpărăturile cu V-Bucks."
         ]
       },
       {
-        title: "Intelege cum functioneaza Cabined Accounts pentru cei sub 13 ani",
-        steps: [
-          "Daca un copil se inregistreaza ca avand sub 13 ani (sau varsta locala de consimtamant digital), Epic creeaza un Cabined Account: poate juca in continuare, dar voice chat-ul, chatul text liber, adaugarea de prieteni si conectarea la aplicatii sociale sau de streaming raman dezactivate pana cand un parinte isi da acordul din Epic Account Portal. Conturile sub 13 ani au si o limita de cheltuieli de 100 USD pe zi. Activeaza functiile suplimentare doar in mod deliberat."
-        ]
-      },
-      {
-        title: "Verifica istoricul tranzactiilor lunar",
-        steps: [
-          "Consulta epicgames.com/account/transactions astfel incat obiceiurile de cheltuire si costurile surpriza sa nu se acumuleze pe nesimtite."
+        "title": "Stabiliți când se încheie jocul",
+        "steps": [
+          "Alegeți ore de încheiere și verificați cheltuielile împreună. La o plată neașteptată, verifică magazinul prin care a fost făcută."
         ]
       }
     ],
-    userCount: "Baza uriasa de jucatori pe toate platformele",
-    ageRecommendation: "Trateaza-l ca 12+ chiar daca joaca si copii mai mici",
-    appMetrics: [
-      { label: "Sesiune medie", value: "90+ min" },
-      { label: "Voice chat", value: "Pornit implicit" },
-      { label: "Presiune V-Bucks", value: "Ridicata" },
-      { label: "Stres competitiv", value: "Semnificativ" }
-    ],
-    callouts: [
+    "watchFor": [
       {
-        type: "warning",
-        title: "Highest concern",
-        description:
-          "Voice chat-ul este activ implicit si poate pune copiii in meciuri cu jucatori adulti aleatori. Acesta este riscul principal de contact si trebuie sa fie prima setare schimbata."
+        "title": "Presiune din partea jucătorilor",
+        "description": "Copilul trebuie să poată opri sunetul sau părăsi o conversație amenințătoare ori inconfortabilă.",
+        "severity": "high"
       },
       {
-        type: "tip",
-        title: "Most impactful action",
-        description:
-          "PIN-ul Epic Games Parental Controls este controlul principal. Seteaza-l primul si pastreaza-l privat."
+        "title": "Moneda virtuală pare mai puțin reală",
+        "description": "Discutați costul real înainte de a cumpăra moneda și înainte de a o cheltui.",
+        "severity": "high"
+      },
+      {
+        "title": "Recompense false",
+        "description": "Nu introduceți parole sau coduri de conectare pe pagini care promit V-Bucks gratuit.",
+        "severity": "medium"
+      },
+      {
+        "title": "Încă un meci",
+        "description": "Verifică dacă meciurile împing repetat ora de somn dincolo de cea stabilită.",
+        "severity": "medium"
       }
-    ]
+    ],
+    "appMetrics": [
+      {
+        "label": "Acces pentru părinte",
+        "value": "PIN Epic"
+      },
+      {
+        "label": "Chat",
+        "value": "Verifică permisiunile"
+      },
+      {
+        "label": "PIN pentru plăți Epic",
+        "value": "Nu acoperă toate plățile"
+      },
+      {
+        "label": "V-Bucks",
+        "value": "Reguli separate"
+      }
+    ],
+    "callouts": [
+      {
+        "type": "warning",
+        "title": "Ce nu pot face controalele",
+        "description": "PIN-ul unui magazin nu acoperă toate metodele de plată. Verifică magazinul consolei și moneda deja existentă în cont."
+      },
+      {
+        "type": "tip",
+        "title": "Most impactful action",
+        "description": "Setează PIN-ul de părinte Epic, apoi stabiliți permisiunile de chat și un buget în bani reali."
+      }
+    ],
+    "editorialReview": {
+      "checkedAt": "2026-09-03",
+      "availability": "Controalele Epic sunt separate de cele ale altor magazine. Unele opțiuni depind de vârstă și regiune.",
+      "sources": [
+        {
+          "title": "Epic: plăți, chat și controale parentale",
+          "url": "https://safety.epicgames.com/en-US/parental-controls"
+        },
+        {
+          "title": "Epic: conturi Cabined",
+          "url": "https://www.epicgames.com/site/cabinedaccounts?lang=en"
+        }
+      ]
+    }
   },
   minecraft: {
     riskLabelText: "Risc mediu",
@@ -1754,137 +2007,6 @@ export const roEntryTranslations: Partial<Record<Entry["slug"], Partial<Localize
         title: "Most impactful action",
         description:
           "Restrangerea multiplayer-ului doar la Realms private este cea mai eficienta schimbare pentru ca elimina contactul cu straini fara sa strice jocul."
-      }
-    ]
-  },
-  "character-ai": {
-    riskLabelText: "Risc foarte ridicat",
-    homeBadgeLabel: "Necesita atentie urgenta",
-    summary:
-      "O platforma de joc de rol cu inteligenta artificiala unde utilizatorii discuta cu personaje personalizate. De la finalul lui 2025, chatul deschis pentru sub 18 ani a fost eliminat si sunt introduse verificari de varsta, dar varsta reala din cont ramane esentiala.",
-    description:
-      "O platforma de joc de rol cu inteligenta artificiala unde utilizatorii discuta cu personaje personalizate. De la finalul lui 2025, chatul deschis pentru sub 18 ani a fost eliminat si sunt introduse verificari de varsta, dar varsta reala din cont ramane esentiala.",
-    quickActions: [
-      {
-        title: "Verifica daca este deja instalata",
-        description:
-          "Cauta in biblioteca de aplicatii dupa Character.AI si C.AI, apoi verifica istoricul descarcarilor din App Store si ecranul principal."
-      },
-      {
-        title: "Activeaza modul de mesagerie sigura",
-        description:
-          "Settings → Feed → Safe Messaging Settings → ON. Asta adauga indicii pentru situatii de criza, dar nu filtreaza continutul pentru adulti."
-      },
-      {
-        title: "Revizuieste lista de personaje",
-        description:
-          "Deschideti contul impreuna si verificati personajele urmarite sau accesate repetat, mai ales cele prezentate ca romantice sau dependente emotional."
-      }
-    ],
-    watchFor: [
-      {
-        title: "Normalizarea jocurilor de rol romantice si sexuale",
-        description:
-          "Adulti si minori folosesc platforma pentru a simula relatii romantice si sexuale cu personaje generate de inteligenta artificiala. Pentru adolescentii in dezvoltare, asta normalizeaza dinamici relationale profund nepotrivite.",
-        severity: "critical"
-      },
-      {
-        title: "Esec fatal documentat intr-o criza",
-        description:
-          "Un proces din 2024 a legat direct sinuciderea unui baiat de 14 ani de interactiunea romantica prelungita cu un robot conversational Character.AI. Platforma nu a intervenit, desi existau semnale clare de suferinta. Nu este un risc ipotetic.",
-        severity: "critical"
-      },
-      {
-        title: "Dependenta emotionala in locul conexiunii umane",
-        description:
-          "Unii adolescenti spun ca prefera robotul conversational relatiilor reale. Folosirea prelungita este asociata cu izolare sociala mai mare si cu o toleranta mai scazuta la frictiunea normala a interactiunilor umane.",
-        severity: "high"
-      },
-      {
-        title: "Personaje create de utilizatori, fara verificare reala",
-        description:
-          "Orice utilizator poate crea un personaj cu aproape orice personalitate. Roboti cu teme pentru adulti, violente sau ideologic extreme pot fi accesibili in ciuda politicilor declarate ale platformei.",
-        severity: "high"
-      },
-      {
-        title: "Traume personale impartasite unui sistem nepotrivit",
-        description:
-          "Copiii pot impartasi crize reale de sanatate mintala, abuzuri sau ganduri suicidare unor roboti conversationali care nu sunt echipati sa raspunda in siguranta si nu alerteaza pe nimeni.",
-        severity: "high"
-      }
-    ],
-    setupGuide: [
-      {
-        title: "Verifica daca este instalata",
-        steps: [
-          "Cauta in biblioteca de aplicatii dupa Character.AI si C.AI, pentru ca uneori apare sub numele mai scurt. Verifica atat istoricul descarcarilor din App Store, cat si ecranul principal."
-        ]
-      },
-      {
-        title: "Activeaza modul de mesagerie sigura",
-        steps: [
-          "In aplicatie mergi la Settings → Feed → Safe Messaging Settings → ON. Asta adauga indicii catre resurse de criza, dar nu filtreaza continutul. Este o masura partiala, nu o rezolvare."
-        ]
-      },
-      {
-        title: "Revizuieste lista de personaje",
-        steps: [
-          "Deschide contul copilului si verifica ce personaje urmareste si cu care interactioneaza. Personajele create de utilizatori nu sunt verificate. Orice personaj romantic, adult sau de simulare a unei relatii este un semnal de alarma, indiferent cum este etichetat."
-        ]
-      },
-      {
-        title: "Tine cont ca chatul pentru sub 18 ani a fost eliminat",
-        steps: [
-          "In noiembrie 2025, Character.AI a eliminat chatul deschis pentru utilizatorii sub 18 ani si a inceput sa foloseasca tehnologii de verificare a varstei, inclusiv un model intern si instrumente precum Persona, pentru a detecta minorii. Conturile identificate ca fiind sub 18 ani primesc acum doar functii creative fara chat, precum Feed, Imagine, Avatar FX, Streams, video si creare de povesti. Asigura-te ca data nasterii copilului este corecta; daca a fost introdusa o varsta mai mare, blocarea chatului nu se aplica."
-        ]
-      },
-      {
-        title: "Discutati inainte sa aplici controale",
-        steps: [
-          "Intreaba pentru ce foloseste aplicatia inainte sa decizi restrictiile. Folosirea pentru scriere creativa este diferita de folosirea din dependenta emotionala. Motivul real schimba raspunsul potrivit."
-        ]
-      },
-      {
-        title: "Seteaza limite zilnice pentru aplicatie",
-        steps: [
-          "iOS: Settings → Screen Time → App Limits → adauga Character.AI → seteaza limita zilnica. Android: Digital Wellbeing → Dashboard → Character.AI → seteaza timer."
-        ]
-      },
-      {
-        title: "Raspunde direct nevoii din spate",
-        steps: [
-          "Daca aplicatia este folosita mai ales pentru sprijin emotional sau pentru ca se simte singur, informatia conteaza. Ajuta-l sa ajunga la consilierul scolii, la un grup de hobby sau la un adult de incredere. Blocarea aplicatiei fara a raspunde nevoii din spate nu rezolva problema."
-        ]
-      }
-    ],
-    ageRating: "17+ in App Store",
-    userCount: "Folosita des de copii de 12-16 ani in ciuda ratingului",
-    platform: "iOS, Android, Web",
-    ageRecommendation: "Nu este recomandata minorilor",
-    appMetrics: [
-      { label: "Utilizare principala", value: "Joc de rol si conversatii emotionale" },
-      { label: "Verificarea varstei", value: "In extindere (2025-2026)" },
-      { label: "Chat deschis sub 18 ani", value: "Eliminat (nov. 2025)" },
-      { label: "Istoric raspuns la crize", value: "A esuat fatal" }
-    ],
-    callouts: [
-      {
-        type: "warning",
-        title: "Highest concern",
-        description:
-          "Character.AI este platforma cu inteligenta artificiala cu cel mai mare risc pentru copii. Un proces din 2024 a legat moartea unui baiat de 14 ani de folosirea prelungita a unui robot conversational romantic. Modul de mesagerie sigura adauga indicii pentru criza, dar nu elimina continutul pentru adulti sau simularea relatiilor."
-      },
-      {
-        type: "tip",
-        title: "Most impactful action",
-        description:
-          "Modul de mesagerie sigura nu este un filtru de continut. Protectia reala inseamna o conversatie deschisa despre ce face copilul in aplicatie si de ce, urmata de o decizie comuna despre limite."
-      },
-      {
-        type: "tip",
-        title: "Nou de la finalul lui 2025",
-        description:
-          "Character.AI a eliminat chatul deschis pentru utilizatorii sub 18 ani si foloseste acum verificari de varsta. Confirma ca data nasterii copilului este setata corect, pentru ca protectia se aplica doar daca acel cont este identificat ca minor."
       }
     ]
   },

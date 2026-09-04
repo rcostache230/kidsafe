@@ -13,6 +13,7 @@ import {
 
 import { Breadcrumbs } from "./breadcrumbs";
 import { EntryCard } from "./entry-card";
+import { EntryReviewDate, EntrySources } from "./entry-sources";
 import { RiskBadge } from "./risk-badge";
 import { RiskBar } from "./risk-bar";
 import { RiskDot } from "./risk-dot";
@@ -65,6 +66,9 @@ export function EntryPage({
             <RiskBadge level={entry.riskLevel} label={entry.riskLabelText} />
           </div>
           <p className="prose-parent text-lg text-paper-ink/85">{entry.description}</p>
+          {entry.editorialReview ? (
+            <EntryReviewDate review={entry.editorialReview} locale={locale} />
+          ) : null}
         </header>
 
         {/* QUICK ACTIONS -------------------------------------------- */}
@@ -263,6 +267,10 @@ export function EntryPage({
             ))}
           </ol>
         </section>
+
+        {entry.editorialReview ? (
+          <EntrySources review={entry.editorialReview} locale={locale} />
+        ) : null}
 
         {/* RELATED -------------------------------------------------- */}
         {relatedEntries.length ? (
