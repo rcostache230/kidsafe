@@ -1,7 +1,7 @@
 import { ImageResponse } from "next/og";
 
 import { getEntry } from "@/data/entries";
-import { EntryOgCard, OG_CONTENT_TYPE, OG_SIZE } from "@/lib/og";
+import { EntryOgCard, OG_CONTENT_TYPE, OG_SIZE, OG_FONTS } from "@/lib/og";
 
 type ImageProps = {
   params: Promise<{
@@ -21,11 +21,11 @@ export default async function RomanianOpenGraphImage({ params }: ImageProps) {
 
   if (!entry) {
     return new ImageResponse(<div>Not found</div>, {
-      ...OG_SIZE
+      ...OG_SIZE, fonts: OG_FONTS
     });
   }
 
   return new ImageResponse(<EntryOgCard entry={entry} locale="ro" />, {
-    ...OG_SIZE
+    ...OG_SIZE, fonts: OG_FONTS
   });
 }

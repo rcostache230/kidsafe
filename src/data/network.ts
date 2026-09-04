@@ -38,7 +38,7 @@ const networkUiCopy = {
     categoryLabel: "Home Network",
     overviewTitle: "Home Network & Router Controls",
     overviewSubtitle:
-      "The most powerful parental control layer most parents never use — applies to every device in your home simultaneously.",
+      "Set filters for devices connected to your home WiFi, and check the limits before relying on them.",
     selectorEyebrow: "Choose your setup path",
     selectorTitle: "Pick the layer that matches your router, patience level, and need for control.",
     selectorLevelOne: "1. Choose an approach",
@@ -47,9 +47,9 @@ const networkUiCopy = {
     overviewGridSubtitle:
       "Open the guide that matches your router brand or filtering style. The setup details are different enough that it is worth choosing the right one.",
     infoBanner:
-      "Router and DNS controls apply to every device on your home network simultaneously — phones, tablets, laptops, smart TVs, and gaming consoles — without installing anything on each device. They are the highest-leverage parental control layer available to parents.",
+      "Router and DNS controls apply to every device on your home network simultaneously, including phones, tablets, laptops, smart TVs and gaming consoles, without installing anything on each device. Set them alongside the controls on each device.",
     warningBanner:
-      "⚠️ What network controls cannot do: They do not work when children switch to mobile data (4G/5G) instead of home WiFi. A VPN app on a child's phone bypasses DNS filtering. HTTPS prevents routers from reading page content — they can only block or allow entire domains, not individual pieces of content within a site.",
+      "What network controls cannot do: They do not work when children switch to mobile data (4G/5G) instead of home WiFi. A VPN app on a child's phone bypasses DNS filtering. HTTPS prevents routers from reading page content: they can only block or allow entire domains, not individual pieces of content within a site.",
     difficultyLabel: "Difficulty",
     costLabel: "Cost",
     approachLabel: "Approach",
@@ -74,7 +74,7 @@ const networkUiCopy = {
     categoryLabel: "Reteaua de acasa",
     overviewTitle: "Controale pentru router si reteaua de acasa",
     overviewSubtitle:
-      "Cel mai puternic strat de control parental pe care cei mai multi parinti nu il folosesc, desi se aplica simultan tuturor dispozitivelor din casa.",
+      "Configurează filtre pentru dispozitivele conectate la WiFi și verifică limitele lor înainte să te bazezi pe ele.",
     selectorEyebrow: "Alege varianta potrivita",
     selectorTitle:
       "Alege varianta potrivita in functie de routerul pe care il ai si de cat control vrei sa ai.",
@@ -84,9 +84,9 @@ const networkUiCopy = {
     overviewGridSubtitle:
       "Deschide ghidul potrivit pentru modelul de router sau pentru metoda de filtrare pe care vrei s-o folosesti. Pasii difera suficient de mult incat merita sa alegi varianta corecta.",
     infoBanner:
-      "Controalele din router si filtrele DNS se aplica simultan tuturor dispozitivelor din reteaua de acasa — telefoane, tablete, laptopuri, televizoare smart si console — fara sa instalezi nimic pe fiecare dispozitiv in parte. Pentru un parinte, sunt cel mai eficient strat de control.",
+      "Controalele din router si filtrele DNS se aplica simultan tuturor dispozitivelor din reteaua de acasa, inclusiv telefoane, tablete, laptopuri, televizoare smart și console, fara sa instalezi nimic pe fiecare dispozitiv in parte. Folosește-le alături de controalele fiecărui dispozitiv.",
     warningBanner:
-      "⚠️ Ce nu pot face controalele de retea: nu functioneaza cand copilul trece pe date mobile (4G/5G) in loc de WiFi-ul de acasa. O aplicatie VPN instalata pe telefon poate ocoli filtrarea DNS. Din cauza HTTPS, routerul nu poate vedea continutul paginii — poate doar sa blocheze sau sa permita domenii intregi, nu elemente individuale dintr-un site.",
+      "Ce nu pot face controalele de retea: nu functioneaza cand copilul trece pe date mobile (4G/5G) in loc de WiFi-ul de acasa. O aplicatie VPN instalata pe telefon poate ocoli filtrarea DNS. Din cauza HTTPS, routerul nu poate vedea continutul paginii: poate doar sa blocheze sau sa permita domenii intregi, nu elemente individuale dintr-un site.",
     difficultyLabel: "Dificultate",
     costLabel: "Cost",
     approachLabel: "Abordare",
@@ -136,27 +136,27 @@ export const networkApproaches: NetworkApproach[] = [
     name: "Built-in Router Controls",
     icon: "🔌",
     description:
-      "Use parental controls already built into your TP-Link, ASUS, or Netgear router. Free and surprisingly powerful.",
+      "Use parental controls already built into your TP-Link, ASUS, or Netgear router. Check which controls your model includes.",
     homepageDescription:
-      "Use parental controls already built into your TP-Link, ASUS, or Netgear router. Free and surprisingly powerful."
+      "Use parental controls already built into your TP-Link, ASUS, or Netgear router. Check which controls your model includes."
   },
   {
     id: "dns-filtering",
     name: "DNS Filtering",
     icon: "🌐",
     description:
-      "Change two numbers in your router settings to block adult content across every device in your home. Free and takes 5 minutes.",
+      "Set two DNS addresses on the router to filter adult sites for connected devices. The free setup takes about 5 minutes.",
     homepageDescription:
-      "Change two numbers in your router settings to block adult content across every device in your home. Free and takes 5 minutes."
+      "Set two DNS addresses on the router to filter adult sites for connected devices. The free setup takes about 5 minutes."
   },
   {
     id: "isp-controls",
     name: "ISP Controls",
     icon: "📡",
     description:
-      "Your internet provider likely has free parental controls you have never activated. Start here if you want the easiest possible first step.",
+      "Check whether your internet provider offers free parental controls. They can be a straightforward place to start.",
     homepageDescription:
-      "Your internet provider likely has free parental controls you have never activated. Start here if you want the easiest possible first step."
+      "Check whether your internet provider offers free parental controls. They can be a straightforward place to start."
   }
 ];
 
@@ -166,12 +166,12 @@ export const networkGuides: NetworkGuide[] = [
     name: "TP-Link (HomeCare / Parental Controls)",
     approach: "built-in-router-controls",
     description:
-      "Most TP-Link routers include HomeCare — a built-in parental controls system managed from your phone via the Tether app.",
+      "Most TP-Link routers include HomeCare: a built-in parental controls system managed from your phone via the Tether app.",
     difficulty: "Easy",
     cost: "Free (built into router)",
     coverageMetrics: [
       { label: "All WiFi devices", value: "Yes" },
-      { label: "Mobile data", value: "No — does not apply when child uses 4G/5G" },
+      { label: "Mobile data", value: "No: does not apply when child uses 4G/5G" },
       { label: "Bypass resistance", value: "Low-Medium" },
       { label: "Setup time", value: "15–20 minutes" }
     ],
@@ -220,7 +220,7 @@ export const networkGuides: NetworkGuide[] = [
       }
     ],
     tip:
-      "Pause Internet is the most-used feature after setup. It gives you immediate leverage without negotiation — internet stops when you say it stops, regardless of what the child is doing on their device.",
+      "Pause Internet stops the connection for the selected device. Explain when you plan to use it so a pause is part of the family agreement.",
     warning:
       "TP-Link HomeCare is bypassed if your child switches to mobile data or installs a VPN. Pair it with a device-level rule that VPN apps require your approval."
   },
@@ -229,9 +229,9 @@ export const networkGuides: NetworkGuide[] = [
     name: "ASUS (AiProtection / Family Zone)",
     approach: "built-in-router-controls",
     description:
-      "ASUS routers with AiProtection (powered by Trend Micro) offer one of the strongest built-in filtering systems in any consumer router.",
+      "ASUS routers with AiProtection use Trend Micro filtering. Check whether your model includes the parental controls you need.",
     difficulty: "Medium",
-    cost: "Free on routers that include AiProtection — check your model at asus.com/aiprotection",
+    cost: "Free on routers that include AiProtection: check your model at asus.com/aiprotection",
     coverageMetrics: [
       { label: "All WiFi devices", value: "Yes" },
       { label: "Mobile data", value: "No" },
@@ -281,7 +281,7 @@ export const networkGuides: NetworkGuide[] = [
       }
     ],
     tip:
-      "AiProtection's malware blocking applies to every device on your network regardless of age or parental settings. Enable it for the whole family — it protects your devices too.",
+      "AiProtection's malware blocking applies to every device on your network regardless of age or parental settings. Enable it for the whole family: it protects your devices too.",
     warning:
       "ASUS AiProtection requires a router model that supports it. Check asus.com/aiprotection before spending time on setup."
   },
@@ -290,7 +290,7 @@ export const networkGuides: NetworkGuide[] = [
     name: "NETGEAR (Smart Parental Controls / Circle integration)",
     approach: "built-in-router-controls",
     description:
-      "Netgear Nighthawk and Orbi routers integrate with Circle, giving you per-app time limits, content categories, and bedtime enforcement from a polished app.",
+      "Supported Netgear Nighthawk and Orbi routers offer parental controls through Circle. Check your model and plan for app limits, content filters and bedtime settings.",
     difficulty: "Medium",
     cost: "Free basic tier via Circle integration; Circle Premium $9.99/month for per-app limits and mobile data coverage",
     coverageMetrics: [
@@ -348,11 +348,11 @@ export const networkGuides: NetworkGuide[] = [
     name: "Cloudflare for Families (1.1.1.3)",
     approach: "dns-filtering",
     description:
-      "Change two numbers in your router settings to block adult content and malware across every device in your home. Free, takes 5 minutes, and requires no ongoing maintenance.",
+      "Set two DNS addresses on your router to filter adult sites and malware for connected devices. The service is free; allow about 5 minutes for setup.",
     difficulty: "Easy",
     cost: "Free",
     coverageMetrics: [
-      { label: "All WiFi devices", value: "Yes — including smart TVs, gaming consoles, tablets" },
+      { label: "All WiFi devices", value: "Yes: including smart TVs, gaming consoles, tablets" },
       { label: "Mobile data", value: "No" },
       { label: "Bypass resistance", value: "Medium" },
       { label: "Setup time", value: "5 minutes" }
@@ -403,14 +403,14 @@ export const networkGuides: NetworkGuide[] = [
     tip:
       "This is the highest-impact action on the page relative to the effort required. Five minutes, free, and it protects every device simultaneously, including the PlayStation and smart TV that no app-based control reaches.",
     warning:
-      "Cloudflare for Families does not work when your child switches to mobile data. It also cannot inspect content inside a site — it blocks or allows entire domains. A child on filtered WiFi can still access inappropriate YouTube videos because YouTube itself is an allowed domain."
+      "Cloudflare for Families does not work when your child switches to mobile data. It also cannot inspect content inside a site: it blocks or allows entire domains. A child on filtered WiFi can still access inappropriate YouTube videos because YouTube itself is an allowed domain."
   },
   {
     slug: "dns-opendns",
     name: "OpenDNS FamilyShield (208.67.222.123)",
     approach: "dns-filtering",
     description:
-      "A free DNS filter from Cisco that blocks adult content, phishing, and — uniquely — proxy and anonymiser sites children use to bypass other filters.",
+      "A free DNS filter from Cisco that blocks adult content, phishing, and proxy and anonymiser sites children use to bypass other filters.",
     difficulty: "Easy",
     cost: "Free (FamilyShield). Free account at opendns.com unlocks a configuration dashboard.",
     coverageMetrics: [
@@ -464,14 +464,14 @@ export const networkGuides: NetworkGuide[] = [
       }
     ],
     tip:
-      "OpenDNS blocks proxy and anonymiser sites by default — these are the tools children often use to bypass basic content filters. That makes it meaningfully harder to circumvent than Cloudflare for Families alone."
+      "OpenDNS blocks proxy and anonymiser sites by default: these are the tools children often use to bypass basic content filters. That makes it meaningfully harder to circumvent than Cloudflare for Families alone."
   },
   {
     slug: "dns-nextdns",
     name: "NextDNS",
     approach: "dns-filtering",
     description:
-      "The most customisable DNS filtering option available. Block specific apps like TikTok or Instagram at the network level with a single toggle. See every domain every device in your home contacts.",
+      "A DNS service with controls for individual apps, content categories and activity logs. It can help you filter services such as TikTok or Instagram on your home network.",
     difficulty: "Medium",
     cost: "Free up to 300,000 queries per month (enough for most families). $19.90 per year for unlimited.",
     coverageMetrics: [
@@ -532,9 +532,9 @@ export const networkGuides: NetworkGuide[] = [
     name: "ISP Parental Controls",
     approach: "isp-controls",
     description:
-      "Your internet provider almost certainly offers free parental controls you have never activated. The weakest option on this page — but the easiest, and better than nothing.",
+      "Check whether your internet provider offers free parental controls. These usually offer fewer options than router or DNS controls, but can be easier to set up.",
     difficulty: "Easy",
-    cost: "Free — included with your broadband subscription",
+    cost: "Free: included with your broadband subscription",
     coverageMetrics: [
       { label: "All WiFi devices", value: "Yes" },
       { label: "Mobile data", value: "No" },

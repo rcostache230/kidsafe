@@ -1,6 +1,6 @@
 import { ImageResponse } from "next/og";
 
-import { HomeOgCard, OG_CONTENT_TYPE, OG_SIZE } from "@/lib/og";
+import { HomeOgCard, OG_CONTENT_TYPE, OG_SIZE, OG_FONTS } from "@/lib/og";
 
 export const alt = "Digital Parents homepage preview";
 export const size = OG_SIZE;
@@ -8,6 +8,6 @@ export const contentType = OG_CONTENT_TYPE;
 
 export default function OpenGraphImage() {
   return new ImageResponse(<HomeOgCard locale="en" />, {
-    ...OG_SIZE
+    ...OG_SIZE, fonts: OG_FONTS
   });
 }

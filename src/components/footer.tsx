@@ -40,7 +40,7 @@ export function Footer() {
   return (
     <footer className="mt-16 border-t border-paper-line bg-paper-200/40">
       <div className="page-shell space-y-8 py-12">
-        <p className="max-w-3xl font-display text-xl italic leading-relaxed text-paper-ink/90">
+        <p className="max-w-3xl font-display text-xl leading-relaxed text-paper-ink/90">
           {copy.footer.quote}
         </p>
 
@@ -113,7 +113,7 @@ export function Footer() {
               <span
                 role="status"
                 aria-live="polite"
-                className="absolute right-0 top-full mt-2 whitespace-nowrap rounded-full bg-paper-ink px-3 py-1 text-xs font-medium text-white shadow-lift"
+                className="mt-2 block rounded-full bg-paper-ink px-3 py-1 text-xs font-medium text-white shadow-lift"
               >
                 {copyState === "copied" ? copy.footer.copied : copy.footer.copyFailed}
               </span>

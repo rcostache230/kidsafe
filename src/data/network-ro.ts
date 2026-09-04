@@ -13,9 +13,9 @@ export const roNetworkApproachTranslations: Record<
   "built-in-router-controls": {
     name: "Controale integrate in router",
     description:
-      "Foloseste controalele parentale deja incluse in routerul tau TP-Link, ASUS sau Netgear. Sunt gratuite si surprinzator de eficiente.",
+      "Foloseste controalele parentale deja incluse in routerul tau TP-Link, ASUS sau Netgear. Verifică ce controale include modelul tău.",
     homepageDescription:
-      "Foloseste controalele parentale deja incluse in routerul tau TP-Link, ASUS sau Netgear. Sunt gratuite si surprinzator de eficiente."
+      "Foloseste controalele parentale deja incluse in routerul tau TP-Link, ASUS sau Netgear. Verifică ce controale include modelul tău."
   },
   "dns-filtering": {
     name: "Filtrare DNS",
@@ -27,9 +27,9 @@ export const roNetworkApproachTranslations: Record<
   "isp-controls": {
     name: "Controale oferite de furnizorul de internet",
     description:
-      "Furnizorul tau de internet are, cel mai probabil, controale parentale gratuite pe care nu le-ai activat niciodata. Incepe aici daca vrei cea mai simpla varianta.",
+      "Verifică dacă furnizorul tău de internet oferă controale parentale gratuite. Pot fi un punct de pornire ușor de configurat.",
     homepageDescription:
-      "Furnizorul tau de internet are, cel mai probabil, controale parentale gratuite pe care nu le-ai activat niciodata. Incepe aici daca vrei cea mai simpla varianta."
+      "Verifică dacă furnizorul tău de internet oferă controale parentale gratuite. Pot fi un punct de pornire ușor de configurat."
   }
 };
 
@@ -44,7 +44,7 @@ export const roNetworkGuideTranslations: Partial<Record<string, LocalizedNetwork
       { label: "All WiFi devices", value: "Da" },
       {
         label: "Mobile data",
-        value: "Nu — nu se aplica atunci cand copilul foloseste 4G/5G"
+        value: "Nu: nu se aplica atunci cand copilul foloseste 4G/5G"
       },
       { label: "Bypass resistance", value: "Scazuta-medie" },
       { label: "Setup time", value: "15–20 de minute" }
@@ -104,7 +104,7 @@ export const roNetworkGuideTranslations: Partial<Record<string, LocalizedNetwork
       "Routerele ASUS cu AiProtection (oferit de Trend Micro) au unul dintre cele mai bune sisteme de filtrare integrate pentru uz casnic.",
     difficulty: "Mediu",
     cost:
-      "Gratuit pe routerele care includ AiProtection — verifica modelul tau la asus.com/aiprotection",
+      "Gratuit pe routerele care includ AiProtection: verifica modelul tau la asus.com/aiprotection",
     coverageMetrics: [
       { label: "All WiFi devices", value: "Da" },
       { label: "Mobile data", value: "Nu" },
@@ -154,7 +154,7 @@ export const roNetworkGuideTranslations: Partial<Record<string, LocalizedNetwork
       }
     ],
     tip:
-      "Blocarea malware din AiProtection se aplica tuturor dispozitivelor din casa, indiferent de varsta sau profil parental. Activeaz-o pentru toata familia — iti protejeaza si tie dispozitivele.",
+      "Blocarea malware din AiProtection se aplica tuturor dispozitivelor din casa, indiferent de varsta sau profil parental. Activeaz-o pentru toata familia: iti protejeaza si tie dispozitivele.",
     warning:
       "ASUS AiProtection functioneaza doar pe modelele de router care il suporta. Verifica asus.com/aiprotection inainte sa investesti timp in configurare."
   },
@@ -221,13 +221,13 @@ export const roNetworkGuideTranslations: Partial<Record<string, LocalizedNetwork
   "dns-cloudflare": {
     name: "Cloudflare for Families (1.1.1.3)",
     description:
-      "Schimba doua adrese DNS in setarile routerului ca sa blochezi continutul pentru adulti si malware pe toate dispozitivele din casa. Este gratuit, dureaza 5 minute si nu cere mentenanta.",
+      "Setează două adrese DNS pe router pentru a filtra site-urile pentru adulți și malware pentru dispozitivele conectate. Serviciul este gratuit; rezervă aproximativ 5 minute pentru configurare.",
     difficulty: "Usor",
     cost: "Gratuit",
     coverageMetrics: [
       {
         label: "All WiFi devices",
-        value: "Da — inclusiv televizoare smart, console si tablete"
+        value: "Da: inclusiv televizoare smart, console si tablete"
       },
       { label: "Mobile data", value: "Nu" },
       { label: "Bypass resistance", value: "Medie" },
@@ -279,7 +279,7 @@ export const roNetworkGuideTranslations: Partial<Record<string, LocalizedNetwork
     tip:
       "Este una dintre cele mai eficiente actiuni de pe toata pagina raportat la efort: cinci minute, gratuit, si protejeaza toate dispozitivele simultan, inclusiv PlayStation-ul si televizorul smart unde controalele pe aplicatie nu ajung.",
     warning:
-      "Cloudflare for Families nu functioneaza cand copilul trece pe date mobile. Nici nu poate inspecta continutul din interiorul unui site — blocheaza sau permite domenii intregi. Un copil aflat pe WiFi filtrat poate vedea in continuare videoclipuri nepotrivite pe YouTube pentru ca domeniul YouTube este permis."
+      "Cloudflare for Families nu functioneaza cand copilul trece pe date mobile. Nici nu poate inspecta continutul din interiorul unui site: blocheaza sau permite domenii intregi. Un copil aflat pe WiFi filtrat poate vedea in continuare videoclipuri nepotrivite pe YouTube pentru ca domeniul YouTube este permis."
   },
   "dns-opendns": {
     name: "OpenDNS FamilyShield (208.67.222.123)",
@@ -342,12 +342,12 @@ export const roNetworkGuideTranslations: Partial<Record<string, LocalizedNetwork
       }
     ],
     tip:
-      "OpenDNS blocheaza implicit site-urile proxy si anonimizatoarele — exact instrumentele pe care copiii le folosesc cel mai des pentru a ocoli filtrele simple. Asta il face mai greu de ocolit decat Cloudflare for Families singur."
+      "OpenDNS blocheaza implicit site-urile proxy si anonimizatoarele: exact instrumentele pe care copiii le folosesc cel mai des pentru a ocoli filtrele simple. Asta il face mai greu de ocolit decat Cloudflare for Families singur."
   },
   "dns-nextdns": {
     name: "NextDNS",
     description:
-      "Cea mai personalizabila optiune de filtrare DNS de pe pagina. Poti bloca aplicatii precum TikTok sau Instagram direct din retea si poti vedea ce domenii contacteaza dispozitivele din casa.",
+      "Un serviciu DNS cu opțiuni pentru aplicații individuale, categorii de conținut și jurnale de activitate. Te poate ajuta să filtrezi servicii precum TikTok sau Instagram în rețeaua de acasă.",
     difficulty: "Mediu",
     cost:
       "Gratuit pana la 300.000 de interogari pe luna (suficient pentru majoritatea familiilor). 19,90 USD pe an pentru nelimitat.",
@@ -409,7 +409,7 @@ export const roNetworkGuideTranslations: Partial<Record<string, LocalizedNetwork
     description:
       "Furnizorul tau de internet ofera aproape sigur controale parentale gratuite pe care nu le-ai activat niciodata. Este cea mai slaba optiune din aceasta pagina, dar si cea mai simpla si mai buna decat nimic.",
     difficulty: "Usor",
-    cost: "Gratuit — inclus in abonamentul tau de internet fix",
+    cost: "Gratuit: inclus in abonamentul tau de internet fix",
     coverageMetrics: [
       { label: "All WiFi devices", value: "Da" },
       { label: "Mobile data", value: "Nu" },

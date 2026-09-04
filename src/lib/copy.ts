@@ -3,71 +3,78 @@ import type { Locale } from "./locale";
 export const uiCopy = {
   en: {
     home: {
-      eyebrow: "Digital safety for real families",
-      title: "Your child's apps, devices, and settings — explained in plain language.",
+      eyebrow: "A parent’s guide to digital safety",
+      title: "Your child's digital life, explained.",
       subtitle:
-        "Step-by-step safety guides from a cybersecurity professional and parent. No jargon, no scare tactics — just what to do first.",
+        "Practical steps for apps, devices and privacy, from a parent who works in cybersecurity.",
       quickPicks: [
-        "My child just got an iPhone",
-        "My child just got an Android phone",
-        "My child just got a tablet",
-        "My child just got a laptop",
-        "Secure my home router & network"
+        "Set up an iPhone",
+        "Set up Android",
+        "Set up a tablet",
+        "Set up a laptop",
+        "Set up home WiFi"
       ],
+      clearSearch: "Clear search",
+      resultsLabel: "matching results",
+      resultLabel: "matching result",
+      browseLabel: "Browse by category",
+      quickStartLabel: "Setting up a new device?",
       searchLabel: "Find the guide you need",
-      searchPlaceholder: "Search for an app, device, or system...",
+      searchPlaceholder: "App, device or system",
       noResults:
         "No matches yet. Try searching for an app or device name like Roblox, Android, or Laptop.",
       sections: {
-        appsTitle: "Apps your child probably uses",
+        appsTitle: "App safety guides",
         appsDescription:
-          "Start with the apps that shape how they talk, scroll, play, and spend time online.",
-        osTitle: "Lock down the operating system",
+          "Choose an app to check its risks and the settings you can change.",
+        osTitle: "Built-in parental controls",
         osDescription:
-          "These built-in controls do the most work before any app-specific setting does.",
+          "Set up the device’s parental controls, then check the settings in each app.",
         devicesTitle: "Device setup guides",
         devicesDescription:
-          "Use these first-time setup checklists when a new device enters the house.",
-        networkTitle: "Home Network & Router Controls",
+          "Start here when your child gets a new phone, tablet or computer.",
+        networkTitle: "Home WiFi and router controls",
         networkDescription:
-          "The most powerful parental control layer most parents never use — applies to every device in your home simultaneously."
+          "Set filters for devices on your home WiFi, and understand where those filters stop working."
       },
       aboutTitle: "Built by a parent who works in cybersecurity",
       aboutBodyOne:
-        "I'm Razvan Costache — Director of Innovation at Bitdefender with 14+ years in consumer cybersecurity. I built this guide because I needed it myself. When my child got their first device, I wanted one place with clear answers — not 50 blog posts and a YouTube rabbit hole.",
+        "I'm Razvan Costache, Director of Innovation at Bitdefender, with 14+ years in consumer cybersecurity. When my child got their first device, I wanted clear answers in one place. I built this guide because I needed it myself.",
       aboutBodyTwo:
-        "Every guide is written from direct experience with these platforms and informed by professional threat research.",
+        "The guides draw on my experience in cybersecurity and published safety guidance. Where sources are listed, you can see when they were checked and which regional limits apply.",
       linkedin: "Connect on LinkedIn →"
     },
     entry: {
       homeBreadcrumb: "Digital Parents",
-      quickActions: "Start here — 3 things to do today",
-      calloutConcern: "What parents worry about most",
-      calloutAction: "The one thing to do right now",
+      quickActions: "Three things to do first",
+      calloutConcern: "Main concern",
+      calloutAction: "Start with this",
       riskLevel: "Risk level",
+      onThisPage: "In this guide",
+      sources: "Sources",
       ageRating: "Age rating",
       users: "Users",
       platform: "Platform",
       ageRecommendation: "Age recommendation",
       warningEyebrow: "Warning signs",
-      warningTitle: "Warning signs to know",
+      warningTitle: "What to watch for",
       guideEyebrow: "Step-by-step guide",
-      guideTitle: "Complete step-by-step guide",
+      guideTitle: "Set it up, step by step",
       relatedEyebrow: "Related guides",
       relatedTitle: "Related guides",
       backTo: "Back to"
     },
     footer: {
       quote:
-        '"Settings matter most when they are paired with routines, visible screens, and regular conversations."',
+        "Use these settings alongside family routines, visible screens and regular conversations.",
       apps: "Apps",
       os: "Operating Systems",
       devices: "Devices",
       network: "Network",
       about: "About",
-      shareTitle: "Know a parent who needs this? Share this site.",
+      shareTitle: "Share these guides with another parent",
       shareBody:
-        "Send them the homepage so they can jump straight to the guide they need.",
+        "Copy the homepage link so they can find their child’s app or device.",
       copy: "Copy link",
       copied: "Link copied",
       copyFailed: "Couldn't copy",
@@ -85,124 +92,135 @@ export const uiCopy = {
     },
     metadata: {
       siteDescription:
-        "A static digital safety directory for parents covering devices, operating systems, and popular apps children use.",
+        "Practical digital safety guides for parents, covering children’s apps, devices and parental controls.",
       homeDescription:
         "Step-by-step digital safety guides for the apps, devices, and systems your child uses.",
       homeTitle:
-        "Your child's apps, devices, and settings — explained in plain language.",
+        "Your child's digital life, explained.",
       notFound: "Not found | Digital Parents",
       entryTitleSuffix: "Digital Safety Guide for Parents"
     },
     og: {
       homeAlt: "Digital Parents homepage preview",
       homeTitle:
-        "Your child's apps, devices, and settings — explained in plain language.",
+        "Your child's digital life, explained.",
       homeSubtitle:
         "Step-by-step safety guides for the devices, systems, and apps your child uses.",
       riskLevel: "Risk level",
+      onThisPage: "In this guide",
+      sources: "Sources",
       parentGuide: "Digital safety guide for parents"
     }
   },
   ro: {
     home: {
-      eyebrow: "Siguranta digitala pentru familii reale",
+      eyebrow: "Siguranță digitală pentru părinți",
       title:
-        "Aplicatiile, dispozitivele si setarile copilului tau — explicate pe intelesul tuturor.",
+        "Viața digitală a copilului tău, pe înțelesul tău.",
       subtitle:
-        "Ghiduri de siguranta pas cu pas, de la un parinte cu experienta in securitate cibernetică. Fara jargon, fara panică — doar ce merita facut mai intai.",
+        "Pași practici pentru aplicații, dispozitive și confidențialitate, de la un părinte care lucrează în securitate cibernetică.",
       quickPicks: [
-        "Copilul meu tocmai a primit un iPhone",
-        "Copilul meu tocmai a primit un telefon Android",
-        "Copilul meu tocmai a primit o tableta",
-        "Copilul meu tocmai a primit un laptop",
-        "Securizeaza routerul si reteaua de acasa"
+        "Configurează un iPhone",
+        "Configurează Android",
+        "Configurează o tabletă",
+        "Configurează un laptop",
+        "Configurează WiFi-ul"
       ],
-      searchLabel: "Gaseste ghidul de care ai nevoie",
-      searchPlaceholder: "Cauta o aplicatie, un dispozitiv sau un sistem...",
+      clearSearch: "Șterge căutarea",
+      resultsLabel: "rezultate găsite",
+      resultLabel: "rezultat găsit",
+      browseLabel: "Alege o categorie",
+      quickStartLabel: "Configurezi un dispozitiv nou?",
+      searchLabel: "Găsește ghidul potrivit",
+      searchPlaceholder: "Aplicație sau dispozitiv",
       noResults:
-        "Nu exista rezultate inca. Incearca sa cauti nume precum Roblox, Android sau Laptop.",
+        "Nu am găsit rezultate. Încearcă numele unei aplicații sau al unui dispozitiv, de exemplu Roblox, Android sau laptop.",
       sections: {
-        appsTitle: "Aplicatiile pe care copilul tau probabil le foloseste",
+        appsTitle: "Ghiduri pentru aplicații",
         appsDescription:
-          "Incepe cu aplicatiile care ii modeleaza felul in care vorbeste, deruleaza, se joaca si isi petrece timpul online.",
-        osTitle: "Securizeaza sistemul de operare",
+          "Alege o aplicație ca să vezi riscurile și setările pe care le poți schimba.",
+        osTitle: "Controale parentale integrate",
         osDescription:
-          "Aceste controale integrate fac cea mai multa munca inaintea oricarei setari specifice unei aplicatii.",
-        devicesTitle: "Ghiduri de configurare pentru dispozitive",
+          "Configurează controalele dispozitivului, apoi verifică setările fiecărei aplicații.",
+        devicesTitle: "Ghiduri pentru dispozitive",
         devicesDescription:
-          "Foloseste aceste liste de verificare cand intra in casa un dispozitiv nou.",
-        networkTitle: "Controale pentru router si reteaua de acasa",
+          "Începe aici când copilul primește un telefon, o tabletă sau un computer nou.",
+        networkTitle: "WiFi și routerul de acasă",
         networkDescription:
-          "Cel mai puternic strat de control parental pe care cei mai multi parinti nu il folosesc, desi se aplica simultan tuturor dispozitivelor din casa."
+          "Configurează filtre pentru dispozitivele conectate la WiFi și află în ce situații nu funcționează."
       },
-      aboutTitle: "Creat de un parinte care lucreaza in securitate cibernetica",
+      aboutTitle: "Creat de un părinte care lucrează în securitate cibernetică",
       aboutBodyOne:
-        "Sunt Razvan Costache — Director of Innovation la Bitdefender, cu peste 14 ani de experienta in securitatea cibernetica pentru consumatori. Am construit acest ghid pentru ca aveam nevoie de el chiar eu. Cand copilul meu a primit primul dispozitiv, am vrut un singur loc cu raspunsuri clare — nu 50 de articole si o gaura neagra pe YouTube.",
+        "Sunt Razvan Costache, Director of Innovation la Bitdefender, cu peste 14 ani de experiență în securitatea cibernetică pentru consumatori. Când copilul meu a primit primul dispozitiv, am vrut răspunsuri clare într-un singur loc. Am creat acest ghid pentru că aveam nevoie de el.",
       aboutBodyTwo:
-        "Fiecare ghid este scris din experienta directa cu aceste platforme si informat de cercetare profesionala in zona de amenintari.",
-      linkedin: "Conecteaza-te pe LinkedIn →"
+        "Ghidurile se bazează pe experiența mea în securitate cibernetică și pe recomandări de siguranță publicate. Acolo unde sunt enumerate surse, poți vedea când au fost verificate și ce limite regionale se aplică.",
+      linkedin: "Conectează-te pe LinkedIn →"
     },
     entry: {
       homeBreadcrumb: "Digital Parents",
-      quickActions: "Incepe aici — 3 lucruri de facut azi",
-      calloutConcern: "Ce ii ingrijoreaza cel mai mult pe parinti",
-      calloutAction: "Un singur lucru de facut acum",
+      quickActions: "Trei lucruri de făcut mai întâi",
+      calloutConcern: "Principalul risc",
+      calloutAction: "Începe cu asta",
       riskLevel: "Nivel de risc",
-      ageRating: "Clasificare de varsta",
+      onThisPage: "În acest ghid",
+      sources: "Surse",
+      ageRating: "Limită de vârstă",
       users: "Utilizatori",
       platform: "Platforma",
-      ageRecommendation: "Varsta recomandata",
+      ageRecommendation: "Vârstă recomandată",
       warningEyebrow: "Semnale de alarma",
-      warningTitle: "Semne pe care merita sa le cunosti",
+      warningTitle: "La ce să fii atent",
       guideEyebrow: "Ghid pas cu pas",
-      guideTitle: "Ghid complet, pas cu pas",
+      guideTitle: "Configurare pas cu pas",
       relatedEyebrow: "Ghiduri similare",
       relatedTitle: "Ghiduri similare",
-      backTo: "Inapoi la"
+      backTo: "Înapoi la"
     },
     footer: {
       quote:
-        '"Setarile conteaza cel mai mult atunci cand sunt insotite de rutine, ecrane vizibile si conversatii regulate."',
-      apps: "Aplicatii",
+        "Folosește setările alături de rutine de familie, ecrane vizibile și conversații regulate.",
+      apps: "Aplicații",
       os: "Sisteme de operare",
       devices: "Dispozitive",
-      network: "Retea",
+      network: "Rețea",
       about: "Despre",
-      shareTitle: "Stii un parinte care are nevoie de asta? Distribuie site-ul.",
+      shareTitle: "Trimite ghidurile unui alt părinte",
       shareBody:
-        "Trimite-i pagina principala ca sa poata ajunge rapid la ghidul de care are nevoie.",
-      copy: "Copiaza linkul",
+        "Copiază linkul paginii principale ca să găsească aplicația sau dispozitivul copilului său.",
+      copy: "Copiază linkul",
       copied: "Link copiat",
       copyFailed: "Nu am putut copia",
       copyright: "© 2025 Digital Parents. Proiect independent realizat de Razvan Costache.",
-      linkedin: "Conecteaza-te pe LinkedIn →"
+      linkedin: "Conectează-te pe LinkedIn →"
     },
     header: {
       switchTo: "EN"
     },
     riskBar: {
-      low: "Scazut",
+      low: "Scăzut",
       medium: "Mediu",
       high: "Ridicat",
       critical: "Critic"
     },
     metadata: {
       siteDescription:
-        "Un ghid static de siguranta digitala pentru parinti, cu recomandari pentru dispozitive, sisteme de operare si aplicatii populare folosite de copii.",
+        "Ghiduri practice de siguranță digitală pentru părinți, despre aplicațiile copiilor, dispozitive și controale parentale.",
       homeDescription:
         "Ghiduri de siguranta digitala, pas cu pas, pentru aplicatiile, dispozitivele si sistemele folosite de copilul tau.",
       homeTitle:
-        "Aplicatiile, dispozitivele si setarile copilului tau — explicate pe intelesul tuturor.",
+        "Viața digitală a copilului tău, pe înțelesul tău.",
       notFound: "Pagina nu a fost gasita | Digital Parents",
       entryTitleSuffix: "Ghid de siguranta digitala pentru parinti"
     },
     og: {
       homeAlt: "Previzualizare homepage Digital Parents",
       homeTitle:
-        "Aplicatiile, dispozitivele si setarile copilului tau — explicate pe intelesul tuturor.",
+        "Viața digitală a copilului tău, pe înțelesul tău.",
       homeSubtitle:
         "Ghiduri de siguranta pas cu pas pentru dispozitivele, sistemele si aplicatiile folosite de copilul tau.",
       riskLevel: "Nivel de risc",
+      onThisPage: "În acest ghid",
+      sources: "Surse",
       parentGuide: "Ghid de siguranta digitala pentru parinti"
     }
   }

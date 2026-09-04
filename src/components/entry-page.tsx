@@ -69,6 +69,12 @@ export function EntryPage({
           {entry.editorialReview ? (
             <EntryReviewDate review={entry.editorialReview} locale={locale} />
           ) : null}
+          <nav aria-label={copy.entry.onThisPage} className="flex flex-wrap gap-x-5 gap-y-1 border-t border-paper-line pt-3 text-sm font-medium">
+            <a className="inline-flex min-h-11 items-center" href="#quick-actions-title">{copy.entry.quickActions}</a>
+            <a className="inline-flex min-h-11 items-center" href="#watch-for-title">{copy.entry.warningTitle}</a>
+            <a className="inline-flex min-h-11 items-center" href="#setup-guide-title">{copy.entry.guideTitle}</a>
+            {entry.editorialReview ? <a className="inline-flex min-h-11 items-center" href="#guide-sources">{copy.entry.sources}</a> : null}
+          </nav>
         </header>
 
         {/* QUICK ACTIONS -------------------------------------------- */}
@@ -113,7 +119,7 @@ export function EntryPage({
                   }`}
                 >
                   <h2
-                    className={`text-sm font-semibold uppercase tracking-wider ${
+                    className={`text-sm font-semibold ${
                       warning ? "text-accent-600" : "text-sage-600"
                     }`}
                   >
@@ -182,7 +188,6 @@ export function EntryPage({
         {/* WATCH FOR ------------------------------------------------ */}
         <section className="space-y-5" aria-labelledby="watch-for-title">
           <div className="space-y-2">
-            <p className="eyebrow">{copy.entry.warningEyebrow}</p>
             <h2
               id="watch-for-title"
               className="font-display text-3xl font-semibold tracking-tight text-paper-ink"
@@ -197,7 +202,7 @@ export function EntryPage({
               return (
                 <section
                   key={item.title}
-                  className="rounded-2xl border border-paper-line bg-white p-5 shadow-soft"
+                  className="border-b border-paper-line py-5"
                 >
                   <div className="flex items-start gap-3">
                     <RiskDot level={item.severity} />
@@ -224,7 +229,6 @@ export function EntryPage({
         {/* SETUP GUIDE ---------------------------------------------- */}
         <section className="space-y-5" aria-labelledby="setup-guide-title">
           <div className="space-y-2">
-            <p className="eyebrow">{copy.entry.guideEyebrow}</p>
             <h2
               id="setup-guide-title"
               className="font-display text-3xl font-semibold tracking-tight text-paper-ink"
@@ -239,11 +243,11 @@ export function EntryPage({
             </p>
           ) : null}
 
-          <ol className="space-y-4">
+          <ol className="setup-steps">
             {entry.setupGuide.map((item, index) => (
               <li
                 key={item.title}
-                className="card p-6"
+                className="py-5"
               >
                 <div className="flex items-start gap-4">
                   <span className="inline-flex h-9 w-9 flex-none items-center justify-center rounded-full bg-brand-50 font-display text-sm font-semibold text-brand-700">
@@ -280,7 +284,6 @@ export function EntryPage({
           >
             <div className="flex items-center justify-between gap-4">
               <div>
-                <p className="eyebrow">{copy.entry.relatedEyebrow}</p>
                 <h2
                   id="related-pages-title"
                   className="mt-2 font-display text-2xl font-semibold tracking-tight text-paper-ink"

@@ -84,7 +84,7 @@ const config: Config = {
         lift: "0 2px 4px rgba(31, 41, 55, 0.04), 0 16px 36px -20px rgba(31, 41, 55, 0.18)"
       },
       borderRadius: {
-        card: "20px"
+        card: "16px"
       }
     }
   },

@@ -51,7 +51,7 @@ export function NetworkOverview({
             return (
               <section
                 key={approach.id}
-                className={`space-y-5 rounded-card border bg-white p-6 shadow-soft sm:p-7 ${
+                className={`space-y-5 border-t pt-8 ${
                   highlighted
                     ? "border-brand-600"
                     : "border-paper-line"
@@ -64,7 +64,7 @@ export function NetworkOverview({
                   <p className="max-w-3xl text-paper-ink/75">{approach.description}</p>
                 </div>
 
-                <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+                <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
                   {guides.map((guide) => (
                     <NetworkGuideCard key={guide.slug} guide={guide} locale={locale} />
                   ))}

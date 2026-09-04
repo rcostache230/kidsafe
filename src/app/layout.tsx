@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import { Analytics } from "@vercel/analytics/next";
 
+import { SkipLink } from "@/components/skip-link";
 import { Footer } from "@/components/footer";
 import { SiteHeader } from "@/components/site-header";
 import { SITE_DESCRIPTION, SITE_NAME, SITE_URL } from "@/lib/site";
@@ -35,13 +36,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ro">
+      <head>
+        <link rel="stylesheet" href="/fonts/fonts.css" />
+        <link rel="preload" href="/fonts/inter-latin.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
+      </head>
       <body className="bg-paper text-paper-ink">
-        <a
-          href="#main"
-          className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50 focus:rounded-full focus:bg-brand-700 focus:px-4 focus:py-2 focus:text-sm focus:font-semibold focus:text-white"
-        >
-          Sari la continut
-        </a>
+        <SkipLink />
         <div className="flex min-h-screen flex-col">
           <SiteHeader />
           <main id="main" className="flex-1">

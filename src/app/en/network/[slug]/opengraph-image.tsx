@@ -1,6 +1,6 @@
 import { ImageResponse } from "next/og";
 
-import { NetworkGuideOgCard, OG_CONTENT_TYPE, OG_SIZE } from "@/lib/og";
+import { NetworkGuideOgCard, OG_CONTENT_TYPE, OG_SIZE, OG_FONTS } from "@/lib/og";
 import { getNetworkGuide } from "@/data/network";
 
 type ImageProps = {
@@ -21,11 +21,11 @@ export default async function OpenGraphImage({ params }: ImageProps) {
 
   if (!guide) {
     return new ImageResponse(<div>Not found</div>, {
-      ...OG_SIZE
+      ...OG_SIZE, fonts: OG_FONTS
     });
   }
 
   return new ImageResponse(<NetworkGuideOgCard guide={guide} locale="en" />, {
-    ...OG_SIZE
+    ...OG_SIZE, fonts: OG_FONTS
   });
 }

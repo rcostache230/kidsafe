@@ -3,6 +3,252 @@ import type { Entry } from "@/data/entries";
 type LocalizedEntry = Omit<Entry, "slug" | "category" | "riskLevel" | "riskBarPosition" | "related">;
 
 export const roEntryTranslations: Partial<Record<Entry["slug"], Partial<LocalizedEntry>>> = {
+  "twitch": {
+    "name": "Twitch",
+    "riskLabelText": "Risc mediu-ridicat",
+    "homeBadgeLabel": "Merită urmărit",
+    "summary": "O platformă de transmisiuni live axată pe jocuri. Verifică chatul, conținutul despre pariuri, cheltuielile și atașamentul copilului față de streameri.",
+    "description": "O platformă de transmisiuni live axată pe jocuri. Verifică chatul, conținutul despre pariuri, cheltuielile și atașamentul copilului față de streameri.",
+    "quickActions": [
+      {
+        "title": "Verifică vârsta și preferințele de conținut",
+        "description": "Data nașterii trebuie să fie corectă. Pentru conturile sub 18 ani, transmisiunile etichetate pentru adulți sunt ascunse implicit. Verifică filtrele din Settings → Content Preferences."
+      },
+      {
+        "title": "Alegeți streamerii împreună",
+        "description": "Alegeți între 5 și 10 streameri și folosiți lista Following în loc de Browse sau Discovery."
+      },
+      {
+        "title": "Șterge metodele de plată salvate",
+        "description": "Elimină cardurile salvate pentru a limita abonamentele și cumpărăturile impulsive de Bits."
+      }
+    ],
+    "watchFor": [
+      {
+        "title": "Mesaje nepotrivite în chatul live",
+        "description": "Pe canalele populare, mesajele apar foarte repede. Copilul poate vedea mesaje sexuale, ură, hărțuire sau tentative de manipulare înainte ca moderatorii să le elimine.",
+        "severity": "high"
+      },
+      {
+        "title": "Conținut despre jocuri de noroc și pariuri",
+        "description": "Prezentarea repetată a pariurilor drept divertisment le poate face să pară o activitate obișnuită pentru copiii care urmăresc transmisiunea.",
+        "severity": "high"
+      },
+      {
+        "title": "Raid-uri cu spectatori necunoscuți",
+        "description": "Un raid trimite publicul unui streamer pe alt canal. Copilul poate întâlni brusc un grup mare de spectatori, inclusiv persoane ostile.",
+        "severity": "medium"
+      },
+      {
+        "title": "Presiune pentru abonamente și donații",
+        "description": "Streamerii cer abonamente și Bits. Copiii se pot simți obligați să-i susțină financiar pe cei de care s-au atașat.",
+        "severity": "medium"
+      },
+      {
+        "title": "Atașament față de streameri",
+        "description": "Un copil poate avea impresia că îl cunoaște personal pe streamer. Această apropiere poate influența felul în care privește produsele, opiniile sau persoanele promovate în transmisiune.",
+        "severity": "medium"
+      }
+    ],
+    "setupGuide": [
+      {
+        "title": "Verifică preferințele de conținut și vârsta contului",
+        "steps": [
+          "Twitch folosește Content Classification Labels: Sexual Themes, Drugs/Intoxication, Violent/Graphic, Gambling și Mature-rated Game. Transmisiunile cu aceste etichete sunt ascunse implicit pentru conturile sub 18 ani. Confirmă data nașterii și verifică fiecare filtru în Settings → Content Preferences. Etichetarea depinde de streameri, deci nu este o garanție."
+        ]
+      },
+      {
+        "title": "Blochează mesajele private de la necunoscuți",
+        "steps": [
+          "Settings → Security and Privacy → Block Whispers from Strangers blochează mesajele dintre utilizatori care nu se urmăresc reciproc. Verifică dacă opțiunea implicită a rămas activă."
+        ]
+      },
+      {
+        "title": "Faceți o listă de streameri aprobați",
+        "steps": [
+          "Urmăriți împreună conținutul a 5 până la 10 streameri și adăugați-i în Following. Folosiți această listă în locul paginilor Browse sau Discovery."
+        ]
+      },
+      {
+        "title": "Stabiliți cum folosiți Browse și Discovery",
+        "steps": [
+          "Twitch nu are o blocare parentală pentru Browse. Conveniți să începeți cu lista Following și reveniți asupra regulii pe măsură ce copilul învață să aleagă conținutul."
+        ]
+      },
+      {
+        "title": "Elimină cardurile salvate",
+        "steps": [
+          "Settings → Payments → șterge cardurile. Pentru un abonament sau Bits va trebui introdusă din nou metoda de plată, ceea ce oferă un moment pentru a discuta cumpărătura."
+        ]
+      },
+      {
+        "title": "Vorbiți despre relația cu streamerii",
+        "steps": [
+          "Explică faptul că un streamer este un creator de divertisment. Copilul poate simți că îl cunoaște, chiar dacă streamerul nu îl cunoaște personal. Discutați cum poate influența această apropiere deciziile și cumpărăturile."
+        ]
+      },
+      {
+        "title": "Setează timpul de vizionare pe dispozitiv",
+        "steps": [
+          "Folosește iOS Screen Time sau Android Digital Wellbeing pentru limita zilnică a aplicației Twitch. Ghidul propune 60 până la 90 de minute ca plafon într-o zi de școală; discutați ce se potrivește rutinei copilului."
+        ]
+      }
+    ],
+    "ageRating": "13+ oficial",
+    "userCount": "Public larg de transmisiuni live",
+    "platform": "Web, iOS, Android, Smart TV, console",
+    "ageRecommendation": "Cu o listă de streameri aleasă împreună și limite pe dispozitiv",
+    "appMetrics": [
+      {
+        "label": "Moderarea conținutului",
+        "value": "Live, fără verificare în avans"
+      },
+      {
+        "label": "Transmisiuni cu pariuri",
+        "value": "Pot normaliza jocurile de noroc"
+      },
+      {
+        "label": "Viteza chatului popular",
+        "value": "Greu de urmărit și moderat"
+      },
+      {
+        "label": "Presiune de cumpărare",
+        "value": "Abonamente și Bits"
+      }
+    ],
+    "callouts": [
+      {
+        "type": "warning",
+        "title": "Highest concern",
+        "description": "Chatul se poate mișca prea repede pentru ca mesajele nepotrivite să fie eliminate înainte să le vadă copilul. Conținutul live nu poate fi verificat integral în avans."
+      },
+      {
+        "type": "tip",
+        "title": "Most impactful action",
+        "description": "Începeți cu streamerii aleși împreună și eliminați metodele de plată salvate. Controalele parentale oferite de Twitch sunt limitate."
+      }
+    ]
+  },
+  "steam": {
+    "name": "Steam",
+    "riskLabelText": "Risc mediu-ridicat",
+    "homeBadgeLabel": "Setează controalele mai întâi",
+    "summary": "Un magazin și o comunitate de jocuri pentru PC. Verifică accesul la jocuri pentru adulți, discuțiile, schimburile de obiecte și cumpărăturile.",
+    "description": "Un magazin și o comunitate de jocuri pentru PC. Verifică accesul la jocuri pentru adulți, discuțiile, schimburile de obiecte și cumpărăturile.",
+    "quickActions": [
+      {
+        "title": "Configurează Steam Families",
+        "description": "Steam Families a înlocuit Family View și Family Sharing în 2024-2025. Contul de părinte poate limita timpul, accesul la magazin și comunitate și poate aproba cumpărăturile copilului."
+      },
+      {
+        "title": "Restricționează Steam Community",
+        "description": "Dezactivează Steam Community și Online Features. Aceste zone prezintă riscuri de contact și conținut; jocurile locale nu au nevoie de ele."
+      },
+      {
+        "title": "Elimină metodele de plată salvate",
+        "description": "Șterge cardurile și folosește carduri cadou sau un sold fix în portofel, ca să păstrezi cheltuielile în buget."
+      }
+    ],
+    "watchFor": [
+      {
+        "title": "Acces la jocuri pentru adulți",
+        "description": "O dată de naștere declarată sau o confirmare de vârstă poate permite accesul la conținut pentru adulți. Verifică restricțiile contului; nu te baza pe această confirmare.",
+        "severity": "high"
+      },
+      {
+        "title": "Conținut și contacte din comunitate",
+        "description": "Discuțiile despre jocuri, paginile comunității și comentariile Workshop pot include conținut pentru adulți, ură, mesaje extremiste și contacte nedorite.",
+        "severity": "high"
+      },
+      {
+        "title": "Înșelătorii prin schimburi și mesaje",
+        "description": "Ofertele false de schimb, persoanele care pretind că sunt Steam Support și linkurile de phishing pot duce la furtul contului sau al obiectelor din joc.",
+        "severity": "high"
+      },
+      {
+        "title": "Cheltuieli în timpul reducerilor",
+        "description": "Summer Sale, Winter Sale și pachetele promoționale pot crea presiunea de a cumpăra imediat. Cardurile salvate fac mai ușor de cheltuit fără a urmări costul real.",
+        "severity": "medium"
+      },
+      {
+        "title": "Cereri de prietenie de la necunoscuți",
+        "description": "Jucătorii din aceleași sesiuni pot trimite cereri de prietenie. După acceptare, pot trimite mesaje, vedea activitatea și invita copilul în alte jocuri.",
+        "severity": "medium"
+      }
+    ],
+    "setupGuide": [
+      {
+        "title": "Configurează Steam Families",
+        "steps": [
+          "Din contul tău de adult: Steam menu → Settings → Family. Creează o familie de până la 6 membri și adaugă copilul cu rol de copil. Poți seta limite de timp, restricții pentru magazin și comunitate și aprobări pentru cumpărături. Restricțiile sunt legate de rolul contului. Setările vechi Family View se transferă la migrare."
+        ]
+      },
+      {
+        "title": "Restricționează comunitatea și forumurile",
+        "steps": [
+          "În controalele parentale Steam Families, restricționează Online Features și Steam Community. Revizuiește aceste opțiuni înainte să permiți funcțiile sociale."
+        ]
+      },
+      {
+        "title": "Șterge cardurile salvate",
+        "steps": [
+          "Steam → account name → Account Details → elimină metodele de plată. Poți folosi carduri Steam Wallet cu o valoare lunară fixă, pentru ca alegerile copilului să rămână în buget."
+        ]
+      },
+      {
+        "title": "Verificați lista de prieteni",
+        "steps": [
+          "Steam → profile → Friends. Eliminați persoanele pe care copilul nu le poate identifica din viața reală sau dintr-un context de joc verificat împreună."
+        ]
+      },
+      {
+        "title": "Aprobă jocurile disponibile copilului",
+        "steps": [
+          "În Steam Families, permite o listă de jocuri pe care le-ai verificat. Copilul poate cere adăugarea unui joc nou, iar tu aprobi sau refuzi cererea."
+        ]
+      },
+      {
+        "title": "Verifică vârsta recomandată pentru jocurile instalate",
+        "steps": [
+          "Deschide Library, apasă cu butonul drept pe un joc și deschide pagina sa din magazin pentru clasificarea PEGI sau ESRB. Discutați jocurile recomandate unei vârste mai mari."
+        ]
+      }
+    ],
+    "ageRating": "13+ pentru conturi",
+    "userCount": "Platformă de jocuri pentru PC",
+    "platform": "PC, Mac, Linux, aplicație mobilă companion",
+    "ageRecommendation": "Verifică accesul la conținut pentru adulți și activează controalele parentale",
+    "appMetrics": [
+      {
+        "label": "Verificarea vârstei",
+        "value": "Vârstă declarată"
+      },
+      {
+        "label": "Forumuri",
+        "value": "Conținut care poate scăpa moderării"
+      },
+      {
+        "label": "Înșelătorii",
+        "value": "Vizează și jucătorii tineri"
+      },
+      {
+        "label": "Presiune de cumpărare",
+        "value": "Reduceri, pachete, oferte limitate"
+      }
+    ],
+    "callouts": [
+      {
+        "type": "warning",
+        "title": "Highest concern",
+        "description": "Confirmarea vârstei din magazin poate fi completată de copil. Verifică accesul efectiv și restricțiile din Steam Families."
+      },
+      {
+        "type": "tip",
+        "title": "Most impactful action",
+        "description": "Configurează Steam Families și elimină cardurile salvate. Restricțiile sunt legate de rolul copilului în familie, în locul vechiului cod PIN Family View."
+      }
+    ]
+  },
   "gemini": {
     "summary": "Asistentul AI Google pentru întrebări, scris și învățare. Verifică tipul contului și țara înainte de a te baza pe controalele Family Link.",
     "description": "Asistentul AI Google pentru întrebări, scris și învățare. Verifică tipul contului și țara înainte de a te baza pe controalele Family Link.",
@@ -681,9 +927,9 @@ export const roEntryTranslations: Partial<Record<Entry["slug"], Partial<Localize
     name: "Telefon",
     riskLabelText: "Risc critic",
     summary:
-      "Un telefon pune mesagerie, internet, camera, plati si partajarea locatiei intr-un singur dispozitiv de buzunar.",
+      "Un telefon reunește mesageria, internetul, camera, plățile și partajarea locației.",
     description:
-      "Un telefon pune mesagerie, internet, camera, plati si partajarea locatiei intr-un singur dispozitiv de buzunar. Asta il transforma in cea mai rapida cale spre distragere constanta, contact privat si continut pe care un parinte nu il vede niciodata daca setarea initiala nu este facuta corect.",
+      "Un telefon reunește mesageria, internetul, camera, plățile și partajarea locației. Configurează-l înainte să-l dai copilului, pentru a limita distragerile, contactele private și accesul la conținut pe care s-ar putea să nu-l vezi.",
     quickActions: [
       {
         title: "Activeaza Screen Time sau Family Link",
@@ -772,9 +1018,9 @@ export const roEntryTranslations: Partial<Record<Entry["slug"], Partial<Localize
     name: "Tableta",
     riskLabelText: "Risc ridicat",
     summary:
-      "O tableta pare adesea mai sigura decat un telefon pentru ca sta in casa, dar poate fi la fel de deschisa imediat ce browserul, aplicatiile video si magazinul de aplicatii sunt active.",
+      "O tabletă are browsere, aplicații video și magazine de aplicații ca un telefon, chiar dacă rămâne în casă.",
     description:
-      "O tableta pare adesea mai sigura decat un telefon pentru ca sta in casa, dar poate fi la fel de deschisa imediat ce browserul, aplicatiile video si magazinul de aplicatii sunt active. Utilizarea in comun creeaza si o alta problema: copiii mostenesc conturi de adult, istoric de navigare de adult si permisiuni de adult.",
+      "O tabletă are browsere, aplicații video și magazine de aplicații ca un telefon, chiar dacă rămâne în casă. Dacă o folosiți în comun, verifică dacă cel mic poate accesa contul, istoricul sau permisiunile unui adult.",
     quickActions: [
       {
         title: "Creeaza un profil pentru copil",
@@ -856,9 +1102,9 @@ export const roEntryTranslations: Partial<Record<Entry["slug"], Partial<Localize
     name: "Laptop",
     riskLabelText: "Risc critic",
     summary:
-      "Un laptop pare un instrument de scoala, dar in practica functioneaza ca un terminal complet de internet.",
+      "Un laptop pentru școală oferă și acces la browsere, descărcări, jocuri, VPN-uri și chat.",
     description:
-      "Un laptop pare un instrument de scoala, dar in practica functioneaza ca un terminal complet de internet. Browserele, descarcarile, clientii de jocuri, VPN-urile si aplicatiile de chat pot exista toate in paralel, ceea ce face supravegherea mult mai grea odata ce laptopul paraseste camera comuna.",
+      "Un laptop pentru școală oferă și acces la browsere, descărcări, jocuri, VPN-uri și chat. Utilizarea poate fi mai greu de urmărit în afara unei camere comune. Creează un cont standard pentru copil și păstrează tu accesul de administrator.",
     quickActions: [
       {
         title: "Creeaza un cont limitat pentru copil",
@@ -947,9 +1193,9 @@ export const roEntryTranslations: Partial<Record<Entry["slug"], Partial<Localize
     name: "Desktop PC",
     riskLabelText: "Risc critic",
     summary:
-      "Un desktop pare mai usor de supravegheat pentru ca sta intr-un singur loc, dar avantajul dispare daca se afla in dormitor.",
+      "Un computer desktop rămâne într-un singur loc. Alege o cameră comună, unde poți vedea cum este folosit.",
     description:
-      "Un desktop pare mai usor de supravegheat pentru ca sta intr-un singur loc, dar avantajul dispare daca se afla in dormitor. Daca ecranul nu este vizibil, platformele de jocuri, browserele, instrumentele de chat si sesiunile de noapte devin mult mai greu de observat decat pe telefon.",
+      "Un computer desktop rămâne într-un singur loc. Alege o cameră comună, unde poți vedea cum este folosit. În dormitor, jocurile, navigarea, conversațiile private și utilizarea noaptea pot trece neobservate.",
     quickActions: [
       {
         title: "Mutati PC-ul intr-o zona comuna",
@@ -1031,9 +1277,9 @@ export const roEntryTranslations: Partial<Record<Entry["slug"], Partial<Localize
   ios: {
     riskLabelText: "Risc critic",
     summary:
-      "iOS pare rafinat si sigur, ceea ce face multe familii sa creada ca setarile implicite sunt suficiente.",
+      "Verifică Screen Time, AirDrop, mesageria și aprobarea aplicațiilor înainte să dai copilului un iPhone sau iPad.",
     description:
-      "iOS pare rafinat si sigur, ceea ce face multe familii sa creada ca setarile implicite sunt suficiente. In realitate, AirDrop, iMessage, instalarile de aplicatii si setarile Screen Time au nevoie de configurare activa daca telefonul sau iPad-ul apartine unui copil.",
+      "Verifică Screen Time, AirDrop, mesageria și aprobarea aplicațiilor înainte să dai copilului un iPhone sau iPad. Setările implicite nu acoperă nevoile fiecărei familii.",
     quickActions: [
       {
         title: "Seteaza un cod separat pentru Screen Time",
@@ -1121,9 +1367,9 @@ export const roEntryTranslations: Partial<Record<Entry["slug"], Partial<Localize
   android: {
     riskLabelText: "Risc critic",
     summary:
-      "Android ofera familiilor instrumente utile de control, dar le ofera copiilor si mai multe cai de ocolire daca setarea este relaxata.",
+      "Folosește Family Link pentru supravegherea unui dispozitiv Android și verifică browserul și instalările din afara Play Store.",
     description:
-      "Android ofera familiilor instrumente utile de control, dar le ofera copiilor si mai multe cai de ocolire daca setarea este relaxata. Sideloading-ul, meniurile diferite intre producatori si accesul larg in browser inseamna ca cel mai sigur dispozitiv Android este unul conectat de la inceput la conturi Google supravegheate.",
+      "Folosește Family Link de la început. Verifică browserul și instalările din afara Play Store, care pot ocoli restricțiile magazinului. Numele meniurilor diferă între producători.",
     quickActions: [
       {
         title: "Configureaza Google Family Link",
@@ -1204,9 +1450,9 @@ export const roEntryTranslations: Partial<Record<Entry["slug"], Partial<Localize
   windows: {
     riskLabelText: "Risc critic",
     summary:
-      "Windows este puternic, flexibil si foarte prezent in dormitoare si contexte scolare, exact de aceea are nevoie de reguli clare de familie.",
+      "Configurează un cont de copil și Family Safety pe computerul Windows folosit pentru școală sau jocuri.",
     description:
-      "Windows este puternic, flexibil si foarte prezent in dormitoare si contexte scolare, exact de aceea are nevoie de reguli clare de familie. Ofera acces la browsere complete, descarcari de fisiere, launchere de jocuri si instrumente de chat private daca un parinte nu creeaza un cont real de copil si nu pastreaza drepturile de administrator pentru sine.",
+      "Windows oferă acces la browsere, descărcări, jocuri și conversații private. Configurează un cont de copil și Family Safety și păstrează drepturile de administrator în contul tău.",
     quickActions: [
       {
         title: "Creeaza un cont Microsoft pentru copil",
@@ -1288,9 +1534,9 @@ export const roEntryTranslations: Partial<Record<Entry["slug"], Partial<Localize
   macos: {
     riskLabelText: "Risc ridicat",
     summary:
-      "macOS este curat si de incredere, dar poate deveni usor un computer cu browser si aplicatii fara limite daca acel cont al copilului nu este restrans.",
+      "Folosește un cont standard pentru copil și protejează Screen Time cu un cod separat pe Mac.",
     description:
-      "macOS este curat si de incredere, dar poate deveni usor un computer cu browser si aplicatii fara limite daca acel cont al copilului nu este restrans. Screen Time ajuta, dar doar atunci cand codul este separat si autentificarea copilului nu poate instala software liber.",
+      "Folosește un cont standard pentru copil și protejează Screen Time cu un cod separat. Fără aceste limite, copilul poate naviga fără restricții și poate instala programe liber.",
     quickActions: [
       {
         title: "Porneste Screen Time cu un cod separat",
@@ -1507,9 +1753,9 @@ export const roEntryTranslations: Partial<Record<Entry["slug"], Partial<Localize
   youtube: {
     riskLabelText: "Risc ridicat",
     summary:
-      "O platforma video condusa de un motor puternic de recomandari, autoplay si comentarii in mare parte nefiltrate.",
+      "O platformă video cu recomandări personalizate, redare automată și comentarii care pot expune copiii la conținut nepotrivit.",
     description:
-      "O platforma video condusa de un motor puternic de recomandari, autoplay si comentarii in mare parte nefiltrate.",
+      "O platformă video cu recomandări personalizate, redare automată și comentarii care pot expune copiii la conținut nepotrivit.",
     quickActions: [
       {
         title: "Activeaza Restricted Mode peste tot",
@@ -1919,9 +2165,9 @@ export const roEntryTranslations: Partial<Record<Entry["slug"], Partial<Localize
   tiktok: {
     riskLabelText: "Risc foarte ridicat",
     summary:
-      "O platforma de clipuri scurte alimentata de unul dintre cele mai puternice motoare de recomandare folosite frecvent de copii.",
+      "O aplicație de clipuri scurte ale cărei recomandări personalizate pot ține copiii în fața ecranului mult timp.",
     description:
-      "O platforma de clipuri scurte alimentata de unul dintre cele mai puternice motoare de recomandare folosite frecvent de copii.",
+      "O aplicație de clipuri scurte ale cărei recomandări personalizate pot ține copiii în fața ecranului mult timp.",
     quickActions: [
       {
         title: "Activeaza Family Pairing",
@@ -2417,9 +2663,9 @@ export const roEntryTranslations: Partial<Record<Entry["slug"], Partial<Localize
   chatgpt: {
     riskLabelText: "Risc mediu",
     summary:
-      "Un chatbot AI care poate ajuta la invatare, dar care estompeaza si linia dintre sprijin, scurtatura si autoritate.",
+      "Un chatbot AI care poate ajuta la învățare. Copiii trebuie să verifice răspunsurile și să înțeleagă limitele sfaturilor sale.",
     description:
-      "Un chatbot AI care poate ajuta la invatare, dar care estompeaza si linia dintre sprijin, scurtatura si autoritate.",
+      "Un chatbot AI care poate ajuta la învățare. Copiii trebuie să verifice răspunsurile și să înțeleagă limitele sfaturilor sale.",
     quickActions: [
       {
         title: "Opreste folosirea conversatiilor pentru antrenare",

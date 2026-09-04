@@ -1,6 +1,6 @@
 import { getCopy } from "@/lib/copy";
 import { type Locale } from "@/lib/locale";
-import { type RiskLevel } from "@/data/entries";
+import { type RiskLevel, getRiskMeta } from "@/data/entries";
 
 // Place categorical ratings in the middle of their segment when no position is supplied.
 const positionByLevel: Record<RiskLevel, number> = {
@@ -23,7 +23,7 @@ export function RiskBar({
   const copy = getCopy(locale);
 
   return (
-    <div className="space-y-3">
+    <div className="space-y-3" role="img" aria-label={`${copy.entry.riskLevel}: ${getRiskMeta(level, locale).label}`}>
       <div className="relative overflow-hidden rounded-full border border-paper-line">
         <div className="grid h-3 grid-cols-4">
           <span className="bg-[#D4ECE6]" />

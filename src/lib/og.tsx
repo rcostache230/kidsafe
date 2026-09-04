@@ -1,3 +1,5 @@
+import { readFileSync } from "node:fs";
+import { join } from "node:path";
 import { BrandMarkSvg } from "@/components/brand";
 import { getCategoryLabel, getRiskMeta, type Entry } from "@/data/entries";
 import {
@@ -15,11 +17,18 @@ export const OG_SIZE = {
   height: 630
 };
 
+export const OG_FONTS = [{
+  name: "Inter",
+  data: new Uint8Array(readFileSync(join(process.cwd(), "public/fonts/inter-og.ttf"))).buffer,
+  weight: 600 as const,
+  style: "normal" as const
+}];
+
 export const OG_CONTENT_TYPE = "image/png";
 
 const baseText = "#0f172a";
 const mutedText = "#5f6b7a";
-const brandColor = "#1e293b";
+const brandColor = "#0D5849";
 
 function legendDot(color: string) {
   return (
@@ -94,11 +103,11 @@ export function HomeOgCard({ locale = "en" }: { locale?: Locale }) {
         display: "flex",
         flexDirection: "column",
         justifyContent: "space-between",
-        background: "#ffffff",
+        background: "#FBF7EF",
         padding: "56px 64px",
         color: baseText,
         fontFamily:
-          "system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif"
+          "Inter"
       }}
     >
       <OgBrand />
@@ -171,11 +180,11 @@ export function EntryOgCard({
         display: "flex",
         flexDirection: "column",
         justifyContent: "space-between",
-        background: "#ffffff",
+        background: "#FBF7EF",
         padding: "52px 60px",
         color: baseText,
         fontFamily:
-          "system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif"
+          "Inter"
       }}
     >
       <OgBrand compact />
@@ -311,11 +320,11 @@ export function NetworkGuideOgCard({
         display: "flex",
         flexDirection: "column",
         justifyContent: "space-between",
-        background: "#ffffff",
+        background: "#FBF7EF",
         padding: "52px 60px",
         color: baseText,
         fontFamily:
-          "system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif"
+          "Inter"
       }}
     >
       <OgBrand compact />

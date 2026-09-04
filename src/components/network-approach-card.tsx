@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { Plugs, Globe, WifiHigh } from "@phosphor-icons/react/dist/ssr";
 
 import {
   getNetworkCopy,
@@ -16,6 +17,7 @@ export function NetworkApproachCard({
   locale?: Locale;
 }) {
   const copy = getNetworkCopy(locale);
+  const Icon = approach.id === "dns-filtering" ? Globe : approach.id === "isp-controls" ? WifiHigh : Plugs;
   const guideCount = getNetworkGuidesByApproach(approach.id).length;
 
   return (
@@ -30,7 +32,7 @@ export function NetworkApproachCard({
             className="inline-flex h-12 w-12 items-center justify-center rounded-2xl border border-paper-line bg-paper-50 text-2xl"
             aria-hidden="true"
           >
-            {approach.icon}
+            <Icon size={26} />
           </span>
           <span className="inline-flex items-center rounded-[10px] bg-brand-50 px-2.5 py-1 text-[11px] font-semibold text-brand-700">
             {copy.guideCount(guideCount)}

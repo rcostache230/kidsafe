@@ -1,6 +1,6 @@
 import { ImageResponse } from "next/og";
 
-import { EntryOgCard, OG_CONTENT_TYPE, OG_SIZE } from "@/lib/og";
+import { EntryOgCard, OG_CONTENT_TYPE, OG_SIZE, OG_FONTS } from "@/lib/og";
 import { getEntry } from "@/data/entries";
 
 type ImageProps = {
@@ -21,11 +21,11 @@ export default async function OpenGraphImage({ params }: ImageProps) {
 
   if (!entry) {
     return new ImageResponse(<div>Not found</div>, {
-      ...OG_SIZE
+      ...OG_SIZE, fonts: OG_FONTS
     });
   }
 
   return new ImageResponse(<EntryOgCard entry={entry} locale="en" />, {
-    ...OG_SIZE
+    ...OG_SIZE, fonts: OG_FONTS
   });
 }

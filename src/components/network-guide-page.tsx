@@ -134,7 +134,6 @@ export function NetworkGuidePage({
 
         <section className="space-y-5" aria-labelledby="network-guide-title">
           <div className="space-y-2">
-            <p className="eyebrow">{copy.guideEyebrow}</p>
             <h2
               id="network-guide-title"
               className="font-display text-3xl font-semibold tracking-tight text-paper-ink"
@@ -143,9 +142,9 @@ export function NetworkGuidePage({
             </h2>
           </div>
 
-          <ol className="space-y-4">
+          <ol className="setup-steps">
             {guide.setupSteps.map((step, index) => (
-              <li key={step.title} className="card p-6">
+              <li key={step.title} className="py-5">
                 <div className="flex items-start gap-4">
                   <span className="inline-flex h-9 w-9 flex-none items-center justify-center rounded-full bg-brand-50 font-display text-sm font-semibold text-brand-700">
                     {index + 1}
@@ -166,14 +165,14 @@ export function NetworkGuidePage({
 
         <div className={`grid gap-3 ${guide.warning ? "sm:grid-cols-2" : ""}`}>
           <section className="rounded-2xl border border-sage-100 bg-[#F1F6EF] p-5">
-            <h2 className="font-display text-sm font-semibold uppercase tracking-wider text-sage-600">
+            <h2 className="font-display text-sm font-semibold text-sage-600">
               {copy.tipTitle}
             </h2>
             <p className="mt-2 text-[15px] leading-7 text-paper-ink/85">{guide.tip}</p>
           </section>
           {guide.warning ? (
             <section className="rounded-2xl border border-accent-200 bg-accent-50 p-5">
-              <h2 className="font-display text-sm font-semibold uppercase tracking-wider text-accent-600">
+              <h2 className="font-display text-sm font-semibold text-accent-600">
                 {copy.warningTitle}
               </h2>
               <p className="mt-2 text-[15px] leading-7 text-paper-ink/85">

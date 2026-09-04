@@ -49,8 +49,8 @@ const categoryLabelsByLocale: Record<Locale, Record<Category, string>> = {
   ro: {
     devices: "Dispozitive",
     os: "Sisteme de operare",
-    apps: "Aplicatii",
-    network: "Retea de acasa"
+    apps: "Aplicații",
+    network: "Rețeaua de acasă"
   }
 };
 
@@ -72,7 +72,7 @@ const localizedRiskLabels: Record<Locale, Record<RiskLevel, string>> = {
     critical: "Critic",
     high: "Ridicat",
     medium: "Mediu",
-    low: "Scazut"
+    low: "Scăzut"
   }
 };
 
@@ -84,10 +84,10 @@ const localizedParentRiskLabels: Record<Locale, Record<RiskLevel, string>> = {
     low: "Low concern"
   },
   ro: {
-    critical: "Necesita atentie zilnica",
-    high: "Seteaza controalele mai intai",
-    medium: "Merita monitorizat",
-    low: "Nivel redus de ingrijorare"
+    critical: "Necesită atenție zilnică",
+    high: "Setează controalele mai întâi",
+    medium: "Merită urmărit",
+    low: "Nivel redus de îngrijorare"
   }
 };
 
@@ -158,8 +158,8 @@ export const entries: Entry[] = [
     "category": "devices",
     "riskLevel": "critical",
     "riskLabelText": "Critical risk",
-    "summary": "A smartphone puts messaging, the internet, a camera, payments, and location sharing in one pocket-sized device.",
-    "description": "A smartphone puts messaging, the internet, a camera, payments, and location sharing in one pocket-sized device. That makes it the fastest route to constant distraction, private contact, and content a parent never sees unless the setup is locked down first.",
+    "summary": "A phone combines messaging, browsing, a camera, payments and location sharing.",
+    "description": "A phone combines messaging, browsing, a camera, payments and location sharing. Set it up before handing it over to reduce distractions, private contact and access to content you may not see.",
     "quickActions": [
       {
         "title": "Enable Screen Time or Family Link",
@@ -255,8 +255,8 @@ export const entries: Entry[] = [
     "category": "devices",
     "riskLevel": "high",
     "riskLabelText": "High risk",
-    "summary": "A tablet often feels safer than a phone because it stays in the house, but it can be just as open once the browser, video apps, and app store are live.",
-    "description": "A tablet often feels safer than a phone because it stays in the house, but it can be just as open once the browser, video apps, and app store are live. Shared family use also creates a common problem: children inherit adult logins, adult browsing history, and adult permissions.",
+    "summary": "A tablet has the same browsers, video apps and app stores as a phone, even when it stays at home.",
+    "description": "A tablet has the same browsers, video apps and app stores as a phone, even when it stays at home. On a shared tablet, check that your child cannot use an adult’s login, browsing history or permissions.",
     "quickActions": [
       {
         "title": "Create a child profile",
@@ -347,8 +347,8 @@ export const entries: Entry[] = [
     "category": "devices",
     "riskLevel": "critical",
     "riskLabelText": "Critical risk",
-    "summary": "A laptop looks like a school tool, but it behaves like a full internet terminal.",
-    "description": "A laptop looks like a school tool, but it behaves like a full internet terminal. Browsers, downloads, gaming clients, VPNs, and chat apps can all exist side by side, which makes a child far harder to supervise once the machine leaves a shared room.",
+    "summary": "A laptop used for school also gives access to browsers, downloads, games, VPNs and chat.",
+    "description": "A laptop used for school also gives access to browsers, downloads, games, VPNs and chat. It can be harder to supervise once it leaves a shared room. Start with a standard child account and keep administrator access yourself.",
     "quickActions": [
       {
         "title": "Create a limited child OS account",
@@ -444,8 +444,8 @@ export const entries: Entry[] = [
     "category": "devices",
     "riskLevel": "critical",
     "riskLabelText": "Critical risk",
-    "summary": "A desktop PC often feels easier to supervise because it stays in one place, but that advantage disappears if it lives in a bedroom.",
-    "description": "A desktop PC often feels easier to supervise because it stays in one place, but that advantage disappears if it lives in a bedroom. Once the screen is unsupervised, gaming platforms, browsers, chat tools, and late-night use can become much harder to spot than on a phone.",
+    "summary": "A desktop stays in one place. Choose a shared room where you can see how it is used.",
+    "description": "A desktop stays in one place. Choose a shared room where you can see how it is used. In a bedroom, games, browsing, private chats and late-night use are easier to miss.",
     "quickActions": [
       {
         "title": "Move the PC to a common area",
@@ -478,7 +478,7 @@ export const entries: Entry[] = [
       },
       {
         "title": "Discord and community chat",
-        "description": "Desktop use often shifts children toward servers and voice channels where adults can join quietly.",
+        "description": "Desktop use often shifts children toward servers and voice channels where adults can join unnoticed.",
         "severity": "high"
       }
     ],
@@ -536,8 +536,8 @@ export const entries: Entry[] = [
     "category": "os",
     "riskLevel": "critical",
     "riskLabelText": "Critical risk",
-    "summary": "iOS feels polished and safe, which can make families assume the defaults are enough.",
-    "description": "iOS feels polished and safe, which can make families assume the defaults are enough. In practice, AirDrop, iMessage, app installs, and Screen Time settings all need active setup if the phone or iPad belongs to a child.",
+    "summary": "Check Screen Time, AirDrop, messaging and app approvals before handing an iPhone or iPad to a child.",
+    "description": "Check Screen Time, AirDrop, messaging and app approvals before handing an iPhone or iPad to a child. The default settings do not cover every family’s needs.",
     "quickActions": [
       {
         "title": "Set a separate Screen Time passcode",
@@ -634,8 +634,8 @@ export const entries: Entry[] = [
     "category": "os",
     "riskLevel": "critical",
     "riskLabelText": "Critical risk",
-    "summary": "Android gives families useful control tools, but it also gives children more routes around them if the setup is loose.",
-    "description": "Android gives families useful control tools, but it also gives children more routes around them if the setup is loose. Sideloading, different manufacturer menus, and open browser access mean the safest Android device is one attached to supervised Google accounts from the start.",
+    "summary": "Use Family Link to supervise an Android device, and check browser access and installs from outside the Play Store.",
+    "description": "Use Family Link to supervise an Android device from the start. Check browser access and installs from outside the Play Store, which can bypass store restrictions. Menu names vary by manufacturer.",
     "quickActions": [
       {
         "title": "Set up Google Family Link",
@@ -726,8 +726,8 @@ export const entries: Entry[] = [
     "category": "os",
     "riskLevel": "critical",
     "riskLabelText": "Critical risk",
-    "summary": "Windows is powerful, flexible, and common in bedrooms and school setups, which is exactly why it needs clear family rules.",
-    "description": "Windows is powerful, flexible, and common in bedrooms and school setups, which is exactly why it needs clear family rules. It gives children access to full browsers, file downloads, game launchers, and private chat tools unless a parent creates a true child account and keeps admin rights to themselves.",
+    "summary": "Set up a child account and Family Safety on the Windows computer your child uses for school or games.",
+    "description": "Windows gives access to browsers, downloads, game launchers and private chats. Set up a child account and Family Safety, and keep administrator permissions on your own account.",
     "quickActions": [
       {
         "title": "Create a child Microsoft account",
@@ -818,8 +818,8 @@ export const entries: Entry[] = [
     "category": "os",
     "riskLevel": "high",
     "riskLabelText": "High risk",
-    "summary": "macOS is clean and dependable, but it can still become an unrestricted browser and app machine if the child's account is not limited.",
-    "description": "macOS is clean and dependable, but it can still become an unrestricted browser and app machine if the child's account is not limited. Screen Time is useful here, but only when the passcode is separate and the child's login is not allowed to install software freely.",
+    "summary": "Use a standard child account and protect Screen Time with a separate passcode on the Mac.",
+    "description": "Use a standard child account and protect Screen Time with a separate passcode. Without these limits, the child may have unrestricted browser access and be able to install software freely.",
     "quickActions": [
       {
         "title": "Turn on Screen Time with a separate passcode",
@@ -856,7 +856,7 @@ export const entries: Entry[] = [
         "severity": "medium"
       }
     ],
-    "setupGuideIntro": "Menu path: System Settings → Screen Time. On older Macs, also double-check whether app installs are gated the way you expect.",
+    "setupGuideIntro": "Menu path: System Settings → Screen Time. On older Macs, also double-check whether app installs require approval as expected.",
     "setupGuide": [
       {
         "title": "Turn on Screen Time",
@@ -1066,8 +1066,8 @@ export const entries: Entry[] = [
     "category": "apps",
     "riskLevel": "high",
     "riskLabelText": "High risk",
-    "summary": "A video platform driven by a powerful recommendation engine, autoplay, and largely unfiltered comments.",
-    "description": "A video platform driven by a powerful recommendation engine, autoplay, and largely unfiltered comments.",
+    "summary": "A video platform with personalised recommendations, autoplay and comments that can expose children to unsuitable content.",
+    "description": "A video platform with personalised recommendations, autoplay and comments that can expose children to unsuitable content.",
     "quickActions": [
       {
         "title": "Enable Restricted Mode everywhere",
@@ -1200,7 +1200,7 @@ export const entries: Entry[] = [
       {
         "type": "tip",
         "title": "New in 2026",
-        "description": "Parents of supervised teen accounts can now cap the Shorts feed by the minute — set it to 0 in Family Center → Time management to remove the endless short-video feed completely."
+        "description": "Parents of supervised teen accounts can now cap the Shorts feed by the minute: set it to 0 in Family Center → Time management to remove the endless short-video feed completely."
       }
     ],
     "related": [
@@ -1317,7 +1317,7 @@ export const entries: Entry[] = [
       {
         "title": "Review Memories regularly",
         "steps": [
-          "Memories tab → check saved snaps together so private content does not quietly build up over time."
+          "Memories tab → check saved snaps together so private content does not build up over time."
         ]
       }
     ],
@@ -1535,8 +1535,8 @@ export const entries: Entry[] = [
     "category": "apps",
     "riskLevel": "critical",
     "riskLabelText": "Very high risk",
-    "summary": "A short-video platform powered by one of the strongest recommendation algorithms children commonly use.",
-    "description": "A short-video platform powered by one of the strongest recommendation algorithms children commonly use.",
+    "summary": "A short-video app whose personalised recommendations can keep children watching for long periods.",
+    "description": "A short-video app whose personalised recommendations can keep children watching for long periods.",
     "quickActions": [
       {
         "title": "Enable Family Pairing",
@@ -2114,8 +2114,8 @@ export const entries: Entry[] = [
     "category": "apps",
     "riskLevel": "medium",
     "riskLabelText": "Medium risk",
-    "summary": "An AI chatbot that can be helpful for learning but also blurs the line between support, shortcut, and authority.",
-    "description": "An AI chatbot that can be helpful for learning but also blurs the line between support, shortcut, and authority.",
+    "summary": "An AI chatbot that can help with learning. Children need to check its answers and understand the limits of its advice.",
+    "description": "An AI chatbot that can help with learning. Children need to check its answers and understand the limits of its advice.",
     "quickActions": [
       {
         "title": "Turn off training usage",
@@ -2583,8 +2583,8 @@ export const entries: Entry[] = [
     "riskLevel": "high",
     "riskLabelText": "Medium-high risk",
     "homeBadgeLabel": "Worth monitoring",
-    "summary": "A live video streaming platform dominated by gaming content — but with real-time unmoderated chat, gambling streams, and heavy parasocial relationship dynamics.",
-    "description": "A live video streaming platform dominated by gaming content — but with real-time unmoderated chat, gambling streams, and heavy parasocial relationship dynamics.",
+    "summary": "A live-streaming platform focused on gaming. Check live chat, gambling content, spending and the attachment a child may develop to streamers.",
+    "description": "A live-streaming platform focused on gaming. Check live chat, gambling content, spending and the attachment a child may develop to streamers.",
     "quickActions": [
       {
         "title": "Set Content Preferences and the right age",
@@ -2678,7 +2678,7 @@ export const entries: Entry[] = [
     "appMetrics": [
       {
         "label": "Content moderation",
-        "value": "Real-time — effectively impossible to pre-screen"
+        "value": "Real-time: effectively impossible to pre-screen"
       },
       {
         "label": "Gambling streams",
@@ -2697,7 +2697,7 @@ export const entries: Entry[] = [
       {
         "type": "warning",
         "title": "Highest concern",
-        "description": "Twitch live chat moves too fast for any moderation system to catch harmful content before a child sees it. There is no pre-screening of live content. What appears in chat cannot be un-seen."
+        "description": "Twitch live chat moves too fast for any moderation system to catch harmful content before a child sees it. There is no pre-screening of live content. A child may see a message before it is removed."
       },
       {
         "type": "tip",
@@ -2727,8 +2727,8 @@ export const entries: Entry[] = [
     "riskLevel": "high",
     "riskLabelText": "Medium-high risk",
     "homeBadgeLabel": "Set up controls first",
-    "summary": "The world's largest PC gaming platform — with adult content accessible via a checkbox, unmoderated community forums, and a thriving scam ecosystem targeting young players.",
-    "description": "The world's largest PC gaming platform — with adult content accessible via a checkbox, unmoderated community forums, and a thriving scam ecosystem targeting young players.",
+    "summary": "A PC gaming store and community. Review access to adult games, community discussions, trades and purchases.",
+    "description": "A PC gaming store and community. Review access to adult games, community discussions, trades and purchases.",
     "quickActions": [
       {
         "title": "Set up Steam Families",
@@ -2835,7 +2835,7 @@ export const entries: Entry[] = [
       {
         "type": "warning",
         "title": "Highest concern",
-        "description": "Steam's adult content toggle is a checkbox that any child can tick. There is no technical barrier between a child's account and explicit content — only a yes or no prompt they can answer themselves."
+        "description": "Steam's adult content toggle is a checkbox that any child can tick. There is no technical barrier between a child's account and explicit content: only a yes or no prompt they can answer themselves."
       },
       {
         "type": "tip",

@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { useEffect } from "react";
 import { usePathname } from "next/navigation";
 
 import { BrandLogo, BrandMark } from "@/components/brand";
@@ -15,6 +16,7 @@ import {
 export function SiteHeader() {
   const pathname = usePathname();
   const locale = getLocaleFromPathname(pathname);
+  useEffect(() => { document.documentElement.lang = locale; }, [locale]);
   const otherLocale = getOppositeLocale(locale);
   const copy = getCopy(locale);
   const basePath = stripLocalePrefix(pathname);
@@ -67,7 +69,7 @@ export function SiteHeader() {
               <Link
                 key={item.href}
                 href={item.href}
-                className="rounded-full px-3.5 py-1.5 text-[15px] font-medium text-paper-ink/80 no-underline hover:bg-brand-50 hover:text-brand-700"
+                className="inline-flex min-h-11 items-center rounded-full px-3.5 py-1.5 text-[15px] font-medium text-paper-ink/80 no-underline hover:bg-brand-50 hover:text-brand-700"
                 style={{ textDecoration: "none" }}
               >
                 {item.label}
@@ -96,7 +98,7 @@ export function SiteHeader() {
             <Link
               key={item.href}
               href={item.href}
-              className="inline-flex min-h-10 items-center justify-center rounded-full border border-paper-line bg-white px-2 text-center text-sm font-medium text-paper-ink no-underline shadow-soft hover:border-brand-600 hover:text-brand-700"
+              className="inline-flex min-h-11 items-center justify-center rounded-full border border-paper-line bg-white px-2 text-center text-sm font-medium text-paper-ink no-underline shadow-soft hover:border-brand-600 hover:text-brand-700"
               style={{ textDecoration: "none" }}
             >
               {item.label}

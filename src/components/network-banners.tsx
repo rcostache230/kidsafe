@@ -1,3 +1,4 @@
+import { Info } from "@phosphor-icons/react/dist/ssr";
 import { getNetworkCopy } from "@/data/network";
 import { type Locale } from "@/lib/locale";
 
@@ -33,7 +34,7 @@ export function NetworkBanners({
     <details className="group overflow-hidden rounded-2xl border border-paper-line bg-white shadow-soft">
       <summary className="flex cursor-pointer list-none items-center justify-between gap-4 px-5 py-4 text-sm font-semibold text-paper-ink transition-colors hover:text-brand-700 [&::-webkit-details-marker]:hidden">
         <span className="inline-flex items-center gap-2">
-          <span aria-hidden="true">ℹ️</span>
+          <Info aria-hidden="true" size={18} />
           {copy.contextSummaryLabel}
         </span>
         <span
