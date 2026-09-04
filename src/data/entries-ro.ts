@@ -133,8 +133,7 @@ export const roEntryTranslations: Partial<Record<Entry["slug"], Partial<Localize
       ]
     },
     "name": "Gemini",
-    "riskLabelText": "Setează controalele mai întâi",
-    "homeBadgeLabel": "Verifică disponibilitatea regională"
+    "riskLabelText": "Risc ridicat"
   },
   "meta-ai": {
     "summary": "Asistentul AI Meta poate apărea în aplicațiile deja folosite de adolescent. Verifică aplicația și contul: informațiile pentru părinți și alertele nu sunt identice peste tot.",
@@ -266,8 +265,7 @@ export const roEntryTranslations: Partial<Record<Entry["slug"], Partial<Localize
       ]
     },
     "name": "Meta AI",
-    "riskLabelText": "Setează controalele mai întâi",
-    "homeBadgeLabel": "Verifică disponibilitatea regională"
+    "riskLabelText": "Risc ridicat"
   },
   "telegram": {
     "summary": "Un serviciu de mesagerie cu grupuri, canale de difuzare și boți ai unor terți. Condițiile Telegram pentru UE cer 18+; ghidul ajută părinții să înțeleagă și să gestioneze utilizarea existentă.",
@@ -407,8 +405,7 @@ export const roEntryTranslations: Partial<Record<Entry["slug"], Partial<Localize
       ]
     },
     "name": "Telegram",
-    "riskLabelText": "Verifică vârsta și riscurile de contact",
-    "homeBadgeLabel": "18+ în UE"
+    "riskLabelText": "Risc ridicat"
   },
   "whatsapp": {
     "summary": "O aplicație de mesagerie și apeluri pentru familie și grupuri. Verifică dacă este un cont standard sau gestionat de părinte, apoi verifică persoanele de contact, invitațiile și raportarea.",

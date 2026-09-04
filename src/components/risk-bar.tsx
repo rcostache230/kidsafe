@@ -1,14 +1,25 @@
 import { getCopy } from "@/lib/copy";
 import { type Locale } from "@/lib/locale";
+import { type RiskLevel } from "@/data/entries";
+
+// Place categorical ratings in the middle of their segment when no position is supplied.
+const positionByLevel: Record<RiskLevel, number> = {
+  low: 12.5,
+  medium: 37.5,
+  high: 62.5,
+  critical: 87.5
+};
 
 export function RiskBar({
   position,
+  level,
   locale = "en"
 }: {
-  position: number;
+  position?: number;
+  level: RiskLevel;
   locale?: Locale;
 }) {
-  const clamped = Math.max(0, Math.min(100, position));
+  const clamped = Math.max(0, Math.min(100, position ?? positionByLevel[level]));
   const copy = getCopy(locale);
 
   return (
