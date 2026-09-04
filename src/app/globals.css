@@ -190,3 +190,21 @@ p, h1, h2, h3, li { overflow-wrap: break-word; }
 }
 
 input[type="search"]::-webkit-search-cancel-button { display: none; }
+
+/* Shared wordmark proportions for guide and article headers. */
+.brand-lockup {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  flex-shrink: 0;
+  text-decoration: none;
+}
+.brand-lockup:hover { text-decoration: none; }
+.brand-logo-image {
+  display: block;
+  width: min(224px, calc(100vw - 108px));
+  height: auto;
+}
+@media (min-width: 640px) {
+  .brand-logo-image { width: 280px; }
+}

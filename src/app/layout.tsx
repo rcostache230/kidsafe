@@ -22,10 +22,9 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [
-      { url: "/icon.svg", type: "image/svg+xml" },
-      { url: "/favicon.ico", sizes: "32x32" }
+      { url: "/brand/digitalparents-favicon.png", sizes: "64x64", type: "image/png" }
     ],
-    apple: [{ url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" }]
+    apple: [{ url: "/brand/digitalparents-apple.png", sizes: "180x180", type: "image/png" }]
   }
 };
 

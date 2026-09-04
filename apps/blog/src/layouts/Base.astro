@@ -44,7 +44,8 @@ const footerCopy =
     <meta name="description" content={description} />
     {canonical ? <link rel="canonical" href={canonical} /> : null}
     <title>{title} | {siteName}</title>
-    <link rel="icon" href="/icon.svg" type="image/svg+xml" />
+    <link rel="icon" href="/brand/digitalparents-favicon.png" type="image/png" />
+    <link rel="apple-touch-icon" href="/brand/digitalparents-apple.png" />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:type" content="article" />
@@ -56,11 +57,8 @@ const footerCopy =
     <a class="skip-link" href="#main">{lang === "ro" ? "Sari la conținut" : "Skip to content"}</a>
     <header class="site-header">
       <div class="shell row">
-        <a class="brand" href={homeHref} aria-label="digitalparents.xyz">
-          <span class="brand-mark" aria-hidden="true">
-            <img src="/brand/digitalparents-logo-mark.png" alt="" width="40" height="40" draggable="false" />
-          </span>
-          <span>digitalparents<span class="brand-dot">.xyz</span></span>
+        <a class="brand-lockup" href={homeHref} aria-label="Digital Parents">
+          <img class="brand-logo-image" src="/brand/digitalparents-wordmark.png" alt="" width="1120" height="107" draggable="false" />
         </a>
         <nav class="nav" aria-label="Primary">
           <a href={`${homeHref}#apps`}>{navGuides}</a>

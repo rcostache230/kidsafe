@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useEffect } from "react";
 import { usePathname } from "next/navigation";
 
-import { BrandLogo, BrandMark } from "@/components/brand";
+import { BrandLogo } from "@/components/brand";
 import { getCopy } from "@/lib/copy";
 import {
   getLocaleFromPathname,
@@ -47,19 +47,7 @@ export function SiteHeader() {
     <header className="sticky top-0 z-40 border-b border-paper-line bg-paper/85 backdrop-blur supports-[backdrop-filter]:bg-paper/70">
       <div className="page-shell py-3 md:py-4">
         <div className="flex items-center justify-between gap-4">
-          <div className="flex items-center gap-3">
-            <Link
-              href={homeHref}
-              className="inline-flex items-center sm:hidden no-underline"
-              aria-label="digitalparents.xyz"
-              style={{ textDecoration: "none" }}
-            >
-              <BrandMark />
-            </Link>
-            <div className="hidden sm:block">
-              <BrandLogo href={homeHref} />
-            </div>
-          </div>
+          <BrandLogo href={homeHref} />
 
           <nav
             aria-label="Primary"

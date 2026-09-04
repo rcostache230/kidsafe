@@ -1,6 +1,5 @@
 import { readFileSync } from "node:fs";
 import { join } from "node:path";
-import { BrandMarkSvg } from "@/components/brand";
 import { getCategoryLabel, getRiskMeta, type Entry } from "@/data/entries";
 import {
   getNetworkApproach,
@@ -10,7 +9,6 @@ import {
 } from "@/data/network";
 import { getCopy } from "@/lib/copy";
 import { type Locale } from "@/lib/locale";
-import { SITE_NAME } from "@/lib/site";
 
 export const OG_SIZE = {
   width: 1200,
@@ -25,6 +23,8 @@ export const OG_FONTS = [{
 }];
 
 export const OG_CONTENT_TYPE = "image/png";
+
+const brandMarkData = `data:image/png;base64,${readFileSync(join(process.cwd(), "public/brand/digitalparents-wordmark.png")).toString("base64")}`;
 
 const baseText = "#0f172a";
 const mutedText = "#5f6b7a";
@@ -75,19 +75,7 @@ export function OgBrand({ compact = false }: { compact?: boolean }) {
         color: brandColor
       }}
     >
-      <BrandMarkSvg size={compact ? 42 : 52} />
-      {!compact ? (
-        <span
-          style={{
-            fontSize: 32,
-            fontWeight: 600,
-            letterSpacing: -0.6,
-            color: brandColor
-          }}
-        >
-          {SITE_NAME}
-        </span>
-      ) : null}
+      <img src={brandMarkData} width={compact ? 300 : 400} height={compact ? 29 : 38} alt="Digital Parents" />
     </div>
   );
 }
