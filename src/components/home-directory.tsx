@@ -9,6 +9,7 @@ import { EntryCard } from "@/components/entry-card";
 import { NetworkApproachCard } from "@/components/network-approach-card";
 import { PartnerTips } from "@/components/partner-tips";
 import { getCopy } from "@/lib/copy";
+import { creatorUrl, crossPromoCopy } from "@/lib/cross-promo";
 import { localizeHref, type Locale } from "@/lib/locale";
 import { getEntriesByCategory, type Entry } from "@/data/entries";
 import {
@@ -206,15 +207,20 @@ export function HomeDirectory({ locale = "en" }: { locale?: Locale }) {
               </h2>
               <p className="text-paper-ink/85">{copy.home.aboutBodyOne}</p>
               <p className="text-paper-ink/85">{copy.home.aboutBodyTwo}</p>
-              <a
-                href="https://www.linkedin.com/in/rcostache/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn-ghost no-underline"
-                style={{ textDecoration: "none" }}
-              >
-                {copy.home.linkedin}
-              </a>
+              <div className="flex flex-wrap gap-3">
+                <a href={creatorUrl} target="_blank" rel="noopener noreferrer" className="btn-ghost no-underline">
+                  {crossPromoCopy[locale].creatorLink}
+                </a>
+                <a
+                  href="https://www.linkedin.com/in/rcostache/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-ghost no-underline"
+                  style={{ textDecoration: "none" }}
+                >
+                  {copy.home.linkedin}
+                </a>
+              </div>
             </div>
           </div>
         </section>

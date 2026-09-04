@@ -6,6 +6,7 @@ import { usePathname } from "next/navigation";
 
 import { BrandLogo } from "@/components/brand";
 import { getCopy } from "@/lib/copy";
+import { crossPromoCopy, klioUrl } from "@/lib/cross-promo";
 import {
   getLocaleFromPathname,
   getOppositeLocale,
@@ -19,6 +20,7 @@ export function SiteHeader() {
   useEffect(() => { document.documentElement.lang = locale; }, [locale]);
   const otherLocale = getOppositeLocale(locale);
   const copy = getCopy(locale);
+  const promo = crossPromoCopy[locale];
   const basePath = stripLocalePrefix(pathname);
   const homeHref = localizeHref("/", locale);
   const switchHref = localizeHref(basePath, otherLocale);
@@ -63,6 +65,9 @@ export function SiteHeader() {
                 {item.label}
               </Link>
             ))}
+            <a href={klioUrl} target="_blank" rel="noopener noreferrer" aria-label={promo.klioLabel} title={promo.klioDescription} className="inline-flex min-h-11 items-center rounded-full px-3.5 py-1.5 text-[15px] font-medium text-brand-700 no-underline hover:bg-brand-50">
+              Klio <span aria-hidden="true" className="ml-1">↗</span>
+            </a>
           </nav>
 
           <div className="flex items-center gap-2">
@@ -80,18 +85,21 @@ export function SiteHeader() {
 
         <nav
           aria-label="Primary mobile"
-          className="grid grid-cols-3 gap-2 pt-3 md:hidden"
+          className="grid grid-cols-4 gap-1.5 pt-3 md:hidden"
         >
           {navItems.map((item) => (
             <Link
               key={item.href}
               href={item.href}
-              className="inline-flex min-h-11 items-center justify-center rounded-full border border-paper-line bg-white px-2 text-center text-sm font-medium text-paper-ink no-underline shadow-soft hover:border-brand-600 hover:text-brand-700"
+              className="inline-flex min-h-11 items-center justify-center rounded-full border border-paper-line bg-white px-1.5 text-center text-sm font-medium text-paper-ink no-underline shadow-soft hover:border-brand-600 hover:text-brand-700"
               style={{ textDecoration: "none" }}
             >
               {item.label}
             </Link>
           ))}
+          <a href={klioUrl} target="_blank" rel="noopener noreferrer" aria-label={promo.klioLabel} title={promo.klioDescription} className="inline-flex min-h-11 items-center justify-center rounded-full border border-paper-line bg-white px-1.5 text-sm font-medium text-brand-700 no-underline shadow-soft hover:border-brand-600">
+            Klio <span aria-hidden="true" className="ml-1">↗</span>
+          </a>
         </nav>
       </div>
     </header>

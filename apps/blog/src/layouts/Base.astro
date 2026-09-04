@@ -1,5 +1,6 @@
 ---
 import "../styles/global.css";
+import { creatorUrl, crossPromoCopy, klioUrl } from "../../../../src/lib/cross-promo";
 
 interface Props {
   title: string;
@@ -10,6 +11,7 @@ interface Props {
 }
 
 const { title, description, lang = "ro", canonical, image } = Astro.props;
+const promo = crossPromoCopy[lang];
 const siteName = "Digital Parents";
 const imageUrl = image
   ? new URL(image, "https://digitalparents.xyz").toString()
@@ -64,6 +66,7 @@ const footerCopy =
           <a href={`${homeHref}#apps`}>{navGuides}</a>
           <a href={blogHref} aria-current={Astro.url.pathname === blogHref ? "page" : undefined}>{navArticles}</a>
           <a href={`${homeHref}#about`}>{navAbout}</a>
+          <a href={klioUrl} target="_blank" rel="noopener noreferrer" aria-label={promo.klioLabel} title={promo.klioDescription} class="klio-link">Klio <span aria-hidden="true">↗</span></a>
         </nav>
         <a class="lang-switch" href={switchLangHref} style="text-decoration:none; border:1px solid var(--paper-line); border-radius:999px; padding:0.4rem 0.75rem; font-size:14px; font-weight:600; color:var(--brand-700); background:#fff;" aria-label={switchLangLabel === "RO" ? "Switch to Romanian" : "Switch to English"}>
           {switchLangLabel}
@@ -77,6 +80,19 @@ const footerCopy =
 
     <footer class="site-footer">
       <div class="shell">
+        <section class="creator-projects" aria-labelledby="creator-projects-title">
+          <h2 id="creator-projects-title">{promo.heading}</h2>
+          <div class="creator-project-links">
+            <div>
+              <a href={creatorUrl} target="_blank" rel="noopener noreferrer">Razvan Costache <span aria-hidden="true">↗</span></a>
+              <p>{promo.creatorDescription}</p>
+            </div>
+            <div>
+              <a href={klioUrl} target="_blank" rel="noopener noreferrer" aria-label={promo.klioLabel}>Klio <span aria-hidden="true">↗</span></a>
+              <p>{promo.klioDescription}</p>
+            </div>
+          </div>
+        </section>
         <p>{footerCopy}</p>
         <p style="margin-top:0.5rem;">
           <a href={homeHref}>{lang === "ro" ? "Înapoi la ghiduri" : "Back to guides"}</a>

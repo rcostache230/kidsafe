@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 
 import { getCopy } from "@/lib/copy";
+import { creatorUrl, crossPromoCopy, klioUrl } from "@/lib/cross-promo";
 import { getLocaleFromPathname, localizeHref } from "@/lib/locale";
 
 export function Footer() {
@@ -12,6 +13,7 @@ export function Footer() {
   const pathname = usePathname();
   const locale = getLocaleFromPathname(pathname);
   const copy = getCopy(locale);
+  const promo = crossPromoCopy[locale];
   const blogLabel = locale === "ro" ? "Articole" : "Articles";
 
   useEffect(() => {
@@ -120,6 +122,20 @@ export function Footer() {
             ) : null}
           </div>
         </div>
+
+        <section aria-labelledby="creator-projects-title" className="border-t border-paper-line pt-6">
+          <h2 id="creator-projects-title" className="text-sm font-semibold text-paper-ink">{promo.heading}</h2>
+          <div className="mt-3 flex flex-col gap-4 sm:flex-row sm:gap-12">
+            <div>
+              <a href={creatorUrl} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-11 items-center gap-1 text-sm font-semibold text-brand-700">Razvan Costache <span aria-hidden="true">↗</span></a>
+              <p className="text-sm text-paper-ink/75">{promo.creatorDescription}</p>
+            </div>
+            <div>
+              <a href={klioUrl} target="_blank" rel="noopener noreferrer" aria-label={promo.klioLabel} className="inline-flex min-h-11 items-center gap-1 text-sm font-semibold text-brand-700">Klio <span aria-hidden="true">↗</span></a>
+              <p className="text-sm text-paper-ink/75">{promo.klioDescription}</p>
+            </div>
+          </div>
+        </section>
 
         <div className="flex flex-col gap-3 border-t border-paper-line pt-6 text-sm text-paper-ink/70 sm:flex-row sm:items-center sm:justify-between">
           <p>{copy.footer.copyright}</p>
