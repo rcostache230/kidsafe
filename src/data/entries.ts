@@ -2858,6 +2858,464 @@ export const entries: Entry[] = [
       }
     ]
   },
+  {
+    "slug": "gemini",
+    "name": "Gemini",
+    "category": "apps",
+    "riskLevel": "high",
+    "riskLabelText": "Set up controls first",
+    "homeBadgeLabel": "Check regional availability",
+    "summary": "Google’s AI assistant for questions, writing and learning. Check the account type and country before relying on Family Link controls.",
+    "description": "Google’s AI assistant for questions, writing and learning. Check the account type and country before relying on Family Link controls.",
+    "ageRating": "Eligibility varies by country and account type",
+    "userCount": "Learners and general AI users",
+    "platform": "Web, Android, iOS",
+    "ageRecommendation": "Our recommendation: eligible accounts, with agreed privacy and learning rules",
+    "quickActions": [
+      {
+        "title": "Check eligibility first",
+        "description": "Google currently excludes supervised Gemini Apps accounts in the EEA, including Romania, as well as the UK and Switzerland."
+      },
+      {
+        "title": "Check the account being used",
+        "description": "Look together at whether it is a personal, supervised or school account. School access depends on the institution’s administrator."
+      },
+      {
+        "title": "Agree what stays private",
+        "description": "Keep passwords, private photos and identifying details out of prompts. Ask for explanations, then check important answers."
+      }
+    ],
+    "setupGuide": [
+      {
+        "title": "Identify the account",
+        "steps": [
+          "Open the account menu together. A school login and a personal login can have different access and data rules; ask the school how its account is managed."
+        ]
+      },
+      {
+        "title": "Use Family Link only where supported",
+        "steps": [
+          "For an eligible supervised account outside the excluded regions: Family Link → select child → Controls → Gemini → Gemini Apps. Review whether access is on or off. Do not remove supervision or change a birthday to bypass eligibility."
+        ]
+      },
+      {
+        "title": "Review privacy settings",
+        "steps": [
+          "Read the Gemini Privacy Hub for the account in use. Where Keep Activity is available, review it together; turning it off does not mean every chat is immediately deleted or that no safety review occurs."
+        ]
+      },
+      {
+        "title": "Review connected services and uploads",
+        "steps": [
+          "Before allowing access to another app or uploading a file, discuss what information the task needs. Avoid sharing documents containing other people’s personal details."
+        ]
+      },
+      {
+        "title": "Practice checking an answer",
+        "steps": [
+          "Try a school question together and ask the child to explain the answer in their own words. Check claims using a textbook or a reliable original source."
+        ]
+      },
+      {
+        "title": "Report a concerning response",
+        "steps": [
+          "Use the response feedback option for inappropriate or incorrect output. Agree that the child can stop a conversation and ask a trusted person for help."
+        ]
+      }
+    ],
+    "watchFor": [
+      {
+        "title": "Confident errors",
+        "description": "A clear explanation can still be wrong. Check before acting on an important answer.",
+        "severity": "high"
+      },
+      {
+        "title": "Private information in prompts",
+        "description": "An uploaded worksheet or screenshot may include names, photos or other details that were not needed.",
+        "severity": "high"
+      },
+      {
+        "title": "A tool becoming a confidant",
+        "description": "Notice when AI use replaces asking people for help or spending time with friends.",
+        "severity": "high"
+      },
+      {
+        "title": "Another account bypassing expectations",
+        "description": "Review actual access together rather than assuming one device setting covers every login.",
+        "severity": "high"
+      }
+    ],
+    "appMetrics": [
+      {
+        "label": "Supervised access in Romania",
+        "value": "Unavailable"
+      },
+      {
+        "label": "School accounts",
+        "value": "Administrator-managed"
+      },
+      {
+        "label": "Privacy",
+        "value": "Account-specific"
+      },
+      {
+        "label": "Answers",
+        "value": "Need checking"
+      }
+    ],
+    "callouts": [
+      {
+        "type": "warning",
+        "title": "Romania and supervised accounts",
+        "description": "Do not follow a US Family Link walkthrough as if it enables Gemini Apps for a supervised account in Romania. Google’s current help excludes the EEA."
+      },
+      {
+        "type": "tip",
+        "title": "Most impactful action",
+        "description": "Check the account and choose one useful learning task to try together before allowing independent use."
+      }
+    ],
+    "editorialReview": {
+      "checkedAt": "2026-09-03",
+      "availability": "Supervised Gemini Apps accounts are unavailable in the EEA, UK and Switzerland. Other account types have their own eligibility rules. This guide covers Gemini Apps, not every Google AI feature.",
+      "sources": [
+        {
+          "title": "Google: supervised Gemini Apps accounts",
+          "url": "https://support.google.com/gemini/answer/16109150?hl=en"
+        },
+        {
+          "title": "Google: sign-in and account eligibility",
+          "url": "https://support.google.com/gemini/answer/13278668?hl=en"
+        },
+        {
+          "title": "Google: Gemini Privacy Hub",
+          "url": "https://support.google.com/gemini/answer/13594961?hl=en"
+        }
+      ]
+    },
+    "related": [
+      {
+        "category": "apps",
+        "slug": "chatgpt"
+      },
+      {
+        "category": "os",
+        "slug": "android"
+      },
+      {
+        "category": "apps",
+        "slug": "meta-ai"
+      }
+    ]
+  },
+  {
+    "slug": "meta-ai",
+    "name": "Meta AI",
+    "category": "apps",
+    "riskLevel": "high",
+    "riskLabelText": "Set up controls first",
+    "homeBadgeLabel": "Check regional availability",
+    "summary": "Meta’s AI assistant can appear inside apps your teen already uses. Check which app and account they use; parental visibility and alerts are not identical everywhere.",
+    "description": "Meta’s AI assistant can appear inside apps your teen already uses. Check which app and account they use; parental visibility and alerts are not identical everywhere.",
+    "ageRating": "Check the host app’s minimum age and regional AI eligibility",
+    "userCount": "Users of Meta apps and AI tools",
+    "platform": "Instagram, Facebook, Messenger, WhatsApp; app and web access vary",
+    "ageRecommendation": "Our recommendation: eligible teen accounts with supervision and clear boundaries",
+    "quickActions": [
+      {
+        "title": "Identify where AI is used",
+        "description": "Ask your teen to show you which Meta app or website they use for AI. Do not assume an Instagram setting covers WhatsApp or a separate login."
+      },
+      {
+        "title": "Review supervision",
+        "description": "Open Family Center for the teen account and check the available AI insights and content settings together."
+      },
+      {
+        "title": "Explain the limits of alerts",
+        "description": "A parent alert is an extra signal, not a promise that every worrying conversation will be detected."
+      }
+    ],
+    "setupGuide": [
+      {
+        "title": "Check the account’s age and app",
+        "steps": [
+          "Use accurate age information and the app’s age-appropriate account. Distinguish the Meta AI assistant from user-created AI characters; controls for one are not automatically controls for the other."
+        ]
+      },
+      {
+        "title": "Review AI conversation topics",
+        "steps": [
+          "Where available in Family Center, open the AI insights for the relevant app. Meta describes topic summaries from the previous seven days, not a transcript of every conversation."
+        ]
+      },
+      {
+        "title": "Check stricter content settings",
+        "steps": [
+          "For Instagram, review Limited Content where available. Meta says this stricter setting also narrows the prompts its AI will answer. It is not a switch that turns off every AI service."
+        ]
+      },
+      {
+        "title": "Check alert availability",
+        "steps": [
+          "The July 2026 announcement places Meta AI distress alerts for Instagram supervision in the US, UK, Australia and Canada, with global expansion planned by year-end. Romanian availability is not confirmed by that announcement."
+        ]
+      },
+      {
+        "title": "Agree on private information and sharing",
+        "steps": [
+          "Avoid putting private photos, passwords or other people’s personal information in a prompt. Before sharing an AI result, check its accuracy and whether anyone shown has agreed."
+        ]
+      },
+      {
+        "title": "Make room for human help",
+        "steps": [
+          "Ask how the conversation felt, not just which topic appeared in a dashboard. If an alert arrives, talk calmly with your teen and seek appropriate support; do not wait for another alert."
+        ]
+      }
+    ],
+    "watchFor": [
+      {
+        "title": "Trusting the assistant too much",
+        "description": "A friendly answer can be inaccurate or unsuitable for a personal decision.",
+        "severity": "high"
+      },
+      {
+        "title": "Personal disclosures",
+        "description": "Discuss what your teen would not want to share with an online service before they send it.",
+        "severity": "high"
+      },
+      {
+        "title": "Different apps, different visibility",
+        "description": "A summary for one supervised account does not describe all AI use on a device.",
+        "severity": "high"
+      },
+      {
+        "title": "Misleading generated content",
+        "description": "Check images and claims before forwarding them or treating them as evidence.",
+        "severity": "high"
+      }
+    ],
+    "appMetrics": [
+      {
+        "label": "AI insights",
+        "value": "Topics, not full chats"
+      },
+      {
+        "label": "Limited Content",
+        "value": "Check availability"
+      },
+      {
+        "label": "Distress alerts",
+        "value": "Selected countries"
+      },
+      {
+        "label": "Coverage",
+        "value": "App and account-specific"
+      }
+    ],
+    "callouts": [
+      {
+        "type": "warning",
+        "title": "No alert does not mean no problem",
+        "description": "Do not rely on an alert system to assess your teen’s wellbeing. Keep ordinary conversations and trusted people involved."
+      },
+      {
+        "type": "tip",
+        "title": "Most impactful action",
+        "description": "Look at the AI feature your teen actually uses and review supervision for that account together."
+      }
+    ],
+    "editorialReview": {
+      "checkedAt": "2026-09-03",
+      "availability": "AI insights, content settings and distress alerts have separate rollouts. The cited announcements do not confirm all features for Romania. Verify the options shown in the relevant account.",
+      "sources": [
+        {
+          "title": "Meta: AI topic insights for parents",
+          "url": "https://about.fb.com/news/2026/04/helping-parents-understand-conversations-their-teens-are-having-with-ai/"
+        },
+        {
+          "title": "Meta: AI alerts and Limited Content",
+          "url": "https://about.fb.com/news/2026/07/keeping-parents-informed-teens-distress-conversations-meta-ai/"
+        },
+        {
+          "title": "Meta: approach to teen AI safety",
+          "url": "https://about.fb.com/news/2025/10/teen-ai-safety-approach/"
+        }
+      ]
+    },
+    "related": [
+      {
+        "category": "apps",
+        "slug": "instagram"
+      },
+      {
+        "category": "apps",
+        "slug": "whatsapp"
+      },
+      {
+        "category": "apps",
+        "slug": "gemini"
+      }
+    ]
+  },
+  {
+    "slug": "telegram",
+    "name": "Telegram",
+    "category": "apps",
+    "riskLevel": "high",
+    "riskLabelText": "Review age and contact risks",
+    "homeBadgeLabel": "18+ in the EU",
+    "summary": "A messaging service with groups, broadcast channels and third-party bots. Telegram’s EU terms require users to be 18+; this guide helps parents understand and respond to existing use.",
+    "description": "A messaging service with groups, broadcast channels and third-party bots. Telegram’s EU terms require users to be 18+; this guide helps parents understand and respond to existing use.",
+    "ageRating": "18+ to sign up in the EU; check local terms elsewhere",
+    "userCount": "Messaging, groups and channel audiences",
+    "platform": "Android, iOS, desktop, web",
+    "ageRecommendation": "Our recommendation: choose an age-appropriate alternative for minors in the EU",
+    "quickActions": [
+      {
+        "title": "Check age eligibility",
+        "description": "In Romania and other EU countries, Telegram’s terms require 18+ to sign up. If a child already uses it, discuss how to move important contacts to an age-appropriate service."
+      },
+      {
+        "title": "Review existing contacts together",
+        "description": "Ask about unfamiliar chats, groups, channels and bots. Make it easy to disclose pressure, threats or unwanted material."
+      },
+      {
+        "title": "Reduce exposure while you respond",
+        "description": "Review privacy settings and report concerning messages before deciding the next steps together."
+      }
+    ],
+    "setupGuide": [
+      {
+        "title": "Start with the existing situation",
+        "steps": [
+          "Ask why your child uses Telegram and who invited them. These checks help with an existing account; they are not instructions to register a child below the service’s minimum age."
+        ]
+      },
+      {
+        "title": "Review phone-number visibility",
+        "steps": [
+          "Open Settings → Privacy and Security → Phone Number. Review visibility and discovery options; a hidden number does not stop contact through shared groups or a public username."
+        ]
+      },
+      {
+        "title": "Review groups and channels",
+        "steps": [
+          "Check group-invitation permissions in Privacy and Security. Review memberships together. A channel is a broadcast feed; a linked discussion group can add conversations with other users."
+        ]
+      },
+      {
+        "title": "Check bots before sharing",
+        "steps": [
+          "Bots and mini apps can be run by third parties. Sending a bot a message can share data with its developer. Avoid sending private files or login codes."
+        ]
+      },
+      {
+        "title": "Understand chat privacy",
+        "steps": [
+          "Regular cloud chats and groups are not end-to-end encrypted. Secret Chats use end-to-end encryption and are device-specific, but do not guarantee a trustworthy recipient or prevent someone photographing a screen."
+        ]
+      },
+      {
+        "title": "Report unwanted or illegal content",
+        "steps": [
+          "Use the message’s Report option: tap on Android, press and hold on iOS, or right-click on desktop. Block unwanted contacts and ask for help if there are threats; do not forward abusive material."
+        ]
+      }
+    ],
+    "watchFor": [
+      {
+        "title": "Moving a conversation into secrecy",
+        "description": "A request to leave a game or social app for a private chat deserves a conversation about who is asking and why.",
+        "severity": "high"
+      },
+      {
+        "title": "Harmful group or channel content",
+        "description": "An invitation from a friend is not a guarantee that all members or posts are safe.",
+        "severity": "high"
+      },
+      {
+        "title": "Bots requesting private data",
+        "description": "Treat a bot as a separate service with its own operator and privacy practices.",
+        "severity": "high"
+      },
+      {
+        "title": "Fake gifts, downloads or login requests",
+        "description": "Do not share login codes or open unfamiliar downloads to claim a promised reward.",
+        "severity": "high"
+      }
+    ],
+    "appMetrics": [
+      {
+        "label": "EU registration",
+        "value": "18+"
+      },
+      {
+        "label": "Regular chats",
+        "value": "Cloud encryption"
+      },
+      {
+        "label": "Secret Chats",
+        "value": "End-to-end encrypted"
+      },
+      {
+        "label": "Bots and mini apps",
+        "value": "Third-party services"
+      }
+    ],
+    "callouts": [
+      {
+        "type": "warning",
+        "title": "Encryption is not a safety rating",
+        "description": "Privacy features protect particular data flows. They do not establish who is on the other end or whether a group is suitable for a child."
+      },
+      {
+        "type": "tip",
+        "title": "Most impactful action",
+        "description": "Understand existing use without blame, address unwanted contact and agree on an age-appropriate way to stay in touch."
+      }
+    ],
+    "editorialReview": {
+      "checkedAt": "2026-09-03",
+      "availability": "The EU minimum age applies to Romania. Privacy and reporting menus vary by client. This guide is for reviewing existing use and reducing harm, not recommending underage registration.",
+      "sources": [
+        {
+          "title": "Telegram: EU terms and minimum age",
+          "url": "https://telegram.org/tos/eu"
+        },
+        {
+          "title": "Telegram: privacy, chat types and reporting FAQ",
+          "url": "https://telegram.org/faq"
+        },
+        {
+          "title": "Telegram: privacy and third-party bots",
+          "url": "https://telegram.org/privacy"
+        },
+        {
+          "title": "Telegram: channels and discussion groups",
+          "url": "https://telegram.org/faq_channels"
+        },
+        {
+          "title": "Telegram: group invitation control",
+          "url": "https://translations.telegram.org/en/android/settings/PrivacyInvitesInfo"
+        }
+      ]
+    },
+    "related": [
+      {
+        "category": "apps",
+        "slug": "whatsapp"
+      },
+      {
+        "category": "apps",
+        "slug": "discord"
+      },
+      {
+        "category": "devices",
+        "slug": "smartphone"
+      }
+    ]
+  },
 ];
 
 function localizeEntry(entry: Entry, locale: Locale): Entry {

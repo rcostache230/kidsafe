@@ -3,6 +3,413 @@ import type { Entry } from "@/data/entries";
 type LocalizedEntry = Omit<Entry, "slug" | "category" | "riskLevel" | "riskBarPosition" | "related">;
 
 export const roEntryTranslations: Partial<Record<Entry["slug"], Partial<LocalizedEntry>>> = {
+  "gemini": {
+    "summary": "Asistentul AI Google pentru întrebări, scris și învățare. Verifică tipul contului și țara înainte de a te baza pe controalele Family Link.",
+    "description": "Asistentul AI Google pentru întrebări, scris și învățare. Verifică tipul contului și țara înainte de a te baza pe controalele Family Link.",
+    "ageRating": "Eligibilitatea depinde de țară și tipul contului",
+    "userCount": "Elevi și utilizatori de instrumente AI",
+    "platform": "Web, Android, iOS",
+    "ageRecommendation": "Recomandarea noastră: conturi eligibile, cu reguli de confidențialitate și învățare",
+    "quickActions": [
+      {
+        "title": "Verifică mai întâi eligibilitatea",
+        "description": "Google exclude în prezent conturile Gemini Apps supravegheate în SEE, inclusiv România, precum și în Regatul Unit și Elveția."
+      },
+      {
+        "title": "Verifică ce cont folosește",
+        "description": "Priviți împreună dacă este un cont personal, supravegheat sau școlar. Accesul școlar depinde de administratorul instituției."
+      },
+      {
+        "title": "Stabiliți ce rămâne privat",
+        "description": "Nu introduceți parole, fotografii private sau date de identificare în cereri. Cereți explicații, apoi verificați răspunsurile importante."
+      }
+    ],
+    "setupGuide": [
+      {
+        "title": "Identifică tipul contului",
+        "steps": [
+          "Deschideți împreună meniul contului. Un cont școlar și unul personal pot avea reguli diferite de acces și date; întreabă școala cum gestionează contul."
+        ]
+      },
+      {
+        "title": "Folosește Family Link doar unde este acceptat",
+        "steps": [
+          "Pentru un cont supravegheat eligibil din afara regiunilor excluse: Family Link → selectează copilul → Controls → Gemini → Gemini Apps. Verifică dacă accesul este pornit sau oprit. Nu elimina supravegherea și nu schimba data nașterii pentru a ocoli condițiile."
+        ]
+      },
+      {
+        "title": "Verifică setările de confidențialitate",
+        "steps": [
+          "Citește Gemini Privacy Hub pentru contul folosit. Unde există Keep Activity, verificați setarea împreună; oprirea ei nu înseamnă ștergerea imediată a tuturor conversațiilor sau absența verificărilor de siguranță."
+        ]
+      },
+      {
+        "title": "Verifică serviciile conectate și fișierele",
+        "steps": [
+          "Înainte de a permite accesul la altă aplicație sau de a încărca un fișier, discutați ce informații sunt necesare. Evitați documentele care conțin date personale ale altor oameni."
+        ]
+      },
+      {
+        "title": "Exersați verificarea unui răspuns",
+        "steps": [
+          "Încercați o întrebare de la școală și cere copilului să explice răspunsul cu propriile cuvinte. Verificați afirmațiile într-un manual sau într-o sursă originală de încredere."
+        ]
+      },
+      {
+        "title": "Raportează un răspuns îngrijorător",
+        "steps": [
+          "Folosește opțiunea de feedback pentru un răspuns nepotrivit sau incorect. Stabiliți că poate opri conversația și cere ajutorul unei persoane de încredere."
+        ]
+      }
+    ],
+    "watchFor": [
+      {
+        "title": "Greșeli prezentate cu încredere",
+        "description": "O explicație clară poate fi greșită. Verificați înainte de a acționa pe baza unui răspuns important.",
+        "severity": "high"
+      },
+      {
+        "title": "Informații private în cereri",
+        "description": "O fișă sau o captură încărcată poate include nume, fotografii ori alte detalii inutile pentru întrebare.",
+        "severity": "high"
+      },
+      {
+        "title": "Instrumentul devine confident",
+        "description": "Observă când folosirea AI înlocuiește cererea de ajutor de la oameni sau timpul cu prietenii.",
+        "severity": "high"
+      },
+      {
+        "title": "Alt cont decât cel așteptat",
+        "description": "Verificați accesul real împreună, fără a presupune că o setare a dispozitivului acoperă fiecare cont.",
+        "severity": "high"
+      }
+    ],
+    "appMetrics": [
+      {
+        "label": "Acces supravegheat în România",
+        "value": "Indisponibil"
+      },
+      {
+        "label": "Conturi școlare",
+        "value": "Gestionate de școală"
+      },
+      {
+        "label": "Confidențialitate",
+        "value": "Depinde de cont"
+      },
+      {
+        "label": "Răspunsuri",
+        "value": "Necesită verificare"
+      }
+    ],
+    "callouts": [
+      {
+        "type": "warning",
+        "title": "România și conturile supravegheate",
+        "description": "Nu urma un ghid Family Link pentru SUA presupunând că permite Gemini Apps pe un cont supravegheat în România. Documentația Google exclude în prezent SEE."
+      },
+      {
+        "type": "tip",
+        "title": "Most impactful action",
+        "description": "Verifică tipul contului și alegeți o activitate utilă de învățare pe care să o încercați împreună înainte de utilizarea independentă."
+      }
+    ],
+    "editorialReview": {
+      "checkedAt": "2026-09-03",
+      "availability": "Conturile Gemini Apps supravegheate sunt indisponibile în SEE, Regatul Unit și Elveția. Alte tipuri de cont au propriile condiții. Ghidul acoperă Gemini Apps, nu toate funcțiile AI Google.",
+      "sources": [
+        {
+          "title": "Google: conturi Gemini Apps supravegheate",
+          "url": "https://support.google.com/gemini/answer/16109150?hl=en"
+        },
+        {
+          "title": "Google: conectare și eligibilitatea conturilor",
+          "url": "https://support.google.com/gemini/answer/13278668?hl=en"
+        },
+        {
+          "title": "Google: confidențialitatea Gemini",
+          "url": "https://support.google.com/gemini/answer/13594961?hl=en"
+        }
+      ]
+    },
+    "name": "Gemini",
+    "riskLabelText": "Setează controalele mai întâi",
+    "homeBadgeLabel": "Verifică disponibilitatea regională"
+  },
+  "meta-ai": {
+    "summary": "Asistentul AI Meta poate apărea în aplicațiile deja folosite de adolescent. Verifică aplicația și contul: informațiile pentru părinți și alertele nu sunt identice peste tot.",
+    "description": "Asistentul AI Meta poate apărea în aplicațiile deja folosite de adolescent. Verifică aplicația și contul: informațiile pentru părinți și alertele nu sunt identice peste tot.",
+    "ageRating": "Verifică vârsta minimă a aplicației și eligibilitatea AI regională",
+    "userCount": "Utilizatori ai aplicațiilor Meta și instrumentelor AI",
+    "platform": "Instagram, Facebook, Messenger, WhatsApp; accesul mobil și web diferă",
+    "ageRecommendation": "Recomandarea noastră: conturi de adolescent eligibile, cu supraveghere și limite clare",
+    "quickActions": [
+      {
+        "title": "Identifică unde folosește AI",
+        "description": "Roagă adolescentul să îți arate aplicația Meta sau site-ul folosit pentru AI. Nu presupune că o setare Instagram acoperă WhatsApp sau alt cont."
+      },
+      {
+        "title": "Verifică supravegherea",
+        "description": "Deschide Family Center pentru contul adolescentului și verificați împreună informațiile AI și setările de conținut disponibile."
+      },
+      {
+        "title": "Explică limitele alertelor",
+        "description": "O alertă către părinte este un semnal suplimentar, nu promisiunea că va fi detectată fiecare conversație îngrijorătoare."
+      }
+    ],
+    "setupGuide": [
+      {
+        "title": "Verifică vârsta contului și aplicația",
+        "steps": [
+          "Folosește informații corecte despre vârstă și contul potrivit din aplicație. Separă asistentul Meta AI de personajele AI create de utilizatori; controalele unuia nu se aplică automat celuilalt."
+        ]
+      },
+      {
+        "title": "Verifică temele conversațiilor AI",
+        "steps": [
+          "Unde sunt disponibile în Family Center, deschide informațiile AI pentru aplicația relevantă. Meta descrie rezumate ale temelor din ultimele șapte zile, nu transcrierea fiecărei conversații."
+        ]
+      },
+      {
+        "title": "Verifică setările mai stricte",
+        "steps": [
+          "Pentru Instagram, consultă Limited Content unde este disponibil. Meta spune că setarea limitează suplimentar cererile la care răspunde AI. Nu este un comutator care oprește toate serviciile AI."
+        ]
+      },
+      {
+        "title": "Verifică disponibilitatea alertelor",
+        "steps": [
+          "Anunțul din iulie 2026 plasează alertele de suferință din conversațiile Meta AI pentru supravegherea Instagram în SUA, Regatul Unit, Australia și Canada, cu extindere globală planificată până la finalul anului. Anunțul nu confirmă disponibilitatea în România."
+        ]
+      },
+      {
+        "title": "Stabiliți reguli despre date și distribuire",
+        "steps": [
+          "Evitați fotografii private, parole sau date personale ale altora în cereri. Înainte de a distribui un rezultat AI, verificați corectitudinea și acordul persoanelor reprezentate."
+        ]
+      },
+      {
+        "title": "Păstrează sprijinul uman",
+        "steps": [
+          "Întreabă cum s-a simțit în conversație, nu doar ce temă apare în panou. Dacă primești o alertă, discută calm și caută sprijinul potrivit; nu aștepta încă o alertă."
+        ]
+      }
+    ],
+    "watchFor": [
+      {
+        "title": "Prea multă încredere în asistent",
+        "description": "Un răspuns prietenos poate fi incorect sau nepotrivit pentru o decizie personală.",
+        "severity": "high"
+      },
+      {
+        "title": "Dezvăluiri personale",
+        "description": "Discutați ce nu ar vrea să împărtășească unui serviciu online înainte să trimită informațiile.",
+        "severity": "high"
+      },
+      {
+        "title": "Aplicații diferite, vizibilitate diferită",
+        "description": "Rezumatul unui cont supravegheat nu descrie toate utilizările AI de pe dispozitiv.",
+        "severity": "high"
+      },
+      {
+        "title": "Conținut generat înșelător",
+        "description": "Verificați imaginile și afirmațiile înainte de a le redistribui sau considera dovezi.",
+        "severity": "high"
+      }
+    ],
+    "appMetrics": [
+      {
+        "label": "Informații AI",
+        "value": "Teme, nu conversații complete"
+      },
+      {
+        "label": "Limited Content",
+        "value": "Verifică disponibilitatea"
+      },
+      {
+        "label": "Alerte de suferință",
+        "value": "Anumite țări"
+      },
+      {
+        "label": "Acoperire",
+        "value": "Depinde de aplicație și cont"
+      }
+    ],
+    "callouts": [
+      {
+        "type": "warning",
+        "title": "Lipsa alertei nu înseamnă lipsa problemei",
+        "description": "Nu te baza pe un sistem de alerte pentru a evalua starea adolescentului. Păstrează conversațiile obișnuite și legătura cu oamenii de încredere."
+      },
+      {
+        "type": "tip",
+        "title": "Most impactful action",
+        "description": "Priviți funcția AI folosită efectiv și verificați împreună supravegherea acelui cont."
+      }
+    ],
+    "editorialReview": {
+      "checkedAt": "2026-09-03",
+      "availability": "Informațiile AI, setările de conținut și alertele au lansări separate. Anunțurile citate nu confirmă toate funcțiile pentru România. Verifică opțiunile din contul relevant.",
+      "sources": [
+        {
+          "title": "Meta: informații pentru părinți despre temele AI",
+          "url": "https://about.fb.com/news/2026/04/helping-parents-understand-conversations-their-teens-are-having-with-ai/"
+        },
+        {
+          "title": "Meta: alerte AI și Limited Content",
+          "url": "https://about.fb.com/news/2026/07/keeping-parents-informed-teens-distress-conversations-meta-ai/"
+        },
+        {
+          "title": "Meta: siguranța AI pentru adolescenți",
+          "url": "https://about.fb.com/news/2025/10/teen-ai-safety-approach/"
+        }
+      ]
+    },
+    "name": "Meta AI",
+    "riskLabelText": "Setează controalele mai întâi",
+    "homeBadgeLabel": "Verifică disponibilitatea regională"
+  },
+  "telegram": {
+    "summary": "Un serviciu de mesagerie cu grupuri, canale de difuzare și boți ai unor terți. Condițiile Telegram pentru UE cer 18+; ghidul ajută părinții să înțeleagă și să gestioneze utilizarea existentă.",
+    "description": "Un serviciu de mesagerie cu grupuri, canale de difuzare și boți ai unor terți. Condițiile Telegram pentru UE cer 18+; ghidul ajută părinții să înțeleagă și să gestioneze utilizarea existentă.",
+    "ageRating": "18+ pentru înregistrare în UE; verifică regulile locale în alte țări",
+    "userCount": "Utilizatori de mesagerie, grupuri și canale",
+    "platform": "Android, iOS, desktop, web",
+    "ageRecommendation": "Recomandarea noastră: o alternativă potrivită vârstei pentru minorii din UE",
+    "quickActions": [
+      {
+        "title": "Verifică vârsta permisă",
+        "description": "În România și celelalte țări UE, condițiile Telegram cer 18+ pentru înregistrare. Dacă un copil îl folosește deja, discutați mutarea contactelor importante pe un serviciu potrivit vârstei."
+      },
+      {
+        "title": "Verificați contactele existente",
+        "description": "Întreabă despre conversațiile, grupurile, canalele și boții necunoscuți. Ajută copilul să poată vorbi despre presiune, amenințări sau materiale nedorite."
+      },
+      {
+        "title": "Reduceți expunerea în timp ce interveniți",
+        "description": "Verificați setările de confidențialitate și raportați mesajele îngrijorătoare înainte de a decide împreună pașii următori."
+      }
+    ],
+    "setupGuide": [
+      {
+        "title": "Pornește de la situația existentă",
+        "steps": [
+          "Întreabă de ce folosește Telegram și cine l-a invitat. Aceste verificări ajută la un cont existent; nu sunt instrucțiuni pentru înregistrarea unui copil sub vârsta minimă."
+        ]
+      },
+      {
+        "title": "Verifică vizibilitatea numărului",
+        "steps": [
+          "Deschide Settings → Privacy and Security → Phone Number. Consultă opțiunile de vizibilitate și găsire; ascunderea numărului nu oprește contactul prin grupuri comune sau un nume public de utilizator."
+        ]
+      },
+      {
+        "title": "Verifică grupurile și canalele",
+        "steps": [
+          "Consultă permisiunile de invitare în grupuri din Privacy and Security. Verificați împreună apartenența la grupuri. Un canal difuzează postări; un grup de discuții asociat poate adăuga conversații cu alți utilizatori."
+        ]
+      },
+      {
+        "title": "Verifică boții înainte de a trimite date",
+        "steps": [
+          "Boții și miniaplicațiile pot fi administrate de terți. Un mesaj către un bot poate trimite date dezvoltatorului său. Evitați fișierele private și codurile de conectare."
+        ]
+      },
+      {
+        "title": "Înțelege confidențialitatea chatului",
+        "steps": [
+          "Conversațiile obișnuite din cloud și grupurile nu sunt criptate integral între participanți. Secret Chats folosesc criptare end-to-end și sunt legate de dispozitiv, dar nu garantează un destinatar de încredere și nu împiedică fotografierea ecranului."
+        ]
+      },
+      {
+        "title": "Raportează conținutul nedorit sau ilegal",
+        "steps": [
+          "Folosește Report din meniul mesajului: atinge pe Android, apasă lung pe iOS sau clic dreapta pe desktop. Blochează contactele nedorite și cere ajutor la amenințări; nu redistribui materiale abuzive."
+        ]
+      }
+    ],
+    "watchFor": [
+      {
+        "title": "Mutarea conversației în secret",
+        "description": "O cerere de a părăsi un joc sau o aplicație socială pentru un chat privat merită o discuție despre cine o face și de ce.",
+        "severity": "high"
+      },
+      {
+        "title": "Conținut dăunător în grupuri și canale",
+        "description": "Invitația unui prieten nu garantează că toți membrii sau toate postările sunt sigure.",
+        "severity": "high"
+      },
+      {
+        "title": "Boți care cer date private",
+        "description": "Tratează un bot ca pe un serviciu separat, cu propriul operator și propriile reguli de confidențialitate.",
+        "severity": "high"
+      },
+      {
+        "title": "Cadouri, descărcări sau conectări false",
+        "description": "Nu împărtășiți coduri de conectare și nu deschideți fișiere necunoscute pentru a primi o recompensă promisă.",
+        "severity": "high"
+      }
+    ],
+    "appMetrics": [
+      {
+        "label": "Înregistrare în UE",
+        "value": "18+"
+      },
+      {
+        "label": "Chat obișnuit",
+        "value": "Criptare în cloud"
+      },
+      {
+        "label": "Secret Chats",
+        "value": "Criptare end-to-end"
+      },
+      {
+        "label": "Boți și miniaplicații",
+        "value": "Servicii ale terților"
+      }
+    ],
+    "callouts": [
+      {
+        "type": "warning",
+        "title": "Criptarea nu este un calificativ de siguranță",
+        "description": "Funcțiile de confidențialitate protejează anumite transferuri de date. Nu stabilesc cine este interlocutorul sau dacă un grup este potrivit pentru copil."
+      },
+      {
+        "type": "tip",
+        "title": "Most impactful action",
+        "description": "Înțelege utilizarea existentă fără învinovățire, gestionați contactele nedorite și alegeți o cale de comunicare potrivită vârstei."
+      }
+    ],
+    "editorialReview": {
+      "checkedAt": "2026-09-03",
+      "availability": "Vârsta minimă din UE se aplică României. Meniurile de confidențialitate și raportare diferă după aplicație. Ghidul ajută la verificarea utilizării existente și reducerea riscului, nu recomandă înregistrarea sub vârsta minimă.",
+      "sources": [
+        {
+          "title": "Telegram: condiții UE și vârsta minimă",
+          "url": "https://telegram.org/tos/eu"
+        },
+        {
+          "title": "Telegram: confidențialitate, tipuri de chat și raportare",
+          "url": "https://telegram.org/faq"
+        },
+        {
+          "title": "Telegram: confidențialitate și boți ai terților",
+          "url": "https://telegram.org/privacy"
+        },
+        {
+          "title": "Telegram: canale și grupuri de discuții",
+          "url": "https://telegram.org/faq_channels"
+        },
+        {
+          "title": "Telegram: controlul invitațiilor în grupuri",
+          "url": "https://translations.telegram.org/en/android/settings/PrivacyInvitesInfo"
+        }
+      ]
+    },
+    "name": "Telegram",
+    "riskLabelText": "Verifică vârsta și riscurile de contact",
+    "homeBadgeLabel": "18+ în UE"
+  },
   "whatsapp": {
     "summary": "O aplicație de mesagerie și apeluri pentru familie și grupuri. Verifică dacă este un cont standard sau gestionat de părinte, apoi verifică persoanele de contact, invitațiile și raportarea.",
     "description": "O aplicație de mesagerie și apeluri pentru familie și grupuri. Verifică dacă este un cont standard sau gestionat de părinte, apoi verifică persoanele de contact, invitațiile și raportarea.",

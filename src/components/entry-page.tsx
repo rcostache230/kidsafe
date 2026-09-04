@@ -129,14 +129,16 @@ export function EntryPage({
         ) : null}
 
         {/* RISK BAR + META ------------------------------------------ */}
-        {entry.category === "apps" && entry.riskBarPosition !== undefined ? (
+        {entry.category === "apps" ? (
           <section className="card space-y-6 p-6">
+            {entry.riskBarPosition !== undefined ? (
             <div className="space-y-3">
               <h2 className="font-display text-xl font-semibold text-paper-ink">
                 {copy.entry.riskLevel}
               </h2>
               <RiskBar position={entry.riskBarPosition} locale={locale} />
             </div>
+            ) : null}
 
             <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
               {[
