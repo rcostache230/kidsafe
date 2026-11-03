@@ -964,13 +964,13 @@ export const entries: Entry[] = [
       {
         "title": "Understand Kids and Select",
         "steps": [
-          "Roblox announced global availability on 16 June 2026. Placement uses age information; it is not simply a tier you choose. Age-checked children aged 5–8 use Kids, and ages 9–15 use Select. Self-declared accounts have more restrictions, including no chat."
+          "Kids accounts cover ages 5 to 8 and Select covers ages 9 to 15. Placement follows age information, not a product tier chosen by the parent. Accounts without an age check have less access and cannot chat."
         ]
       },
       {
         "title": "Check chat permissions",
         "steps": [
-          "Chat requires an age check. Review the communication options shown for your child rather than assuming all chat is friends-only. Available controls depend on age and region."
+          "An age check is required for chat. Chat is off by default under 9; a parent can adjust the standard settings. Review the options for the child’s age and region."
         ]
       },
       {
@@ -992,7 +992,7 @@ export const entries: Entry[] = [
         ]
       }
     ],
-    "ageRating": "Experience ratings vary; Kids 5–8 / Select 9–15",
+    "ageRating": "Experience ratings vary; Kids 5 to 8 / Select 9 to 15",
     "userCount": "Children, teens and adults",
     "platform": "iOS, Android, Xbox, PlayStation, PC",
     "ageRecommendation": "Our recommendation: 10+ with active supervision",
@@ -1023,7 +1023,7 @@ export const entries: Entry[] = [
       },
       {
         "type": "tip",
-        "title": "Most impactful action",
+        "title": "Start here",
         "description": "Use your own linked parent account to review the settings that actually apply to your child."
       }
     ],
@@ -1042,20 +1042,16 @@ export const entries: Entry[] = [
       }
     ],
     "editorialReview": {
-      "checkedAt": "2026-09-03",
-      "availability": "Kids and Select are globally available. Individual controls vary by age, account and region.",
+      "checkedAt": "2026-11-03",
+      "availability": "Kids and Select are globally available. Chat requires an age check and is off by default under 9. Other controls vary by age, account and region.",
       "sources": [
         {
-          "title": "Roblox: parental controls",
-          "url": "https://about.roblox.com/parental-controls"
-        },
-        {
-          "title": "Roblox: Kids and Select availability",
+          "title": "Roblox: Kids, Select and chat settings",
           "url": "https://about.roblox.com/newsroom/2026/06/age-based-roblox-kids-and-select-accounts-now-globally-available"
         },
         {
-          "title": "Roblox: monthly spending limits",
-          "url": "https://en.help.roblox.com/hc/en-us/articles/4409558125460-Monthly-Spending-Limits-and-Notifications-FAQ"
+          "title": "Roblox: safety FAQs",
+          "url": "https://about.roblox.com/safety-faqs"
         }
       ]
     }
@@ -1066,141 +1062,126 @@ export const entries: Entry[] = [
     "category": "apps",
     "riskLevel": "high",
     "riskLabelText": "High risk",
-    "summary": "A video platform with personalised recommendations, autoplay and comments that can expose children to unsuitable content.",
-    "description": "A video platform with personalised recommendations, autoplay and comments that can expose children to unsuitable content.",
+    "summary": "A video app with recommendations, Shorts and comments. Choose a supervised experience for your child and check what they watch together.",
+    "description": "A video app with recommendations, Shorts and comments. Choose a supervised experience for your child and check what they watch together.",
     "quickActions": [
       {
-        "title": "Enable Restricted Mode everywhere",
-        "description": "Account icon → Restricted Mode → ON. Repeat this on every browser and every device because it is not account-wide."
+        "title": "Choose a supervised experience",
+        "description": "Use YouTube Kids for younger children or review the supervised account options together. Filters can still miss unsuitable videos."
       },
       {
-        "title": "Use YouTube Kids for children under 13",
-        "description": "Switch younger children to the YouTube Kids app and review settings at kids.youtube.com/settings."
+        "title": "Limit the Shorts feed",
+        "description": "In the YouTube app, open Settings → Family Center → your child → Time management. Choose a daily Shorts limit; 0 minutes turns off the scrolling feed."
       },
       {
         "title": "Turn off Autoplay",
-        "description": "Account icon → Settings → Autoplay → OFF so videos stop instead of rolling into the next recommendation."
-      },
-      {
-        "title": "Limit or switch off the Shorts feed",
-        "description": "For supervised teen accounts, open Family Center → your child → Time management and set a daily Shorts limit. Setting it to 0 minutes removes the Shorts feed entirely (added January 2026)."
+        "description": "Check Autoplay in the app settings so one video does not automatically lead to another."
       }
     ],
     "watchFor": [
       {
-        "title": "Algorithm rabbit holes",
-        "description": "A child can move from harmless clips into extremist, violent, or self-harm content quickly because the system rewards continued watching.",
+        "title": "Recommendations that become upsetting",
+        "description": "A few videos can lead to more of the same subject. Ask your child to tell you when their feed becomes frightening or uncomfortable.",
         "severity": "critical"
       },
       {
-        "title": "Comment sections expose children to adults and explicit content",
-        "description": "Comments often include sexual language, harassment, scams, and direct contact attempts with little meaningful moderation.",
+        "title": "Unwanted contact in comments",
+        "description": "Comments can contain harassment, sexual language, scams or attempts to start a private conversation.",
         "severity": "high"
       },
       {
-        "title": "YouTube Kids is not fully safe",
-        "description": "The child version reduces risk but still allows age-inappropriate videos, misleading channels, and algorithm mistakes to slip through.",
+        "title": "Unsuitable videos in YouTube Kids",
+        "description": "The children’s app filters content, but a video can still be misclassified.",
         "severity": "high"
       },
       {
-        "title": "Autoplay removes natural stopping points",
-        "description": "Without a clear stopping cue, a planned short watch can turn into an hour or more of passive viewing.",
+        "title": "Watching past the agreed time",
+        "description": "Shorts and Autoplay can make it easy to lose track of time.",
         "severity": "high"
       },
       {
-        "title": "Misleading health and money advice",
-        "description": "Confident creators can sound expert while sharing harmful health claims, get-rich promises, or other bad advice.",
+        "title": "Misleading advice",
+        "description": "Check health, money and other consequential claims with a reliable source before acting on them.",
         "severity": "medium"
       }
     ],
     "setupGuide": [
       {
-        "title": "Enable Restricted Mode everywhere",
+        "title": "Choose the account together",
         "steps": [
-          "Account icon → Restricted Mode → ON. Repeat this on every browser and every device because it is not account-wide."
+          "Use the correct birthday. Review YouTube Kids or a supervised YouTube account rather than relying only on Restricted Mode."
         ]
       },
       {
-        "title": "Use YouTube Kids for children under 13",
+        "title": "Set the Shorts limit",
         "steps": [
-          "Switch younger children to the YouTube Kids app and review settings at kids.youtube.com/settings."
+          "From your linked parent account in the YouTube app, open Settings → Family Center → select your child → Time management → daily Shorts feed limit. YouTube confirmed the zero-minute option in Europe in April 2026. This controls the scrolling feed, not every way of watching a short video."
         ]
       },
       {
-        "title": "Turn off Autoplay",
+        "title": "Review content settings",
         "steps": [
-          "Account icon → Settings → Autoplay → OFF so videos stop instead of rolling into the next recommendation."
+          "In Family Center, select your child and review Content Settings. In YouTube Kids, consider turning off Search or choosing approved content for a narrower selection."
         ]
       },
       {
-        "title": "Disable Search for younger children",
+        "title": "Check Autoplay and Restricted Mode",
         "steps": [
-          "YouTube Kids app → profile icon → Settings → disable Search for children under 8 so the app serves a narrower set of videos."
+          "Turn off Autoplay. If you use Restricted Mode, check each browser and device separately; it is an extra filter, not a replacement for a supervised account."
         ]
       },
       {
-        "title": "Review watch history weekly",
+        "title": "Look at watch history together",
         "steps": [
-          "Account → History and look through what the recommendation system has been serving your child."
+          "Ask about the creators your child enjoys and review unfamiliar recommendations. Block or report unsuitable content."
         ]
       },
       {
-        "title": "Limit or switch off the Shorts feed",
+        "title": "Check livestreaming eligibility",
         "steps": [
-          "On a supervised teen account, open Family Center → select your child → Time management and set a daily limit on the Shorts feed. Setting it to 0 minutes removes the endless Shorts feed from their app (rolled out January 2026)."
+          "YouTube’s livestreaming minimum is 16. A younger teen taking part in a stream must follow YouTube’s adult-presence rules; a linked parent account alone does not grant permission."
         ]
       },
       {
-        "title": "Know the new live-streaming age rule",
+        "title": "Set a whole-app limit separately",
         "steps": [
-          "Since July 2025, YouTube only lets 16+ users livestream. Children aged 13-15 can stream only while visibly supervised by an adult on the same channel, so check before allowing any live broadcasts."
-        ]
-      },
-      {
-        "title": "Set an app-specific time limit",
-        "steps": [
-          "Use iPhone Screen Time or Android Digital Wellbeing and target the YouTube app itself rather than only setting whole-device limits."
+          "Use the device’s parental controls if you also want to limit total YouTube time. Teen supervision can be turned off by the teen; discuss that boundary together."
         ]
       }
     ],
-    "ageRating": "13+ for accounts",
+    "ageRating": "Standard accounts: local Google minimum age; supervised options differ",
     "userCount": "Massive global audience",
     "platform": "iOS, Android, Web, TV",
-    "ageRecommendation": "Use YouTube Kids for under-13s, but supervise closely",
+    "ageRecommendation": "Choose YouTube Kids or supervised YouTube to fit the child’s age",
     "riskBarPosition": 72,
     "appMetrics": [
       {
-        "label": "Avg teen daily use",
-        "value": "80 min/day"
+        "label": "Shorts feed",
+        "value": "Parent-set daily limit"
       },
       {
-        "label": "Algorithm power",
-        "value": "Extreme"
+        "label": "Zero-minute limit",
+        "value": "Turns off scrolling feed"
       },
       {
-        "label": "Comment sections",
-        "value": "Unmoderated"
+        "label": "Comments",
+        "value": "Depend on account and video"
       },
       {
-        "label": "YouTube Kids",
-        "value": "Not fully safe"
+        "label": "Content filters",
+        "value": "Can miss unsuitable videos"
       }
     ],
     "callouts": [
       {
         "type": "warning",
-        "title": "Highest concern",
-        "description": "YouTube's recommendation algorithm is trained to maximize watch time, not wellbeing. A child watching one mildly edgy video can be served increasingly extreme content within 30 minutes, and this can happen on YouTube Kids too."
+        "title": "What the limit covers",
+        "description": "A Shorts feed limit does not block all YouTube viewing. Review content settings and total app time separately."
       },
       {
         "type": "tip",
-        "title": "Most impactful action",
-        "description": "Restricted Mode has to be enabled separately on every browser and every device. It does not sync automatically."
-      },
-      {
-        "type": "tip",
-        "title": "New in 2026",
-        "description": "Parents of supervised teen accounts can now cap the Shorts feed by the minute: set it to 0 in Family Center → Time management to remove the endless short-video feed completely."
+        "title": "Start here",
+        "description": "Choose a supervised account, then set a Shorts limit and watch a few recommended videos together."
       }
     ],
     "related": [
@@ -1216,7 +1197,21 @@ export const entries: Entry[] = [
         "category": "os",
         "slug": "android"
       }
-    ]
+    ],
+    "editorialReview": {
+      "checkedAt": "2026-11-03",
+      "availability": "The zero-minute Shorts feed limit is documented for Europe. Mobile and desktop menus differ. Teen supervision can be ended by the teen.",
+      "sources": [
+        {
+          "title": "YouTube: teen supervision and Shorts settings",
+          "url": "https://support.google.com/youtubekids/answer/15190245?co=GENIE.Platform%3DiOS&hl=en"
+        },
+        {
+          "title": "YouTube: Shorts controls available in Europe",
+          "url": "https://blog.youtube/news-and-events/new-youtube-shorts-parental-controls-europe/"
+        }
+      ]
+    }
   },
   {
     "slug": "snapchat",
@@ -1228,16 +1223,16 @@ export const entries: Entry[] = [
     "description": "A photo and messaging app built around disappearing messages, quick sharing, and live location features.",
     "quickActions": [
       {
-        "title": "Turn on Ghost Mode",
-        "description": "Snap Map → gear icon → Ghost Mode ON. Do this before your child builds a friend list."
+        "title": "Check Ghost Mode",
+        "description": "In Snap Map, open the settings gear and check Ghost Mode. Location sharing is off by default; confirm whether it has been enabled since."
       },
       {
         "title": "Limit who can contact them",
         "description": "Settings → Privacy Controls → Contact Me and set it to Friends only."
       },
       {
-        "title": "Purge the friend list",
-        "description": "Profile → My Friends and remove anyone your child cannot clearly identify offline."
+        "title": "Review the friend list together",
+        "description": "Open Profile → My Friends and ask about people your child does not recognise. Remove or block unwanted contacts."
       },
       {
         "title": "Set up Family Center",
@@ -1273,9 +1268,9 @@ export const entries: Entry[] = [
     ],
     "setupGuide": [
       {
-        "title": "Turn on Ghost Mode",
+        "title": "Check location sharing",
         "steps": [
-          "Snap Map → gear icon → Ghost Mode ON. Do this before your child builds a friend list."
+          "Location sharing is off by default. In Snap Map → settings gear, review Ghost Mode and any chosen audience. Check separate live-location sharing and the phone’s location permissions too."
         ]
       },
       {
@@ -1285,33 +1280,33 @@ export const entries: Entry[] = [
         ]
       },
       {
-        "title": "Purge the friend list",
+        "title": "Review the friend list together",
         "steps": [
-          "Profile → My Friends and remove anyone your child cannot clearly identify offline."
+          "Open Profile → My Friends and ask about people your child does not recognise. Remove or block unwanted contacts."
         ]
       },
       {
-        "title": "Disable Quick Add",
+        "title": "Check Find Friends visibility",
         "steps": [
-          "Settings → Privacy Controls → See Me in Quick Add → OFF so the account is less visible to strangers."
+          "In Settings, look for See Me in Find Friends and turn it off if you want fewer friend suggestions. Find Friends is the current name for Quick Add."
         ]
       },
       {
-        "title": "Teach that screenshots are permanent",
+        "title": "Explain how messages can be saved",
         "steps": [
-          "Open any chat together and explain that disappearing is a design feature, not a guarantee."
+          "Screenshots or another camera can preserve a message even when it disappears from the chat. Discuss what your child is comfortable sending."
         ]
       },
       {
-        "title": "Link Family Center and use the new insights",
+        "title": "Link Family Center",
         "steps": [
-          "From your own account (18+) open Family Center and invite your teen (13-17) to link. As of January 2026 you can see their weekly average screen time broken down by feature and get trust signals showing how they may know each new friend they add."
+          "Invite your teen from your own eligible adult account. Family Center shows recent contacts, average daily use over the previous week and a breakdown by feature. Friend signals offer context, not proof that someone is trustworthy. It does not reveal private messages."
         ]
       },
       {
         "title": "Turn on Content Controls and disable My AI",
         "steps": [
-          "Inside Family Center, enable Content Controls to filter out Stories from creators flagged as sensitive or suggestive, and switch off the My AI chatbot if you do not want your child chatting with it."
+          "In Family Center, review restrictions on sensitive Stories and Spotlight content. Disable My AI if you do not want it used. These controls do not filter every message or image sent by friends."
         ]
       },
       {
@@ -1328,32 +1323,32 @@ export const entries: Entry[] = [
     "riskBarPosition": 80,
     "appMetrics": [
       {
-        "label": "Primary age group",
-        "value": "13-17"
+        "label": "Snap Map sharing",
+        "value": "Off by default"
       },
       {
-        "label": "Snap Map",
-        "value": "On by default"
+        "label": "Family Center",
+        "value": "Contacts and usage insights"
       },
       {
-        "label": "Disappearing messages",
-        "value": "False safety"
+        "label": "Private messages",
+        "value": "Not shown to parents"
       },
       {
-        "label": "Content pressure",
-        "value": "Very high"
+        "label": "Saved images",
+        "value": "Can outlast the chat"
       }
     ],
     "callouts": [
       {
         "type": "warning",
-        "title": "Highest concern",
-        "description": "Snap Map can broadcast precise location to all friends by default. Turning on Ghost Mode should happen before anything else."
+        "title": "Check location sharing",
+        "description": "Location sharing is off by default. If it has been enabled, check the audience and any separate live-location sharing. Review phone location permissions too."
       },
       {
         "type": "tip",
-        "title": "Most impactful action",
-        "description": "Ghost Mode is the single highest-impact Snapchat setting. Turn it on before the first friend request."
+        "title": "Start here",
+        "description": "Review Ghost Mode and the friend list together, then link Family Center."
       }
     ],
     "related": [
@@ -1369,7 +1364,25 @@ export const entries: Entry[] = [
         "category": "apps",
         "slug": "instagram"
       }
-    ]
+    ],
+    "editorialReview": {
+      "checkedAt": "2026-11-03",
+      "availability": "Location sharing is opt-in. Family Center provides contacts and usage insights, not message contents. Check the current app version for Find Friends settings.",
+      "sources": [
+        {
+          "title": "Snapchat: Family Center insights",
+          "url": "https://newsroom.snap.com/deeper-insights-with-family-center"
+        },
+        {
+          "title": "Snapchat: location privacy",
+          "url": "https://help.snapchat.com/hc/en-gb/articles/24547077410580-Snap-Map-Privacy-Safety-Reminder"
+        },
+        {
+          "title": "Snapchat: Quick Add is now Find Friends",
+          "url": "https://help.snapchat.com/hc/en-gb/articles/34691800487316-What-happened-to-Quick-Add"
+        }
+      ]
+    }
   },
   {
     "slug": "instagram",
@@ -1377,100 +1390,84 @@ export const entries: Entry[] = [
     "category": "apps",
     "riskLevel": "high",
     "riskLabelText": "High risk",
-    "summary": "A social platform driven by visual identity, algorithmic recommendations, public feedback, and direct messages.",
-    "description": "A social platform driven by visual identity, algorithmic recommendations, public feedback, and direct messages.",
+    "summary": "A social app with photos, videos, recommendations and direct messages. Check Teen Account protections, supervision and who can contact your teen.",
+    "description": "A social app with photos, videos, recommendations and direct messages. Check Teen Account protections, supervision and who can contact your teen.",
     "quickActions": [
       {
-        "title": "Switch to a private account",
-        "description": "Settings → Account Privacy → Private Account. This should be the starting point, not an afterthought."
+        "title": "Check the Teen Account",
+        "description": "Use the correct birthday and review the account’s privacy, message and content settings together."
       },
       {
-        "title": "Restrict incoming DMs",
-        "description": "Settings → Messages → Message Controls → Don't receive requests from Others."
+        "title": "Link parental supervision",
+        "description": "Open Family Center and connect your parent account with your teen’s agreement."
       },
       {
-        "title": "Turn on Family Centre supervision",
-        "description": "Settings → Family Centre and connect the parent account for under-18 supervision tools."
-      },
-      {
-        "title": "Confirm they are on a Teen Account",
-        "description": "All under-18 users now default to a protected Teen Account (private, restricted DMs, PG-13 content). Check the birthday is correct so the protections actually apply."
+        "title": "Review the content level",
+        "description": "Check the default 13+ content setting or choose Limited Content for stronger filtering. These settings cannot guarantee that every post is suitable."
       }
     ],
     "watchFor": [
       {
-        "title": "Body image and eating disorder pressure",
-        "description": "Repeated appearance-focused content can reshape how a child sees normal bodies, food, and self-worth.",
+        "title": "Appearance and body-image pressure",
+        "description": "Ask how repeated posts about appearance, food or fitness make your teen feel.",
         "severity": "high"
       },
       {
-        "title": "Stranger DMs and grooming",
-        "description": "Public accounts and open message controls make it easy for adults to start private conversations.",
+        "title": "Unwanted private contact",
+        "description": "Review unfamiliar followers and message requests. Make it easy to tell you about pressure or requests for secrecy.",
         "severity": "high"
       },
       {
-        "title": "Cyberbullying through public metrics",
-        "description": "Likes, comments, tags, and story replies can turn normal social conflict into a public scoreboard.",
+        "title": "Bullying through comments and tags",
+        "description": "Comments, tags and story replies can make conflict public. Practise blocking and reporting together.",
         "severity": "high"
       },
       {
-        "title": "Explore content spirals",
-        "description": "A few clicks on provocative or upsetting posts can quickly reshape the whole recommendation feed.",
+        "title": "Upsetting recommendations",
+        "description": "If the feed keeps returning to a distressing subject, review it together and use content controls.",
         "severity": "medium"
       },
       {
-        "title": "Financial scams from fake influencers",
-        "description": "Giveaways, fake shops, and influencer-style messages can pressure teens into sharing payment details or personal data.",
+        "title": "Fake shops and giveaways",
+        "description": "Pause before sharing payment details or personal information with an unfamiliar account.",
         "severity": "medium"
       }
     ],
     "setupGuide": [
       {
-        "title": "Switch to a private account",
+        "title": "Review privacy and messages",
         "steps": [
-          "Settings → Account Privacy → Private Account. This should be the starting point, not an afterthought."
+          "Check Account privacy and message controls together. Teen Accounts include restrictions on contact; review existing followers as well as new requests."
         ]
       },
       {
-        "title": "Restrict incoming DMs",
+        "title": "Connect Family Center",
         "steps": [
-          "Settings → Messages → Message Controls → Don't receive requests from Others."
+          "Follow the supervision invitation in Family Center. Review which controls apply to the teen’s age and account."
         ]
       },
       {
-        "title": "Turn on Family Centre supervision",
+        "title": "Choose the content setting",
         "steps": [
-          "Settings → Family Centre and connect the parent account for under-18 supervision tools."
+          "Meta calls the default teen content setting 13+, inspired by movie ratings. Under-18s need parental permission to opt out. Limited Content filters more material and restricts comments; neither setting certifies every post as suitable."
         ]
       },
       {
-        "title": "Verify the Teen Account protections",
+        "title": "Check the October alert update",
         "steps": [
-          "Since 2024 every under-18 account defaults to a Teen Account: private by default, strictest message settings, and (from October 2025) a PG-13 content default. Under-16s cannot loosen these without a linked parent approving via Family Centre, so make sure supervision is connected. Instagram also now uses age-detection to move accounts that listed an adult birthday back into Teen protections."
+          "On 29 October 2026, Meta announced a global rollout of alerts to supervising parents for repeated suicide or self-harm searches on Instagram and Facebook, and concerning Meta AI chats on Instagram, Facebook and Messenger. Check the linked account; an alert cannot detect every concern."
         ]
       },
       {
-        "title": "Turn on the strictest content setting",
+        "title": "Review time and tags",
         "steps": [
-          "In Family Centre you can keep the PG-13 default or switch on the stricter Limited Content setting, which filters more material and removes the ability to see or leave comments. Parents are also alerted if a teen repeatedly searches suicide or self-harm terms (added February 2026)."
+          "Use supervision or device controls for a daily time limit. Review tag and mention permissions and decide which posts need approval."
         ]
       },
       {
-        "title": "Clear search history monthly",
+        "title": "Talk about the feed",
         "steps": [
-          "Settings → Your Activity → Recent Searches or Clear Search History and review what the algorithm has been learning."
-        ]
-      },
-      {
-        "title": "Set a daily time limit",
-        "steps": [
-          "Settings → Your Activity → Time Spent → Daily Limit and choose a cap you will enforce consistently."
-        ]
-      },
-      {
-        "title": "Approve tags manually",
-        "steps": [
-          "Settings → Privacy → Tags → Manually Approve Tags so your child is not attached to posts without warning."
+          "Look at recommendations together. Use Not interested, blocking or reporting when appropriate, and ask how the posts make your teen feel."
         ]
       }
     ],
@@ -1481,37 +1478,32 @@ export const entries: Entry[] = [
     "riskBarPosition": 70,
     "appMetrics": [
       {
-        "label": "Body image risk",
-        "value": "Very high"
+        "label": "Teen content setting",
+        "value": "13+ by default"
       },
       {
-        "label": "Content default (teens)",
-        "value": "PG-13"
+        "label": "Stricter option",
+        "value": "Limited Content"
       },
       {
-        "label": "Stranger DMs (teens)",
-        "value": "Restricted by default"
+        "label": "Direct messages",
+        "value": "Teen contact restrictions"
       },
       {
-        "label": "Teen Accounts",
-        "value": "Default for under-18s"
+        "label": "Distress alerts",
+        "value": "Global rollout announced"
       }
     ],
     "callouts": [
       {
         "type": "warning",
-        "title": "Highest concern",
-        "description": "The algorithm is the main risk on Instagram, not just the people using it. Once the feed learns insecurity or obsession, it can keep serving more of the same."
+        "title": "Filters have limits",
+        "description": "Private accounts and content filters reduce some risks. They cannot prevent every harmful post or unwanted interaction."
       },
       {
         "type": "tip",
-        "title": "Most impactful action",
-        "description": "A private account plus restricted DMs closes most stranger contact routes right away."
-      },
-      {
-        "type": "tip",
-        "title": "New since 2024",
-        "description": "Teen Accounts are now the default for everyone under 18 and apply private mode, strict DMs, and PG-13 content automatically. Link a parent account in Family Centre so under-16s cannot turn the protections off."
+        "title": "Start here",
+        "description": "Connect supervision and review the account’s privacy, messages and content level together."
       }
     ],
     "related": [
@@ -1527,7 +1519,21 @@ export const entries: Entry[] = [
         "category": "apps",
         "slug": "tiktok"
       }
-    ]
+    ],
+    "editorialReview": {
+      "checkedAt": "2026-11-03",
+      "availability": "The 13+ content setting has expanded internationally. Meta announced a global alert rollout on 29 October; confirm options in the supervised account.",
+      "sources": [
+        {
+          "title": "Meta: 13+ and Limited Content settings",
+          "url": "https://about.fb.com/news/2026/04/instagram-expands-teen-accounts-inspired-by-13-content-ratings/"
+        },
+        {
+          "title": "Meta: parent alerts, updated 29 October 2026",
+          "url": "https://about.fb.com/news/2026/07/keeping-parents-informed-teens-distress-conversations-meta-ai/"
+        }
+      ]
+    }
   },
   {
     "slug": "tiktok",
@@ -1539,86 +1545,80 @@ export const entries: Entry[] = [
     "description": "A short-video app whose personalised recommendations can keep children watching for long periods.",
     "quickActions": [
       {
-        "title": "Enable Family Pairing",
-        "description": "Settings → Family Pairing and link the parent's account to the child's account."
+        "title": "Link Family Pairing",
+        "description": "Open Settings and privacy → Family Pairing and connect your account to your teen’s."
       },
       {
-        "title": "Set a hard daily limit",
-        "description": "Family Pairing → Screen Time and cap use at 60 minutes or less for younger teens, protected by a parent code."
+        "title": "Choose a daily limit together",
+        "description": "Use Family Pairing to set a daily screen-time limit and schedule Time Away. Choose a limit that fits your child’s routine."
       },
       {
-        "title": "Restrict DMs",
-        "description": "Family Pairing → Direct Messages and limit contact to Friends or disable it if the account does not need messaging."
+        "title": "Review messaging for their age",
+        "description": "Direct messages are unavailable under 16. For older teens, review the messaging controls in Family Pairing and restrict unwanted requests."
       }
     ],
     "watchFor": [
       {
-        "title": "Self-harm and eating disorder content spirals",
-        "description": "The algorithm can learn vulnerability fast and keep feeding more extreme material with very little effort from the user.",
+        "title": "Upsetting recommendations",
+        "description": "Ask whether videos about self-harm, eating or appearance keep returning and how they affect your child.",
         "severity": "critical"
       },
       {
-        "title": "Infinite scroll and extreme time loss",
-        "description": "The feed has almost no stopping cues, which makes short sessions stretch far beyond what a child intended.",
+        "title": "Watching past the agreed time",
+        "description": "The scrolling feed offers few natural stopping points. Check whether use is displacing sleep or other activities.",
         "severity": "critical"
       },
       {
-        "title": "Predatory contact through DMs and Duets",
-        "description": "Public posting and social tools can create contact with strangers even if a child never seeks it out.",
+        "title": "Contact from strangers",
+        "description": "Public posts and social features can bring unwanted interactions even without direct messages.",
         "severity": "high"
       },
       {
-        "title": "Disinformation and radicalisation",
-        "description": "Fast emotional content is rewarded, which can make misleading or extreme viewpoints spread especially well.",
+        "title": "Misleading information",
+        "description": "Check important claims before trusting or sharing them.",
         "severity": "high"
       },
       {
-        "title": "TikTok Shop impulse spending",
-        "description": "Short videos can move directly into shopping behavior before a child has time to think about cost or quality.",
+        "title": "Impulse purchases",
+        "description": "Discuss the real cost of products and gifts promoted in videos, where available.",
         "severity": "medium"
       }
     ],
     "setupGuide": [
       {
-        "title": "Enable Family Pairing",
+        "title": "Connect Family Pairing",
         "steps": [
-          "Settings → Family Pairing and link the parent's account to the child's account."
+          "Open Settings and privacy → Family Pairing and connect your account to your teen’s."
         ]
       },
       {
-        "title": "Set a hard daily limit",
+        "title": "Set time boundaries",
         "steps": [
-          "Family Pairing → Screen Time and cap use at 60 minutes or less for younger teens, protected by a parent code."
+          "Use Family Pairing to set a daily screen-time limit and schedule Time Away. Choose a limit that fits your child’s routine."
         ]
       },
       {
-        "title": "Restrict DMs",
+        "title": "Review direct messages",
         "steps": [
-          "Family Pairing → Direct Messages and limit contact to Friends or disable it if the account does not need messaging."
+          "Direct messages are unavailable under 16. For older teens, review the messaging controls in Family Pairing and restrict unwanted requests."
         ]
       },
       {
-        "title": "Turn on Restricted Mode",
+        "title": "Check content and privacy",
         "steps": [
-          "Settings → Digital Wellbeing → Restricted Mode and lock it with the parent code."
+          "In Family Pairing, review Restricted Mode, private-account settings and the available controls for comments and reused videos. Options depend on age."
         ]
       },
       {
-        "title": "Make the account private and block stranger Duets",
+        "title": "Review followers and blocked accounts",
         "steps": [
-          "Settings → Privacy → Private Account, then Privacy → Duet and choose a friends-only option."
+          "Check the follower and following lists together. Family Pairing includes public-post notifications and tools to block specific accounts; the blocking feature was introduced first in Europe."
         ]
       },
       {
-        "title": "Use the newer Family Pairing controls",
+        "title": "Shape the feed together",
         "steps": [
-          "Family Pairing now (since July 2025) lets you schedule Time Away windows that block the app during school or night hours, get notified when your teen posts a public video, block specific accounts, and see who they follow, who follows them, and which topics shape their feed. Review these together in Family Pairing settings."
-        ]
-      },
-      {
-        "title": "Shape the feed actively",
-        "steps": [
-          "Long-press unwanted videos → Not Interested so the recommendation engine receives corrective feedback."
+          "Review Manage Topics and keyword filters where available. Use Not interested on unwanted videos; it does not guarantee that similar content will never appear."
         ]
       }
     ],
@@ -1629,37 +1629,32 @@ export const entries: Entry[] = [
     "riskBarPosition": 90,
     "appMetrics": [
       {
-        "label": "Avg teen daily use",
-        "value": "95 min"
+        "label": "Parent tools",
+        "value": "Family Pairing"
       },
       {
-        "label": "Algorithm power",
-        "value": "Extreme"
+        "label": "Direct messages",
+        "value": "Unavailable under 16"
       },
       {
-        "label": "Mental health link",
-        "value": "Strongest"
+        "label": "Time controls",
+        "value": "Daily limit and Time Away"
       },
       {
-        "label": "Data collection",
-        "value": "Extensive"
+        "label": "Feed controls",
+        "value": "Topics and keyword filters"
       }
     ],
     "callouts": [
       {
         "type": "warning",
-        "title": "Highest concern",
-        "description": "TikTok's recommendation engine is the product risk. The app is built to maximize time spent, and time limits are the most effective control a parent has."
+        "title": "Check the account’s age",
+        "description": "Messaging, privacy and video-sharing options depend on age. An adult birthday can leave a teen without the expected protections."
       },
       {
         "type": "tip",
-        "title": "Most impactful action",
-        "description": "Family Pairing gives parents meaningful control without taking the child's password. Set it up before anything else."
-      },
-      {
-        "type": "tip",
-        "title": "New since 2025",
-        "description": "Family Pairing added Time Away scheduling, alerts when your teen posts publicly, the ability to block specific accounts, and visibility into who they follow and what shapes their feed. Under-16 accounts are also private by default with a 60-minute daily limit."
+        "title": "Start here",
+        "description": "Link Family Pairing and agree on a daily limit and times away from the app."
       }
     ],
     "related": [
@@ -1675,7 +1670,25 @@ export const entries: Entry[] = [
         "category": "apps",
         "slug": "youtube"
       }
-    ]
+    ],
+    "editorialReview": {
+      "checkedAt": "2026-11-03",
+      "availability": "Family Pairing controls vary by age and region. Direct messages are for ages 16+. Check the current options in the linked account.",
+      "sources": [
+        {
+          "title": "TikTok: Family Pairing controls",
+          "url": "https://newsroom.tiktok.com/supportingfamilies-with-new-family-pairing-features?lang=en-GB"
+        },
+        {
+          "title": "TikTok: teen privacy and messaging settings",
+          "url": "https://support.tiktok.com/en/account-and-privacy/account-privacy-settings/privacy-and-safety-settings-for-users-under-age-18"
+        },
+        {
+          "title": "TikTok: 2026 teen safety tools",
+          "url": "https://newsroom.tiktok.com/tiktok-reinforces-commitment-to-teen-safety-with-over-50-preset-safety-and-privacy-features?lang=en-PH"
+        }
+      ]
+    }
   },
   {
     "slug": "discord",
@@ -1687,8 +1700,8 @@ export const entries: Entry[] = [
     "description": "A service for group communities, direct messages and voice calls. Link Family Center and review who can contact your teen alongside the servers they use.",
     "quickActions": [
       {
-        "title": "Connect Family Center",
-        "description": "Open Family Center in account settings. Complete the link together in the mobile app; your teen needs to accept."
+        "title": "Link Family Center",
+        "description": "In Family Center, use your teen’s invitation link or QR code and have them accept the connection. Setup works on web, desktop or mobile."
       },
       {
         "title": "Restrict direct messages",
@@ -1741,9 +1754,9 @@ export const entries: Entry[] = [
         ]
       },
       {
-        "title": "Separate teen protections from the global rollout",
+        "title": "Check the account’s age group",
         "steps": [
-          "Discord’s February update delayed global age assurance to the second half of 2026. That announcement does not establish completion. Check the current account’s settings and country-specific requirements; not everyone is asked for ID or a face scan."
+          "Open User Settings → Account Status. Discord’s 22 September update introduced age groups estimated from account signals, with additional restrictions for teens. Most users are not asked for ID or a selfie. If the group is wrong, use the official correction process."
         ]
       },
       {
@@ -1778,8 +1791,8 @@ export const entries: Entry[] = [
         "value": "Check account settings"
       },
       {
-        "label": "Global age assurance",
-        "value": "Rollout status varies"
+        "label": "Age group",
+        "value": "Check Account Status"
       }
     ],
     "callouts": [
@@ -1790,7 +1803,7 @@ export const entries: Entry[] = [
       },
       {
         "type": "tip",
-        "title": "Most impactful action",
+        "title": "Start here",
         "description": "Connect Family Center and review contact permissions together before joining more servers."
       }
     ],
@@ -1809,24 +1822,16 @@ export const entries: Entry[] = [
       }
     ],
     "editorialReview": {
-      "checkedAt": "2026-09-03",
-      "availability": "Global age assurance was postponed to the second half of 2026; completion is not confirmed by the cited announcement. Check local availability.",
+      "checkedAt": "2026-11-03",
+      "availability": "The 22 September age-group update replaces the February postponement notice. Account Status shows the group applied to an account; verification options and legal requirements vary.",
       "sources": [
         {
-          "title": "Discord: age-assurance rollout update",
-          "url": "https://discord.com/safety/how-discord-is-building-safer-experiences-for-teens"
+          "title": "Discord: September age-assurance approach",
+          "url": "https://discord.com/blog/safer-for-teens-same-discord-for-adults"
         },
         {
           "title": "Discord: Family Center for parents",
           "url": "https://support.discord.com/hc/en-us/articles/14155043715735-Family-Center-for-Parents-and-Guardians"
-        },
-        {
-          "title": "Discord: privacy and contact settings",
-          "url": "https://support.discord.com/hc/en-us/articles/217916488-Blocking-Privacy-Settings"
-        },
-        {
-          "title": "Discord: sensitive-content filters",
-          "url": "https://support.discord.com/hc/en-us/articles/18210995019671-Discord-Sensitive-Content-Filters"
         }
       ]
     }
@@ -1907,9 +1912,9 @@ export const entries: Entry[] = [
         ]
       },
       {
-        "title": "Agree on stopping points",
+        "title": "Set play and create time limits",
         "steps": [
-          "Choose session end times and review spending together. Check the store used for each payment when investigating an unexpected charge."
+          "In Epic parental controls, review Time Limit Controls for Fortnite and UEFN. You can set schedules and separate Play Time from Create Time. Limits follow the same Epic account across devices; console limits can restrict time further."
         ]
       }
     ],
@@ -1944,7 +1949,7 @@ export const entries: Entry[] = [
       },
       {
         "type": "tip",
-        "title": "Most impactful action",
+        "title": "Start here",
         "description": "Set the Epic parent PIN, then agree on chat permissions and a real-money budget together."
       }
     ],
@@ -1963,16 +1968,12 @@ export const entries: Entry[] = [
       }
     ],
     "editorialReview": {
-      "checkedAt": "2026-09-03",
-      "availability": "Epic controls and other platform-store controls are separate. Some options depend on age and region.",
+      "checkedAt": "2026-11-03",
+      "availability": "Epic payment approval excludes other stores and existing V-Bucks. Paid-random-item controls depend on region. Play and create limits follow the same Epic account across devices.",
       "sources": [
         {
-          "title": "Epic: payment, chat and parental controls",
+          "title": "Epic: parental controls, payments and time limits",
           "url": "https://safety.epicgames.com/en-US/parental-controls"
-        },
-        {
-          "title": "Epic: Cabined Accounts",
-          "url": "https://www.epicgames.com/site/cabinedaccounts?lang=en"
         }
       ]
     }
@@ -1983,20 +1984,20 @@ export const entries: Entry[] = [
     "category": "apps",
     "riskLevel": "medium",
     "riskLabelText": "Medium risk",
-    "summary": "A creative sandbox game that is low risk in single-player but very different once public servers and downloads enter the picture.",
-    "description": "A creative sandbox game that is low risk in single-player but very different once public servers and downloads enter the picture.",
+    "summary": "A building and exploration game. Single-player, private Realms and public servers offer different experiences; check the edition, account and people your child plays with.",
+    "description": "A building and exploration game. Single-player, private Realms and public servers offer different experiences; check the edition, account and people your child plays with.",
     "quickActions": [
       {
-        "title": "Check whether they use Java or Bedrock",
-        "description": "Java Edition on PC has no meaningful built-in parental controls. Bedrock on consoles, mobile, and Windows can be controlled through Xbox Family Safety."
+        "title": "Check the edition and Microsoft account",
+        "description": "Current Java and Bedrock editions support Microsoft account controls. Check that your child uses their own child account."
       },
       {
-        "title": "Use Microsoft Family Safety for Bedrock",
-        "description": "Go to family.microsoft.com (the controls moved here) and restrict multiplayer, purchases, and screen time for any Bedrock account."
+        "title": "Review multiplayer and communication",
+        "description": "Use the Microsoft family group and Xbox privacy and online safety settings to check multiplayer and contact permissions for the child."
       },
       {
-        "title": "Keep Java players on Realms only",
-        "description": "Use minecraft.net/realms and set up a private, invite-only Realm with known friends instead of public servers."
+        "title": "Choose who can join",
+        "description": "For multiplayer, consider a private Realm with people you know. Check the member list and invitations together."
       }
     ],
     "watchFor": [
@@ -2028,69 +2029,81 @@ export const entries: Entry[] = [
     ],
     "setupGuide": [
       {
-        "title": "Check whether they use Java or Bedrock",
+        "title": "Check the edition and account",
         "steps": [
-          "Java Edition on PC has no meaningful built-in parental controls. Bedrock on consoles, mobile, and Windows can be controlled through Xbox Family Safety."
+          "Current Java and Bedrock editions support Microsoft account controls. Check that your child uses their own child account."
         ]
       },
       {
-        "title": "Use Microsoft Family Safety for Bedrock",
+        "title": "Review Microsoft and Xbox permissions",
         "steps": [
-          "Minecraft's controls now live in Microsoft Family Safety (family.microsoft.com) and Xbox account settings, not inside the game. Under the Online Safety tab allow or block multiplayer and clubs (this also gates Realms); under the Privacy tab set who can communicate by voice, text, or invite; and turn on Needs approval to buy things for purchases. Settings apply across Windows, mobile, and console."
+          "Use the parent account to review the child’s Xbox privacy and online safety settings, including multiplayer and communication. These matter for both current editions, even on a non-Xbox device."
         ]
       },
       {
-        "title": "Keep Java players on Realms only",
+        "title": "Check purchases and time separately",
         "steps": [
-          "Use minecraft.net/realms and set up a private, invite-only Realm with known friends instead of public servers."
+          "Review the store and device used for purchases and time limits. A Microsoft account setting does not replace PlayStation, Nintendo, Apple or Google payment controls."
         ]
       },
       {
-        "title": "Limit downloads to trusted mod sites",
+        "title": "Review a Realm’s members",
         "steps": [
-          "Only allow modrinth.com or curseforge.com for mods or texture packs. Treat other sources as high risk."
+          "For multiplayer, consider a private Realm with people you know. Check the member list and invitations together."
         ]
       },
       {
-        "title": "Add a launcher cutoff time",
+        "title": "Check downloads before installing",
         "steps": [
-          "Use Windows Family Safety or macOS Screen Time to block the Minecraft launcher after a set hour."
+          "Use established mod sites such as Modrinth or CurseForge, then check the uploader and file. A familiar download site does not guarantee that every mod is safe."
+        ]
+      },
+      {
+        "title": "Know the limits of older or modified versions",
+        "steps": [
+          "Minecraft says its parental control features do not cover versions earlier than Java 1.16.4 or modded versions. Check the game actually launched, not just the launcher."
+        ]
+      },
+      {
+        "title": "Practise reporting",
+        "steps": [
+          "Find the in-game reporting and blocking options together. Moderation and chat behaviour differ between Realms and third-party servers."
         ]
       }
     ],
-    "ageRating": "7+ official",
+    "ageRating": "PEGI 7 content rating; account and store requirements differ",
     "userCount": "Huge global player base",
     "platform": "PC, Console, Mobile",
     "ageRecommendation": "Single-player suits younger children; multiplayer needs supervision",
     "riskBarPosition": 50,
     "appMetrics": [
       {
-        "label": "Single-player risk",
-        "value": "Low"
+        "label": "Single-player",
+        "value": "No stranger contact in game"
       },
       {
-        "label": "Public server risk",
-        "value": "High"
+        "label": "Public servers",
+        "value": "Moderation varies"
       },
       {
-        "label": "Mod downloads",
-        "value": "Malware vector"
+        "label": "Java and Bedrock",
+        "value": "Microsoft account controls"
       },
       {
-        "label": "Creative mode",
-        "value": "Educational"
+        "label": "Mods",
+        "value": "Check each download"
       }
     ],
     "callouts": [
       {
         "type": "warning",
-        "title": "Highest concern",
-        "description": "Minecraft Realms are far safer than third-party public servers. For many families, the difference between low and high risk is not the game itself but where the child is playing it."
+        "title": "Account controls have limits",
+        "description": "A private Realm limits membership, but its safety still depends on who is invited and how they behave. Check modifications and external chat apps too."
       },
       {
         "type": "tip",
-        "title": "Most impactful action",
-        "description": "Restricting multiplayer to private Realms only is the most effective change because it removes stranger contact while keeping the game enjoyable."
+        "title": "Start here",
+        "description": "Use a child Microsoft account, review multiplayer permissions and choose the people your child plays with."
       }
     ],
     "related": [
@@ -2106,7 +2119,21 @@ export const entries: Entry[] = [
         "category": "os",
         "slug": "windows"
       }
-    ]
+    ],
+    "editorialReview": {
+      "checkedAt": "2026-11-03",
+      "availability": "Microsoft account controls apply to supported Java and Bedrock versions. Minecraft excludes versions earlier than Java 1.16.4 and modded versions from its parental-control support. Store and device controls are separate.",
+      "sources": [
+        {
+          "title": "Minecraft: parental controls and supported versions",
+          "url": "https://www.minecraft.net/en-us/article/parental-controls"
+        },
+        {
+          "title": "Minecraft: child accounts and social features",
+          "url": "https://help.minecraft.net/hc/en-us/articles/360058605852"
+        }
+      ]
+    }
   },
   {
     "slug": "chatgpt",
@@ -2118,31 +2145,31 @@ export const entries: Entry[] = [
     "description": "An AI chatbot that can help with learning. Children need to check its answers and understand the limits of its advice.",
     "quickActions": [
       {
-        "title": "Turn off training usage",
-        "description": "Settings → Data Controls → Improve the model → OFF so conversations are not used to improve the model."
-      },
-      {
-        "title": "Disable Memory",
-        "description": "Settings → Personalization → Memory → OFF if you want fewer saved details across chats."
-      },
-      {
         "title": "Link a parent account",
-        "description": "Settings → Parental controls → Add family member to link your account to your teen's (13-18). This unlocks quiet hours, content protections, and distress alerts (launched September 2025)."
+        "description": "Open Settings → Parental controls → Add family member. Your teen must accept the invitation; then select them to review available controls."
       },
       {
-        "title": "Agree on school rules first",
-        "description": "Check your child's school AI policy and write simple family rules for homework, citations, and when AI help is allowed."
+        "title": "Review data and memory",
+        "description": "Check model-training and saved-memory settings in parental controls. Turning them off does not delete existing chats or every previously saved detail."
+      },
+      {
+        "title": "Set study and quiet hours",
+        "description": "Study hours starts eligible new chats in study mode. Quiet hours limits access during scheduled times; the two settings do different jobs."
+      },
+      {
+        "title": "Agree on school rules",
+        "description": "Check the school’s AI policy and agree when help is allowed, how to cite it and which work must be completed independently."
       }
     ],
     "watchFor": [
       {
         "title": "Jailbreak prompts to bypass safeguards",
-        "description": "Children can find or share prompt tricks that try to unlock unsafe, biased, or age-inappropriate responses.",
+        "description": "Children can find or share prompts intended to get around safeguards. Ask them to show you responses that feel unsafe or inappropriate.",
         "severity": "high"
       },
       {
-        "title": "Academic cheating",
-        "description": "The tool can write essays, solve homework, and produce polished answers faster than a parent or teacher may notice.",
+        "title": "Homework completed without understanding",
+        "description": "A finished answer can hide gaps in learning. Ask your child to explain the reasoning in their own words.",
         "severity": "high"
       },
       {
@@ -2152,7 +2179,7 @@ export const entries: Entry[] = [
       },
       {
         "title": "Confident misinformation",
-        "description": "ChatGPT can sound certain while still being wrong, which is risky when a child treats it like a search engine plus tutor.",
+        "description": "A fluent answer can be wrong. Verify important claims before relying on them.",
         "severity": "medium"
       },
       {
@@ -2163,51 +2190,45 @@ export const entries: Entry[] = [
     ],
     "setupGuide": [
       {
-        "title": "Turn off training usage",
+        "title": "Check the teen experience",
         "steps": [
-          "Settings → Data Controls → Improve the model → OFF so conversations are not used to improve the model."
+          "ChatGPT for Teens applies automatically to eligible accounts identified as under 18. Where shown, review Settings → Account → Age together."
         ]
       },
       {
-        "title": "Disable Memory",
+        "title": "Connect parental controls",
         "steps": [
-          "Settings → Personalization → Memory → OFF if you want fewer saved details across chats."
+          "Open Settings → Parental controls → Add family member. Your teen must accept the invitation; then select them to review available controls."
         ]
       },
       {
-        "title": "Agree on school rules first",
+        "title": "Review available features",
         "steps": [
-          "Check your child's school AI policy and write simple family rules for homework, citations, and when AI help is allowed."
+          "Review sensitive-content safeguards, model training, saved memory, Voice, images and Health where available. For ChatGPT Work, review code network access and Cloud browser separately; neither is a switch for all search or plugins."
         ]
       },
       {
-        "title": "Teach that the model can make things up",
+        "title": "Separate study time from downtime",
         "steps": [
-          "Use a few test questions together and verify the answers so your child sees that fluent does not always mean correct."
+          "Study hours affects eligible new chats in the main experience, not GPT or Project chats. Quiet hours restricts access. Some setting changes apply only to new conversations."
         ]
       },
       {
-        "title": "Set up the new parental controls",
+        "title": "Understand privacy and unlinking",
         "steps": [
-          "OpenAI launched native parental controls in September 2025. In ChatGPT go to Settings → Parental controls → Add family member and send your teen (13-18) an invite they accept. Once linked, content protections (less graphic content, no sexual/violent roleplay) turn on automatically and your teen cannot switch them off. You can also set Quiet hours, turn off Voice mode, Memory, and image generation, and opt out of model training."
+          "You cannot read your teen’s chats through parental controls. Either person can unlink; if your teen does, you are notified and linked controls and alerts stop."
         ]
       },
       {
-        "title": "Understand the distress-alert system",
+        "title": "Understand safety notifications",
         "steps": [
-          "With a linked account, if OpenAI's systems detect possible signs of acute distress or self-harm, trained reviewers may notify you by email, text, or push. You can opt out, but for many families it is worth leaving on. There is a parent guide at chatgpt.com/parent-resources."
+          "Alerts may follow reviewed self-harm concerns, disordered-eating concerns in Chat, or violence-related account deactivation. They can miss problems and are not live monitoring. Review notification contacts after linking."
         ]
       },
       {
-        "title": "Disable optional browsing tools if enabled",
+        "title": "Check answers together",
         "steps": [
-          "Settings → Beta Features and turn off extras you do not want the child using independently."
-        ]
-      },
-      {
-        "title": "Use it together for the first week",
-        "steps": [
-          "Sit with your child for early sessions so they learn how to ask for help, verify answers, and stop when the tool becomes a shortcut."
+          "Ask your teen to explain an answer and verify important claims against a reliable source. Agree on what help is allowed for homework."
         ]
       }
     ],
@@ -2218,37 +2239,32 @@ export const entries: Entry[] = [
     "riskBarPosition": 45,
     "appMetrics": [
       {
-        "label": "Social exposure",
-        "value": "None"
+        "label": "Teen experience",
+        "value": "Automatic for eligible accounts"
       },
       {
-        "label": "Academic risk",
-        "value": "High"
+        "label": "Parent access to chats",
+        "value": "No transcripts"
       },
       {
-        "label": "Content risk",
-        "value": "Moderate"
+        "label": "Study hours",
+        "value": "Changes how eligible chats start"
       },
       {
-        "label": "Emotional dependency",
-        "value": "Emerging"
+        "label": "Quiet hours",
+        "value": "Scheduled access limits"
       }
     ],
     "callouts": [
       {
         "type": "warning",
-        "title": "Highest concern",
-        "description": "The goal with ChatGPT is usually honest use, not blocking. Children need rules about what the tool can help with and what still has to be their own work."
+        "title": "Alerts have limits",
+        "description": "A linked account does not provide access to chats or continuous monitoring. Keep talking with your teen and respond to concerns even without an alert."
       },
       {
         "type": "tip",
-        "title": "Most impactful action",
-        "description": "A clear family rule about homework and fact-checking is usually more effective than trying to ban the tool entirely."
-      },
-      {
-        "type": "tip",
-        "title": "New since 2025",
-        "description": "ChatGPT now has real parental controls: link a teen account in Settings → Parental controls to apply content protections they cannot disable, set quiet hours, and receive alerts if signs of distress are detected."
+        "title": "October 2026 update",
+        "description": "OpenAI announced further limits on weapons-related information for teens on 30 October. These safeguards do not guarantee that every answer is correct or appropriate."
       }
     ],
     "related": [
@@ -2264,7 +2280,25 @@ export const entries: Entry[] = [
         "category": "os",
         "slug": "macos"
       }
-    ]
+    ],
+    "editorialReview": {
+      "checkedAt": "2026-11-03",
+      "availability": "Controls apply to eligible linked personal accounts and end when the teen unlinks or moves to the adult experience. Features vary by account and region. Study hours and ChatGPT Work controls have separate scopes.",
+      "sources": [
+        {
+          "title": "OpenAI: current parental controls",
+          "url": "https://help.openai.com/en/articles/12315553-managing-parental-controls-in-chatgpt"
+        },
+        {
+          "title": "OpenAI: ChatGPT for Teens",
+          "url": "https://help.openai.com/en/articles/20001421-chatgpt-for-teens"
+        },
+        {
+          "title": "OpenAI: 30 October teen safety update",
+          "url": "https://openai.com/index/community-safety-report-and-new-protections-for-teens/"
+        }
+      ]
+    }
   },
   {
     "slug": "character-ai",
@@ -2273,8 +2307,8 @@ export const entries: Entry[] = [
     "riskLevel": "critical",
     "riskLabelText": "Very high risk",
     "homeBadgeLabel": "Urgent attention needed",
-    "summary": "An AI character and entertainment service. Character.AI says it has removed open-ended character chat for under-18s; review the account’s age and the experience actually available to your child.",
-    "description": "An AI character and entertainment service. Character.AI says it has removed open-ended character chat for under-18s; review the account’s age and the experience actually available to your child.",
+    "summary": "An AI character and entertainment service. Under-18 open-ended chat has been removed. An October sale-process announcement makes it worth checking subscriptions, saved data and service notices together.",
+    "description": "An AI character and entertainment service. Under-18 open-ended chat has been removed. An October sale-process announcement makes it worth checking subscriptions, saved data and service notices together.",
     "quickActions": [
       {
         "title": "Check the account together",
@@ -2347,6 +2381,12 @@ export const entries: Entry[] = [
         "steps": [
           "If the child describes distress, listen and help them reach a trusted person or appropriate professional support. Do not rely on a chatbot to manage a crisis."
         ]
+      },
+      {
+        "title": "Review the October service update",
+        "steps": [
+          "On 12 October 2026, Character.AI announced a Chapter 11 process seeking a sale. The announcement says the service remains running and subscriptions continue billing, but warns of a wind-down if no suitable bid emerges. Check current notices and review export, deletion and subscription options together."
+        ]
       }
     ],
     "ageRating": "Open-ended character chat: 18+",
@@ -2380,8 +2420,13 @@ export const entries: Entry[] = [
       },
       {
         "type": "tip",
-        "title": "Most impactful action",
+        "title": "Start here",
         "description": "Check the child’s actual account experience together and agree what AI is useful for in your family."
+      },
+      {
+        "type": "warning",
+        "title": "Service status can change",
+        "description": "The October announcement describes continued operation during a sale process. It does not promise that the platform or paid features will remain available."
       }
     ],
     "related": [
@@ -2399,20 +2444,16 @@ export const entries: Entry[] = [
       }
     ],
     "editorialReview": {
-      "checkedAt": "2026-09-03",
-      "availability": "The platform confirms removal of under-18 open-ended character chat. Review age assurance and account access with official support if needed.",
+      "checkedAt": "2026-11-03",
+      "availability": "Under-18 open chat remains removed in the September safety update. The 12 October announcement says services and billing continue during a proposed sale process; future operation is uncertain.",
       "sources": [
         {
-          "title": "Character.AI: under-18 chat announcement",
-          "url": "https://blog.character.ai/u18-chat-announcement/"
-        },
-        {
-          "title": "Character.AI: September 2026 safety update",
+          "title": "Character.AI: September safety update",
           "url": "https://blog.character.ai/continuing-to-build-upon-our-safety-priorities/"
         },
         {
-          "title": "eSafety: AI companion guidance",
-          "url": "https://www.esafety.gov.au/educators/training-for-professionals/professional-learning-program-teachers/ai-companions-information-sheet"
+          "title": "Character.AI: 12 October service and subscription update",
+          "url": "https://blog.character.ai/an-update-on-character-ai/"
         }
       ]
     }
@@ -2531,8 +2572,13 @@ export const entries: Entry[] = [
       },
       {
         "type": "tip",
-        "title": "Most impactful action",
+        "title": "Start here",
         "description": "Check the account type and group permissions before joining the first class group."
+      },
+      {
+        "type": "tip",
+        "title": "Rollout checked in November 2026",
+        "description": "The official announcement still describes gradual availability. If parent-managed setup is absent, do not use an adult birthday to register a child."
       }
     ],
     "related": [
@@ -2551,7 +2597,7 @@ export const entries: Entry[] = [
     ],
     "editorialReview": {
       "checkedAt": "2026-09-03",
-      "availability": "Parent-managed accounts are rolling out. Availability in Romania is not confirmed by the global announcement.",
+      "availability": "The parent-managed account announcement describes a gradual rollout, not a confirmed completion date for Romania. Check setup on both phones; managed accounts limit use to messaging and calling.",
       "sources": [
         {
           "title": "WhatsApp: registration requirements",
@@ -2587,8 +2633,8 @@ export const entries: Entry[] = [
     "description": "A live-streaming platform focused on gaming. Check live chat, gambling content, spending and the attachment a child may develop to streamers.",
     "quickActions": [
       {
-        "title": "Set Content Preferences and the right age",
-        "description": "Confirm the account birthday is under 18 so labelled mature streams are hidden by default, then keep each Content Classification Label filtered under Settings → Content Preferences."
+        "title": "Check content preferences and account age",
+        "description": "In Content Preferences, review each label filter. Four sensitive-content categories are filtered by default for under-18s, but teens can change them; Mature-rated Games is a separate choice."
       },
       {
         "title": "Build a pre-approved streamer list",
@@ -2601,42 +2647,42 @@ export const entries: Entry[] = [
     ],
     "watchFor": [
       {
-        "title": "Live chat exposes children to unmoderated adult content in real time",
-        "description": "Popular streams move thousands of messages per minute. Hate speech, sexual content, grooming attempts, and harassment appear and disappear before any moderation system can act. A child sees it before it is removed.",
+        "title": "Harmful messages in live chat",
+        "description": "On busy channels, a child may see harassment, sexual language or manipulation before moderators remove it.",
         "severity": "high"
       },
       {
-        "title": "Gambling and sports betting content normalises gambling for minors",
-        "description": "Gambling streams are a significant content category on Twitch. Regular exposure to gambling presented as entertainment normalises it for young viewers during a formative period.",
+        "title": "Gambling presented as entertainment",
+        "description": "Review the gambling filter and discuss streams that make betting look routine.",
         "severity": "high"
       },
       {
-        "title": "Twitch raids flood a channel with unexpected users",
-        "description": "A raid sends a streamer's entire audience to another channel simultaneously. This can expose children watching smaller streamers to sudden, uncontrolled, and often hostile audiences.",
+        "title": "Unexpected audiences after raids",
+        "description": "A raid moves viewers to another channel. The new channel and its chat may feel very different.",
         "severity": "medium"
       },
       {
-        "title": "Subscription and donation spending pressure",
-        "description": "Streamers actively encourage viewers to subscribe and send Bits. Children develop loyalty to streamers and feel social pressure to financially support them.",
+        "title": "Pressure to subscribe or buy Bits",
+        "description": "A child may feel obliged to spend money on a streamer they like.",
         "severity": "medium"
       },
       {
-        "title": "Parasocial relationships with streamers create susceptibility",
-        "description": "Children feel they know streamers personally. This creates trust that streamers and anyone who appears on their streams do not merit and makes children susceptible to influence, products, and ideologies promoted by people they feel attached to.",
+        "title": "Attachment to streamers",
+        "description": "Discuss how feeling close to a creator can affect trust in the products or opinions they promote.",
         "severity": "medium"
       }
     ],
     "setupGuide": [
       {
-        "title": "Set Content Preferences and check the age on the account",
+        "title": "Review each content filter",
         "steps": [
-          "Twitch now uses Content Classification Labels (Sexual Themes; Drugs/Intoxication; Violent/Graphic; Gambling; Mature-rated Game). For accounts registered as under 18, streams carrying those labels are hidden by default. Confirm the birthday is set correctly, then open Settings → Content Preferences to keep each labelled category filtered. The catch: labels rely on streamers self-tagging, so 'hidden by default' is not a guarantee."
+          "Under-18 defaults filter Sexual Themes, Drugs/Intoxication, Violent/Graphic Depictions and Gambling. Check Mature-rated Games separately. These are changeable account preferences, not a parent-locked guarantee; labels and live moderation can miss content."
         ]
       },
       {
-        "title": "Block whispers from strangers",
+        "title": "Block Whispers from strangers",
         "steps": [
-          "Settings → Security and Privacy → Block Whispers from Strangers stops private messages from users who do not follow each other. This is on by default, but verify it is still enabled."
+          "In Security and Privacy, check Block Whispers from Strangers. Twitch’s definition includes exceptions such as accounts you follow or have messaged; it is not a mutual-follow-only rule."
         ]
       },
       {
@@ -2646,27 +2692,27 @@ export const entries: Entry[] = [
         ]
       },
       {
-        "title": "Disable open browsing of the Discover and Browse pages",
+        "title": "Agree how to use Browse",
         "steps": [
-          "There is no parental lock for Browse, so the practical solution is an agreement: watched content comes from the Following list, not from browsing. Frame it as a starting point, not a permanent restriction."
+          "Twitch has no parent lock for Browse. Start with a Following list you have chosen together and revisit the agreement as your child gains experience."
         ]
       },
       {
-        "title": "Remove saved payment methods from the account",
+        "title": "Review payment methods",
         "steps": [
-          "Settings → Payments → remove all cards. Without a saved payment method, subscriptions and Bits purchases require re-entering card details, which creates a natural pause that eliminates impulse spending."
+          "Remove saved cards and check app-store payments and active subscriptions separately. This adds a pause before some purchases, but does not block every payment route."
         ]
       },
       {
-        "title": "Discuss parasocial relationships directly",
+        "title": "Talk about attachment to streamers",
         "steps": [
-          "Explain that streamers are entertainers, not friends. They do not know your child exists. The relationship is one-directional. This conversation is more protective than any setting Twitch offers."
+          "A child can feel close to a streamer who does not know them personally. Discuss how that feeling can influence purchases and whose advice they trust."
         ]
       },
       {
-        "title": "Set viewing time using device-level controls",
+        "title": "Set a viewing limit on the device",
         "steps": [
-          "Use iOS Screen Time or Android Digital Wellbeing to set a daily limit on the Twitch app itself. Sixty to ninety minutes is a reasonable ceiling for a school day."
+          "Use the child’s device parental controls to set an app limit. Agree on a duration that fits school, sleep and other activities."
         ]
       }
     ],
@@ -2677,32 +2723,32 @@ export const entries: Entry[] = [
     "riskBarPosition": 62,
     "appMetrics": [
       {
-        "label": "Content moderation",
-        "value": "Real-time: effectively impossible to pre-screen"
+        "label": "Content filters",
+        "value": "Changeable preferences"
       },
       {
-        "label": "Gambling streams",
-        "value": "Common and normalising"
+        "label": "Live moderation",
+        "value": "May act after content appears"
       },
       {
-        "label": "Chat speed (popular streams)",
-        "value": "Unreadable, unmoderable"
+        "label": "Private messages",
+        "value": "Check Whisper settings"
       },
       {
-        "label": "Spending pressure",
-        "value": "Subscriptions + Bits donations"
+        "label": "Spending",
+        "value": "Subscriptions and Bits"
       }
     ],
     "callouts": [
       {
         "type": "warning",
-        "title": "Highest concern",
-        "description": "Twitch live chat moves too fast for any moderation system to catch harmful content before a child sees it. There is no pre-screening of live content. A child may see a message before it is removed."
+        "title": "Live content can change quickly",
+        "description": "Filters and moderators cannot review an entire live stream in advance. A child may see a message before it is removed."
       },
       {
         "type": "tip",
-        "title": "Most impactful action",
-        "description": "Directing your child to a curated list of pre-approved streamers and removing saved payment methods are the two most effective actions. Twitch's own settings offer very limited parental control."
+        "title": "Start here",
+        "description": "Choose streamers together, check the label filters and agree on spending and viewing limits."
       }
     ],
     "related": [
@@ -2718,7 +2764,25 @@ export const entries: Entry[] = [
         "category": "apps",
         "slug": "discord"
       }
-    ]
+    ],
+    "editorialReview": {
+      "checkedAt": "2026-11-03",
+      "availability": "Under-18 defaults filter four sensitive-content labels. Mature-rated Games is separate, and teens can adjust preferences. These settings are not a parental lock. The help portal returned a loading error; label details were checked in indexed official guidance.",
+      "sources": [
+        {
+          "title": "Twitch: content display preferences",
+          "url": "https://help.twitch.tv/s/article/how-to-customize-content"
+        },
+        {
+          "title": "Twitch: parent and educator guide",
+          "url": "https://safety.twitch.tv/s/article/Guide-Parents-Educators?language=en_US"
+        },
+        {
+          "title": "Twitch: safety and Whisper defaults",
+          "url": "https://safety.twitch.tv/s/article/Safety-at-Twitch?language=en_US"
+        }
+      ]
+    }
   },
   {
     "slug": "steam",
@@ -2732,11 +2796,11 @@ export const entries: Entry[] = [
     "quickActions": [
       {
         "title": "Set up Steam Families",
-        "description": "Steam Families (which replaced Family View and Family Sharing in 2024-2025) lets a parent account set playtime limits, restrict store and community access, and approve purchase requests for a child member."
+        "description": "Create a Steam Family from your adult account and add your child with the child role. Enable parental controls for their account."
       },
       {
-        "title": "Block Steam Community access",
-        "description": "Turn off Steam Community and Online Features because those are the highest-risk surfaces and children do not need them to play local games."
+        "title": "Review Community and chat access",
+        "description": "Restrict Community, Store or chat access in the child’s parental controls where you do not want those features used."
       },
       {
         "title": "Remove saved payment methods",
@@ -2745,42 +2809,42 @@ export const entries: Entry[] = [
     ],
     "watchFor": [
       {
-        "title": "Adult and violent game content accessible via false birthdate",
-        "description": "Steam's adult content filter requires only clicking I am over 18 to bypass. There is no verification. Explicitly sexual games are available in the same store a 10-year-old can browse.",
+        "title": "Games outside the agreed age range",
+        "description": "Review allowed games in Steam Families. Store content preferences alone do not decide which games are suitable for your child.",
         "severity": "high"
       },
       {
-        "title": "Steam Community forums contain unmoderated content",
-        "description": "Game discussion boards, community hubs, and Workshop comments contain adult content, hate speech, extremist rhetoric, and contact attempts. These are not separated from the core game experience.",
+        "title": "Unwanted contact in Community and chat",
+        "description": "Community posts and messages can contain harassment, adult material or scams. Review these permissions separately from the game list.",
         "severity": "high"
       },
       {
-        "title": "Trading and marketplace scams specifically target young players",
-        "description": "Fake item trade offers, Steam Support impersonation, and phishing links shared in game chat or Community are specifically engineered to target young players who do not recognise the patterns. Account takeover and item theft are common.",
+        "title": "Trade and account scams",
+        "description": "Treat unexpected trade links or messages claiming to be Steam Support cautiously. Never share login codes.",
         "severity": "high"
       },
       {
-        "title": "Sale mechanics and bundle design drive compulsive spending",
-        "description": "Steam sales like Summer Sale and Winter Sale create artificial urgency. Children with access to stored payment methods regularly spend significant amounts during sale events without fully registering the real-money cost.",
+        "title": "Spending during sales",
+        "description": "Discounts and bundles can make it easy to spend beyond the agreed budget. Review saved cards and wallet credit.",
         "severity": "medium"
       },
       {
-        "title": "Friend requests from strangers in multiplayer games",
-        "description": "Players from shared game lobbies can send friend requests. Strangers on a child's friend list can then message them, see their game activity, and invite them to other games.",
+        "title": "Friend requests from game lobbies",
+        "description": "Ask who your child adds and review unfamiliar contacts together.",
         "severity": "medium"
       }
     ],
     "setupGuide": [
       {
-        "title": "Set up Steam Families (this replaced Family View)",
+        "title": "Create the family and child role",
         "steps": [
-          "Steam now uses Steam Families instead of the old PIN-based Family View. From your own adult account go to Steam menu → Settings → Family and create a Family (up to 6 members), then add your child as a child-role member. Restrictions are now tied to the child's account role rather than a guessable PIN, and you can set playtime/screentime limits, restrict store and community features, and approve or deny each purchase request. Any old Family View settings carry over automatically when you migrate."
+          "In Steam Settings → Family, create or manage your Steam Family and add your child as a child member. Enable their parental controls and review the allowed games, Store, Community and chat access."
         ]
       },
       {
-        "title": "Block Steam Community and forums entirely",
+        "title": "Review Community and chat access",
         "steps": [
-          "In the Steam Families parental controls, restrict access to Online Features and the Steam Community. These are the highest-risk areas and children do not need them to play games."
+          "In Steam Families parental controls, choose whether the child can use the Store, Community and chat. Review the settings inside each permitted game too."
         ]
       },
       {
@@ -2806,41 +2870,47 @@ export const entries: Entry[] = [
         "steps": [
           "Open the Library, right-click any game, then open its store page to check the PEGI or ESRB rating. Games above the child's age should be discussed, not ignored."
         ]
+      },
+      {
+        "title": "Set playtime and review requests",
+        "steps": [
+          "Steam Families supports playtime limits, schedules and requests for more time or purchases. These controls do not replace a game’s own chat and privacy settings."
+        ]
       }
     ],
     "ageRating": "13+ for accounts",
     "userCount": "The largest PC gaming platform",
     "platform": "PC, Mac, Linux, Mobile companion app",
-    "ageRecommendation": "Treat adult content access as open until Family Controls are enabled",
+    "ageRecommendation": "Review allowed games and Community access before independent use",
     "riskBarPosition": 63,
     "appMetrics": [
       {
-        "label": "Adult content gate",
-        "value": "Checkbox birthdate only"
+        "label": "Parent tools",
+        "value": "Steam Families"
       },
       {
-        "label": "Community forums",
-        "value": "Largely unmoderated"
+        "label": "Allowed games",
+        "value": "Parent-selected library"
       },
       {
-        "label": "Scam targeting",
-        "value": "Young players are primary targets"
+        "label": "Community and chat",
+        "value": "Separate restrictions"
       },
       {
-        "label": "Spending triggers",
-        "value": "Sales, bundles, limited-time offers"
+        "label": "Playtime",
+        "value": "Limits and requests"
       }
     ],
     "callouts": [
       {
         "type": "warning",
-        "title": "Highest concern",
-        "description": "Steam's adult content toggle is a checkbox that any child can tick. There is no technical barrier between a child's account and explicit content: only a yes or no prompt they can answer themselves."
+        "title": "Check each game too",
+        "description": "Steam Families controls access to Steam features. A permitted game can still have its own multiplayer, purchases or external account."
       },
       {
         "type": "tip",
-        "title": "Most impactful action",
-        "description": "Setting up Steam Families (the system that replaced Family View) and removing saved payment methods are the two controls that matter most. Steam Families restrictions are tied to the child's account role, so they are harder to bypass than the old PIN."
+        "title": "Start here",
+        "description": "Add the child role, enable parental controls and choose the games and community features together."
       }
     ],
     "related": [
@@ -2856,7 +2926,21 @@ export const entries: Entry[] = [
         "category": "apps",
         "slug": "minecraft"
       }
-    ]
+    ],
+    "editorialReview": {
+      "checkedAt": "2026-11-03",
+      "availability": "Steam Families replaces Family View and Family Sharing. Family eligibility and game sharing have their own rules; game-level chat and purchases need separate review. The help portal returned a limited page during this check; the guide and replacement notice were checked in indexed official text.",
+      "sources": [
+        {
+          "title": "Steam: Families user guide and parental controls",
+          "url": "https://help.steampowered.com/en/faqs/view/054C-3167-DD7F-49D4"
+        },
+        {
+          "title": "Steam: Family View replacement notice",
+          "url": "https://help.steampowered.com/en/faqs/view/6B1A-66BE-E911-3D98"
+        }
+      ]
+    }
   },
   {
     "slug": "gemini",
@@ -2970,20 +3054,20 @@ export const entries: Entry[] = [
       },
       {
         "type": "tip",
-        "title": "Most impactful action",
+        "title": "Start here",
         "description": "Check the account and choose one useful learning task to try together before allowing independent use."
       }
     ],
     "editorialReview": {
-      "checkedAt": "2026-09-03",
-      "availability": "Supervised Gemini Apps accounts are unavailable in the EEA, UK and Switzerland. Other account types have their own eligibility rules. This guide covers Gemini Apps, not every Google AI feature.",
+      "checkedAt": "2026-11-03",
+      "availability": "Google still excludes supervised Gemini Apps accounts in the EEA, UK and Switzerland. Romania is in the EEA. School accounts have separate administrator rules; the Privacy Hub was updated on 26 October.",
       "sources": [
         {
           "title": "Google: supervised Gemini Apps accounts",
           "url": "https://support.google.com/gemini/answer/16109150?hl=en"
         },
         {
-          "title": "Google: sign-in and account eligibility",
+          "title": "Google: account eligibility",
           "url": "https://support.google.com/gemini/answer/13278668?hl=en"
         },
         {
@@ -3017,7 +3101,7 @@ export const entries: Entry[] = [
     "description": "Meta’s AI assistant can appear inside apps your teen already uses. Check which app and account they use; parental visibility and alerts are not identical everywhere.",
     "ageRating": "Check the host app’s minimum age and regional AI eligibility",
     "userCount": "Users of Meta apps and AI tools",
-    "platform": "Instagram, Facebook, Messenger, WhatsApp; app and web access vary",
+    "platform": "Meta AI app and web; Instagram, Facebook, Messenger and WhatsApp availability varies",
     "ageRecommendation": "Our recommendation: eligible teen accounts with supervision and clear boundaries",
     "quickActions": [
       {
@@ -3041,21 +3125,21 @@ export const entries: Entry[] = [
         ]
       },
       {
-        "title": "Review AI conversation topics",
+        "title": "Review AI topics and app supervision",
         "steps": [
-          "Where available in Family Center, open the AI insights for the relevant app. Meta describes topic summaries from the previous seven days, not a transcript of every conversation."
+          "Meta’s 5 October update makes supervision available globally in the Meta AI app. Linked parents can see topics from the previous seven days, not transcripts. Review the relevant account in Family Center."
         ]
       },
       {
         "title": "Check stricter content settings",
         "steps": [
-          "For Instagram, review Limited Content where available. Meta says this stricter setting also narrows the prompts its AI will answer. It is not a switch that turns off every AI service."
+          "In the Meta AI app, a supervising parent can choose Limited Content instead of the default 13+ setting. Check each app separately; this does not disable every AI feature."
         ]
       },
       {
-        "title": "Check alert availability",
+        "title": "Check the October alert rollout",
         "steps": [
-          "The July 2026 announcement places Meta AI distress alerts for Instagram supervision in the US, UK, Australia and Canada, with global expansion planned by year-end. Romanian availability is not confirmed by that announcement."
+          "Meta’s 29 October update announces alerts to supervising parents globally for possible suicide or self-harm risk in Meta AI chats on Instagram, Facebook and Messenger. Check the linked account; this announcement does not establish equivalent alerts for WhatsApp or the standalone Meta AI app."
         ]
       },
       {
@@ -3100,11 +3184,11 @@ export const entries: Entry[] = [
       },
       {
         "label": "Limited Content",
-        "value": "Check availability"
+        "value": "Meta AI app and Instagram"
       },
       {
         "label": "Distress alerts",
-        "value": "Selected countries"
+        "value": "Global rollout announced"
       },
       {
         "label": "Coverage",
@@ -3119,25 +3203,21 @@ export const entries: Entry[] = [
       },
       {
         "type": "tip",
-        "title": "Most impactful action",
+        "title": "Start here",
         "description": "Look at the AI feature your teen actually uses and review supervision for that account together."
       }
     ],
     "editorialReview": {
-      "checkedAt": "2026-09-03",
-      "availability": "AI insights, content settings and distress alerts have separate rollouts. The cited announcements do not confirm all features for Romania. Verify the options shown in the relevant account.",
+      "checkedAt": "2026-11-03",
+      "availability": "Meta AI app supervision is documented globally from 5 October. The 29 October global alert rollout covers supervised Instagram, Facebook and Messenger accounts; coverage differs by app.",
       "sources": [
         {
-          "title": "Meta: AI topic insights for parents",
+          "title": "Meta: AI app supervision, updated 5 October 2026",
           "url": "https://about.fb.com/news/2026/04/helping-parents-understand-conversations-their-teens-are-having-with-ai/"
         },
         {
-          "title": "Meta: AI alerts and Limited Content",
+          "title": "Meta: alerts, updated 29 October 2026",
           "url": "https://about.fb.com/news/2026/07/keeping-parents-informed-teens-distress-conversations-meta-ai/"
-        },
-        {
-          "title": "Meta: approach to teen AI safety",
-          "url": "https://about.fb.com/news/2025/10/teen-ai-safety-approach/"
         }
       ]
     },
@@ -3268,8 +3348,13 @@ export const entries: Entry[] = [
       },
       {
         "type": "tip",
-        "title": "Most impactful action",
+        "title": "Start here",
         "description": "Understand existing use without blame, address unwanted contact and agree on an age-appropriate way to stay in touch."
+      },
+      {
+        "type": "tip",
+        "title": "EU terms checked in November 2026",
+        "description": "Telegram’s current EU terms still require users to be at least 18 to sign up. This applies in Romania."
       }
     ],
     "editorialReview": {

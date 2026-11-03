@@ -11,8 +11,8 @@ export const roEntryTranslations: Partial<Record<Entry["slug"], Partial<Localize
     "description": "O platformă de transmisiuni live axată pe jocuri. Verifică chatul, conținutul despre pariuri, cheltuielile și atașamentul copilului față de streameri.",
     "quickActions": [
       {
-        "title": "Verifică vârsta și preferințele de conținut",
-        "description": "Data nașterii trebuie să fie corectă. Pentru conturile sub 18 ani, transmisiunile etichetate pentru adulți sunt ascunse implicit. Verifică filtrele din Settings → Content Preferences."
+        "title": "Verifică filtrele și vârsta contului",
+        "description": "În Content Preferences, verifică fiecare filtru. Patru categorii sensibile sunt filtrate implicit sub 18 ani, dar adolescentul le poate schimba; Mature-rated Games este o opțiune separată."
       },
       {
         "title": "Alegeți streamerii împreună",
@@ -52,15 +52,15 @@ export const roEntryTranslations: Partial<Record<Entry["slug"], Partial<Localize
     ],
     "setupGuide": [
       {
-        "title": "Verifică preferințele de conținut și vârsta contului",
+        "title": "Verifică fiecare filtru de conținut",
         "steps": [
-          "Twitch folosește Content Classification Labels: Sexual Themes, Drugs/Intoxication, Violent/Graphic, Gambling și Mature-rated Game. Transmisiunile cu aceste etichete sunt ascunse implicit pentru conturile sub 18 ani. Confirmă data nașterii și verifică fiecare filtru în Settings → Content Preferences. Etichetarea depinde de streameri, deci nu este o garanție."
+          "Sub 18 ani sunt filtrate implicit Sexual Themes, Drugs/Intoxication, Violent/Graphic Depictions și Gambling. Verifică separat Mature-rated Games. Sunt preferințe modificabile, nu o blocare controlată exclusiv de părinte; etichetele și moderarea live pot rata conținut."
         ]
       },
       {
-        "title": "Blochează mesajele private de la necunoscuți",
+        "title": "Blochează mesajele Whispers de la necunoscuți",
         "steps": [
-          "Settings → Security and Privacy → Block Whispers from Strangers blochează mesajele dintre utilizatori care nu se urmăresc reciproc. Verifică dacă opțiunea implicită a rămas activă."
+          "În Security and Privacy, verifică Block Whispers from Strangers. Definiția Twitch include excepții, precum conturile urmărite sau contactate deja; regula nu se limitează la urmărirea reciprocă."
         ]
       },
       {
@@ -76,9 +76,9 @@ export const roEntryTranslations: Partial<Record<Entry["slug"], Partial<Localize
         ]
       },
       {
-        "title": "Elimină cardurile salvate",
+        "title": "Verifică metodele de plată",
         "steps": [
-          "Settings → Payments → șterge cardurile. Pentru un abonament sau Bits va trebui introdusă din nou metoda de plată, ceea ce oferă un moment pentru a discuta cumpărătura."
+          "Elimină cardurile salvate și verifică separat plățile prin magazinul aplicației și abonamentele active. Acest pas oferă o pauză înaintea unor cumpărături, dar nu blochează fiecare mod de plată."
         ]
       },
       {
@@ -88,9 +88,9 @@ export const roEntryTranslations: Partial<Record<Entry["slug"], Partial<Localize
         ]
       },
       {
-        "title": "Setează timpul de vizionare pe dispozitiv",
+        "title": "Setează limita de vizionare pe dispozitiv",
         "steps": [
-          "Folosește iOS Screen Time sau Android Digital Wellbeing pentru limita zilnică a aplicației Twitch. Ghidul propune 60 până la 90 de minute ca plafon într-o zi de școală; discutați ce se potrivește rutinei copilului."
+          "Folosește controalele parentale ale dispozitivului pentru o limită a aplicației. Alegeți o durată potrivită pentru școală, somn și celelalte activități."
         ]
       }
     ],
@@ -100,34 +100,52 @@ export const roEntryTranslations: Partial<Record<Entry["slug"], Partial<Localize
     "ageRecommendation": "Cu o listă de streameri aleasă împreună și limite pe dispozitiv",
     "appMetrics": [
       {
-        "label": "Moderarea conținutului",
-        "value": "Live, fără verificare în avans"
+        "label": "Filtre de conținut",
+        "value": "Preferințe modificabile"
       },
       {
-        "label": "Transmisiuni cu pariuri",
-        "value": "Pot normaliza jocurile de noroc"
+        "label": "Moderare live",
+        "value": "Poate interveni după afișare"
       },
       {
-        "label": "Viteza chatului popular",
-        "value": "Greu de urmărit și moderat"
+        "label": "Mesaje private",
+        "value": "Verifică Whispers"
       },
       {
-        "label": "Presiune de cumpărare",
+        "label": "Cheltuieli",
         "value": "Abonamente și Bits"
       }
     ],
     "callouts": [
       {
         "type": "warning",
-        "title": "Highest concern",
-        "description": "Chatul se poate mișca prea repede pentru ca mesajele nepotrivite să fie eliminate înainte să le vadă copilul. Conținutul live nu poate fi verificat integral în avans."
+        "title": "Conținutul live se poate schimba rapid",
+        "description": "Filtrele și moderatorii nu pot verifica integral o transmisiune în avans. Copilul poate vedea un mesaj înainte de eliminare."
       },
       {
         "type": "tip",
-        "title": "Most impactful action",
-        "description": "Începeți cu streamerii aleși împreună și eliminați metodele de plată salvate. Controalele parentale oferite de Twitch sunt limitate."
+        "title": "Începe de aici",
+        "description": "Alegeți streamerii împreună, verificați filtrele și stabiliți limitele de cheltuieli și vizionare."
       }
-    ]
+    ],
+    "editorialReview": {
+      "checkedAt": "2026-11-03",
+      "availability": "Sub 18 ani sunt filtrate implicit patru etichete de conținut sensibil. Mature-rated Games este separat, iar adolescentul poate modifica preferințele. Setările nu sunt o blocare parentală. Portalul de ajutor a afișat o eroare de încărcare; detaliile etichetelor au fost consultate în ghidul oficial indexat.",
+      "sources": [
+        {
+          "title": "Twitch: content display preferences",
+          "url": "https://help.twitch.tv/s/article/how-to-customize-content"
+        },
+        {
+          "title": "Twitch: parent and educator guide",
+          "url": "https://safety.twitch.tv/s/article/Guide-Parents-Educators?language=en_US"
+        },
+        {
+          "title": "Twitch: safety and Whisper defaults",
+          "url": "https://safety.twitch.tv/s/article/Safety-at-Twitch?language=en_US"
+        }
+      ]
+    }
   },
   "steam": {
     "name": "Steam",
@@ -138,11 +156,11 @@ export const roEntryTranslations: Partial<Record<Entry["slug"], Partial<Localize
     "quickActions": [
       {
         "title": "Configurează Steam Families",
-        "description": "Steam Families a înlocuit Family View și Family Sharing în 2024-2025. Contul de părinte poate limita timpul, accesul la magazin și comunitate și poate aproba cumpărăturile copilului."
+        "description": "Creează o familie Steam din contul tău de adult și adaugă copilul cu rol de copil. Activează controalele parentale pentru contul lui."
       },
       {
-        "title": "Restricționează Steam Community",
-        "description": "Dezactivează Steam Community și Online Features. Aceste zone prezintă riscuri de contact și conținut; jocurile locale nu au nevoie de ele."
+        "title": "Verifică accesul la Community și chat",
+        "description": "Restricționează Community, Store sau chat din controalele copilului dacă nu vrei să folosească aceste funcții."
       },
       {
         "title": "Elimină metodele de plată salvate",
@@ -151,42 +169,42 @@ export const roEntryTranslations: Partial<Record<Entry["slug"], Partial<Localize
     ],
     "watchFor": [
       {
-        "title": "Acces la jocuri pentru adulți",
-        "description": "O dată de naștere declarată sau o confirmare de vârstă poate permite accesul la conținut pentru adulți. Verifică restricțiile contului; nu te baza pe această confirmare.",
+        "title": "Jocuri nepotrivite vârstei",
+        "description": "Verifică jocurile permise în Steam Families. Preferințele de conținut ale magazinului nu decid singure ce este potrivit copilului.",
         "severity": "high"
       },
       {
-        "title": "Conținut și contacte din comunitate",
-        "description": "Discuțiile despre jocuri, paginile comunității și comentariile Workshop pot include conținut pentru adulți, ură, mesaje extremiste și contacte nedorite.",
+        "title": "Contact nedorit în Community și chat",
+        "description": "Postările și mesajele pot conține hărțuire, conținut pentru adulți sau înșelătorii. Verifică aceste permisiuni separat de lista jocurilor.",
         "severity": "high"
       },
       {
-        "title": "Înșelătorii prin schimburi și mesaje",
-        "description": "Ofertele false de schimb, persoanele care pretind că sunt Steam Support și linkurile de phishing pot duce la furtul contului sau al obiectelor din joc.",
+        "title": "Înșelătorii cu schimburi sau conturi",
+        "description": "Verifică atent linkurile de schimb și mesajele care pretind că vin de la Steam Support. Nu distribui coduri de conectare.",
         "severity": "high"
       },
       {
         "title": "Cheltuieli în timpul reducerilor",
-        "description": "Summer Sale, Winter Sale și pachetele promoționale pot crea presiunea de a cumpăra imediat. Cardurile salvate fac mai ușor de cheltuit fără a urmări costul real.",
+        "description": "Reducerile și pachetele pot încuraja depășirea bugetului. Verifică metodele de plată și soldul portofelului.",
         "severity": "medium"
       },
       {
-        "title": "Cereri de prietenie de la necunoscuți",
-        "description": "Jucătorii din aceleași sesiuni pot trimite cereri de prietenie. După acceptare, pot trimite mesaje, vedea activitatea și invita copilul în alte jocuri.",
+        "title": "Cereri de prietenie din jocuri",
+        "description": "Întreabă pe cine adaugă copilul și verificați împreună contactele necunoscute.",
         "severity": "medium"
       }
     ],
     "setupGuide": [
       {
-        "title": "Configurează Steam Families",
+        "title": "Creează familia și rolul de copil",
         "steps": [
-          "Din contul tău de adult: Steam menu → Settings → Family. Creează o familie de până la 6 membri și adaugă copilul cu rol de copil. Poți seta limite de timp, restricții pentru magazin și comunitate și aprobări pentru cumpărături. Restricțiile sunt legate de rolul contului. Setările vechi Family View se transferă la migrare."
+          "În Steam Settings → Family, creează sau gestionează familia și adaugă copilul ca membru cu rol de copil. Activează controalele parentale și verifică jocurile permise și accesul la Store, Community și chat."
         ]
       },
       {
-        "title": "Restricționează comunitatea și forumurile",
+        "title": "Verifică accesul la Community și chat",
         "steps": [
-          "În controalele parentale Steam Families, restricționează Online Features și Steam Community. Revizuiește aceste opțiuni înainte să permiți funcțiile sociale."
+          "În controalele Steam Families, alege dacă poate folosi Store, Community și chat. Verifică și setările din fiecare joc permis."
         ]
       },
       {
@@ -212,42 +230,62 @@ export const roEntryTranslations: Partial<Record<Entry["slug"], Partial<Localize
         "steps": [
           "Deschide Library, apasă cu butonul drept pe un joc și deschide pagina sa din magazin pentru clasificarea PEGI sau ESRB. Discutați jocurile recomandate unei vârste mai mari."
         ]
+      },
+      {
+        "title": "Setează timpul și verifică cererile",
+        "steps": [
+          "Steam Families are limite de timp, program de joacă și cereri pentru timp suplimentar sau cumpărături. Aceste controale nu înlocuiesc setările de chat și confidențialitate din fiecare joc."
+        ]
       }
     ],
     "ageRating": "13+ pentru conturi",
     "userCount": "Platformă de jocuri pentru PC",
     "platform": "PC, Mac, Linux, aplicație mobilă companion",
-    "ageRecommendation": "Verifică accesul la conținut pentru adulți și activează controalele parentale",
+    "ageRecommendation": "Verifică jocurile permise și Community înainte de utilizare independentă",
     "appMetrics": [
       {
-        "label": "Verificarea vârstei",
-        "value": "Vârstă declarată"
+        "label": "Instrumente pentru părinte",
+        "value": "Steam Families"
       },
       {
-        "label": "Forumuri",
-        "value": "Conținut care poate scăpa moderării"
+        "label": "Jocuri permise",
+        "value": "Bibliotecă aleasă de părinte"
       },
       {
-        "label": "Înșelătorii",
-        "value": "Vizează și jucătorii tineri"
+        "label": "Community și chat",
+        "value": "Restricții separate"
       },
       {
-        "label": "Presiune de cumpărare",
-        "value": "Reduceri, pachete, oferte limitate"
+        "label": "Timp de joacă",
+        "value": "Limite și cereri"
       }
     ],
     "callouts": [
       {
         "type": "warning",
-        "title": "Highest concern",
-        "description": "Confirmarea vârstei din magazin poate fi completată de copil. Verifică accesul efectiv și restricțiile din Steam Families."
+        "title": "Verifică și fiecare joc",
+        "description": "Steam Families controlează accesul la funcțiile Steam. Un joc permis poate avea propriul multiplayer, cumpărături sau cont extern."
       },
       {
         "type": "tip",
-        "title": "Most impactful action",
-        "description": "Configurează Steam Families și elimină cardurile salvate. Restricțiile sunt legate de rolul copilului în familie, în locul vechiului cod PIN Family View."
+        "title": "Începe de aici",
+        "description": "Adaugă rolul de copil, activează controalele parentale și alegeți jocurile și funcțiile comunității."
       }
-    ]
+    ],
+    "editorialReview": {
+      "checkedAt": "2026-11-03",
+      "availability": "Steam Families înlocuiește Family View și Family Sharing. Eligibilitatea familiei și partajarea jocurilor au reguli proprii; verifică separat chatul și cumpărăturile din jocuri. Portalul de ajutor a afișat o pagină limitată la această verificare; ghidul și anunțul înlocuirii au fost consultate în textul oficial indexat.",
+      "sources": [
+        {
+          "title": "Steam: Families user guide and parental controls",
+          "url": "https://help.steampowered.com/en/faqs/view/054C-3167-DD7F-49D4"
+        },
+        {
+          "title": "Steam: Family View replacement notice",
+          "url": "https://help.steampowered.com/en/faqs/view/6B1A-66BE-E911-3D98"
+        }
+      ]
+    }
   },
   "gemini": {
     "summary": "Asistentul AI Google pentru întrebări, scris și învățare. Verifică tipul contului și țara înainte de a te baza pe controalele Family Link.",
@@ -356,24 +394,24 @@ export const roEntryTranslations: Partial<Record<Entry["slug"], Partial<Localize
       },
       {
         "type": "tip",
-        "title": "Most impactful action",
+        "title": "Începe de aici",
         "description": "Verifică tipul contului și alegeți o activitate utilă de învățare pe care să o încercați împreună înainte de utilizarea independentă."
       }
     ],
     "editorialReview": {
-      "checkedAt": "2026-09-03",
-      "availability": "Conturile Gemini Apps supravegheate sunt indisponibile în SEE, Regatul Unit și Elveția. Alte tipuri de cont au propriile condiții. Ghidul acoperă Gemini Apps, nu toate funcțiile AI Google.",
+      "checkedAt": "2026-11-03",
+      "availability": "Google exclude în continuare conturile Gemini Apps supravegheate în SEE, Regatul Unit și Elveția. România este în SEE. Conturile școlare au reguli separate ale administratorului; Privacy Hub a fost actualizat la 26 octombrie.",
       "sources": [
         {
-          "title": "Google: conturi Gemini Apps supravegheate",
+          "title": "Google: supervised Gemini Apps accounts",
           "url": "https://support.google.com/gemini/answer/16109150?hl=en"
         },
         {
-          "title": "Google: conectare și eligibilitatea conturilor",
+          "title": "Google: account eligibility",
           "url": "https://support.google.com/gemini/answer/13278668?hl=en"
         },
         {
-          "title": "Google: confidențialitatea Gemini",
+          "title": "Google: Gemini Privacy Hub",
           "url": "https://support.google.com/gemini/answer/13594961?hl=en"
         }
       ]
@@ -386,7 +424,7 @@ export const roEntryTranslations: Partial<Record<Entry["slug"], Partial<Localize
     "description": "Asistentul AI Meta poate apărea în aplicațiile deja folosite de adolescent. Verifică aplicația și contul: informațiile pentru părinți și alertele nu sunt identice peste tot.",
     "ageRating": "Verifică vârsta minimă a aplicației și eligibilitatea AI regională",
     "userCount": "Utilizatori ai aplicațiilor Meta și instrumentelor AI",
-    "platform": "Instagram, Facebook, Messenger, WhatsApp; accesul mobil și web diferă",
+    "platform": "Aplicația și site-ul Meta AI; disponibilitate variabilă în Instagram, Facebook, Messenger și WhatsApp",
     "ageRecommendation": "Recomandarea noastră: conturi de adolescent eligibile, cu supraveghere și limite clare",
     "quickActions": [
       {
@@ -410,21 +448,21 @@ export const roEntryTranslations: Partial<Record<Entry["slug"], Partial<Localize
         ]
       },
       {
-        "title": "Verifică temele conversațiilor AI",
+        "title": "Verifică subiectele și supravegherea aplicației",
         "steps": [
-          "Unde sunt disponibile în Family Center, deschide informațiile AI pentru aplicația relevantă. Meta descrie rezumate ale temelor din ultimele șapte zile, nu transcrierea fiecărei conversații."
+          "Actualizarea Meta din 5 octombrie anunță supravegherea disponibilă global în aplicația Meta AI. Părinții conectați pot vedea subiectele din ultimele șapte zile, nu transcrierile. Verifică acel cont în Family Center."
         ]
       },
       {
-        "title": "Verifică setările mai stricte",
+        "title": "Verifică filtrarea mai strictă",
         "steps": [
-          "Pentru Instagram, consultă Limited Content unde este disponibil. Meta spune că setarea limitează suplimentar cererile la care răspunde AI. Nu este un comutator care oprește toate serviciile AI."
+          "În aplicația Meta AI, părintele care supraveghează contul poate alege Limited Content în locul setării implicite 13+. Verifică fiecare aplicație separat; opțiunea nu dezactivează toate funcțiile AI."
         ]
       },
       {
-        "title": "Verifică disponibilitatea alertelor",
+        "title": "Verifică lansarea alertelor din octombrie",
         "steps": [
-          "Anunțul din iulie 2026 plasează alertele de suferință din conversațiile Meta AI pentru supravegherea Instagram în SUA, Regatul Unit, Australia și Canada, cu extindere globală planificată până la finalul anului. Anunțul nu confirmă disponibilitatea în România."
+          "Actualizarea Meta din 29 octombrie anunță alerte globale pentru părinții care supraveghează conturi, când conversațiile cu Meta AI pe Instagram, Facebook și Messenger sugerează risc de suicid sau autovătămare. Verifică acel cont; anunțul nu confirmă alerte echivalente pentru WhatsApp sau aplicația separată Meta AI."
         ]
       },
       {
@@ -469,11 +507,11 @@ export const roEntryTranslations: Partial<Record<Entry["slug"], Partial<Localize
       },
       {
         "label": "Limited Content",
-        "value": "Verifică disponibilitatea"
+        "value": "Aplicația Meta AI și Instagram"
       },
       {
         "label": "Alerte de suferință",
-        "value": "Anumite țări"
+        "value": "Lansare globală anunțată"
       },
       {
         "label": "Acoperire",
@@ -488,25 +526,21 @@ export const roEntryTranslations: Partial<Record<Entry["slug"], Partial<Localize
       },
       {
         "type": "tip",
-        "title": "Most impactful action",
+        "title": "Începe de aici",
         "description": "Priviți funcția AI folosită efectiv și verificați împreună supravegherea acelui cont."
       }
     ],
     "editorialReview": {
-      "checkedAt": "2026-09-03",
-      "availability": "Informațiile AI, setările de conținut și alertele au lansări separate. Anunțurile citate nu confirmă toate funcțiile pentru România. Verifică opțiunile din contul relevant.",
+      "checkedAt": "2026-11-03",
+      "availability": "Supravegherea aplicației Meta AI este documentată global din 5 octombrie. Lansarea globală a alertelor din 29 octombrie vizează conturile supravegheate Instagram, Facebook și Messenger; acoperirea diferă între aplicații.",
       "sources": [
         {
-          "title": "Meta: informații pentru părinți despre temele AI",
+          "title": "Meta: AI app supervision, updated 5 October 2026",
           "url": "https://about.fb.com/news/2026/04/helping-parents-understand-conversations-their-teens-are-having-with-ai/"
         },
         {
-          "title": "Meta: alerte AI și Limited Content",
+          "title": "Meta: alerts, updated 29 October 2026",
           "url": "https://about.fb.com/news/2026/07/keeping-parents-informed-teens-distress-conversations-meta-ai/"
-        },
-        {
-          "title": "Meta: siguranța AI pentru adolescenți",
-          "url": "https://about.fb.com/news/2025/10/teen-ai-safety-approach/"
         }
       ]
     },
@@ -620,8 +654,13 @@ export const roEntryTranslations: Partial<Record<Entry["slug"], Partial<Localize
       },
       {
         "type": "tip",
-        "title": "Most impactful action",
+        "title": "Începe de aici",
         "description": "Înțelege utilizarea existentă fără învinovățire, gestionați contactele nedorite și alegeți o cale de comunicare potrivită vârstei."
+      },
+      {
+        "type": "tip",
+        "title": "Termenii UE verificați în noiembrie 2026",
+        "description": "Termenii actuali Telegram pentru UE cer în continuare cel puțin 18 ani la înscriere. Regula se aplică în România."
       }
     ],
     "editorialReview": {
@@ -759,15 +798,20 @@ export const roEntryTranslations: Partial<Record<Entry["slug"], Partial<Localize
       },
       {
         "type": "tip",
-        "title": "Most impactful action",
+        "title": "Începe de aici",
         "description": "Verifică tipul contului și permisiunile pentru grupuri înainte de a intra în primul grup al clasei."
+      },
+      {
+        "type": "tip",
+        "title": "Disponibilitate verificată în noiembrie 2026",
+        "description": "Anunțul oficial descrie în continuare disponibilitate treptată. Dacă nu apare configurarea gestionată de părinte, nu folosi o dată de naștere de adult pentru copil."
       }
     ],
     "riskLabelText": "Risc mediu-ridicat",
     "homeBadgeLabel": "Setează controalele mai întâi",
     "editorialReview": {
       "checkedAt": "2026-09-03",
-      "availability": "Conturile gestionate de părinte se lansează treptat. Anunțul global nu confirmă disponibilitatea în România.",
+      "availability": "Anunțul conturilor gestionate de părinte descrie o lansare treptată, fără o dată confirmată de finalizare pentru România. Verifică configurarea pe ambele telefoane; aceste conturi limitează utilizarea la mesaje și apeluri.",
       "sources": [
         {
           "title": "WhatsApp: condiții de înregistrare",
@@ -793,8 +837,8 @@ export const roEntryTranslations: Partial<Record<Entry["slug"], Partial<Localize
     }
   },
   "character-ai": {
-    "summary": "Un serviciu de divertisment cu personaje AI. Character.AI spune că a eliminat chatul deschis cu personaje pentru cei sub 18 ani; verifică vârsta contului și experiența disponibilă copilului.",
-    "description": "Un serviciu de divertisment cu personaje AI. Character.AI spune că a eliminat chatul deschis cu personaje pentru cei sub 18 ani; verifică vârsta contului și experiența disponibilă copilului.",
+    "summary": "Un serviciu de personaje AI și divertisment. Conversațiile libere cu personaje au fost eliminate pentru cei sub 18 ani. După anunțul din octombrie despre procesul de vânzare, verificați împreună abonamentele, datele salvate și notificările serviciului.",
+    "description": "Un serviciu de personaje AI și divertisment. Conversațiile libere cu personaje au fost eliminate pentru cei sub 18 ani. După anunțul din octombrie despre procesul de vânzare, verificați împreună abonamentele, datele salvate și notificările serviciului.",
     "ageRating": "Chat deschis cu personaje: 18+",
     "userCount": "Utilizatori de personaje AI și instrumente creative",
     "ageRecommendation": "Recomandarea noastră: fără chat de relație cu AI pentru minori",
@@ -848,6 +892,12 @@ export const roEntryTranslations: Partial<Record<Entry["slug"], Partial<Localize
         "steps": [
           "Dacă copilul descrie suferință, ascultă-l și ajută-l să ajungă la o persoană de încredere sau la sprijin profesional potrivit. Nu te baza pe un chatbot pentru gestionarea unei crize."
         ]
+      },
+      {
+        "title": "Verifică actualizarea serviciului din octombrie",
+        "steps": [
+          "La 12 octombrie 2026, Character.AI a anunțat un proces Chapter 11 pentru vânzarea companiei. Anunțul spune că serviciul funcționează și abonamentele continuă să fie facturate, dar avertizează că platforma se poate închide dacă nu apare o ofertă potrivită. Verificați notificările actuale și opțiunile de export, ștergere și abonament."
+        ]
       }
     ],
     "watchFor": [
@@ -898,27 +948,28 @@ export const roEntryTranslations: Partial<Record<Entry["slug"], Partial<Localize
       },
       {
         "type": "tip",
-        "title": "Most impactful action",
+        "title": "Începe de aici",
         "description": "Verificați împreună experiența reală a contului și stabiliți la ce este util AI în familia voastră."
+      },
+      {
+        "type": "warning",
+        "title": "Starea serviciului se poate schimba",
+        "description": "Anunțul din octombrie descrie funcționarea în timpul unui proces de vânzare. Nu promite că platforma sau funcțiile plătite vor rămâne disponibile."
       }
     ],
     "riskLabelText": "Risc foarte ridicat",
     "homeBadgeLabel": "Necesită atenție sporită",
     "editorialReview": {
-      "checkedAt": "2026-09-03",
-      "availability": "Platforma confirmă eliminarea chatului deschis cu personaje sub 18 ani. Verifică vârsta și accesul contului cu suportul oficial, dacă este nevoie.",
+      "checkedAt": "2026-11-03",
+      "availability": "Actualizarea de siguranță din septembrie confirmă eliminarea conversațiilor libere sub 18 ani. Anunțul din 12 octombrie spune că serviciile și facturarea continuă în timpul procesului de vânzare; funcționarea viitoare este incertă.",
       "sources": [
         {
-          "title": "Character.AI: anunțul despre chat sub 18 ani",
-          "url": "https://blog.character.ai/u18-chat-announcement/"
-        },
-        {
-          "title": "Character.AI: siguranță, septembrie 2026",
+          "title": "Character.AI: September safety update",
           "url": "https://blog.character.ai/continuing-to-build-upon-our-safety-priorities/"
         },
         {
-          "title": "eSafety: ghid despre companioni AI",
-          "url": "https://www.esafety.gov.au/educators/training-for-professionals/professional-learning-program-teachers/ai-companions-information-sheet"
+          "title": "Character.AI: 12 October service and subscription update",
+          "url": "https://blog.character.ai/an-update-on-character-ai/"
         }
       ]
     }
@@ -1624,7 +1675,7 @@ export const roEntryTranslations: Partial<Record<Entry["slug"], Partial<Localize
     "riskLabelText": "Risc ridicat",
     "summary": "O platformă cu jocuri create de utilizatori. Începe cu un cont de părinte conectat, apoi verifică jocurile, comunicarea și cheltuielile pentru vârsta copilului.",
     "description": "O platformă cu jocuri create de utilizatori. Începe cu un cont de părinte conectat, apoi verifică jocurile, comunicarea și cheltuielile pentru vârsta copilului.",
-    "ageRating": "Clasificarea diferă după joc; Kids 5–8 / Select 9–15",
+    "ageRating": "Clasificarea diferă după joc; Kids 5 până la 8 / Select 9 până la 15",
     "userCount": "Copii, adolescenți și adulți",
     "ageRecommendation": "Recomandarea noastră: 10+ cu supraveghere activă",
     "quickActions": [
@@ -1651,13 +1702,13 @@ export const roEntryTranslations: Partial<Record<Entry["slug"], Partial<Localize
       {
         "title": "Înțelege Kids și Select",
         "steps": [
-          "Roblox a anunțat disponibilitatea globală pe 16 iunie 2026. Încadrarea folosește informațiile despre vârstă; nu este doar un nivel ales de părinte. Copiii cu vârsta verificată de 5–8 ani folosesc Kids, iar cei de 9–15 ani, Select. Conturile cu vârstă doar declarată au restricții suplimentare, inclusiv lipsa chatului."
+          "Conturile Kids acoperă vârstele de la 5 la 8 ani, iar Select de la 9 la 15 ani. Încadrarea urmează informațiile despre vârstă, nu un nivel ales de părinte. Conturile fără verificarea vârstei au acces mai restrâns și nu pot folosi chatul."
         ]
       },
       {
         "title": "Verifică permisiunile de chat",
         "steps": [
-          "Chatul necesită verificarea vârstei. Consultă opțiunile afișate pentru copil, fără să presupui că toate conversațiile sunt limitate la prieteni. Controalele disponibile depind de vârstă și regiune."
+          "Chatul necesită verificarea vârstei. Sub 9 ani este oprit implicit; părintele poate ajusta setările standard. Verifică opțiunile pentru vârsta și regiunea copilului."
         ]
       },
       {
@@ -1727,568 +1778,575 @@ export const roEntryTranslations: Partial<Record<Entry["slug"], Partial<Localize
       },
       {
         "type": "tip",
-        "title": "Most impactful action",
+        "title": "Începe de aici",
         "description": "Folosește propriul cont de părinte conectat pentru a verifica setările aplicabile copilului tău."
       }
     ],
     "editorialReview": {
-      "checkedAt": "2026-09-03",
-      "availability": "Kids și Select sunt disponibile global. Controalele individuale diferă după vârstă, cont și regiune.",
+      "checkedAt": "2026-11-03",
+      "availability": "Kids și Select sunt disponibile global. Chatul necesită verificarea vârstei și este oprit implicit sub 9 ani. Alte controale depind de vârstă, cont și regiune.",
       "sources": [
         {
-          "title": "Roblox: controale parentale",
-          "url": "https://about.roblox.com/parental-controls"
-        },
-        {
-          "title": "Roblox: disponibilitatea Kids și Select",
+          "title": "Roblox: Kids, Select and chat settings",
           "url": "https://about.roblox.com/newsroom/2026/06/age-based-roblox-kids-and-select-accounts-now-globally-available"
         },
         {
-          "title": "Roblox: limite lunare de cheltuieli",
-          "url": "https://en.help.roblox.com/hc/en-us/articles/4409558125460-Monthly-Spending-Limits-and-Notifications-FAQ"
+          "title": "Roblox: safety FAQs",
+          "url": "https://about.roblox.com/safety-faqs"
         }
       ]
     }
   },
   youtube: {
-    riskLabelText: "Risc ridicat",
-    summary:
-      "O platformă video cu recomandări personalizate, redare automată și comentarii care pot expune copiii la conținut nepotrivit.",
-    description:
-      "O platformă video cu recomandări personalizate, redare automată și comentarii care pot expune copiii la conținut nepotrivit.",
-    quickActions: [
+    "riskLabelText": "Risc ridicat",
+    "summary": "O aplicație video cu recomandări, Shorts și comentarii. Alege un cont supravegheat potrivit copilului și verificați împreună ce urmărește.",
+    "description": "O aplicație video cu recomandări, Shorts și comentarii. Alege un cont supravegheat potrivit copilului și verificați împreună ce urmărește.",
+    "quickActions": [
       {
-        title: "Activeaza Restricted Mode peste tot",
-        description:
-          "Account icon → Restricted Mode → ON. Repeta asta pe fiecare browser si pe fiecare dispozitiv, fiindca nu este o setare valabila la nivel de cont."
+        "title": "Alege un cont supravegheat",
+        "description": "Pentru copiii mai mici, folosește YouTube Kids sau verifică opțiunile de cont supravegheat. Filtrele pot rata videoclipuri nepotrivite."
       },
       {
-        title: "Foloseste YouTube Kids pentru copiii sub 13 ani",
-        description:
-          "Muta copiii mai mici in aplicatia YouTube Kids si verifica setarile la kids.youtube.com/settings."
+        "title": "Limitează feedul Shorts",
+        "description": "În aplicația YouTube, deschide Settings → Family Center → copilul tău → Time management. Alege o limită zilnică pentru Shorts; la 0 minute, feedul cu derulare se oprește."
       },
       {
-        title: "Opreste Autoplay",
-        description:
-          "Account icon → Settings → Autoplay → OFF, astfel incat videoclipurile sa se opreasca in loc sa curga spre urmatoarea recomandare."
-      },
-      {
-        title: "Limiteaza sau opreste feedul Shorts",
-        description:
-          "Pentru conturile de adolescent supravegheate, deschide Family Center → copilul tau → Time management si seteaza o limita zilnica pentru Shorts. Setarea pe 0 minute elimina complet feedul Shorts (introdus in ianuarie 2026)."
+        "title": "Oprește redarea automată",
+        "description": "Verifică Autoplay în setările aplicației, pentru ca următorul videoclip să nu pornească automat."
       }
     ],
-    watchFor: [
+    "watchFor": [
       {
-        title: "Rabbit holes create de algoritm",
-        description:
-          "Un copil poate trece rapid de la clipuri inofensive la continut extremist, violent sau despre self-harm, pentru ca sistemul recompenseaza vizionarea continua.",
-        severity: "critical"
+        "title": "Recomandări care devin tulburătoare",
+        "description": "Câteva videoclipuri pot aduce mai multe recomandări pe același subiect. Încurajează copilul să-ți spună dacă feedul îl sperie sau îl deranjează.",
+        "severity": "critical"
       },
       {
-        title: "Comentariile expun copiii la adulti si continut explicit",
-        description:
-          "Comentariile includ des limbaj sexual, hartuire, escrocherii si tentative directe de contact, cu moderare foarte slaba.",
-        severity: "high"
+        "title": "Contact nedorit prin comentarii",
+        "description": "Comentariile pot conține hărțuire, limbaj sexual, înșelătorii sau încercări de a începe o conversație privată.",
+        "severity": "high"
       },
       {
-        title: "YouTube Kids nu este complet sigur",
-        description:
-          "Versiunea pentru copii reduce riscul, dar lasa in continuare sa treaca videoclipuri nepotrivite, canale inselatoare si greseli ale algoritmului.",
-        severity: "high"
+        "title": "Videoclipuri nepotrivite în YouTube Kids",
+        "description": "Aplicația pentru copii filtrează conținutul, dar un videoclip poate fi încadrat greșit.",
+        "severity": "high"
       },
       {
-        title: "Autoplay elimina punctele naturale de oprire",
-        description:
-          "Fara un semnal clar de stop, o sesiune scurta planificata se poate transforma usor intr-o ora sau mai mult de vizionare pasiva.",
-        severity: "high"
+        "title": "Vizionare peste timpul stabilit",
+        "description": "Cu Shorts și Autoplay, copilul poate pierde ușor noțiunea timpului.",
+        "severity": "high"
       },
       {
-        title: "Sfaturi inselatoare despre sanatate si bani",
-        description:
-          "Creatorii increzatori pot suna convingator in timp ce ofera sfaturi daunatoare despre sanatate sau promisiuni de imbogatire rapida.",
-        severity: "medium"
+        "title": "Sfaturi înșelătoare",
+        "description": "Verificați afirmațiile despre sănătate, bani sau alte decizii importante într-o sursă de încredere înainte de a le urma.",
+        "severity": "medium"
       }
     ],
-    setupGuide: [
+    "setupGuide": [
       {
-        title: "Activeaza Restricted Mode peste tot",
-        steps: [
-          "Account icon → Restricted Mode → ON. Repeta asta pe fiecare browser si pe fiecare dispozitiv, fiindca nu este o setare valabila la nivel de cont."
+        "title": "Alegeți contul împreună",
+        "steps": [
+          "Folosește data corectă de naștere. Verifică YouTube Kids sau un cont YouTube supravegheat, în loc să te bazezi doar pe Restricted Mode."
         ]
       },
       {
-        title: "Foloseste YouTube Kids pentru copiii sub 13 ani",
-        steps: [
-          "Muta copiii mai mici in aplicatia YouTube Kids si verifica setarile la kids.youtube.com/settings."
+        "title": "Setează limita pentru Shorts",
+        "steps": [
+          "Din contul de părinte conectat în aplicația YouTube, deschide Settings → Family Center → copilul tău → Time management → daily Shorts feed limit. YouTube a confirmat opțiunea de 0 minute în Europa în aprilie 2026. Limita controlează feedul cu derulare, nu toate modurile de a viziona un clip scurt."
         ]
       },
       {
-        title: "Opreste Autoplay",
-        steps: [
-          "Account icon → Settings → Autoplay → OFF, astfel incat videoclipurile sa se opreasca in loc sa curga spre urmatoarea recomandare."
+        "title": "Verifică setările de conținut",
+        "steps": [
+          "În Family Center, selectează copilul și verifică Content Settings. În YouTube Kids poți opri Search sau alege conținut aprobat pentru o selecție mai restrânsă."
         ]
       },
       {
-        title: "Dezactiveaza Search pentru copiii mici",
-        steps: [
-          "YouTube Kids app → profile icon → Settings → dezactiveaza Search pentru copiii sub 8 ani, astfel incat aplicatia sa afiseze un set mai restrans de clipuri."
+        "title": "Verifică Autoplay și Restricted Mode",
+        "steps": [
+          "Oprește Autoplay. Dacă folosești Restricted Mode, verifică fiecare browser și dispozitiv separat; este un filtru suplimentar, nu un înlocuitor pentru contul supravegheat."
         ]
       },
       {
-        title: "Verifica istoricul de vizionare saptamanal",
-        steps: [
-          "Account → History si uita-te la ce a inceput algoritmul sa ii serveasca copilului."
+        "title": "Uitați-vă împreună la istoricul vizionărilor",
+        "steps": [
+          "Întreabă ce creatori îi plac copilului și verificați recomandările necunoscute. Blocați sau raportați conținutul nepotrivit."
         ]
       },
       {
-        title: "Limiteaza sau opreste feedul Shorts",
-        steps: [
-          "Pe un cont de adolescent supravegheat, deschide Family Center → selecteaza copilul → Time management si seteaza o limita zilnica pentru feedul Shorts. Setarea pe 0 minute scoate feedul nesfarsit de Shorts din aplicatia lor (lansat in ianuarie 2026)."
+        "title": "Verifică regulile pentru transmisiuni live",
+        "steps": [
+          "Vârsta minimă pentru a transmite live pe YouTube este 16 ani. Un adolescent mai mic care participă la o transmisiune trebuie să respecte regulile privind prezența unui adult; conectarea contului de părinte nu este suficientă."
         ]
       },
       {
-        title: "Cunoaste noua regula de varsta pentru live streaming",
-        steps: [
-          "Din iulie 2025 YouTube permite live streaming doar utilizatorilor de 16+. Copiii de 13-15 ani pot transmite live doar daca sunt supravegheati vizibil de un adult pe acelasi canal, deci verifica inainte de a permite orice transmisiune live."
-        ]
-      },
-      {
-        title: "Seteaza o limita de timp specifica aplicatiei",
-        steps: [
-          "Foloseste iPhone Screen Time sau Android Digital Wellbeing si tinteste aplicatia YouTube, nu doar limita generala a dispozitivului."
+        "title": "Setează separat limita întregii aplicații",
+        "steps": [
+          "Folosește controalele parentale ale dispozitivului pentru timpul total petrecut pe YouTube. Adolescentul poate opri supravegherea contului; discutați această limită împreună."
         ]
       }
     ],
-    ageRating: "13+ pentru conturi",
-    userCount: "Audienta globala uriasa",
-    ageRecommendation: "Foloseste YouTube Kids sub 13 ani, dar supravegheaza atent",
-    appMetrics: [
-      { label: "Utilizare zilnica la adolescenti", value: "80 min/zi" },
-      { label: "Puterea algoritmului", value: "Extrema" },
-      { label: "Comentarii", value: "Nemoderate" },
-      { label: "YouTube Kids", value: "Nu e complet sigur" }
-    ],
-    callouts: [
+    "ageRating": "Conturi standard: vârsta minimă Google din țară; opțiunile supravegheate diferă",
+    "userCount": "Public de toate vârstele",
+    "ageRecommendation": "Alege YouTube Kids sau YouTube supravegheat în funcție de vârsta copilului",
+    "appMetrics": [
       {
-        type: "warning",
-        title: "Highest concern",
-        description:
-          "Algoritmul de recomandare al YouTube este antrenat sa maximizeze timpul de vizionare, nu starea de bine. Un copil care vede un clip usor edgy poate primi continut tot mai extrem in mai putin de 30 de minute, inclusiv pe YouTube Kids."
+        "label": "Feedul Shorts",
+        "value": "Limită zilnică pusă de părinte"
       },
       {
-        type: "tip",
-        title: "Most impactful action",
-        description:
-          "Restricted Mode trebuie activat separat pe fiecare browser si pe fiecare dispozitiv. Nu se sincronizeaza automat."
+        "label": "Limita de 0 minute",
+        "value": "Oprește feedul cu derulare"
       },
       {
-        type: "tip",
-        title: "Nou in 2026",
-        description:
-          "Parintii conturilor de adolescent supravegheate pot acum limita feedul Shorts la minut - seteaza-l pe 0 in Family Center → Time management pentru a elimina complet feedul nesfarsit de clipuri scurte."
+        "label": "Comentarii",
+        "value": "Depind de cont și videoclip"
+      },
+      {
+        "label": "Filtre de conținut",
+        "value": "Pot rata videoclipuri nepotrivite"
       }
-    ]
+    ],
+    "callouts": [
+      {
+        "type": "warning",
+        "title": "Ce acoperă limita",
+        "description": "Limita feedului Shorts nu blochează toate videoclipurile YouTube. Verifică separat conținutul și timpul total în aplicație."
+      },
+      {
+        "type": "tip",
+        "title": "Începe de aici",
+        "description": "Alege un cont supravegheat, apoi setează limita pentru Shorts și urmăriți împreună câteva recomandări."
+      }
+    ],
+    "editorialReview": {
+      "checkedAt": "2026-11-03",
+      "availability": "Limita de 0 minute pentru feedul Shorts este documentată pentru Europa. Meniurile diferă între mobil și desktop. Adolescentul poate opri supravegherea.",
+      "sources": [
+        {
+          "title": "YouTube: teen supervision and Shorts settings",
+          "url": "https://support.google.com/youtubekids/answer/15190245?co=GENIE.Platform%3DiOS&hl=en"
+        },
+        {
+          "title": "YouTube: Shorts controls available in Europe",
+          "url": "https://blog.youtube/news-and-events/new-youtube-shorts-parental-controls-europe/"
+        }
+      ]
+    }
   },
   snapchat: {
-    riskLabelText: "Risc ridicat",
-    summary:
-      "O aplicatie de poze si mesagerie construita in jurul mesajelor care dispar, partajarii rapide si functiilor de locatie live.",
-    description:
-      "O aplicatie de poze si mesagerie construita in jurul mesajelor care dispar, partajarii rapide si functiilor de locatie live.",
-    quickActions: [
+    "riskLabelText": "Risc ridicat",
+    "summary": "O aplicatie de poze si mesagerie construita in jurul mesajelor care dispar, partajarii rapide si functiilor de locatie live.",
+    "description": "O aplicatie de poze si mesagerie construita in jurul mesajelor care dispar, partajarii rapide si functiilor de locatie live.",
+    "quickActions": [
       {
-        title: "Porneste Ghost Mode",
-        description:
-          "Snap Map → gear icon → Ghost Mode ON. Fa asta inainte ca cel mic sa isi construiasca lista de prieteni."
+        "title": "Verifică Ghost Mode",
+        "description": "În Snap Map, deschide rotița de setări și verifică Ghost Mode. Partajarea locației este oprită implicit; verifică dacă a fost activată între timp."
       },
       {
-        title: "Limiteaza cine il poate contacta",
-        description:
-          "Settings → Privacy Controls → Contact Me si seteaza Friends only."
+        "title": "Limitează cine îl poate contacta",
+        "description": "În Settings → Privacy Controls → Contact Me, alege Friends."
       },
       {
-        title: "Curata lista de prieteni",
-        description:
-          "Profile → My Friends si elimina pe oricine copilul nu poate identifica clar offline."
+        "title": "Verificați lista de prieteni împreună",
+        "description": "Deschide Profile → My Friends și întreabă despre persoanele pe care copilul nu le recunoaște. Eliminați sau blocați contactele nedorite."
       },
       {
-        title: "Configureaza Family Center",
-        description:
-          "Din contul tau (18+) leaga contul adolescentului in Family Center pentru a vedea contactele recente, a filtra Story-urile sensibile si a opri chatbotul My AI."
+        "title": "Conectează Family Center",
+        "description": "Trimite adolescentului o invitație din contul tău de adult. Poți vedea contacte recente și timpul de utilizare, limita conținutul și opri My AI, fără să citești conversațiile private."
       }
     ],
-    watchFor: [
+    "watchFor": [
       {
-        title: "Partajarea locatiei prin Snap Map",
-        description:
-          "Locatia in timp real poate arata unde locuieste copilul, unde merge la scoala sau unde se afla chiar acum.",
-        severity: "critical"
+        "title": "Partajarea locației",
+        "description": "Dacă este activată, locația poate dezvălui unde locuiește copilul, unde învață sau unde se află.",
+        "severity": "critical"
       },
       {
-        title: "Sexting-ul pare mai sigur decat este",
-        description:
-          "Formatul cu mesaje care dispar scade garda copilului, desi capturile de ecran si al doilea dispozitiv fac salvarea foarte usoara.",
-        severity: "critical"
+        "title": "Imagini intime păstrate de altcineva",
+        "description": "Dispariția unui mesaj nu împiedică o captură de ecran sau fotografierea cu alt dispozitiv.",
+        "severity": "critical"
       },
       {
-        title: "Solicitari legate de droguri",
-        description:
-          "Snapchat este folosit frecvent pentru contacte locale si poate expune adolescentii la oferte sau postari codate pentru care nu sunt pregatiti.",
-        severity: "high"
+        "title": "Oferte de substanțe sau alte produse ilegale",
+        "description": "Spune-i copilului că îți poate arăta o ofertă suspectă fără să fie învinovățit.",
+        "severity": "high"
       },
       {
-        title: "Escrocherii de sextortion",
-        description:
-          "Un copil poate fi presat sa trimita o imagine si apoi santajat cu amenintarea ca aceasta va fi distribuita mai departe.",
-        severity: "high"
+        "title": "Amenințări cu distribuirea imaginilor",
+        "description": "Cineva poate cere o imagine și apoi amenința că o distribuie pentru a obține bani sau alte imagini.",
+        "severity": "high"
       },
       {
-        title: "Anxietate de streak si FOMO",
-        description:
-          "Streak-urile zilnice imping la verificare constanta si fac prieteniile obisnuite sa para o performanta permanenta.",
-        severity: "medium"
+        "title": "Presiunea de a păstra streak-uri",
+        "description": "Urmărește dacă seria de mesaje zilnice afectează somnul sau îl face să se teamă că pierde o prietenie.",
+        "severity": "medium"
       }
     ],
-    setupGuide: [
+    "setupGuide": [
       {
-        title: "Porneste Ghost Mode",
-        steps: [
-          "Snap Map → gear icon → Ghost Mode ON. Fa asta inainte ca cel mic sa isi construiasca lista de prieteni."
+        "title": "Verifică partajarea locației",
+        "steps": [
+          "Partajarea locației este oprită implicit. În Snap Map → rotița de setări, verifică Ghost Mode și persoanele alese pentru partajare. Verifică separat orice partajare live și permisiunile de localizare ale telefonului."
         ]
       },
       {
-        title: "Limiteaza cine il poate contacta",
-        steps: [
-          "Settings → Privacy Controls → Contact Me si seteaza Friends only."
+        "title": "Limitează contactele",
+        "steps": [
+          "În Settings → Privacy Controls → Contact Me, alege Friends."
         ]
       },
       {
-        title: "Curata lista de prieteni",
-        steps: [
-          "Profile → My Friends si elimina pe oricine copilul nu poate identifica clar offline."
+        "title": "Verificați lista de prieteni",
+        "steps": [
+          "Deschide Profile → My Friends și întreabă despre persoanele pe care copilul nu le recunoaște. Eliminați sau blocați contactele nedorite."
         ]
       },
       {
-        title: "Dezactiveaza Quick Add",
-        steps: [
-          "Settings → Privacy Controls → See Me in Quick Add → OFF pentru ca acel cont sa fie mai putin vizibil strainilor."
+        "title": "Verifică vizibilitatea în Find Friends",
+        "steps": [
+          "În Settings, caută See Me in Find Friends și oprește opțiunea dacă vrei mai puține sugestii de prietenie. Find Friends este numele actual al funcției Quick Add."
         ]
       },
       {
-        title: "Explica faptul ca screenshot-urile sunt permanente",
-        steps: [
-          "Deschide orice chat impreuna si explica faptul ca disparitia este o functie de design, nu o garantie."
+        "title": "Explică felul în care pot fi salvate mesajele",
+        "steps": [
+          "Capturile de ecran sau o altă cameră pot păstra un mesaj chiar dacă dispare din conversație. Discutați ce se simte copilul confortabil să trimită."
         ]
       },
       {
-        title: "Leaga Family Center si foloseste noile informatii",
-        steps: [
-          "Din contul tau (18+) deschide Family Center si invita adolescentul (13-17) sa se conecteze. Din ianuarie 2026 poti vedea media saptamanala a timpului petrecut, defalcata pe functii, si primesti semnale de incredere care arata cum ar putea cunoaste fiecare prieten nou pe care il adauga."
+        "title": "Conectează Family Center",
+        "steps": [
+          "Trimite invitația din contul tău de adult eligibil. Family Center arată contactele recente, media zilnică de utilizare din săptămâna trecută și timpul pe funcții. Indiciile despre prieteni oferă context, nu dovada că cineva este de încredere. Conversațiile private nu sunt afișate."
         ]
       },
       {
-        title: "Activeaza Content Controls si dezactiveaza My AI",
-        steps: [
-          "In Family Center, activeaza Content Controls pentru a filtra Story-urile de la creatori marcati ca sensibili sau sugestivi, si opreste chatbotul My AI daca nu vrei ca cel mic sa converseze cu el."
+        "title": "Verifică Content Controls și My AI",
+        "steps": [
+          "În Family Center, verifică restricțiile pentru conținutul sensibil din Stories și Spotlight. Oprește My AI dacă nu vrei să fie folosit. Aceste opțiuni nu filtrează fiecare mesaj sau imagine primită de la prieteni."
         ]
       },
       {
-        title: "Verifica Memories in mod regulat",
-        steps: [
-          "Memories tab → verificati impreuna snap-urile salvate pentru ca materialul privat sa nu se stranga pe nesimtite."
+        "title": "Verificați ce rămâne salvat",
+        "steps": [
+          "Discutați despre imaginile păstrate în Memories și despre cine le poate vedea înainte de a le distribui."
         ]
       }
     ],
-    userCount: "Foarte populara printre adolescenti",
-    ageRecommendation: "Recomandata 15+ cu supraveghere activa",
-    appMetrics: [
-      { label: "Grupa principala de varsta", value: "13-17" },
-      { label: "Snap Map", value: "Pornit implicit" },
-      { label: "Mesaje care dispar", value: "Siguranta falsa" },
-      { label: "Presiune sociala", value: "Foarte mare" }
-    ],
-    callouts: [
+    "userCount": "Folosit și de adolescenți",
+    "ageRecommendation": "Recomandarea noastră: de la 15 ani, cu supraveghere activă",
+    "appMetrics": [
       {
-        type: "warning",
-        title: "Highest concern",
-        description:
-          "Snap Map poate transmite implicit locatia precisa tuturor prietenilor. Activarea Ghost Mode ar trebui facuta inainte de orice altceva."
+        "label": "Locația pe Snap Map",
+        "value": "Oprită implicit"
       },
       {
-        type: "tip",
-        title: "Most impactful action",
-        description:
-          "Ghost Mode este setarea cu cel mai mare impact pe Snapchat. Porneste-o inainte de prima cerere de prietenie."
+        "label": "Family Center",
+        "value": "Contacte și timp de utilizare"
+      },
+      {
+        "label": "Conversații private",
+        "value": "Nu sunt afișate părintelui"
+      },
+      {
+        "label": "Imagini salvate",
+        "value": "Pot rămâne după dispariția mesajului"
       }
-    ]
+    ],
+    "callouts": [
+      {
+        "type": "warning",
+        "title": "Verifică partajarea locației",
+        "description": "Locația nu este partajată implicit. Dacă a fost activată, verifică destinatarii și partajarea live separată. Verifică și permisiunile telefonului."
+      },
+      {
+        "type": "tip",
+        "title": "Începe de aici",
+        "description": "Verificați Ghost Mode și lista de prieteni împreună, apoi conectați Family Center."
+      }
+    ],
+    "editorialReview": {
+      "checkedAt": "2026-11-03",
+      "availability": "Partajarea locației necesită activare. Family Center arată contacte și timpul de utilizare, nu conținutul mesajelor. Verifică setările Find Friends în versiunea actuală a aplicației.",
+      "sources": [
+        {
+          "title": "Snapchat: Family Center insights",
+          "url": "https://newsroom.snap.com/deeper-insights-with-family-center"
+        },
+        {
+          "title": "Snapchat: location privacy",
+          "url": "https://help.snapchat.com/hc/en-gb/articles/24547077410580-Snap-Map-Privacy-Safety-Reminder"
+        },
+        {
+          "title": "Snapchat: Quick Add is now Find Friends",
+          "url": "https://help.snapchat.com/hc/en-gb/articles/34691800487316-What-happened-to-Quick-Add"
+        }
+      ]
+    }
   },
   instagram: {
-    riskLabelText: "Risc ridicat",
-    summary:
-      "O platforma sociala condusa de identitate vizuala, recomandari algoritmice, feedback public si mesaje directe.",
-    description:
-      "O platforma sociala condusa de identitate vizuala, recomandari algoritmice, feedback public si mesaje directe.",
-    quickActions: [
+    "riskLabelText": "Risc ridicat",
+    "summary": "O aplicație socială cu fotografii, videoclipuri, recomandări și mesaje directe. Verifică protecțiile Teen Account, supravegherea și cine poate contacta adolescentul.",
+    "description": "O aplicație socială cu fotografii, videoclipuri, recomandări și mesaje directe. Verifică protecțiile Teen Account, supravegherea și cine poate contacta adolescentul.",
+    "quickActions": [
       {
-        title: "Treci pe cont privat",
-        description:
-          "Settings → Account Privacy → Private Account. Asta trebuie sa fie punctul de plecare, nu un gand ulterior."
+        "title": "Verifică Teen Account",
+        "description": "Folosește data corectă de naștere și verificați împreună setările de confidențialitate, mesaje și conținut."
       },
       {
-        title: "Restrictioneaza mesajele primite",
-        description:
-          "Settings → Messages → Message Controls → Don't receive requests from Others."
+        "title": "Conectează supravegherea parentală",
+        "description": "Deschide Family Center și conectează contul tău cu acordul adolescentului."
       },
       {
-        title: "Porneste Family Centre supervision",
-        description:
-          "Settings → Family Centre si conecteaza contul parintelui pentru instrumentele de supraveghere sub 18 ani."
-      },
-      {
-        title: "Confirma ca este pe un Teen Account",
-        description:
-          "Toti utilizatorii sub 18 ani trec acum implicit pe un Teen Account protejat (privat, DM-uri restrictionate, continut PG-13). Verifica daca data nasterii este corecta pentru ca protectiile sa se aplice efectiv."
+        "title": "Verifică nivelul de conținut",
+        "description": "Verifică setarea implicită 13+ sau alege Limited Content pentru filtrare mai strictă. Aceste opțiuni nu garantează că fiecare postare este potrivită."
       }
     ],
-    watchFor: [
+    "watchFor": [
       {
-        title: "Presiune legata de imaginea corporala si tulburari alimentare",
-        description:
-          "Continuitatea continutului focalizat pe aparente poate schimba modul in care un copil vede corpurile normale, mancarea si propria valoare.",
-        severity: "high"
+        "title": "Presiune asupra imaginii corporale",
+        "description": "Întreabă cum îl fac să se simtă postările repetate despre aspect, alimentație sau fitness.",
+        "severity": "high"
       },
       {
-        title: "DM-uri de la straini si grooming",
-        description:
-          "Conturile publice si setarile deschise pentru mesaje fac usor pentru adulti sa inceapa conversatii private.",
-        severity: "high"
+        "title": "Contact privat nedorit",
+        "description": "Verificați urmăritorii necunoscuți și cererile de mesaje. Încurajează-l să îți spună despre presiuni sau cereri de secret.",
+        "severity": "high"
       },
       {
-        title: "Cyberbullying prin metrici publice",
-        description:
-          "Like-urile, comentariile, tag-urile si raspunsurile la story pot transforma conflictele sociale obisnuite intr-un scor public.",
-        severity: "high"
+        "title": "Hărțuire prin comentarii și etichetări",
+        "description": "Comentariile, etichetările și răspunsurile la Stories pot face un conflict public. Exersați împreună blocarea și raportarea.",
+        "severity": "high"
       },
       {
-        title: "Spirale de continut in Explore",
-        description:
-          "Cateva clickuri pe postari provocatoare sau tulburatoare pot schimba rapid intregul feed de recomandari.",
-        severity: "medium"
+        "title": "Recomandări tulburătoare",
+        "description": "Dacă feedul revine la un subiect care îl supără, verificați-l împreună și folosiți controalele de conținut.",
+        "severity": "medium"
       },
       {
-        title: "Escrocherii financiare de la influenceri falsi",
-        description:
-          "Giveaway-urile, magazinele false si mesajele in stil influencer pot impinge adolescentii sa ofere date de plata sau date personale.",
-        severity: "medium"
+        "title": "Magazine și concursuri false",
+        "description": "Opriți-vă înainte de a trimite date de plată sau informații personale unui cont necunoscut.",
+        "severity": "medium"
       }
     ],
-    setupGuide: [
+    "setupGuide": [
       {
-        title: "Treci pe cont privat",
-        steps: [
-          "Settings → Account Privacy → Private Account. Asta trebuie sa fie punctul de plecare, nu un gand ulterior."
+        "title": "Verifică profilul și mesajele",
+        "steps": [
+          "Verificați împreună Account privacy și opțiunile pentru mesaje. Teen Accounts limitează contactele; uitați-vă și la urmăritorii existenți, nu doar la cererile noi."
         ]
       },
       {
-        title: "Restrictioneaza mesajele primite",
-        steps: [
-          "Settings → Messages → Message Controls → Don't receive requests from Others."
+        "title": "Conectează Family Center",
+        "steps": [
+          "Urmează invitația de supraveghere din Family Center. Verifică ce controale se aplică vârstei și contului adolescentului."
         ]
       },
       {
-        title: "Porneste Family Centre supervision",
-        steps: [
-          "Settings → Family Centre si conecteaza contul parintelui pentru instrumentele de supraveghere sub 18 ani."
+        "title": "Alege nivelul de conținut",
+        "steps": [
+          "Meta numește setarea implicită pentru adolescenți 13+, inspirată de clasificările filmelor. Cei sub 18 ani au nevoie de acordul părintelui pentru a renunța la ea. Limited Content filtrează mai mult conținut și restricționează comentariile; niciuna nu certifică fiecare postare drept potrivită."
         ]
       },
       {
-        title: "Verifica protectiile Teen Account",
-        steps: [
-          "Din 2024 fiecare cont sub 18 ani trece implicit pe un Teen Account: privat in mod implicit, setari stricte de mesaje si (din octombrie 2025) continut PG-13 implicit. Cei sub 16 ani nu pot relaxa aceste setari fara aprobarea unui parinte conectat in Family Centre, deci asigura-te ca supravegherea este activa. Instagram foloseste acum si detectia varstei pentru a muta inapoi in protectiile pentru adolescenti conturile care au declarat o data de nastere de adult."
+        "title": "Verifică actualizarea alertelor din octombrie",
+        "steps": [
+          "La 29 octombrie 2026, Meta a anunțat lansarea globală a alertelor pentru părinții care supraveghează conturi: căutări repetate despre suicid sau autovătămare pe Instagram și Facebook, respectiv conversații îngrijorătoare cu Meta AI pe Instagram, Facebook și Messenger. Verifică opțiunile contului conectat; alertele pot rata probleme."
         ]
       },
       {
-        title: "Activeaza setarea de continut cea mai stricta",
-        steps: [
-          "In Family Centre poti pastra setarea implicita PG-13 sau poti activa setarea mai stricta Limited Content, care filtreaza mai mult material si elimina posibilitatea de a vedea sau lasa comentarii. Parintii sunt avertizati si daca un adolescent cauta repetat termeni legati de suicid sau autovatamare (adaugat in februarie 2026)."
+        "title": "Verifică timpul și etichetările",
+        "steps": [
+          "Folosește supravegherea sau controalele dispozitivului pentru o limită zilnică. Verifică permisiunile pentru etichetări și mențiuni și stabiliți ce postări necesită aprobare."
         ]
       },
       {
-        title: "Sterge istoricul cautarilor lunar",
-        steps: [
-          "Settings → Your Activity → Recent Searches sau Clear Search History si verifica ce a invatat algoritmul."
-        ]
-      },
-      {
-        title: "Seteaza o limita zilnica",
-        steps: [
-          "Settings → Your Activity → Time Spent → Daily Limit si alege o limita pe care o vei aplica constant."
-        ]
-      },
-      {
-        title: "Aproba manual tag-urile",
-        steps: [
-          "Settings → Privacy → Tags → Manually Approve Tags, astfel incat copilul sa nu fie atasat la postari fara avertisment."
+        "title": "Discutați despre recomandări",
+        "steps": [
+          "Uitați-vă împreună la feed. Folosiți Not interested, blocarea sau raportarea când este cazul și întreabă cum îl fac postările să se simtă."
         ]
       }
     ],
-    userCount: "Audienta uriasa de adolescenti si tineri adulti",
-    ageRecommendation: "Nerecomandat sub 16 ani fara supraveghere",
-    appMetrics: [
-      { label: "Risc imagine corporala", value: "Foarte ridicat" },
-      { label: "Continut implicit (adolescenti)", value: "PG-13" },
-      { label: "DM-uri de la straini (adolescenti)", value: "Restrictionate implicit" },
-      { label: "Teen Accounts", value: "Implicit sub 18 ani" }
-    ],
-    callouts: [
+    "userCount": "Adolescenți și adulți",
+    "ageRecommendation": "Recomandarea noastră: sub 16 ani, cu supraveghere",
+    "appMetrics": [
       {
-        type: "warning",
-        title: "Highest concern",
-        description:
-          "Algoritmul este principalul risc pe Instagram, nu doar oamenii de pe platforma. Odata ce feedul invata nesiguranta sau obsesia, continua sa serveasca tot mai mult din acelasi continut."
+        "label": "Conținut pentru adolescenți",
+        "value": "13+ implicit"
       },
       {
-        type: "tip",
-        title: "Most impactful action",
-        description:
-          "Un cont privat plus DM-uri restrictionate inchid imediat majoritatea rutelor de contact cu straini."
+        "label": "Opțiune mai strictă",
+        "value": "Limited Content"
       },
       {
-        type: "tip",
-        title: "Nou din 2024",
-        description:
-          "Teen Accounts sunt acum setarea implicita pentru toti sub 18 ani si aplica automat modul privat, DM-uri stricte si continut PG-13. Conecteaza un cont de parinte in Family Centre pentru ca cei sub 16 ani sa nu poata opri protectiile."
+        "label": "Mesaje directe",
+        "value": "Restricții pentru adolescenți"
+      },
+      {
+        "label": "Alerte de risc",
+        "value": "Lansare globală anunțată"
       }
-    ]
+    ],
+    "callouts": [
+      {
+        "type": "warning",
+        "title": "Filtrele au limite",
+        "description": "Un cont privat și filtrele reduc unele riscuri. Nu pot preveni fiecare postare dăunătoare sau interacțiune nedorită."
+      },
+      {
+        "type": "tip",
+        "title": "Începe de aici",
+        "description": "Conectează supravegherea și verificați împreună confidențialitatea, mesajele și nivelul de conținut."
+      }
+    ],
+    "editorialReview": {
+      "checkedAt": "2026-11-03",
+      "availability": "Setarea de conținut 13+ a fost extinsă internațional. Meta a anunțat lansarea globală a alertelor la 29 octombrie; confirmă opțiunile în contul supravegheat.",
+      "sources": [
+        {
+          "title": "Meta: 13+ and Limited Content settings",
+          "url": "https://about.fb.com/news/2026/04/instagram-expands-teen-accounts-inspired-by-13-content-ratings/"
+        },
+        {
+          "title": "Meta: parent alerts, updated 29 October 2026",
+          "url": "https://about.fb.com/news/2026/07/keeping-parents-informed-teens-distress-conversations-meta-ai/"
+        }
+      ]
+    }
   },
   tiktok: {
-    riskLabelText: "Risc foarte ridicat",
-    summary:
-      "O aplicație de clipuri scurte ale cărei recomandări personalizate pot ține copiii în fața ecranului mult timp.",
-    description:
-      "O aplicație de clipuri scurte ale cărei recomandări personalizate pot ține copiii în fața ecranului mult timp.",
-    quickActions: [
+    "riskLabelText": "Risc foarte ridicat",
+    "summary": "O aplicație de clipuri scurte ale cărei recomandări personalizate pot ține copiii în fața ecranului mult timp.",
+    "description": "O aplicație de clipuri scurte ale cărei recomandări personalizate pot ține copiii în fața ecranului mult timp.",
+    "quickActions": [
       {
-        title: "Activeaza Family Pairing",
-        description:
-          "Settings → Family Pairing si leaga contul parintelui de contul copilului."
+        "title": "Conectează Family Pairing",
+        "description": "Deschide Settings and privacy → Family Pairing și conectează contul tău cu cel al adolescentului."
       },
       {
-        title: "Seteaza o limita zilnica ferma",
-        description:
-          "Family Pairing → Screen Time si limiteaza utilizarea la 60 de minute sau mai putin pentru adolescentii mai mici, protejata cu un cod de parinte."
+        "title": "Alegeți o limită zilnică",
+        "description": "Folosește Family Pairing pentru limita zilnică și programul Time Away. Alege o limită potrivită rutinei copilului."
       },
       {
-        title: "Restrictioneaza DM-urile",
-        description:
-          "Family Pairing → Direct Messages si limiteaza contactul la Friends sau dezactiveaza complet daca acel cont nu are nevoie de mesagerie."
+        "title": "Verifică mesajele în funcție de vârstă",
+        "description": "Mesajele directe nu sunt disponibile sub 16 ani. Pentru adolescenții mai mari, verifică opțiunile Family Pairing și restricționează cererile nedorite."
       }
     ],
-    watchFor: [
+    "watchFor": [
       {
-        title: "Spirale de continut despre self-harm si tulburari alimentare",
-        description:
-          "Algoritmul poate invata vulnerabilitatea foarte repede si apoi poate servi material tot mai extrem fara mare efort din partea utilizatorului.",
-        severity: "critical"
+        "title": "Recomandări despre autovătămare sau tulburări alimentare",
+        "description": "Întreabă dacă apar repetat videoclipuri care îl supără sau îi schimbă felul în care își privește corpul.",
+        "severity": "critical"
       },
       {
-        title: "Scroll infinit si pierdere extrema de timp",
-        description:
-          "Fluxul are aproape zero indicii de oprire, asa ca sesiuni scurte se transforma usor in mult mai mult decat a vrut copilul.",
-        severity: "critical"
+        "title": "Timp pierdut prin derulare continuă",
+        "description": "Feedul are puține momente naturale de oprire. Verifică dacă timpul petrecut acolo afectează somnul sau alte activități.",
+        "severity": "critical"
       },
       {
-        title: "Contact pradalnic prin DMs si Duets",
-        description:
-          "Postarea publica si instrumentele sociale pot crea contact cu straini chiar daca un copil nu il cauta in mod activ.",
-        severity: "high"
+        "title": "Contact de la necunoscuți",
+        "description": "Postările publice și funcțiile sociale pot aduce interacțiuni nedorite, inclusiv în afara mesajelor directe.",
+        "severity": "high"
       },
       {
-        title: "Dezinformare si radicalizare",
-        description:
-          "Continutul emotional si rapid este recompensat, ceea ce face ca ideile inselatoare sau extreme sa circule deosebit de bine.",
-        severity: "high"
+        "title": "Informații înșelătoare",
+        "description": "Verificați afirmațiile importante înainte de a le crede sau distribui.",
+        "severity": "high"
       },
       {
-        title: "Cumparaturi impulsive in TikTok Shop",
-        description:
-          "Clipurile scurte pot trece direct in comportament de cumparare inainte ca un copil sa se gandeasca serios la cost sau calitate.",
-        severity: "medium"
+        "title": "Cumpărături impulsive",
+        "description": "Discutați costul real al produselor și cadourilor promovate în clipuri, unde sunt disponibile.",
+        "severity": "medium"
       }
     ],
-    setupGuide: [
+    "setupGuide": [
       {
-        title: "Activeaza Family Pairing",
-        steps: [
-          "Settings → Family Pairing si leaga contul parintelui de contul copilului."
+        "title": "Conectează Family Pairing",
+        "steps": [
+          "Deschide Settings and privacy → Family Pairing și conectează contul tău cu cel al adolescentului."
         ]
       },
       {
-        title: "Seteaza o limita zilnica ferma",
-        steps: [
-          "Family Pairing → Screen Time si limiteaza utilizarea la 60 de minute sau mai putin pentru adolescentii mai mici, protejata cu un cod de parinte."
+        "title": "Stabilește limitele de timp",
+        "steps": [
+          "Folosește Family Pairing pentru limita zilnică și programul Time Away. Alege o limită potrivită rutinei copilului."
         ]
       },
       {
-        title: "Restrictioneaza DM-urile",
-        steps: [
-          "Family Pairing → Direct Messages si limiteaza contactul la Friends sau dezactiveaza complet daca acel cont nu are nevoie de mesagerie."
+        "title": "Verifică mesajele directe",
+        "steps": [
+          "Mesajele directe nu sunt disponibile sub 16 ani. Pentru adolescenții mai mari, verifică opțiunile Family Pairing și restricționează cererile nedorite."
         ]
       },
       {
-        title: "Porneste Restricted Mode",
-        steps: [
-          "Settings → Digital Wellbeing → Restricted Mode si blocheaza-l cu codul parintelui."
+        "title": "Verifică filtrele și confidențialitatea",
+        "steps": [
+          "În Family Pairing, verifică Restricted Mode, contul privat și opțiunile disponibile pentru comentarii și reutilizarea videoclipurilor. Opțiunile depind de vârstă."
         ]
       },
       {
-        title: "Fa contul privat si blocheaza Duets cu straini",
-        steps: [
-          "Settings → Privacy → Private Account, apoi Privacy → Duet si alege optiunea friends-only."
+        "title": "Verificați urmăritorii și conturile blocate",
+        "steps": [
+          "Uitați-vă împreună la cine urmărește adolescentul și cine îl urmărește. Family Pairing include notificări pentru postări publice și blocarea anumitor conturi; funcția de blocare a fost introdusă mai întâi în Europa."
         ]
       },
       {
-        title: "Foloseste noile controale Family Pairing",
-        steps: [
-          "Family Pairing permite acum (din iulie 2025) sa programezi intervale Time Away care blocheaza aplicatia in timpul orelor de scoala sau noaptea, sa primesti notificari cand adolescentul posteaza un clip public, sa blochezi conturi anume si sa vezi pe cine urmareste, cine il urmareste si ce subiecte ii modeleaza feedul. Revizuieste-le impreuna in setarile Family Pairing."
-        ]
-      },
-      {
-        title: "Modeleaza feedul activ",
-        steps: [
-          "Tine apasat pe clipurile nedorite → Not Interested, astfel incat motorul de recomandare sa primeasca feedback corectiv."
+        "title": "Ajustați recomandările împreună",
+        "steps": [
+          "Verificați Manage Topics și filtrele de cuvinte unde sunt disponibile. Folosiți Not interested pentru clipurile nedorite; aceasta nu garantează că nu mai apare conținut asemănător."
         ]
       }
     ],
-    userCount: "Audienta globala uriasa",
-    ageRecommendation: "Nerecomandat sub 16 ani fara controale stricte",
-    appMetrics: [
-      { label: "Utilizare zilnica la adolescenti", value: "95 min" },
-      { label: "Puterea algoritmului", value: "Extrema" },
-      { label: "Legatura cu sanatatea mentala", value: "Cea mai puternica" },
-      { label: "Colectare de date", value: "Extinsa" }
-    ],
-    callouts: [
+    "userCount": "Public internațional",
+    "ageRecommendation": "Recomandarea noastră: sub 16 ani, cu limite și supraveghere",
+    "appMetrics": [
       {
-        type: "warning",
-        title: "Highest concern",
-        description:
-          "Motorul de recomandare TikTok este riscul principal al produsului. Aplicatia este construita sa maximizeze timpul petrecut, iar limitele de timp sunt cel mai eficient control al parintelui."
+        "label": "Instrumente pentru părinte",
+        "value": "Family Pairing"
       },
       {
-        type: "tip",
-        title: "Most impactful action",
-        description:
-          "Family Pairing le ofera parintilor control real fara a cere parola copilului. Seteaza-l inainte de orice altceva."
+        "label": "Mesaje directe",
+        "value": "Indisponibile sub 16 ani"
       },
       {
-        type: "tip",
-        title: "Nou din 2025",
-        description:
-          "Family Pairing a adaugat programarea Time Away, alerte cand adolescentul posteaza public, posibilitatea de a bloca conturi anume si vizibilitate asupra celor pe care ii urmareste si a ceea ce ii modeleaza feedul. Conturile sub 16 ani sunt si ele private implicit, cu o limita zilnica de 60 de minute."
+        "label": "Timp de utilizare",
+        "value": "Limită zilnică și Time Away"
+      },
+      {
+        "label": "Recomandări",
+        "value": "Subiecte și filtre de cuvinte"
       }
-    ]
+    ],
+    "callouts": [
+      {
+        "type": "warning",
+        "title": "Verifică vârsta contului",
+        "description": "Mesajele, confidențialitatea și distribuirea clipurilor depind de vârstă. O dată de naștere de adult poate lăsa adolescentul fără protecțiile așteptate."
+      },
+      {
+        "type": "tip",
+        "title": "Începe de aici",
+        "description": "Conectează Family Pairing și stabiliți limita zilnică și intervalele fără aplicație."
+      }
+    ],
+    "editorialReview": {
+      "checkedAt": "2026-11-03",
+      "availability": "Controalele Family Pairing diferă în funcție de vârstă și regiune. Mesajele directe sunt pentru cei de cel puțin 16 ani. Verifică opțiunile contului conectat.",
+      "sources": [
+        {
+          "title": "TikTok: Family Pairing controls",
+          "url": "https://newsroom.tiktok.com/supportingfamilies-with-new-family-pairing-features?lang=en-GB"
+        },
+        {
+          "title": "TikTok: teen privacy and messaging settings",
+          "url": "https://support.tiktok.com/en/account-and-privacy/account-privacy-settings/privacy-and-safety-settings-for-users-under-age-18"
+        },
+        {
+          "title": "TikTok: 2026 teen safety tools",
+          "url": "https://newsroom.tiktok.com/tiktok-reinforces-commitment-to-teen-safety-with-over-50-preset-safety-and-privacy-features?lang=en-PH"
+        }
+      ]
+    }
   },
   "discord": {
     "riskLabelText": "Risc foarte ridicat",
@@ -2300,7 +2358,7 @@ export const roEntryTranslations: Partial<Record<Entry["slug"], Partial<Localize
     "quickActions": [
       {
         "title": "Conectează Family Center",
-        "description": "Deschide Family Center din setările contului. Finalizați conectarea împreună în aplicația mobilă; adolescentul trebuie să accepte."
+        "description": "În Family Center, folosește linkul de invitație sau codul QR al adolescentului, care trebuie să accepte conectarea. Configurarea funcționează pe web, desktop sau mobil."
       },
       {
         "title": "Restricționează mesajele directe",
@@ -2331,9 +2389,9 @@ export const roEntryTranslations: Partial<Record<Entry["slug"], Partial<Localize
         ]
       },
       {
-        "title": "Separă protecțiile de lansarea globală",
+        "title": "Verifică grupa de vârstă a contului",
         "steps": [
-          "Actualizarea Discord din februarie a amânat verificarea globală a vârstei pentru a doua jumătate a lui 2026. Anunțul nu confirmă finalizarea. Verifică setările contului și cerințele țării; nu tuturor li se cere un act sau o scanare facială."
+          "Deschide User Settings → Account Status. Actualizarea Discord din 22 septembrie introduce grupe de vârstă estimate din semnalele contului, cu restricții suplimentare pentru adolescenți. Majorității utilizatorilor nu li se cere un act sau un selfie. Dacă grupa este greșită, urmează procedura oficială de corectare."
         ]
       },
       {
@@ -2385,8 +2443,8 @@ export const roEntryTranslations: Partial<Record<Entry["slug"], Partial<Localize
         "value": "Verifică setările"
       },
       {
-        "label": "Verificare globală a vârstei",
-        "value": "Lansare variabilă"
+        "label": "Grupa de vârstă",
+        "value": "Verifică Account Status"
       }
     ],
     "callouts": [
@@ -2397,29 +2455,21 @@ export const roEntryTranslations: Partial<Record<Entry["slug"], Partial<Localize
       },
       {
         "type": "tip",
-        "title": "Most impactful action",
+        "title": "Începe de aici",
         "description": "Conectează Family Center și verificați permisiunile de contact înainte de a intra pe alte servere."
       }
     ],
     "editorialReview": {
-      "checkedAt": "2026-09-03",
-      "availability": "Verificarea globală a vârstei a fost amânată pentru a doua jumătate a lui 2026; anunțul citat nu confirmă finalizarea. Verifică disponibilitatea locală.",
+      "checkedAt": "2026-11-03",
+      "availability": "Actualizarea grupelor de vârstă din 22 septembrie înlocuiește anunțul de amânare din februarie. Account Status arată grupa aplicată contului; opțiunile de verificare și cerințele legale variază.",
       "sources": [
         {
-          "title": "Discord: actualizarea verificării vârstei",
-          "url": "https://discord.com/safety/how-discord-is-building-safer-experiences-for-teens"
+          "title": "Discord: September age-assurance approach",
+          "url": "https://discord.com/blog/safer-for-teens-same-discord-for-adults"
         },
         {
-          "title": "Discord: Family Center pentru părinți",
+          "title": "Discord: Family Center for parents",
           "url": "https://support.discord.com/hc/en-us/articles/14155043715735-Family-Center-for-Parents-and-Guardians"
-        },
-        {
-          "title": "Discord: confidențialitate și contact",
-          "url": "https://support.discord.com/hc/en-us/articles/217916488-Blocking-Privacy-Settings"
-        },
-        {
-          "title": "Discord: filtre pentru conținut sensibil",
-          "url": "https://support.discord.com/hc/en-us/articles/18210995019671-Discord-Sensitive-Content-Filters"
         }
       ]
     }
@@ -2477,9 +2527,9 @@ export const roEntryTranslations: Partial<Record<Entry["slug"], Partial<Localize
         ]
       },
       {
-        "title": "Stabiliți când se încheie jocul",
+        "title": "Setează limite pentru joacă și creație",
         "steps": [
-          "Alegeți ore de încheiere și verificați cheltuielile împreună. La o plată neașteptată, verifică magazinul prin care a fost făcută."
+          "În controalele Epic, verifică Time Limit Controls pentru Fortnite și UEFN. Poți pune un program și limite separate pentru Play Time și Create Time. Limitele urmează același cont Epic pe toate dispozitivele; consola poate restricționa timpul suplimentar."
         ]
       }
     ],
@@ -2531,272 +2581,300 @@ export const roEntryTranslations: Partial<Record<Entry["slug"], Partial<Localize
       },
       {
         "type": "tip",
-        "title": "Most impactful action",
+        "title": "Începe de aici",
         "description": "Setează PIN-ul de părinte Epic, apoi stabiliți permisiunile de chat și un buget în bani reali."
       }
     ],
     "editorialReview": {
-      "checkedAt": "2026-09-03",
-      "availability": "Controalele Epic sunt separate de cele ale altor magazine. Unele opțiuni depind de vârstă și regiune.",
+      "checkedAt": "2026-11-03",
+      "availability": "Aprobarea plăților Epic nu acoperă alte magazine sau V-Bucks existenți. Controlul obiectelor aleatorii depinde de regiune. Limitele de joacă și creație urmează același cont Epic pe dispozitive.",
       "sources": [
         {
-          "title": "Epic: plăți, chat și controale parentale",
+          "title": "Epic: parental controls, payments and time limits",
           "url": "https://safety.epicgames.com/en-US/parental-controls"
-        },
-        {
-          "title": "Epic: conturi Cabined",
-          "url": "https://www.epicgames.com/site/cabinedaccounts?lang=en"
         }
       ]
     }
   },
   minecraft: {
-    riskLabelText: "Risc mediu",
-    summary:
-      "Un joc sandbox creativ care are risc scazut in single-player, dar devine foarte diferit imediat ce apar serverele publice si descarcarile.",
-    description:
-      "Un joc sandbox creativ care are risc scazut in single-player, dar devine foarte diferit imediat ce apar serverele publice si descarcarile.",
-    quickActions: [
+    "riskLabelText": "Risc mediu",
+    "summary": "Un joc de construcție și explorare. Jocul individual, Realms private și serverele publice oferă experiențe diferite; verifică ediția, contul și persoanele cu care se joacă.",
+    "description": "Un joc de construcție și explorare. Jocul individual, Realms private și serverele publice oferă experiențe diferite; verifică ediția, contul și persoanele cu care se joacă.",
+    "quickActions": [
       {
-        title: "Verifica daca foloseste Java sau Bedrock",
-        description:
-          "Java Edition pe PC nu are controale parentale relevante. Bedrock pe console, mobil si Windows poate fi controlat prin Xbox Family Safety."
+        "title": "Verifică ediția și contul Microsoft",
+        "description": "Edițiile actuale Java și Bedrock au controale prin contul Microsoft. Verifică dacă este folosit contul propriu de copil."
       },
       {
-        title: "Foloseste Microsoft Family Safety pentru Bedrock",
-        description:
-          "Mergi la family.microsoft.com (controalele s-au mutat aici) si restrictioneaza multiplayer-ul, cumparaturile si timpul pentru orice cont Bedrock."
+        "title": "Verifică jocul online și comunicarea",
+        "description": "Folosește grupul familial Microsoft și setările Xbox de confidențialitate și siguranță online pentru permisiunile copilului."
       },
       {
-        title: "Tine jucatorii Java doar pe Realms",
-        description:
-          "Foloseste minecraft.net/realms si configureaza un Realm privat, doar pe baza de invitatie, cu prieteni cunoscuti, in loc de servere publice."
+        "title": "Alegeți cine poate participa",
+        "description": "Pentru jocul online, luați în calcul un Realm privat cu persoane cunoscute. Verificați împreună membrii și invitațiile."
       }
     ],
-    watchFor: [
+    "watchFor": [
       {
-        title: "Serverele publice expun copiii la adulti",
-        description:
-          "Serverele multiplayer terte permit accesul strainilor, cu verificare slaba a varstei si moderare foarte amestecata.",
-        severity: "high"
+        "title": "Contact cu necunoscuți pe servere publice",
+        "description": "Serverele administrate de terți pot primi persoane necunoscute și au reguli de moderare diferite.",
+        "severity": "high"
       },
       {
-        title: "Chatul public este adesea nefiltrat",
-        description:
-          "Chatul de pe server poate include limbaj sexual, hartuire, escrocherii si alt material mult dincolo de PEGI 7.",
-        severity: "high"
+        "title": "Mesaje nepotrivite în chat",
+        "description": "Chatul poate include hărțuire, limbaj sexual sau înșelătorii. Clasificarea jocului nu descrie fiecare mesaj al jucătorilor.",
+        "severity": "high"
       },
       {
-        title: "Modurile si texture pack-urile pot aduce malware",
-        description:
-          "Descarcarile terte sunt o ruta comuna pentru fisiere maliotioase, instalatoare false si instrumente de furt de cont.",
-        severity: "high"
+        "title": "Fișiere periculoase în moduri",
+        "description": "Un instalator fals sau un mod compromis poate fura datele contului ori instala programe nedorite.",
+        "severity": "high"
       },
       {
-        title: "Escrocherii cu Minecraft gratuit",
-        description:
-          "Paginile de phishing si generatoarele false de conturi ii vizeaza des pe copiii care vor jocul sau continut premium gratuit.",
-        severity: "medium"
+        "title": "Oferte false de jocuri sau obiecte gratuite",
+        "description": "Nu introduce parole sau coduri de conectare pentru a obține jocul, pelerine sau alte recompense.",
+        "severity": "medium"
       },
       {
-        title: "Cheltuieli in marketplace",
-        description:
-          "Editia Bedrock adauga achizitii prin Minecoins si continut din marketplace, desi in general presiunea este mai mica decat in shooter-ele live-service.",
-        severity: "low"
+        "title": "Cumpărături în Marketplace",
+        "description": "Verificați costul în bani reali înainte de a cumpăra Minecoins sau conținut.",
+        "severity": "low"
       }
     ],
-    setupGuide: [
+    "setupGuide": [
       {
-        title: "Verifica daca foloseste Java sau Bedrock",
-        steps: [
-          "Java Edition pe PC nu are controale parentale relevante. Bedrock pe console, mobil si Windows poate fi controlat prin Xbox Family Safety."
+        "title": "Verifică ediția și contul",
+        "steps": [
+          "Edițiile actuale Java și Bedrock au controale prin contul Microsoft. Verifică dacă este folosit contul propriu de copil."
         ]
       },
       {
-        title: "Foloseste Microsoft Family Safety pentru Bedrock",
-        steps: [
-          "Controalele Minecraft sunt acum in Microsoft Family Safety (family.microsoft.com) si in setarile contului Xbox, nu in joc. In tabul Online Safety permite sau blocheaza multiplayer-ul si cluburile (asta controleaza si accesul la Realms); in tabul Privacy stabileste cine poate comunica prin voce, text sau invitatii; si activeaza Needs approval to buy things pentru cumparaturi. Setarile se aplica pe Windows, mobil si console."
+        "title": "Verifică permisiunile Microsoft și Xbox",
+        "steps": [
+          "Din contul de părinte, verifică setările Xbox de confidențialitate și siguranță online ale copilului, inclusiv jocul multiplayer și comunicarea. Contează pentru ambele ediții actuale, chiar și pe un dispozitiv care nu este Xbox."
         ]
       },
       {
-        title: "Tine jucatorii Java doar pe Realms",
-        steps: [
-          "Foloseste minecraft.net/realms si configureaza un Realm privat, doar pe baza de invitatie, cu prieteni cunoscuti, in loc de servere publice."
+        "title": "Verifică separat cumpărăturile și timpul",
+        "steps": [
+          "Verifică magazinul și dispozitivul folosite pentru cumpărături și limite de timp. Setările Microsoft nu înlocuiesc controalele de plată PlayStation, Nintendo, Apple sau Google."
         ]
       },
       {
-        title: "Limiteaza descarcarile la site-uri de incredere",
-        steps: [
-          "Permite doar modrinth.com sau curseforge.com pentru moduri sau texture packs. Trateaza orice alta sursa ca risc ridicat."
+        "title": "Verificați membrii Realm-ului",
+        "steps": [
+          "Pentru jocul online, luați în calcul un Realm privat cu persoane cunoscute. Verificați împreună membrii și invitațiile."
         ]
       },
       {
-        title: "Adauga o ora limita pentru launcher",
-        steps: [
-          "Foloseste Windows Family Safety sau macOS Screen Time pentru a bloca launcherul Minecraft dupa o anumita ora."
+        "title": "Verifică fișierele înainte de instalare",
+        "steps": [
+          "Folosește site-uri cunoscute pentru moduri, precum Modrinth sau CurseForge, apoi verifică autorul și fișierul. Un site cunoscut nu garantează că fiecare mod este sigur."
+        ]
+      },
+      {
+        "title": "Ține cont de versiunile vechi sau modificate",
+        "steps": [
+          "Minecraft precizează că funcțiile sale de control parental nu acoperă versiunile anterioare Java 1.16.4 sau versiunile modificate. Verifică jocul pornit efectiv, nu doar lansatorul."
+        ]
+      },
+      {
+        "title": "Exersați raportarea",
+        "steps": [
+          "Găsiți împreună opțiunile de raportare și blocare din joc. Moderarea și chatul diferă între Realms și serverele terților."
         ]
       }
     ],
-    userCount: "Baza globala uriasa de jucatori",
-    ageRecommendation: "Single-player este potrivit pentru copii mai mici; multiplayer-ul cere supraveghere",
-    appMetrics: [
-      { label: "Risc single-player", value: "Scazut" },
-      { label: "Risc pe servere publice", value: "Ridicat" },
-      { label: "Descarcari de moduri", value: "Vector malware" },
-      { label: "Creative mode", value: "Educational" }
-    ],
-    callouts: [
+    "userCount": "Copii, adolescenți și adulți",
+    "ageRecommendation": "Joc individual pentru cei mici; multiplayer cu supraveghere",
+    "appMetrics": [
       {
-        type: "warning",
-        title: "Highest concern",
-        description:
-          "Minecraft Realms este mult mai sigur decat serverele publice terte. Pentru multe familii, diferenta dintre risc scazut si risc ridicat nu este jocul in sine, ci locul in care copilul il joaca."
+        "label": "Joc individual",
+        "value": "Fără jucători necunoscuți"
       },
       {
-        type: "tip",
-        title: "Most impactful action",
-        description:
-          "Restrangerea multiplayer-ului doar la Realms private este cea mai eficienta schimbare pentru ca elimina contactul cu straini fara sa strice jocul."
+        "label": "Servere publice",
+        "value": "Moderare variabilă"
+      },
+      {
+        "label": "Java și Bedrock",
+        "value": "Controale Microsoft"
+      },
+      {
+        "label": "Moduri",
+        "value": "Verifică fiecare descărcare"
       }
-    ]
+    ],
+    "callouts": [
+      {
+        "type": "warning",
+        "title": "Controalele contului au limite",
+        "description": "Un Realm privat limitează membrii, dar siguranța depinde și de cine este invitat și cum se comportă. Verifică și modurile sau aplicațiile externe de chat."
+      },
+      {
+        "type": "tip",
+        "title": "Începe de aici",
+        "description": "Folosește un cont Microsoft de copil, verifică permisiunile multiplayer și alegeți persoanele cu care se joacă."
+      }
+    ],
+    "editorialReview": {
+      "checkedAt": "2026-11-03",
+      "availability": "Controalele Microsoft se aplică versiunilor Java și Bedrock acceptate. Minecraft exclude versiunile anterioare Java 1.16.4 și jocurile modificate din suportul pentru control parental. Controalele magazinului și dispozitivului sunt separate.",
+      "sources": [
+        {
+          "title": "Minecraft: parental controls and supported versions",
+          "url": "https://www.minecraft.net/en-us/article/parental-controls"
+        },
+        {
+          "title": "Minecraft: child accounts and social features",
+          "url": "https://help.minecraft.net/hc/en-us/articles/360058605852"
+        }
+      ]
+    },
+    "ageRating": "Clasificare de conținut PEGI 7; cerințele contului și magazinului diferă"
   },
   chatgpt: {
-    riskLabelText: "Risc mediu",
-    summary:
-      "Un chatbot AI care poate ajuta la învățare. Copiii trebuie să verifice răspunsurile și să înțeleagă limitele sfaturilor sale.",
-    description:
-      "Un chatbot AI care poate ajuta la învățare. Copiii trebuie să verifice răspunsurile și să înțeleagă limitele sfaturilor sale.",
-    quickActions: [
+    "riskLabelText": "Risc mediu",
+    "summary": "Un chatbot AI care poate ajuta la învățare. Copiii trebuie să verifice răspunsurile și să înțeleagă limitele sfaturilor sale.",
+    "description": "Un chatbot AI care poate ajuta la învățare. Copiii trebuie să verifice răspunsurile și să înțeleagă limitele sfaturilor sale.",
+    "quickActions": [
       {
-        title: "Opreste folosirea conversatiilor pentru antrenare",
-        description:
-          "Settings → Data Controls → Improve the model → OFF, astfel incat conversatiile sa nu fie folosite pentru imbunatatirea modelului."
+        "title": "Conectează un cont de părinte",
+        "description": "Deschide Settings → Parental controls → Add family member. Adolescentul trebuie să accepte invitația; apoi selectează-l pentru a verifica opțiunile."
       },
       {
-        title: "Dezactiveaza Memory",
-        description:
-          "Settings → Personalization → Memory → OFF daca vrei sa fie salvate mai putine detalii intre conversatii."
+        "title": "Verifică datele și memoria",
+        "description": "Verifică opțiunile pentru antrenarea modelelor și memoria salvată în controalele parentale. Oprirea lor nu șterge conversațiile existente sau fiecare detaliu deja salvat."
       },
       {
-        title: "Leaga un cont de parinte",
-        description:
-          "Settings → Parental controls → Add family member pentru a lega contul tau de cel al adolescentului (13-18). Asta deblocheaza ore linistite, protectii de continut si alerte de risc (lansate in septembrie 2025)."
+        "title": "Setează Study hours și Quiet hours",
+        "description": "Study hours pornește conversațiile noi eligibile în modul de studiu. Quiet hours limitează accesul în intervalele stabilite; cele două setări au roluri diferite."
       },
       {
-        title: "Stabileste mai intai reguli pentru scoala",
-        description:
-          "Verifica politica scolii despre AI si scrie reguli simple in familie pentru teme, citare si cand este permis ajutorul AI."
+        "title": "Stabiliți regulile pentru școală",
+        "description": "Verifică politica școlii despre AI și stabiliți când este permis ajutorul, cum se citează și ce trebuie lucrat independent."
       }
     ],
-    watchFor: [
+    "watchFor": [
       {
-        title: "Prompturi de jailbreak pentru a ocoli protectiile",
-        description:
-          "Copiii pot gasi sau distribui trucuri de prompt care incearca sa scoata raspunsuri nesigure, partinitoare sau nepotrivite pentru varsta.",
-        severity: "high"
+        "title": "Încercări de ocolire a protecțiilor",
+        "description": "Copiii pot găsi sau distribui instrucțiuni care încearcă să obțină răspunsuri nepotrivite.",
+        "severity": "high"
       },
       {
-        title: "Tri-sarea la scoala",
-        description:
-          "Instrumentul poate scrie eseuri, rezolva teme si produce raspunsuri finisate mai repede decat observa un parinte sau profesor.",
-        severity: "high"
+        "title": "Teme făcute în locul copilului",
+        "description": "Un răspuns complet poate ascunde faptul că adolescentul nu a înțeles materia. Cere-i să explice pașii.",
+        "severity": "high"
       },
       {
-        title: "Dependenta emotionala",
-        description:
-          "Unii copii pot incepe sa foloseasca chatbotul ca inlocuitor pentru sprijin real, feedback sau contact social.",
-        severity: "medium"
+        "title": "Înlocuirea sprijinului uman",
+        "description": "Observă dacă discuțiile cu AI iau locul prietenilor, familiei sau ajutorului de care are nevoie.",
+        "severity": "medium"
       },
       {
-        title: "Dezinformare spusa cu incredere",
-        description:
-          "ChatGPT poate suna foarte sigur pe el si totusi sa greseasca, ceea ce este riscant cand un copil il trateaza ca pe un mix de motor de cautare si tutore.",
-        severity: "medium"
+        "title": "Răspunsuri greșite spuse cu încredere",
+        "description": "Un răspuns fluent poate fi fals. Verificați afirmațiile importante înainte de a le folosi.",
+        "severity": "medium"
       },
       {
-        title: "Retentia datelor din conversatii",
-        description:
-          "Daca setarile raman implicite, copiii pot impartasi detalii personale fara sa inteleaga cum sunt stocate conversatiile.",
-        severity: "low"
+        "title": "Date personale în conversații",
+        "description": "Discutați ce informații nu ar trebui trimise și verificați opțiunile de păstrare a datelor.",
+        "severity": "low"
       }
     ],
-    setupGuide: [
+    "setupGuide": [
       {
-        title: "Opreste folosirea conversatiilor pentru antrenare",
-        steps: [
-          "Settings → Data Controls → Improve the model → OFF, astfel incat conversatiile sa nu fie folosite pentru imbunatatirea modelului."
+        "title": "Verifică experiența pentru adolescenți",
+        "steps": [
+          "ChatGPT for Teens se aplică automat conturilor eligibile identificate ca aparținând celor sub 18 ani. Unde apare opțiunea, verificați împreună Settings → Account → Age."
         ]
       },
       {
-        title: "Dezactiveaza Memory",
-        steps: [
-          "Settings → Personalization → Memory → OFF daca vrei sa fie salvate mai putine detalii intre conversatii."
+        "title": "Conectează controalele parentale",
+        "steps": [
+          "Deschide Settings → Parental controls → Add family member. Adolescentul trebuie să accepte invitația; apoi selectează-l pentru a verifica opțiunile."
         ]
       },
       {
-        title: "Stabileste mai intai reguli pentru scoala",
-        steps: [
-          "Verifica politica scolii despre AI si scrie reguli simple in familie pentru teme, citare si cand este permis ajutorul AI."
+        "title": "Verifică funcțiile disponibile",
+        "steps": [
+          "Verifică protecțiile pentru conținut sensibil, antrenarea modelelor, memoria salvată, Voice, imaginile și Health unde este disponibil. Pentru ChatGPT Work, verifică separat accesul codului la rețea și Cloud browser; niciuna nu controlează toate căutările sau pluginurile."
         ]
       },
       {
-        title: "Explica faptul ca modelul poate inventa raspunsuri",
-        steps: [
-          "Folositi impreuna cateva intrebari-test si verificati raspunsurile, astfel incat copilul sa vada ca fluent nu inseamna mereu corect."
+        "title": "Separă studiul de pauzele de acces",
+        "steps": [
+          "Study hours afectează conversațiile noi eligibile din experiența principală, nu conversațiile din GPT-uri sau Projects. Quiet hours restricționează accesul. Unele schimbări se aplică doar conversațiilor noi."
         ]
       },
       {
-        title: "Configureaza noile controale parentale",
-        steps: [
-          "OpenAI a lansat controale parentale native in septembrie 2025. In ChatGPT mergi la Settings → Parental controls → Add family member si trimite adolescentului (13-18) o invitatie pe care o accepta. Odata legat, protectiile de continut (mai putin continut grafic, fara joc de rol sexual sau violent) se activeaza automat si adolescentul nu le poate opri. Poti seta si Quiet hours, opri modul Voice, Memory si generarea de imagini, si renunta la antrenarea modelului."
+        "title": "Înțelege confidențialitatea și deconectarea",
+        "steps": [
+          "Controalele parentale nu îți permit să citești conversațiile adolescentului. Oricare dintre voi poate deconecta conturile; dacă adolescentul o face, ești notificat, iar controalele și alertele asociate se opresc."
         ]
       },
       {
-        title: "Intelege sistemul de alerte de risc",
-        steps: [
-          "Cu un cont legat, daca sistemele OpenAI detecteaza posibile semne de suferinta acuta sau autovatamare, evaluatori instruiti te pot anunta prin email, SMS sau notificare. Poti renunta, dar pentru multe familii merita lasat activ. Exista un ghid pentru parinti la chatgpt.com/parent-resources."
+        "title": "Înțelege alertele de siguranță",
+        "steps": [
+          "Alertele pot urma evaluării unor semne de autovătămare, unor posibile tulburări alimentare în Chat sau dezactivării contului pentru încălcări legate de violență. Pot rata probleme și nu sunt monitorizare în direct. Verifică datele de contact după conectare."
         ]
       },
       {
-        title: "Dezactiveaza instrumentele optionale de navigare daca sunt active",
-        steps: [
-          "Settings → Beta Features si opreste extensiile suplimentare pe care nu vrei sa le foloseasca independent."
-        ]
-      },
-      {
-        title: "Foloseste-l impreuna in prima saptamana",
-        steps: [
-          "Stai langa copil in sesiunile initiale pentru a invata cum sa ceara ajutor, cum sa verifice raspunsurile si cand sa se opreasca daca instrumentul devine o scurtatura."
+        "title": "Verificați răspunsurile împreună",
+        "steps": [
+          "Cere adolescentului să explice un răspuns și verificați afirmațiile importante într-o sursă de încredere. Stabiliți ce ajutor este permis pentru teme."
         ]
       }
     ],
-    userCount: "Baza uriasa de utilizatori elevi si adulti",
-    ageRecommendation: "Este cel mai util cu reguli clare despre teme si verificarea faptelor",
-    appMetrics: [
-      { label: "Expunere sociala", value: "Niciuna" },
-      { label: "Risc academic", value: "Ridicat" },
-      { label: "Risc de continut", value: "Moderat" },
-      { label: "Dependenta emotionala", value: "Emergenta" }
-    ],
-    callouts: [
+    "userCount": "Elevi și adulți",
+    "ageRecommendation": "Cu reguli clare pentru teme și verificarea răspunsurilor",
+    "appMetrics": [
       {
-        type: "warning",
-        title: "Highest concern",
-        description:
-          "Cu ChatGPT, scopul este de obicei folosirea onesta, nu blocarea totala. Copiii au nevoie de reguli clare despre ce poate face instrumentul pentru ei si ce ramane munca lor proprie."
+        "label": "Experiența pentru adolescenți",
+        "value": "Automată pentru conturi eligibile"
       },
       {
-        type: "tip",
-        title: "Most impactful action",
-        description:
-          "O regula clara in familie despre teme si fact-checking este de obicei mai eficienta decat o interdictie completa."
+        "label": "Accesul părintelui la conversații",
+        "value": "Fără transcrieri"
       },
       {
-        type: "tip",
-        title: "Nou din 2025",
-        description:
-          "ChatGPT are acum controale parentale reale: leaga un cont de adolescent in Settings → Parental controls pentru a aplica protectii de continut pe care nu le pot dezactiva, a seta ore linistite si a primi alerte daca sunt detectate semne de suferinta."
+        "label": "Study hours",
+        "value": "Schimbă pornirea conversațiilor eligibile"
+      },
+      {
+        "label": "Quiet hours",
+        "value": "Limite de acces programate"
       }
-    ]
+    ],
+    "callouts": [
+      {
+        "type": "warning",
+        "title": "Alertele au limite",
+        "description": "Conectarea conturilor nu oferă acces la conversații sau monitorizare continuă. Discutați în continuare și răspunde la probleme chiar dacă nu apare o alertă."
+      },
+      {
+        "type": "tip",
+        "title": "Actualizare din octombrie 2026",
+        "description": "OpenAI a anunțat la 30 octombrie restricții suplimentare pentru informațiile despre arme oferite adolescenților. Protecțiile nu garantează că fiecare răspuns este corect sau potrivit."
+      }
+    ],
+    "editorialReview": {
+      "checkedAt": "2026-11-03",
+      "availability": "Controalele se aplică conturilor personale eligibile conectate și se încheie la deconectare sau la trecerea în experiența de adult. Funcțiile diferă după cont și regiune. Study hours și controalele ChatGPT Work au acoperire separată.",
+      "sources": [
+        {
+          "title": "OpenAI: current parental controls",
+          "url": "https://help.openai.com/en/articles/12315553-managing-parental-controls-in-chatgpt"
+        },
+        {
+          "title": "OpenAI: ChatGPT for Teens",
+          "url": "https://help.openai.com/en/articles/20001421-chatgpt-for-teens"
+        },
+        {
+          "title": "OpenAI: 30 October teen safety update",
+          "url": "https://openai.com/index/community-safety-report-and-new-protections-for-teens/"
+        }
+      ]
+    }
   }
 };
