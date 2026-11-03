@@ -999,20 +999,20 @@ export const entries: Entry[] = [
     "riskBarPosition": 75,
     "appMetrics": [
       {
-        "label": "Younger accounts",
-        "value": "Kids / Select"
+        "label": "Kids and Select accounts",
+        "value": "Younger players use Kids or Select accounts, with settings based on their age."
       },
       {
-        "label": "Chat access",
-        "value": "Age check required"
+        "label": "Who can use chat?",
+        "value": "Players must complete an age check before they can use chat. Check the permissions available for your child."
       },
       {
-        "label": "Parent access",
-        "value": "Linked account"
+        "label": "Managing your child’s settings",
+        "value": "Use your own linked parent account to review and change the controls available for your child."
       },
       {
-        "label": "Purchases",
-        "value": "Robux and subscriptions"
+        "label": "Robux and subscriptions",
+        "value": "Check both currency purchases and subscriptions when agreeing on a spending budget."
       }
     ],
     "callouts": [
@@ -1156,20 +1156,20 @@ export const entries: Entry[] = [
     "riskBarPosition": 72,
     "appMetrics": [
       {
-        "label": "Shorts feed",
-        "value": "Parent-set daily limit"
+        "label": "Daily Shorts limit",
+        "value": "A linked parent can set how long a supervised account can scroll the Shorts feed each day."
       },
       {
-        "label": "Zero-minute limit",
-        "value": "Turns off scrolling feed"
+        "label": "What does 0 minutes do?",
+        "value": "It turns off the scrolling Shorts feed. Other ways of watching YouTube videos remain available."
       },
       {
         "label": "Comments",
-        "value": "Depend on account and video"
+        "value": "Whether your child can see or use comments depends on the account and the video."
       },
       {
         "label": "Content filters",
-        "value": "Can miss unsuitable videos"
+        "value": "Filters can miss unsuitable videos. Review recommendations and watch some videos together."
       }
     ],
     "callouts": [
@@ -1323,20 +1323,20 @@ export const entries: Entry[] = [
     "riskBarPosition": 80,
     "appMetrics": [
       {
-        "label": "Snap Map sharing",
-        "value": "Off by default"
+        "label": "Location sharing on Snap Map",
+        "value": "Location sharing is off by default. Check whether your child has since turned it on and who can see them."
       },
       {
-        "label": "Family Center",
-        "value": "Contacts and usage insights"
+        "label": "What Family Center shows",
+        "value": "You can see recent contacts and information about time spent in the app."
       },
       {
-        "label": "Private messages",
-        "value": "Not shown to parents"
+        "label": "Can parents read messages?",
+        "value": "Family Center does not show the contents of your teen’s private conversations."
       },
       {
-        "label": "Saved images",
-        "value": "Can outlast the chat"
+        "label": "Disappearing images",
+        "value": "Someone can save an image with a screenshot or another camera, even if it disappears from the chat."
       }
     ],
     "callouts": [
@@ -1478,20 +1478,20 @@ export const entries: Entry[] = [
     "riskBarPosition": 70,
     "appMetrics": [
       {
-        "label": "Teen content setting",
-        "value": "13+ by default"
+        "label": "Default teen content setting",
+        "value": "Teen Accounts use the 13+ content setting by default. Unsuitable posts can still appear."
       },
       {
-        "label": "Stricter option",
-        "value": "Limited Content"
+        "label": "Limited Content",
+        "value": "This stricter option filters more material and restricts comments."
       },
       {
-        "label": "Direct messages",
-        "value": "Teen contact restrictions"
+        "label": "Who can send messages?",
+        "value": "Teen Accounts limit incoming contact. Review message permissions and existing followers together."
       },
       {
-        "label": "Distress alerts",
-        "value": "Global rollout announced"
+        "label": "Safety alerts for parents",
+        "value": "Meta has announced a global rollout of distress alerts. Check the options in your teen’s supervised account."
       }
     ],
     "callouts": [
@@ -1629,20 +1629,20 @@ export const entries: Entry[] = [
     "riskBarPosition": 90,
     "appMetrics": [
       {
-        "label": "Parent tools",
-        "value": "Family Pairing"
+        "label": "Family Pairing",
+        "value": "Link your account to your teen’s to manage the available time, privacy and content controls."
       },
       {
-        "label": "Direct messages",
-        "value": "Unavailable under 16"
+        "label": "Who can use direct messages?",
+        "value": "Direct messages are unavailable under 16. For older teens, review who can send messages or requests."
       },
       {
-        "label": "Time controls",
-        "value": "Daily limit and Time Away"
+        "label": "Daily limits and Time Away",
+        "value": "Set a daily time limit and schedule periods when your teen cannot use the app."
       },
       {
-        "label": "Feed controls",
-        "value": "Topics and keyword filters"
+        "label": "Shaping the feed",
+        "value": "Topic preferences and keyword filters help adjust recommendations. They cannot guarantee that every video will be suitable."
       }
     ],
     "callouts": [
@@ -1779,20 +1779,20 @@ export const entries: Entry[] = [
     "riskBarPosition": 85,
     "appMetrics": [
       {
-        "label": "Parent tools",
-        "value": "Family Center"
+        "label": "Family Center",
+        "value": "Link accounts to see recent activity and manage the safety settings available for your teen."
       },
       {
-        "label": "Message content",
-        "value": "Private"
+        "label": "Can parents read messages?",
+        "value": "Family Center does not show the contents of private conversations."
       },
       {
-        "label": "Media filters",
-        "value": "Check account settings"
+        "label": "Image and media filters",
+        "value": "Check the account’s sensitive-content filters. Blurring an image is different from blocking it, and filters can miss content."
       },
       {
-        "label": "Age group",
-        "value": "Check Account Status"
+        "label": "Checking the age group",
+        "value": "Open User Settings → Account Status to see the age group Discord has applied to the account."
       }
     ],
     "callouts": [
@@ -1925,20 +1925,20 @@ export const entries: Entry[] = [
     "riskBarPosition": 60,
     "appMetrics": [
       {
-        "label": "Parent access",
-        "value": "Epic PIN"
+        "label": "Epic parental PIN",
+        "value": "Keep the parent PIN private. It protects the parental controls and approvals you configure."
       },
       {
-        "label": "Chat",
-        "value": "Review permissions"
+        "label": "Voice and text chat",
+        "value": "Review who your child can talk to in Epic’s chat settings. Permissions depend on age."
       },
       {
-        "label": "Epic payment PIN",
-        "value": "Not all payment routes"
+        "label": "Which payments does the PIN cover?",
+        "value": "The Epic payment PIN covers real-money purchases through Epic. Other stores and existing V-Bucks need separate checks."
       },
       {
-        "label": "V-Bucks",
-        "value": "Separate spending rules"
+        "label": "Spending existing V-Bucks",
+        "value": "Agree on a budget for currency already in the account. The real-money payment PIN does not control these purchases."
       }
     ],
     "callouts": [
@@ -2079,19 +2079,19 @@ export const entries: Entry[] = [
     "appMetrics": [
       {
         "label": "Single-player",
-        "value": "No stranger contact in game"
+        "value": "Your child plays without contact with other players inside the game."
       },
       {
         "label": "Public servers",
-        "value": "Moderation varies"
+        "value": "Rules and moderation vary by server. Check who can join and how chat is managed."
       },
       {
-        "label": "Java and Bedrock",
-        "value": "Microsoft account controls"
+        "label": "Controls for Java and Bedrock",
+        "value": "Supported versions of both editions use Microsoft account controls. Check multiplayer and communication permissions."
       },
       {
-        "label": "Mods",
-        "value": "Check each download"
+        "label": "Mods and downloads",
+        "value": "Check the source and file before installing a mod. A familiar download site does not guarantee that every file is safe."
       }
     ],
     "callouts": [
@@ -2396,20 +2396,20 @@ export const entries: Entry[] = [
     "riskBarPosition": 88,
     "appMetrics": [
       {
-        "label": "Under-18 open chat",
-        "value": "Removed by platform"
+        "label": "Open-ended chat for under-18s",
+        "value": "Character.AI says it has removed open-ended character chat for users under 18."
       },
       {
-        "label": "Age information",
-        "value": "Check together"
+        "label": "Checking the account’s age",
+        "value": "Review the birthday and available features together. Contact support if your child can access adult-only features."
       },
       {
-        "label": "Other access",
-        "value": "Review browser too"
+        "label": "Access through a browser",
+        "value": "Check website access as well as the installed app. An app limit alone does not cover every way of using the service."
       },
       {
-        "label": "Support",
-        "value": "Keep people involved"
+        "label": "Support from real people",
+        "value": "Keep trusted people involved. A chatbot cannot replace human support when your child is struggling."
       }
     ],
     "callouts": [
@@ -2548,20 +2548,20 @@ export const entries: Entry[] = [
     "riskBarPosition": 65,
     "appMetrics": [
       {
-        "label": "Personal conversations",
-        "value": "End-to-end encrypted"
+        "label": "Privacy of personal conversations",
+        "value": "Personal chats and calls use end-to-end encryption. This does not make every contact trustworthy."
       },
       {
-        "label": "Reporting",
-        "value": "Messages can be submitted"
+        "label": "Reporting unwanted messages",
+        "value": "You can report abusive messages to WhatsApp. Reporting can send recent messages to the service for review."
       },
       {
         "label": "Parent-managed accounts",
-        "value": "Regional rollout"
+        "value": "Availability is rolling out. Check whether setup is offered on your phones before relying on these controls."
       },
       {
-        "label": "Group additions",
-        "value": "Privacy controls"
+        "label": "Who can add your child to groups?",
+        "value": "Review group privacy settings. Parent-managed accounts also let parents decide which groups the child can join."
       }
     ],
     "callouts": [
@@ -2724,19 +2724,19 @@ export const entries: Entry[] = [
     "appMetrics": [
       {
         "label": "Content filters",
-        "value": "Changeable preferences"
+        "value": "Your teen can change these preferences. They are not settings that only a parent can unlock."
       },
       {
         "label": "Live moderation",
-        "value": "May act after content appears"
+        "value": "A moderator may remove harmful content after your child has already seen it."
       },
       {
-        "label": "Private messages",
-        "value": "Check Whisper settings"
+        "label": "Private messages: Whispers",
+        "value": "Check Block Whispers from Strangers in Security and Privacy. The rule has exceptions, including some existing contacts."
       },
       {
-        "label": "Spending",
-        "value": "Subscriptions and Bits"
+        "label": "Subscriptions and Bits",
+        "value": "Both can involve real spending. Review payment methods and active subscriptions together."
       }
     ],
     "callouts": [
@@ -2885,20 +2885,20 @@ export const entries: Entry[] = [
     "riskBarPosition": 63,
     "appMetrics": [
       {
-        "label": "Parent tools",
-        "value": "Steam Families"
+        "label": "Steam Families",
+        "value": "Add your child with the child role, then enable the parental controls for their account."
       },
       {
-        "label": "Allowed games",
-        "value": "Parent-selected library"
+        "label": "Choosing allowed games",
+        "value": "You can choose which games your child may play from the available library."
       },
       {
-        "label": "Community and chat",
-        "value": "Separate restrictions"
+        "label": "Community and chat access",
+        "value": "Review these permissions separately from the game list. A permitted game can also have its own chat settings."
       },
       {
-        "label": "Playtime",
-        "value": "Limits and requests"
+        "label": "Playtime limits",
+        "value": "Set time limits and schedules. Your child can send requests for extra time for you to review."
       }
     ],
     "callouts": [
@@ -3030,20 +3030,20 @@ export const entries: Entry[] = [
     ],
     "appMetrics": [
       {
-        "label": "Supervised access in Romania",
-        "value": "Unavailable"
+        "label": "Supervised accounts in Romania",
+        "value": "Google does not offer Gemini Apps to supervised accounts in Romania, which is part of the EEA."
       },
       {
         "label": "School accounts",
-        "value": "Administrator-managed"
+        "value": "The school’s administrator decides whether Gemini is available for a school account."
       },
       {
-        "label": "Privacy",
-        "value": "Account-specific"
+        "label": "Privacy settings",
+        "value": "Data settings depend on the account type. Check the rules for the account your child actually uses."
       },
       {
-        "label": "Answers",
-        "value": "Need checking"
+        "label": "Checking answers",
+        "value": "Gemini can give a confident answer that is wrong. Verify important claims with a reliable source."
       }
     ],
     "callouts": [
@@ -3179,20 +3179,20 @@ export const entries: Entry[] = [
     ],
     "appMetrics": [
       {
-        "label": "AI insights",
-        "value": "Topics, not full chats"
+        "label": "What parents can see",
+        "value": "Supervision can show topics from recent AI conversations, without giving parents the full chats."
       },
       {
         "label": "Limited Content",
-        "value": "Meta AI app and Instagram"
+        "value": "In Instagram and the Meta AI app, this setting narrows the content or conversations available to a teen."
       },
       {
-        "label": "Distress alerts",
-        "value": "Global rollout announced"
+        "label": "Safety alerts for parents",
+        "value": "Meta has announced a global alert rollout for supervised Instagram, Facebook and Messenger accounts. Check the relevant account."
       },
       {
-        "label": "Coverage",
-        "value": "App and account-specific"
+        "label": "Which apps do controls cover?",
+        "value": "Controls depend on the app and account. An Instagram setting does not automatically cover WhatsApp or another login."
       }
     ],
     "callouts": [
@@ -3324,20 +3324,20 @@ export const entries: Entry[] = [
     ],
     "appMetrics": [
       {
-        "label": "EU registration",
-        "value": "18+"
+        "label": "Minimum age in the EU",
+        "value": "Telegram’s EU terms require users to be at least 18 to sign up. This applies in Romania."
       },
       {
         "label": "Regular chats",
-        "value": "Cloud encryption"
+        "value": "Regular chats and groups use cloud encryption. They do not have end-to-end encryption."
       },
       {
         "label": "Secret Chats",
-        "value": "End-to-end encrypted"
+        "value": "These use end-to-end encryption and stay on the devices involved. Encryption does not establish that the other person is trustworthy."
       },
       {
         "label": "Bots and mini apps",
-        "value": "Third-party services"
+        "value": "These can be run by third parties. Sending information to a bot can share it with that service’s operator."
       }
     ],
     "callouts": [

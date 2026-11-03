@@ -101,19 +101,19 @@ export const roEntryTranslations: Partial<Record<Entry["slug"], Partial<Localize
     "appMetrics": [
       {
         "label": "Filtre de conținut",
-        "value": "Preferințe modificabile"
+        "value": "Adolescentul poate modifica aceste preferințe. Setările nu sunt protejate printr-o deblocare rezervată părintelui."
       },
       {
         "label": "Moderare live",
-        "value": "Poate interveni după afișare"
+        "value": "Un moderator poate elimina conținutul dăunător după ce copilul l-a văzut deja."
       },
       {
-        "label": "Mesaje private",
-        "value": "Verifică Whispers"
+        "label": "Mesaje private: Whispers",
+        "value": "Verifică Block Whispers from Strangers în Security and Privacy. Regula are excepții, inclusiv pentru unele contacte existente."
       },
       {
-        "label": "Cheltuieli",
-        "value": "Abonamente și Bits"
+        "label": "Abonamente și Bits",
+        "value": "Ambele pot implica bani reali. Verificați împreună metodele de plată și abonamentele active."
       }
     ],
     "callouts": [
@@ -244,20 +244,20 @@ export const roEntryTranslations: Partial<Record<Entry["slug"], Partial<Localize
     "ageRecommendation": "Verifică jocurile permise și Community înainte de utilizare independentă",
     "appMetrics": [
       {
-        "label": "Instrumente pentru părinte",
-        "value": "Steam Families"
+        "label": "Steam Families",
+        "value": "Adaugă copilul cu rol de copil, apoi activează controalele parentale pentru contul lui."
       },
       {
-        "label": "Jocuri permise",
-        "value": "Bibliotecă aleasă de părinte"
+        "label": "Alegerea jocurilor permise",
+        "value": "Poți alege ce jocuri are voie să joace copilul din biblioteca disponibilă."
       },
       {
-        "label": "Community și chat",
-        "value": "Restricții separate"
+        "label": "Acces la Community și chat",
+        "value": "Verifică aceste permisiuni separat de lista jocurilor. Un joc permis poate avea și propriile setări de chat."
       },
       {
-        "label": "Timp de joacă",
-        "value": "Limite și cereri"
+        "label": "Limite pentru timpul de joacă",
+        "value": "Setează limite de timp și un program. Copilul poate trimite cereri de timp suplimentar pe care să le verifici."
       }
     ],
     "callouts": [
@@ -370,20 +370,20 @@ export const roEntryTranslations: Partial<Record<Entry["slug"], Partial<Localize
     ],
     "appMetrics": [
       {
-        "label": "Acces supravegheat în România",
-        "value": "Indisponibil"
+        "label": "Conturi supravegheate în România",
+        "value": "Google nu oferă Gemini Apps conturilor supravegheate din România, care face parte din SEE."
       },
       {
         "label": "Conturi școlare",
-        "value": "Gestionate de școală"
+        "value": "Administratorul școlii decide dacă Gemini este disponibil pentru un cont școlar."
       },
       {
-        "label": "Confidențialitate",
-        "value": "Depinde de cont"
+        "label": "Setări de confidențialitate",
+        "value": "Setările pentru date depind de tipul contului. Verifică regulile contului folosit efectiv de copil."
       },
       {
-        "label": "Răspunsuri",
-        "value": "Necesită verificare"
+        "label": "Verificarea răspunsurilor",
+        "value": "Gemini poate da un răspuns greșit cu multă siguranță. Verificați afirmațiile importante într-o sursă de încredere."
       }
     ],
     "callouts": [
@@ -502,20 +502,20 @@ export const roEntryTranslations: Partial<Record<Entry["slug"], Partial<Localize
     ],
     "appMetrics": [
       {
-        "label": "Informații AI",
-        "value": "Teme, nu conversații complete"
+        "label": "Ce poate vedea părintele",
+        "value": "Supravegherea poate arăta subiectele conversațiilor recente cu AI, fără a da acces la conversațiile complete."
       },
       {
         "label": "Limited Content",
-        "value": "Aplicația Meta AI și Instagram"
+        "value": "În Instagram și aplicația Meta AI, această setare restrânge conținutul sau conversațiile disponibile adolescentului."
       },
       {
-        "label": "Alerte de suferință",
-        "value": "Lansare globală anunțată"
+        "label": "Alerte de siguranță pentru părinți",
+        "value": "Meta a anunțat lansarea globală a alertelor pentru conturile supravegheate Instagram, Facebook și Messenger. Verifică acel cont."
       },
       {
-        "label": "Acoperire",
-        "value": "Depinde de aplicație și cont"
+        "label": "Ce aplicații acoperă setările?",
+        "value": "Controalele depind de aplicație și cont. O setare Instagram nu acoperă automat WhatsApp sau o altă conectare."
       }
     ],
     "callouts": [
@@ -630,20 +630,20 @@ export const roEntryTranslations: Partial<Record<Entry["slug"], Partial<Localize
     ],
     "appMetrics": [
       {
-        "label": "Înregistrare în UE",
-        "value": "18+"
+        "label": "Vârsta minimă în UE",
+        "value": "Termenii Telegram pentru UE cer cel puțin 18 ani la înscriere. Regula se aplică și în România."
       },
       {
-        "label": "Chat obișnuit",
-        "value": "Criptare în cloud"
+        "label": "Conversații obișnuite",
+        "value": "Conversațiile obișnuite și grupurile folosesc criptare în cloud. Nu au criptare end-to-end."
       },
       {
         "label": "Secret Chats",
-        "value": "Criptare end-to-end"
+        "value": "Folosesc criptare end-to-end și rămân pe dispozitivele implicate. Criptarea nu dovedește că cealaltă persoană este de încredere."
       },
       {
         "label": "Boți și miniaplicații",
-        "value": "Servicii ale terților"
+        "value": "Pot fi administrate de terți. Informațiile trimise unui bot pot ajunge la operatorul acelui serviciu."
       }
     ],
     "callouts": [
@@ -774,20 +774,20 @@ export const roEntryTranslations: Partial<Record<Entry["slug"], Partial<Localize
     ],
     "appMetrics": [
       {
-        "label": "Conversații personale",
-        "value": "Criptate integral"
+        "label": "Confidențialitatea conversațiilor personale",
+        "value": "Conversațiile și apelurile personale folosesc criptare end-to-end. Aceasta nu face fiecare contact demn de încredere."
       },
       {
-        "label": "Raportare",
-        "value": "Se pot trimite mesaje"
+        "label": "Raportarea mesajelor nedorite",
+        "value": "Poți raporta mesaje abuzive către WhatsApp. Raportarea poate trimite mesaje recente serviciului pentru verificare."
       },
       {
-        "label": "Conturi gestionate",
-        "value": "Lansare regională"
+        "label": "Conturi gestionate de părinte",
+        "value": "Disponibilitatea este în curs de extindere. Verifică dacă apare configurarea pe telefoanele voastre înainte de a te baza pe aceste controale."
       },
       {
-        "label": "Adăugare în grupuri",
-        "value": "Controale de confidențialitate"
+        "label": "Cine poate adăuga copilul în grupuri?",
+        "value": "Verifică setările de confidențialitate pentru grupuri. Conturile gestionate de părinte îi permit acestuia să decidă în ce grupuri poate intra copilul."
       }
     ],
     "callouts": [
@@ -924,20 +924,20 @@ export const roEntryTranslations: Partial<Record<Entry["slug"], Partial<Localize
     ],
     "appMetrics": [
       {
-        "label": "Chat deschis sub 18 ani",
-        "value": "Eliminat de platformă"
+        "label": "Conversații libere sub 18 ani",
+        "value": "Character.AI spune că a eliminat conversațiile libere cu personaje pentru utilizatorii sub 18 ani."
       },
       {
-        "label": "Informații despre vârstă",
-        "value": "Verificați împreună"
+        "label": "Verificarea vârstei contului",
+        "value": "Verificați împreună data nașterii și funcțiile disponibile. Contactează asistența dacă are acces la funcții rezervate adulților."
       },
       {
-        "label": "Alte căi de acces",
-        "value": "Verifică și browserul"
+        "label": "Accesul prin browser",
+        "value": "Verifică site-ul, alături de aplicația instalată. Limita unei aplicații nu acoperă toate modurile de a folosi serviciul."
       },
       {
-        "label": "Sprijin",
-        "value": "Păstrează legătura cu oamenii"
+        "label": "Sprijin din partea oamenilor",
+        "value": "Păstrează legătura cu persoane de încredere. Un chatbot nu poate înlocui sprijinul uman când copilului îi este greu."
       }
     ],
     "callouts": [
@@ -1754,20 +1754,20 @@ export const roEntryTranslations: Partial<Record<Entry["slug"], Partial<Localize
     ],
     "appMetrics": [
       {
-        "label": "Conturi pentru copii",
-        "value": "Kids / Select"
+        "label": "Conturile Kids și Select",
+        "value": "Jucătorii mai mici folosesc conturi Kids sau Select, cu setări în funcție de vârstă."
       },
       {
-        "label": "Acces la chat",
-        "value": "Vârstă verificată"
+        "label": "Cine poate folosi chatul?",
+        "value": "Jucătorii trebuie să treacă verificarea vârstei înainte de a folosi chatul. Verifică permisiunile disponibile pentru copil."
       },
       {
-        "label": "Acces pentru părinte",
-        "value": "Cont conectat"
+        "label": "Gestionarea setărilor copilului",
+        "value": "Folosește contul tău de părinte conectat pentru a verifica și modifica opțiunile disponibile pentru copil."
       },
       {
-        "label": "Cumpărături",
-        "value": "Robux și abonamente"
+        "label": "Robux și abonamente",
+        "value": "Când stabiliți bugetul, verificați atât cumpărăturile de monedă virtuală, cât și abonamentele."
       }
     ],
     "callouts": [
@@ -1891,20 +1891,20 @@ export const roEntryTranslations: Partial<Record<Entry["slug"], Partial<Localize
     "ageRecommendation": "Alege YouTube Kids sau YouTube supravegheat în funcție de vârsta copilului",
     "appMetrics": [
       {
-        "label": "Feedul Shorts",
-        "value": "Limită zilnică pusă de părinte"
+        "label": "Limita zilnică pentru Shorts",
+        "value": "Un părinte conectat poate limita timpul petrecut zilnic în feedul Shorts al contului supravegheat."
       },
       {
-        "label": "Limita de 0 minute",
-        "value": "Oprește feedul cu derulare"
+        "label": "Ce face limita de 0 minute?",
+        "value": "Oprește feedul Shorts cu derulare. Alte moduri de a viziona videoclipuri pe YouTube rămân disponibile."
       },
       {
         "label": "Comentarii",
-        "value": "Depind de cont și videoclip"
+        "value": "Accesul copilului la comentarii depinde de cont și de videoclip."
       },
       {
         "label": "Filtre de conținut",
-        "value": "Pot rata videoclipuri nepotrivite"
+        "value": "Filtrele pot rata videoclipuri nepotrivite. Verificați recomandările și urmăriți împreună câteva clipuri."
       }
     ],
     "callouts": [
@@ -2037,20 +2037,20 @@ export const roEntryTranslations: Partial<Record<Entry["slug"], Partial<Localize
     "ageRecommendation": "Recomandarea noastră: de la 15 ani, cu supraveghere activă",
     "appMetrics": [
       {
-        "label": "Locația pe Snap Map",
-        "value": "Oprită implicit"
+        "label": "Partajarea locației pe Snap Map",
+        "value": "Locația nu este partajată implicit. Verifică dacă a activat-o copilul între timp și cine îl poate vedea."
       },
       {
-        "label": "Family Center",
-        "value": "Contacte și timp de utilizare"
+        "label": "Ce arată Family Center",
+        "value": "Poți vedea contactele recente și informații despre timpul petrecut în aplicație."
       },
       {
-        "label": "Conversații private",
-        "value": "Nu sunt afișate părintelui"
+        "label": "Poți citi mesajele copilului?",
+        "value": "Family Center nu arată conținutul conversațiilor private ale adolescentului."
       },
       {
-        "label": "Imagini salvate",
-        "value": "Pot rămâne după dispariția mesajului"
+        "label": "Imagini care dispar",
+        "value": "Cineva poate păstra o imagine printr-o captură de ecran sau cu altă cameră, chiar dacă dispare din chat."
       }
     ],
     "callouts": [
@@ -2171,20 +2171,20 @@ export const roEntryTranslations: Partial<Record<Entry["slug"], Partial<Localize
     "ageRecommendation": "Recomandarea noastră: sub 16 ani, cu supraveghere",
     "appMetrics": [
       {
-        "label": "Conținut pentru adolescenți",
-        "value": "13+ implicit"
+        "label": "Conținutul implicit pentru adolescenți",
+        "value": "Teen Accounts folosesc implicit setarea de conținut 13+. Pot apărea totuși postări nepotrivite."
       },
       {
-        "label": "Opțiune mai strictă",
-        "value": "Limited Content"
+        "label": "Limited Content",
+        "value": "Această opțiune mai strictă filtrează mai mult conținut și restricționează comentariile."
       },
       {
-        "label": "Mesaje directe",
-        "value": "Restricții pentru adolescenți"
+        "label": "Cine poate trimite mesaje?",
+        "value": "Teen Accounts limitează contactele primite. Verificați împreună permisiunile pentru mesaje și urmăritorii existenți."
       },
       {
-        "label": "Alerte de risc",
-        "value": "Lansare globală anunțată"
+        "label": "Alerte de siguranță pentru părinți",
+        "value": "Meta a anunțat lansarea globală a alertelor de risc. Verifică opțiunile din contul supravegheat al adolescentului."
       }
     ],
     "callouts": [
@@ -2301,20 +2301,20 @@ export const roEntryTranslations: Partial<Record<Entry["slug"], Partial<Localize
     "ageRecommendation": "Recomandarea noastră: sub 16 ani, cu limite și supraveghere",
     "appMetrics": [
       {
-        "label": "Instrumente pentru părinte",
-        "value": "Family Pairing"
+        "label": "Family Pairing",
+        "value": "Conectează contul tău cu cel al adolescentului pentru a gestiona opțiunile de timp, confidențialitate și conținut."
       },
       {
-        "label": "Mesaje directe",
-        "value": "Indisponibile sub 16 ani"
+        "label": "Cine poate folosi mesajele directe?",
+        "value": "Mesajele directe nu sunt disponibile sub 16 ani. Pentru cei mai mari, verifică cine poate trimite mesaje sau cereri."
       },
       {
-        "label": "Timp de utilizare",
-        "value": "Limită zilnică și Time Away"
+        "label": "Limite zilnice și Time Away",
+        "value": "Setează o limită zilnică și intervale în care adolescentul nu poate folosi aplicația."
       },
       {
-        "label": "Recomandări",
-        "value": "Subiecte și filtre de cuvinte"
+        "label": "Ajustarea recomandărilor",
+        "value": "Preferințele pentru subiecte și filtrele de cuvinte ajută la ajustarea recomandărilor. Nu garantează că fiecare videoclip este potrivit."
       }
     ],
     "callouts": [
@@ -2431,20 +2431,20 @@ export const roEntryTranslations: Partial<Record<Entry["slug"], Partial<Localize
     ],
     "appMetrics": [
       {
-        "label": "Instrumente pentru părinte",
-        "value": "Family Center"
+        "label": "Family Center",
+        "value": "Conectează conturile pentru a vedea activitatea recentă și a gestiona setările de siguranță disponibile pentru adolescent."
       },
       {
-        "label": "Conținutul mesajelor",
-        "value": "Privat"
+        "label": "Poți citi mesajele copilului?",
+        "value": "Family Center nu arată conținutul conversațiilor private."
       },
       {
-        "label": "Filtre media",
-        "value": "Verifică setările"
+        "label": "Filtre pentru imagini și conținut media",
+        "value": "Verifică filtrele pentru conținut sensibil. Estomparea unei imagini diferă de blocarea ei, iar filtrele pot rata conținut."
       },
       {
-        "label": "Grupa de vârstă",
-        "value": "Verifică Account Status"
+        "label": "Verificarea grupei de vârstă",
+        "value": "Deschide User Settings → Account Status pentru a vedea grupa de vârstă aplicată de Discord contului."
       }
     ],
     "callouts": [
@@ -2557,20 +2557,20 @@ export const roEntryTranslations: Partial<Record<Entry["slug"], Partial<Localize
     ],
     "appMetrics": [
       {
-        "label": "Acces pentru părinte",
-        "value": "PIN Epic"
+        "label": "PIN-ul parental Epic",
+        "value": "Păstrează PIN-ul privat. Acesta protejează controalele parentale și aprobările pe care le configurezi."
       },
       {
-        "label": "Chat",
-        "value": "Verifică permisiunile"
+        "label": "Chat vocal și text",
+        "value": "Verifică în setările Epic cu cine poate vorbi copilul. Permisiunile depind de vârstă."
       },
       {
-        "label": "PIN pentru plăți Epic",
-        "value": "Nu acoperă toate plățile"
+        "label": "Ce plăți acoperă PIN-ul?",
+        "value": "PIN-ul de plată Epic acoperă cumpărăturile cu bani reali prin Epic. Alte magazine și V-Bucks existenți necesită verificări separate."
       },
       {
-        "label": "V-Bucks",
-        "value": "Reguli separate"
+        "label": "Cheltuirea V-Bucks existenți",
+        "value": "Stabiliți un buget pentru moneda deja din cont. PIN-ul pentru plăți cu bani reali nu controlează aceste cumpărături."
       }
     ],
     "callouts": [
@@ -2690,19 +2690,19 @@ export const roEntryTranslations: Partial<Record<Entry["slug"], Partial<Localize
     "appMetrics": [
       {
         "label": "Joc individual",
-        "value": "Fără jucători necunoscuți"
+        "value": "Copilul se joacă fără contact cu alți jucători în interiorul jocului."
       },
       {
         "label": "Servere publice",
-        "value": "Moderare variabilă"
+        "value": "Regulile și moderarea diferă între servere. Verifică cine poate participa și cum este gestionat chatul."
       },
       {
-        "label": "Java și Bedrock",
-        "value": "Controale Microsoft"
+        "label": "Controale pentru Java și Bedrock",
+        "value": "Versiunile acceptate ale ambelor ediții folosesc controale prin contul Microsoft. Verifică permisiunile pentru multiplayer și comunicare."
       },
       {
-        "label": "Moduri",
-        "value": "Verifică fiecare descărcare"
+        "label": "Moduri și descărcări",
+        "value": "Verifică sursa și fișierul înainte de a instala un mod. Un site cunoscut nu garantează că fiecare fișier este sigur."
       }
     ],
     "callouts": [
