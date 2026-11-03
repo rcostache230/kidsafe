@@ -2830,20 +2830,20 @@ export const roEntryTranslations: Partial<Record<Entry["slug"], Partial<Localize
     "ageRecommendation": "Cu reguli clare pentru teme și verificarea răspunsurilor",
     "appMetrics": [
       {
-        "label": "Experiența pentru adolescenți",
-        "value": "Automată pentru conturi eligibile"
+        "label": "Protecții pentru adolescenți",
+        "value": "ChatGPT le activează automat pentru conturile eligibile identificate ca aparținând celor sub 18 ani."
       },
       {
-        "label": "Accesul părintelui la conversații",
-        "value": "Fără transcrieri"
+        "label": "Poți citi conversațiile copilului?",
+        "value": "Nu. Conectarea conturilor nu îți dă acces la conversațiile adolescentului."
       },
       {
         "label": "Study hours",
-        "value": "Schimbă pornirea conversațiilor eligibile"
+        "value": "Conversațiile noi din experiența principală ChatGPT pornesc în modul de studiu la orele alese. GPT-urile și Projects sunt excluse. Accesul rămâne deschis."
       },
       {
         "label": "Quiet hours",
-        "value": "Limite de acces programate"
+        "value": "Oprește accesul adolescentului la ChatGPT în intervalele stabilite de tine."
       }
     ],
     "callouts": [

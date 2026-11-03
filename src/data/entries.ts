@@ -2239,20 +2239,20 @@ export const entries: Entry[] = [
     "riskBarPosition": 45,
     "appMetrics": [
       {
-        "label": "Teen experience",
-        "value": "Automatic for eligible accounts"
+        "label": "Teen protections",
+        "value": "ChatGPT turns these on automatically for eligible accounts identified as belonging to someone under 18."
       },
       {
-        "label": "Parent access to chats",
-        "value": "No transcripts"
+        "label": "Can parents read chats?",
+        "value": "No. Linking accounts does not let you read your teen’s conversations."
       },
       {
         "label": "Study hours",
-        "value": "Changes how eligible chats start"
+        "value": "New chats in the main ChatGPT experience start in study mode at the times you choose. GPTs and Projects are excluded. Access stays open."
       },
       {
         "label": "Quiet hours",
-        "value": "Scheduled access limits"
+        "value": "Stops your teen from using ChatGPT during the times you set."
       }
     ],
     "callouts": [

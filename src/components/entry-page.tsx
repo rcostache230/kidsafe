@@ -164,24 +164,29 @@ export function EntryPage({
                 </div>
               ))}
             </div>
+          </section>
+        ) : null}
 
-            {entry.appMetrics?.length ? (
-              <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
-                {entry.appMetrics.map((metric) => (
-                  <div
-                    key={metric.label}
-                    className="rounded-xl border border-paper-line bg-paper-50 p-4"
-                  >
-                    <p className="font-display text-lg font-semibold text-paper-ink">
-                      {metric.value}
-                    </p>
-                    <p className="mt-1 text-[11px] font-semibold uppercase tracking-[0.16em] text-paper-ink/60">
-                      {metric.label}
-                    </p>
-                  </div>
-                ))}
-              </div>
-            ) : null}
+        {entry.category === "apps" && entry.appMetrics?.length ? (
+          <section className="space-y-5" aria-labelledby="app-features-title">
+            <h2
+              id="app-features-title"
+              className="font-display text-3xl font-semibold tracking-tight text-paper-ink"
+            >
+              {copy.entry.featuresAndLimits}
+            </h2>
+            <dl className="grid gap-4 sm:grid-cols-2">
+              {entry.appMetrics.map((metric) => (
+                <div key={metric.label} className="card p-5">
+                  <dt className="font-display text-lg font-semibold leading-7 text-paper-ink">
+                    {metric.label}
+                  </dt>
+                  <dd className="mt-2 text-[15px] leading-7 text-paper-ink/80">
+                    {metric.value}
+                  </dd>
+                </div>
+              ))}
+            </dl>
           </section>
         ) : null}
 
