@@ -3,6 +3,183 @@ import type { Entry } from "@/data/entries";
 type LocalizedEntry = Omit<Entry, "slug" | "category" | "riskLevel" | "riskBarPosition" | "related">;
 
 export const roEntryTranslations: Partial<Record<Entry["slug"], Partial<LocalizedEntry>>> = {
+  "bump": {
+    "name": "Bump by amo",
+    "riskLabelText": "Risc ridicat",
+    "summary": "O hartă pe care prietenii își partajează locația în timp real. Verifică cine poate vedea deplasările adolescentului și ce informații apar în profilul lui.",
+    "description": "Bump le permite prietenilor să se vadă pe o hartă în timp real, să discute și să vadă locurile pe care le-au vizitat. Dacă telefonul îi dă acces la locație în fundal, Bump poate partaja locația adolescentului cu prietenii acceptați, chiar și atunci când aplicația nu e pe ecran. Verificați împreună lista de prieteni, permisiunile de localizare și profilul public.",
+    "ageRating": "App Store România: 13+. Pe Google Play în România apare „Acord parental”.",
+    "userCount": "Peste 10 milioane de descărcări pe Google Play",
+    "platform": "iOS, Android",
+    "ageRecommendation": "Recomandarea noastră: de la 16 ani, doar cu prieteni de încredere",
+    "quickActions": [
+      {
+        "title": "Verifică vârsta minimă pentru cont",
+        "description": "Bump spune că în majoritatea țărilor trebuie să ai cel puțin 16 ani. Unele țări permit accesul de la 13 ani. Verifică regula locală la înscriere și introdu vârsta reală."
+      },
+      {
+        "title": "Verificați prietenii înainte de a partaja locația",
+        "description": "Acceptați doar persoane pe care adolescentul le cunoaște în viața reală și în care are încredere. Prietenii noi pot vedea locația în timp real în mod implicit. Activează Private Mode pentru a limita cererile primite."
+      },
+      {
+        "title": "Stabiliți când opriți partajarea locației",
+        "description": "E firesc să luați o pauză. Când adolescentul vrea să nu mai partajeze locația cu nimeni, oprește din setările telefonului accesul aplicației Bump la locație."
+      }
+    ],
+    "watchFor": [
+      {
+        "title": "Rutina de acasă și de la școală",
+        "description": "Un prieten care vede în timp real unde se află adolescentul și cât timp stă într-un loc îi poate deduce rutina zilnică.",
+        "severity": "high"
+      },
+      {
+        "title": "Presiunea de a rămâne vizibil pe hartă",
+        "description": "Verificările repetate, întrebările despre deplasări sau insistența de a lăsa locația pornită pot fi semne de control. Stabiliți că adolescentul poate opri oricând partajarea.",
+        "severity": "high"
+      },
+      {
+        "title": "Profil public și listă de elevi",
+        "description": "Alți utilizatori Bump pot vedea profilul. Dacă adolescentul se înscrie pe pagina unei școli, primește o insignă în profil și apare în lista elevilor acelei școli.",
+        "severity": "high"
+      },
+      {
+        "title": "Chat și capturi de ecran",
+        "description": "Prietenii pot trimite mesaje, fotografii și alte fișiere în conversații individuale sau de grup. Oricine vede un profil sau un marcaj pe hartă poate face o captură și o poate trimite mai departe.",
+        "severity": "medium"
+      }
+    ],
+    "appMetrics": [
+      {
+        "label": "Locația în timp real",
+        "value": "Prietenii acceptați pot vedea implicit locația în timp real, inclusiv în fundal dacă telefonul permite. Marcajul de pe hartă poate arăta și de cât timp stă cineva acolo."
+      },
+      {
+        "label": "Private Mode (modul privat)",
+        "value": "Când îl activezi, doar persoanele din contactele telefonului îți pot trimite cereri de prietenie. Bump descrie profilurile ca fiind publice. Verifică ce apare pe al tău."
+      },
+      {
+        "label": "Ghost Mode (modul fantomă)",
+        "value": "Lasă ultima locație partajată pe harta prietenului ales. Setarea se aplică individual. Aplicația poate înregistra în continuare locații pentru Scratch Map și Nights."
+      },
+      {
+        "label": "Istoricul Scratch Map",
+        "value": "Prietenii pot vedea în detaliu zonele pe care le-ai explorat. Alți utilizatori Bump văd o versiune mai puțin detaliată. Potrivit amo, ștergerea istoricului locației presupune ștergerea contului."
+      }
+    ],
+    "callouts": [
+      {
+        "type": "warning",
+        "title": "Highest concern",
+        "description": "Partajarea locației poate continua când Bump rulează în fundal. Un prieten acceptat poate primi imediat acces la locația adolescentului."
+      },
+      {
+        "type": "tip",
+        "title": "Most impactful action",
+        "description": "Decideți împreună dacă adolescentul își dorește o hartă care se actualizează pe parcursul zilei. Dacă vrea să oprească orice actualizare nouă, retrage accesul aplicației Bump la locație din setările telefonului."
+      }
+    ],
+    "setupGuide": [
+      {
+        "title": "Limitează cererile de prietenie și verifică profilul",
+        "steps": [
+          "În Bump, deschide profilul → Friending Settings → Private Mode. Verificați separat lista de prieteni și eliminați persoanele pe care adolescentul nu le cunoaște sau în care nu are încredere.",
+          "Verificați poza de profil, locurile salvate și insigna școlii. Pentru a ieși din lista unei școli, atinge numele ei în profil, deschide setările școlii și alege Leave school."
+        ]
+      },
+      {
+        "title": "Oprește temporar partajarea locației cu un prieten",
+        "steps": [
+          "Atinge marcajul prietenului pe hartă, apoi pictograma cu fantomă și activează Ghost Mode pentru acea persoană. Prietenul va vedea în continuare ultima locație pe care i-ai partajat-o."
+        ]
+      },
+      {
+        "title": "Oprește accesul la locație din setările telefonului",
+        "steps": [
+          "Pe iPhone, mergi la Configurări → Intimitate și securitate → Servicii de localizare → Bump și alege Niciodată.",
+          "Pe Android, mergi la Setări → Aplicații → Bump → Permisiuni → Locație și alege Nu permite.",
+          "Bump nu va mai primi locații noi de pe acel telefon. Harta în timp real și actualizările Scratch Map depind de permisiunea de localizare. Pentru istoricul deja salvat, verifică opțiunea de ștergere a contului."
+        ]
+      },
+      {
+        "title": "Blochează sau raportează contactele nedorite",
+        "steps": [
+          "Deschide profilul persoanei, atinge meniul cu trei puncte și alege opțiunea de blocare sau de raportare. Potrivit Bump, persoanele blocate pot apărea în continuare în grupurile comune. Verificați și acele conversații."
+        ]
+      },
+      {
+        "title": "Șterge contul dacă renunțați la Bump",
+        "steps": [
+          "În Bump, deschide setările → Privacy and terms → Delete my account și confirmă. Bump spune că dezactivează imediat contul. Dacă te conectezi din nou în următoarele 30 de zile, contul se reactivează."
+        ]
+      }
+    ],
+    "editorialReview": {
+      "checkedAt": "2026-11-17",
+      "availability": "Aplicația apare în magazinele iOS și Android din România. Clasificarea din magazin și vârsta minimă pentru cont sunt reguli separate. Bump precizează că accesul între 13 și 15 ani depinde de țară. Nu am putut confirma rezultatul înscrierii la aceste vârste în România sau documentația pentru un cont de părinte conectat.",
+      "sources": [
+        {
+          "title": "Bump: vârsta minimă pentru cont",
+          "url": "https://help.bumpmaps.com/ro/articles/11420225-despre-bump"
+        },
+        {
+          "title": "App Store România: Bump și clasificarea de vârstă",
+          "url": "https://apps.apple.com/ro/app/bump-hart%C4%83-pt-prieteni/id6471519217?l=ro"
+        },
+        {
+          "title": "Google Play: pagina Bump în limba română",
+          "url": "https://play.google.com/store/apps/details?hl=ro&id=co.amo.android.location"
+        },
+        {
+          "title": "amo: locația în timp real și setările implicite pentru prieteni noi",
+          "url": "https://amo.co/services/"
+        },
+        {
+          "title": "Bump: modul Private Mode și cererile de prietenie",
+          "url": "https://help.bumpmaps.com/en/articles/14736924-private-mode"
+        },
+        {
+          "title": "Bump: modul fantomă",
+          "url": "https://help.bumpmaps.com/en/articles/11604192-ghost-mode"
+        },
+        {
+          "title": "Bump: profiluri publice, locuri și chat",
+          "url": "https://help.bumpmaps.com/en/articles/11420926-how-bump-works"
+        },
+        {
+          "title": "Bump: lista elevilor și ieșirea din pagina școlii",
+          "url": "https://help.bumpmaps.com/en/articles/13369606-school"
+        },
+        {
+          "title": "Bump: istoricul locației și vizibilitatea hărții Scratch Map",
+          "url": "https://help.bumpmaps.com/en/articles/11604738-scratch-map"
+        },
+        {
+          "title": "Bump: blocarea și raportarea utilizatorilor",
+          "url": "https://help.bumpmaps.com/en/articles/12141158-community-guidelines"
+        },
+        {
+          "title": "Bump: ce se întâmplă când blochezi pe cineva",
+          "url": "https://help.bumpmaps.com/en/articles/11458996-block-someone"
+        },
+        {
+          "title": "Bump: ștergerea contului",
+          "url": "https://help.bumpmaps.com/en/articles/11459030-want-to-delete-your-bump-account"
+        },
+        {
+          "title": "amo: politica de confidențialitate și datele de localizare",
+          "url": "https://amo.co/privacy-policy"
+        },
+        {
+          "title": "Apple: accesul aplicațiilor la locație pe iPhone",
+          "url": "https://support.apple.com/ro-ro/102647"
+        },
+        {
+          "title": "Google: accesul aplicațiilor la locație pe Android",
+          "url": "https://support.google.com/android/answer/6179507?hl=ro"
+        }
+      ]
+    }
+  },
   "twitch": {
     "name": "Twitch",
     "riskLabelText": "Risc mediu-ridicat",

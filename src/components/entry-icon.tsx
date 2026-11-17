@@ -1,8 +1,8 @@
 import { type Entry } from "@/data/entries";
-import { GameController, YoutubeLogo, SnapchatLogo, InstagramLogo, TiktokLogo, DiscordLogo, Crosshair, Cube, Robot, Sparkle, ChatCircle, TelegramLogo, MaskHappy, WhatsappLogo, TwitchLogo, SteamLogo, AppleLogo, AndroidLogo, WindowsLogo, Laptop, DeviceMobile, DeviceTablet, Desktop, ShieldCheck } from "@phosphor-icons/react/dist/ssr";
+import { GameController, MapPin, YoutubeLogo, SnapchatLogo, InstagramLogo, TiktokLogo, DiscordLogo, Crosshair, Cube, Robot, Sparkle, ChatCircle, TelegramLogo, MaskHappy, WhatsappLogo, TwitchLogo, SteamLogo, AppleLogo, AndroidLogo, WindowsLogo, Laptop, DeviceMobile, DeviceTablet, Desktop, ShieldCheck } from "@phosphor-icons/react/dist/ssr";
 
 const entryIcons = {
-  roblox: GameController, youtube: YoutubeLogo, snapchat: SnapchatLogo,
+  roblox: GameController, youtube: YoutubeLogo, snapchat: SnapchatLogo, bump: MapPin,
   instagram: InstagramLogo, tiktok: TiktokLogo, discord: DiscordLogo,
   fortnite: Crosshair, minecraft: Cube, chatgpt: Robot, gemini: Sparkle,
   "meta-ai": ChatCircle, telegram: TelegramLogo, "character-ai": MaskHappy,

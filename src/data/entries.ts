@@ -1385,6 +1385,200 @@ export const entries: Entry[] = [
     }
   },
   {
+    "slug": "bump",
+    "name": "Bump by amo",
+    "category": "apps",
+    "riskLevel": "high",
+    "riskLabelText": "High risk",
+    "summary": "A social map for sharing live location with friends. Review who can see your teen’s movements and what their profile reveals.",
+    "description": "Bump lets friends see one another on a live map, chat and see places they have visited. With background location enabled, accepted friends can keep seeing your teen’s location while your teen uses other apps. Review the friend list, location permissions and public profile together.",
+    "ageRating": "App Store Romania: 13+. Google Play: Parental Guidance in Romania.",
+    "userCount": "10M+ downloads on Google Play",
+    "platform": "iOS, Android",
+    "ageRecommendation": "Our recommendation: 16+ and only with trusted friends",
+    "quickActions": [
+      {
+        "title": "Check Bump’s signup age",
+        "description": "Bump says the minimum is 16 in most countries. Ages 13–15 are allowed in some countries. Check the local rule during signup and enter the real age."
+      },
+      {
+        "title": "Review friends before sharing location",
+        "description": "Accept only people your teen knows and trusts in person. New friends can see live location by default. Turn on Private Mode to limit incoming requests."
+      },
+      {
+        "title": "Agree when to turn location off",
+        "description": "Make it normal to pause sharing. Use the phone’s app permissions to stop Bump receiving new location data when your teen wants to stop sharing with everyone."
+      }
+    ],
+    "watchFor": [
+      {
+        "title": "Home and school routines",
+        "description": "A friend who can see your teen’s live pin and how long they stay in one place can work out their daily routine.",
+        "severity": "high"
+      },
+      {
+        "title": "Pressure to stay visible",
+        "description": "Repeated checks, questions about where your teen went or demands to keep sharing can be signs of controlling behavior. Agree that your teen can turn sharing off at any time.",
+        "severity": "high"
+      },
+      {
+        "title": "A public profile and school directory",
+        "description": "Other Bump users can view the profile. Joining a school adds a badge and puts your teen in that school’s directory.",
+        "severity": "high"
+      },
+      {
+        "title": "Chat and screenshots",
+        "description": "Friends can send messages and media in individual or group chats. Anyone who can see a pin or a profile can capture and forward what they see.",
+        "severity": "medium"
+      }
+    ],
+    "appMetrics": [
+      {
+        "label": "Live location",
+        "value": "Accepted friends can see live location by default, including in the background when the phone allows it. The pin can also show how long someone has been there."
+      },
+      {
+        "label": "Private Mode",
+        "value": "Only people in your phone contacts can send you friend requests when it’s on. Bump describes profiles as public. Review what yours shows."
+      },
+      {
+        "label": "Ghost Mode",
+        "value": "It freezes your last shared location for one friend at a time. Scratch Map and Nights can still record location history."
+      },
+      {
+        "label": "Scratch Map history",
+        "value": "Friends can see a detailed record of places you’ve explored. Other Bump users can see a less detailed version. amo says deleting location history requires deleting the account."
+      }
+    ],
+    "callouts": [
+      {
+        "type": "warning",
+        "title": "Highest concern",
+        "description": "With background access, live tracking can continue outside the app. Accepting a friend can give them immediate access to your teen’s location."
+      },
+      {
+        "type": "tip",
+        "title": "Most impactful action",
+        "description": "Decide together whether your teen wants a map that updates throughout the day. If they want to stop all new tracking, revoke Bump’s location permission on the phone."
+      }
+    ],
+    "setupGuide": [
+      {
+        "title": "Limit friend requests and review the profile",
+        "steps": [
+          "In Bump, open your profile → Friending Settings → Private Mode. Review existing friends separately and remove anyone your teen does not know and trust.",
+          "Review the profile photo, saved places and school badge. To leave a school, tap its name on the profile, open the school’s settings and choose Leave school."
+        ]
+      },
+      {
+        "title": "Pause live sharing with one friend",
+        "steps": [
+          "On the map, tap the friend’s pin, tap the ghost icon and turn on Ghost Mode for that friend. They can still see the last location shared with them."
+        ]
+      },
+      {
+        "title": "Stop location access on the phone",
+        "steps": [
+          "On iPhone, open Settings → Privacy & Security → Location Services → Bump and choose Never.",
+          "On Android, open Settings → Apps → Bump → Permissions → Location and choose Don’t allow.",
+          "This stops Bump from getting new locations from that phone. The live map and Scratch Map updates depend on location permission. Review account deletion separately if you want to erase stored history."
+        ]
+      },
+      {
+        "title": "Block or report unwanted contact",
+        "steps": [
+          "Open the person’s profile, tap the three-dot menu and choose Block or Report. Bump says blocked people can still appear in group chats you both belong to. Review those chats too."
+        ]
+      },
+      {
+        "title": "Delete the account if you stop using Bump",
+        "steps": [
+          "In Bump, open Settings → Privacy and terms → Delete my account and confirm. Bump says it deactivates the account immediately and signing back in within 30 days reactivates it."
+        ]
+      }
+    ],
+    "editorialReview": {
+      "checkedAt": "2026-11-17",
+      "availability": "Listed for iOS and Android in Romania. App-store ratings and Bump’s signup rules are separate. Bump’s public help describes country-dependent access for ages 13–15. We could not confirm the signup result for those ages in Romania or find documentation for a linked parent account.",
+      "sources": [
+        {
+          "title": "Bump: signup age by country",
+          "url": "https://help.bumpmaps.com/en/articles/11421368-age-requirements-for-using-bump"
+        },
+        {
+          "title": "Apple App Store Romania: Bump listing and age rating",
+          "url": "https://apps.apple.com/ro/app/bump-hart%C4%83-pt-prieteni/id6471519217?l=ro"
+        },
+        {
+          "title": "Google Play: Bump’s Romanian listing",
+          "url": "https://play.google.com/store/apps/details?hl=ro&id=co.amo.android.location"
+        },
+        {
+          "title": "amo: live location and defaults for new friends",
+          "url": "https://amo.co/services/"
+        },
+        {
+          "title": "Bump: Private Mode and friend requests",
+          "url": "https://help.bumpmaps.com/en/articles/14736924-private-mode"
+        },
+        {
+          "title": "Bump: Ghost Mode",
+          "url": "https://help.bumpmaps.com/en/articles/11604192-ghost-mode"
+        },
+        {
+          "title": "Bump: public profiles, places and chat",
+          "url": "https://help.bumpmaps.com/en/articles/11420926-how-bump-works"
+        },
+        {
+          "title": "Bump: school directory and leaving a school",
+          "url": "https://help.bumpmaps.com/en/articles/13369606-school"
+        },
+        {
+          "title": "Bump: location history and Scratch Map visibility",
+          "url": "https://help.bumpmaps.com/en/articles/11604738-scratch-map"
+        },
+        {
+          "title": "Bump: blocking and reporting",
+          "url": "https://help.bumpmaps.com/en/articles/12141158-community-guidelines"
+        },
+        {
+          "title": "Bump: what happens after you block someone",
+          "url": "https://help.bumpmaps.com/en/articles/11458996-block-someone"
+        },
+        {
+          "title": "Bump: deleting an account",
+          "url": "https://help.bumpmaps.com/en/articles/11459030-want-to-delete-your-bump-account"
+        },
+        {
+          "title": "amo: privacy policy and location data",
+          "url": "https://amo.co/privacy-policy"
+        },
+        {
+          "title": "Apple: app location permissions on iPhone",
+          "url": "https://support.apple.com/en-us/102647"
+        },
+        {
+          "title": "Google: app location permissions on Android",
+          "url": "https://support.google.com/android/answer/6179507?hl=en-GB"
+        }
+      ]
+    },
+    "related": [
+      {
+        "category": "apps",
+        "slug": "snapchat"
+      },
+      {
+        "category": "os",
+        "slug": "ios"
+      },
+      {
+        "category": "os",
+        "slug": "android"
+      }
+    ]
+  },
+  {
     "slug": "instagram",
     "name": "Instagram",
     "category": "apps",
