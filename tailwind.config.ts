@@ -7,35 +7,18 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: {
-        sans: [
-          "Inter",
-          "DM Sans",
-          "ui-sans-serif",
-          "system-ui",
-          "-apple-system",
-          "sans-serif"
-        ],
-        display: [
-          "Fraunces",
-          "Source Serif Pro",
-          "Iowan Old Style",
-          "Apple Garamond",
-          "Georgia",
-          "serif"
-        ]
+        sans: ["var(--site-font)"],
+        display: ["var(--site-font)"]
       },
       colors: {
-        // Warm paper background system (inspired by Salvați Copiii guide)
         paper: {
-          DEFAULT: "#FBF7EF", // cream page background
-          50: "#FEFCF7",
-          100: "#FBF7EF",
-          200: "#F4ECDB",
-          300: "#E8DCC2",
-          400: "#D9C7A0",
-          ink: "#1F2937", // body text — softer than pure black, AA on cream
-          mute: "#4B5563", // muted body
-          line: "#E8E0D0" // subtle warm divider
+          DEFAULT: "rgb(var(--paper-rgb) / <alpha-value>)",
+          50: "rgb(var(--paper-surface-rgb) / <alpha-value>)",
+          100: "rgb(var(--paper-rgb) / <alpha-value>)",
+          200: "rgb(var(--paper-strong-rgb) / <alpha-value>)",
+          ink: "rgb(var(--ink-rgb) / <alpha-value>)",
+          mute: "rgb(var(--ink-mute-rgb) / <alpha-value>)",
+          line: "rgb(var(--paper-line-rgb) / <alpha-value>)"
         },
         brand: {
           // Deep editorial teal — keeps continuity but more grown-up
@@ -84,7 +67,7 @@ const config: Config = {
         lift: "0 2px 4px rgba(31, 41, 55, 0.04), 0 16px 36px -20px rgba(31, 41, 55, 0.18)"
       },
       borderRadius: {
-        card: "16px"
+        card: "var(--panel-radius)"
       }
     }
   },

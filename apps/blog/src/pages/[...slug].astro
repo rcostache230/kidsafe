@@ -17,11 +17,13 @@ export async function getStaticPaths() {
 }
 
 const { post } = Astro.props;
-const { Content } = await render(post);
+const { Content, headings } = await render(post);
+const sections = headings.filter(({ depth }) => depth === 2);
 const lang = post.data.lang;
 const postPath = lang === "ro" ? post.id.replace(/^ro\//, "") : `en/${post.id}`;
 const indexHref = lang === "ro" ? "/blog" : "/blog/en";
 const indexLabel = lang === "ro" ? "Articole" : "Articles";
+const contentsLabel = lang === "ro" ? "În acest articol" : "In this article";
 const dateLocale = lang === "ro" ? "ro-RO" : "en-US";
 
 function formatDate(date: Date) {
@@ -51,7 +53,7 @@ function formatDate(date: Date) {
 
     <header class="post-header">
       <p class="eyebrow">{indexLabel}</p>
-      <h1>{post.data.title}</h1>
+      <h1 class="page-title">{post.data.title}</h1>
       <div class="meta">
         <time datetime={post.data.publishedAt.toISOString()}>
           {formatDate(post.data.publishedAt)}
@@ -62,22 +64,33 @@ function formatDate(date: Date) {
           <span class="tag">{tag}</span>
         ))}
       </div>
-      <p class="lede">{post.data.description}</p>
+      <p class="page-lede">{post.data.description}</p>
     </header>
 
-    {post.data.cover ? (
-      <figure class="post-cover">
-        <img
-          src={post.data.cover}
-          alt=""
-          loading="eager"
-          decoding="async"
-        />
-      </figure>
-    ) : null}
-
-    <div class="prose">
-      <Content />
+    <div class="post-reading">
+      {sections.length > 0 && (
+        <nav class="contents-panel article-contents" aria-label={contentsLabel}>
+          <p class="eyebrow">{contentsLabel}</p>
+          <ul>
+            {sections.map(({ slug, text }) => <li><a href={`#${slug}`}>{text}</a></li>)}
+          </ul>
+        </nav>
+      )}
+      <div class="post-body card">
+        {post.data.cover ? (
+          <figure class="post-cover">
+            <img
+              src={post.data.cover}
+              alt=""
+              loading="eager"
+              decoding="async"
+            />
+          </figure>
+        ) : null}
+        <div class="prose">
+          <Content />
+        </div>
+      </div>
     </div>
   </article>
 </Base>

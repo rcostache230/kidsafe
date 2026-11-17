@@ -47,15 +47,15 @@ export function EntrySources({
   const copy = labels[locale];
 
   return (
-    <section id="guide-sources" aria-labelledby="guide-sources-title" className="card scroll-mt-24 space-y-4 p-6">
-      <h2 id="guide-sources-title" className="font-display text-2xl font-semibold text-paper-ink">
+    <section id="guide-sources" aria-labelledby="guide-sources-title" tabIndex={-1} className="guide-panel p-5 sm:p-6">
+      <h2 id="guide-sources-title">
         {copy.heading}
       </h2>
-      <p className="text-sm leading-6 text-paper-ink/80">{copy.method}</p>
-      <p className="text-sm leading-6 text-paper-ink/80">
+      <p className="mb-3 text-base text-paper-mute">{copy.method}</p>
+      <p className="mb-3 text-base text-paper-mute">
         <span className="font-semibold">{copy.scope}: </span>{review.availability}
       </p>
-      <ul className="list-disc space-y-2 pl-5 text-sm leading-6">
+      <ul className="list-disc space-y-2 pl-5 text-base">
         {review.sources.map((source) => (
           <li key={source.url}>
             <a href={source.url} className="break-words text-brand-700 underline underline-offset-4">

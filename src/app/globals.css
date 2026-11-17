@@ -3,63 +3,26 @@
 @tailwind components;
 @tailwind utilities;
 
-/* ---------------------------------------------------------------
-   Digital Parents — light editorial theme (2026 overhaul).
-   Inspired by the Salvați Copiii / EU te iubesc parent guide:
-   warm paper, calm teal, generous type, partnership tone.
-   --------------------------------------------------------------- */
-
-:root {
-  color-scheme: light;
-  --paper: #FBF7EF;
-  --paper-100: #FBF7EF;
-  --paper-200: #F4ECDB;
-  --paper-line: #E8E0D0;
-  --ink: #1F2937;
-  --ink-mute: #4B5563;
-  --ink-soft: #6B7280;
-  --brand-50: #EAF6F3;
-  --brand-100: #D4ECE6;
-  --brand-600: #106B5A;
-  --brand-700: #0D5849;
-  --accent-400: #E8794B;
-  --accent-500: #D85F2F;
-  --sage-100: #E4EDE2;
-  --sage-600: #4F7256;
-  --sun-100: #FCF1D1;
-  --sun-600: #C99318;
-}
-
 @layer base {
-  html {
-    /* Force a light render even when the OS prefers dark. Parents
-       browsing on a phone with auto-dark were getting an unreadable
-       site; the new theme is light-only. */
-    color-scheme: light;
-  }
-
   body {
-    @apply min-h-screen text-[#1F2937] antialiased;
+    @apply min-h-screen antialiased;
+    color: var(--ink);
     background-color: var(--paper);
-    font-family: "Inter", "DM Sans", system-ui, -apple-system, sans-serif;
+    font-family: var(--site-font);
     font-feature-settings: "ss01", "cv11";
     font-size: 17px;
     line-height: 1.7;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-
   }
 
-  /* Headlines use the editorial serif. Tight tracking, deep ink. */
   h1, h2, h3, h4 {
-    font-family: "Fraunces", "Source Serif Pro", Georgia, serif;
+    font-family: var(--site-font);
     letter-spacing: -0.015em;
     color: var(--ink);
   }
 
-  h1 { font-weight: 600; }
-  h2 { font-weight: 600; }
-  h3 { font-weight: 600; }
+  h1, h2, h3 { font-weight: 700; }
 
   p { color: var(--ink); }
 
@@ -75,7 +38,6 @@
     text-decoration-color: var(--brand-600);
   }
 
-  /* Focus ring for keyboard users — warm, visible on cream. */
   :focus-visible {
     outline: 3px solid var(--brand-600);
     outline-offset: 3px;
@@ -90,43 +52,31 @@
 
 @layer components {
   .page-shell {
-    @apply mx-auto w-full max-w-5xl px-5 sm:px-6 lg:px-8;
+    width: 100%;
+    max-width: var(--shell-width);
+    margin-inline: auto;
+    padding-inline: var(--shell-inset);
   }
 
-  /* Editorial card — replaces the previous translucent + glow style. */
   .card {
     background: #FFFFFF;
     border: 1px solid var(--paper-line);
-    border-radius: 16px;
-    box-shadow: 0 1px 2px rgba(31, 41, 55, 0.04), 0 8px 24px -16px rgba(31, 41, 55, 0.12);
+    border-radius: var(--panel-radius);
   }
 
   .card-hover {
-    transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
+    transition: border-color 150ms ease;
   }
   .card-hover:hover {
-    transform: translateY(-2px);
-    border-color: rgba(16, 107, 90, 0.35);
-    box-shadow: 0 2px 4px rgba(31, 41, 55, 0.04), 0 18px 36px -22px rgba(16, 107, 90, 0.25);
+    border-color: var(--brand-600);
   }
 
-  /* Eyebrow label — small caps used across hero + sections. */
-  .eyebrow {
-    font-family: "Inter", system-ui, sans-serif;
-    font-size: 12px;
-    font-weight: 600;
-    letter-spacing: 0.16em;
-    text-transform: uppercase;
-    color: var(--brand-700);
-  }
-
-  /* Pill button — primary action. */
   .btn-primary {
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
     padding: 0.7rem 1.25rem;
-    border-radius: 999px;
+    border-radius: 8px;
     background: var(--brand-700);
     color: #FFFFFF;
     font-weight: 600;
@@ -146,8 +96,8 @@
     align-items: center;
     gap: 0.5rem;
     padding: 0.55rem 1rem;
-    border-radius: 999px;
-    border: 1px solid var(--paper-line);
+    border-radius: 8px;
+    border: 1px solid var(--ink);
     background: #FFFFFF;
     color: var(--ink);
     font-weight: 500;
@@ -160,15 +110,6 @@
     color: var(--brand-700);
     text-decoration: none;
   }
-
-  /* Prose blocks (used by entry pages + blog). */
-  .prose-parent {
-    color: var(--ink);
-    font-size: 1.0625rem;
-    line-height: 1.75;
-  }
-  .prose-parent p + p { margin-top: 1.1em; }
-  .prose-parent strong { color: var(--ink); font-weight: 600; }
 }
 
 /* Keep movement optional and controls reachable on small screens. */
@@ -176,6 +117,9 @@
   *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
 }
 html { scroll-padding-top: 9rem; }
+@media (min-width: 768px) {
+  html { scroll-padding-top: 6rem; }
+}
 input, button, summary { font: inherit; }
 button, summary { touch-action: manipulation; }
 p, h1, h2, h3, li { overflow-wrap: break-word; }
@@ -183,10 +127,6 @@ p, h1, h2, h3, li { overflow-wrap: break-word; }
 @layer components {
   .btn-primary, .btn-ghost { min-height: 44px; justify-content: center; }
   .btn-primary:active, .btn-ghost:active { transform: translateY(1px); }
-  .setup-steps { border-left: 2px solid var(--brand-100); padding-left: 1.25rem; }
-  .setup-steps > li { padding: 1.25rem 0; }
-  .setup-steps > li:first-child { padding-top: 0; }
-  .setup-steps > li + li { border-top: 1px solid var(--paper-line); }
 }
 
 input[type="search"]::-webkit-search-cancel-button { display: none; }

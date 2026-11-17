@@ -40,7 +40,7 @@ export function Footer() {
   }
 
   return (
-    <footer className="mt-16 border-t border-paper-line bg-paper-200/40">
+    <footer className="border-t border-paper-line bg-paper-200/60">
       <div className="page-shell space-y-8 py-12">
         <p className="max-w-3xl font-display text-xl leading-relaxed text-paper-ink/90">
           {copy.footer.quote}
@@ -94,7 +94,7 @@ export function Footer() {
           </Link>
         </nav>
 
-        <div className="flex flex-col gap-4 rounded-card border border-paper-line bg-white p-5 shadow-soft sm:flex-row sm:items-center sm:justify-between sm:gap-6">
+        <div className="flex flex-col gap-4 rounded-card border border-paper-line bg-white p-5 sm:flex-row sm:items-center sm:justify-between sm:gap-6">
           <div className="space-y-1">
             <p className="font-display text-lg font-semibold text-paper-ink">
               {copy.footer.shareTitle}

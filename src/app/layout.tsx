@@ -7,7 +7,10 @@ import { Footer } from "@/components/footer";
 import { SiteHeader } from "@/components/site-header";
 import { SITE_DESCRIPTION, SITE_NAME, SITE_URL } from "@/lib/site";
 
+import "./theme.css";
 import "./globals.css";
+import "./directory.css";
+import "./guide.css";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),

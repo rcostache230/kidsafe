@@ -46,7 +46,7 @@ export function SiteHeader() {
   ];
 
   return (
-    <header className="sticky top-0 z-40 border-b border-paper-line bg-paper/85 backdrop-blur supports-[backdrop-filter]:bg-paper/70">
+    <header className="sticky top-0 z-40 border-b border-paper-line bg-paper/95 backdrop-blur">
       <div className="page-shell py-3 md:py-4">
         <div className="flex items-center justify-between gap-4">
           <BrandLogo href={homeHref} />
@@ -59,13 +59,13 @@ export function SiteHeader() {
               <Link
                 key={item.href}
                 href={item.href}
-                className="inline-flex min-h-11 items-center rounded-full px-3.5 py-1.5 text-[15px] font-medium text-paper-ink/80 no-underline hover:bg-brand-50 hover:text-brand-700"
+                className="inline-flex min-h-11 items-center rounded-lg px-3.5 py-1.5 text-[15px] font-medium text-paper-ink/80 no-underline hover:bg-brand-50 hover:text-brand-700"
                 style={{ textDecoration: "none" }}
               >
                 {item.label}
               </Link>
             ))}
-            <a href={klioUrl} target="_blank" rel="noopener noreferrer" aria-label={promo.klioLabel} title={promo.klioDescription} className="inline-flex min-h-11 items-center rounded-full px-3.5 py-1.5 text-[15px] font-medium text-brand-700 no-underline hover:bg-brand-50">
+            <a href={klioUrl} target="_blank" rel="noopener noreferrer" aria-label={promo.klioLabel} title={promo.klioDescription} className="inline-flex min-h-11 items-center rounded-lg px-3.5 py-1.5 text-[15px] font-medium text-brand-700 no-underline hover:bg-brand-50">
               Klio <span aria-hidden="true" className="ml-1">↗</span>
             </a>
           </nav>
@@ -74,7 +74,7 @@ export function SiteHeader() {
             <Link
               href={switchHref}
               hrefLang={otherLocale}
-              className="inline-flex items-center rounded-full border border-paper-line bg-white px-3 py-1.5 text-sm font-semibold text-brand-700 no-underline hover:border-brand-600"
+              className="inline-flex min-h-11 items-center rounded-lg border border-paper-line bg-white px-3 py-1.5 text-sm font-semibold text-brand-700 no-underline hover:border-brand-600"
               style={{ textDecoration: "none" }}
               aria-label={otherLocale === "ro" ? "Switch to Romanian" : "Switch to English"}
             >
@@ -91,13 +91,13 @@ export function SiteHeader() {
             <Link
               key={item.href}
               href={item.href}
-              className="inline-flex min-h-11 items-center justify-center rounded-full border border-paper-line bg-white px-1.5 text-center text-sm font-medium text-paper-ink no-underline shadow-soft hover:border-brand-600 hover:text-brand-700"
+              className="inline-flex min-h-11 items-center justify-center rounded-lg border border-paper-line bg-white px-1.5 text-center text-sm font-medium text-paper-ink no-underline hover:border-brand-600 hover:text-brand-700"
               style={{ textDecoration: "none" }}
             >
               {item.label}
             </Link>
           ))}
-          <a href={klioUrl} target="_blank" rel="noopener noreferrer" aria-label={promo.klioLabel} title={promo.klioDescription} className="inline-flex min-h-11 items-center justify-center rounded-full border border-paper-line bg-white px-1.5 text-sm font-medium text-brand-700 no-underline shadow-soft hover:border-brand-600">
+          <a href={klioUrl} target="_blank" rel="noopener noreferrer" aria-label={promo.klioLabel} title={promo.klioDescription} className="inline-flex min-h-11 items-center justify-center rounded-lg border border-paper-line bg-white px-1.5 text-sm font-medium text-brand-700 no-underline hover:border-brand-600">
             Klio <span aria-hidden="true" className="ml-1">↗</span>
           </a>
         </nav>

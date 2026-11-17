@@ -39,10 +39,10 @@ export function NetworkGuideCard({
         </div>
 
         <div className="space-y-2">
-          <h3 className="font-display text-xl font-semibold tracking-tight text-paper-ink">
+          <h3 className="text-lg font-bold leading-tight tracking-tight text-paper-ink">
             {guide.name}
           </h3>
-          <p className="text-[15px] leading-7 text-paper-ink/75">{guide.description}</p>
+          <p className="text-base leading-relaxed text-paper-mute">{guide.description}</p>
         </div>
 
         {setupTime ? (

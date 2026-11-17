@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { ArrowDown } from "@phosphor-icons/react/dist/ssr";
 
 import { getCopy } from "@/lib/copy";
 import { type Locale } from "@/lib/locale";
@@ -13,7 +14,9 @@ import {
 
 import { Breadcrumbs } from "./breadcrumbs";
 import { EntryCard } from "./entry-card";
+import { EntryIcon } from "./entry-icon";
 import { EntryReviewDate, EntrySources } from "./entry-sources";
+import { GuideContents, GuideSteps } from "./guide-layout";
 import { RiskBadge } from "./risk-badge";
 import { RiskBar } from "./risk-bar";
 import { RiskDot } from "./risk-dot";
@@ -39,269 +42,151 @@ export function EntryPage({
   entry: Entry;
   locale?: Locale;
 }) {
-  const copy = getCopy(locale);
+  const { entry: copy } = getCopy(locale);
   const relatedEntries = getRelatedEntries(entry, locale);
+  const categoryLabel = getCategoryLabel(entry.category, locale);
+  const directoryHref = getCategoryDirectoryHref(entry.category, locale);
+  const isApp = entry.category === "apps";
+  const features = isApp ? entry.appMetrics : undefined;
+  const sections: Array<[string, string]> = [["quick-actions-title", copy.quickActions]];
+  if (features?.length) sections.push(["app-features-title", copy.featuresAndLimits]);
+  sections.push(["watch-for-title", copy.warningTitle], ["setup-guide-title", copy.guideTitle]);
+  if (entry.editorialReview) sections.push(["guide-sources", copy.sources]);
 
   return (
-    <article className="page-shell py-10 sm:py-14" lang={locale}>
-      <div className="mx-auto max-w-3xl space-y-12">
+    <article className="guide-page" lang={locale}>
+      <div className="page-shell guide-shell">
         <Breadcrumbs
           items={[
-            { label: copy.entry.homeBreadcrumb, href: locale === "en" ? "/en" : "/" },
-            {
-              label: getCategoryLabel(entry.category, locale),
-              href: getCategoryDirectoryHref(entry.category, locale)
-            },
+            { label: copy.homeBreadcrumb, href: locale === "en" ? "/en" : "/" },
+            { label: categoryLabel, href: directoryHref },
             { label: entry.name }
           ]}
         />
 
-        {/* HEADER --------------------------------------------------- */}
-        <header className="space-y-6">
-          <p className="eyebrow">{getCategoryLabel(entry.category, locale)}</p>
-          <div className="flex flex-wrap items-center gap-4">
-            <h1 className="font-display text-[40px] font-semibold leading-[1.05] tracking-tight text-paper-ink sm:text-[48px]">
-              {entry.name}
-            </h1>
-            <RiskBadge level={entry.riskLevel} label={entry.riskLabelText} />
+        <header className="guide-hero">
+          <div className="guide-intro">
+            <div className="flex flex-wrap items-center gap-3">
+              <EntryIcon entry={entry} size="sm" className="guide-entry-icon" />
+              <span className="eyebrow">{categoryLabel}</span>
+            </div>
+            <h1 className="page-title">{entry.name}</h1>
+            <p className="page-lede">{entry.description}</p>
+            <div className="guide-intro-actions">
+              {!isApp && <RiskBadge level={entry.riskLevel} label={entry.riskLabelText} />}
+              <a href="#setup-guide-title" className="guide-jump">
+                {copy.guideTitle}
+                <ArrowDown size={16} aria-hidden="true" />
+              </a>
+              {entry.editorialReview && <EntryReviewDate review={entry.editorialReview} locale={locale} />}
+            </div>
           </div>
-          <p className="prose-parent text-lg text-paper-ink/85">{entry.description}</p>
-          {entry.editorialReview ? (
-            <EntryReviewDate review={entry.editorialReview} locale={locale} />
-          ) : null}
-          <nav aria-label={copy.entry.onThisPage} className="flex flex-wrap gap-x-5 gap-y-1 border-t border-paper-line pt-3 text-sm font-medium">
-            <a className="inline-flex min-h-11 items-center" href="#quick-actions-title">{copy.entry.quickActions}</a>
-            <a className="inline-flex min-h-11 items-center" href="#watch-for-title">{copy.entry.warningTitle}</a>
-            <a className="inline-flex min-h-11 items-center" href="#setup-guide-title">{copy.entry.guideTitle}</a>
-            {entry.editorialReview ? <a className="inline-flex min-h-11 items-center" href="#guide-sources">{copy.entry.sources}</a> : null}
-          </nav>
+
+          {isApp && (
+            <section className="guide-summary" aria-labelledby="app-risk-title">
+              <div className="guide-summary-main">
+                <h2 className="eyebrow" id="app-risk-title">{copy.riskLevel}</h2>
+                <RiskBadge level={entry.riskLevel} label={entry.riskLabelText} />
+                <RiskBar level={entry.riskLevel} position={entry.riskBarPosition} locale={locale} />
+              </div>
+              <dl className="guide-facts">
+                {[
+                  [copy.ageRating, entry.ageRating],
+                  [copy.ageRecommendation, entry.ageRecommendation],
+                  [copy.platform, entry.platform],
+                  [copy.users, entry.userCount]
+                ].map(([label, value]) => (
+                  <div key={label}>
+                    <dt className="eyebrow">{label}</dt>
+                    <dd>{value}</dd>
+                  </div>
+                ))}
+              </dl>
+            </section>
+          )}
         </header>
 
-        {/* QUICK ACTIONS -------------------------------------------- */}
-        <section className="space-y-5" aria-labelledby="quick-actions-title">
-          <h2
-            id="quick-actions-title"
-            className="font-display text-3xl font-semibold tracking-tight text-paper-ink"
-          >
-            {copy.entry.quickActions}
-          </h2>
-          <ol className="grid gap-4 sm:grid-cols-3">
-            {entry.quickActions.map((action, index) => (
-              <li key={action.title} className="card p-5">
-                <div className="flex items-center gap-3">
-                  <span className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-brand-50 font-display text-sm font-semibold text-brand-700">
-                    {index + 1}
-                  </span>
-                  <h3 className="font-display text-base font-semibold text-paper-ink">
-                    {action.title}
-                  </h3>
-                </div>
-                <p className="mt-4 text-[15px] leading-7 text-paper-ink/80">
-                  {action.description}
-                </p>
-              </li>
-            ))}
-          </ol>
-        </section>
+        <div className="guide-body">
+          <GuideContents label={copy.onThisPage} links={sections} />
 
-        {/* CALLOUTS ------------------------------------------------- */}
-        {entry.callouts?.length ? (
-          <div className="grid gap-3 sm:grid-cols-2">
-            {entry.callouts.map((callout) => {
-              const warning = callout.type === "warning";
-              return (
-                <section
-                  key={callout.title}
-                  className={`rounded-2xl border p-5 ${
-                    warning
-                      ? "border-accent-200 bg-accent-50"
-                      : "border-sage-100 bg-[#F1F6EF]"
-                  }`}
-                >
-                  <h2
-                    className={`text-sm font-semibold ${
-                      warning ? "text-accent-600" : "text-sage-600"
-                    }`}
-                  >
-                    {getCalloutTitle(callout.title, locale)}
-                  </h2>
-                  <p className="mt-2 text-[15px] leading-7 text-paper-ink/85">
-                    {callout.description}
-                  </p>
-                </section>
-              );
-            })}
-          </div>
-        ) : null}
-
-        {/* RISK BAR + META ------------------------------------------ */}
-        {entry.category === "apps" ? (
-          <section className="card space-y-6 p-6">
-            <div className="space-y-3">
-              <h2 className="font-display text-xl font-semibold text-paper-ink">
-                {copy.entry.riskLevel}
-              </h2>
-              <RiskBar level={entry.riskLevel} position={entry.riskBarPosition} locale={locale} />
-            </div>
-
-            <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
-              {[
-                { label: copy.entry.ageRating, value: entry.ageRating },
-                { label: copy.entry.users, value: entry.userCount },
-                { label: copy.entry.platform, value: entry.platform },
-                { label: copy.entry.ageRecommendation, value: entry.ageRecommendation }
-              ].map((stat) => (
-                <div
-                  key={stat.label}
-                  className="rounded-xl border border-paper-line bg-paper-50 p-4"
-                >
-                  <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-paper-ink/60">
-                    {stat.label}
-                  </p>
-                  <p className="mt-2 text-[15px] leading-6 text-paper-ink/90">
-                    {stat.value}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </section>
-        ) : null}
-
-        {entry.category === "apps" && entry.appMetrics?.length ? (
-          <section className="space-y-5" aria-labelledby="app-features-title">
-            <h2
-              id="app-features-title"
-              className="font-display text-3xl font-semibold tracking-tight text-paper-ink"
-            >
-              {copy.entry.featuresAndLimits}
-            </h2>
-            <dl className="grid gap-4 sm:grid-cols-2">
-              {entry.appMetrics.map((metric) => (
-                <div key={metric.label} className="card p-5">
-                  <dt className="font-display text-lg font-semibold leading-7 text-paper-ink">
-                    {metric.label}
-                  </dt>
-                  <dd className="mt-2 text-[15px] leading-7 text-paper-ink/80">
-                    {metric.value}
-                  </dd>
-                </div>
-              ))}
-            </dl>
-          </section>
-        ) : null}
-
-        {/* WATCH FOR ------------------------------------------------ */}
-        <section className="space-y-5" aria-labelledby="watch-for-title">
-          <div className="space-y-2">
-            <h2
-              id="watch-for-title"
-              className="font-display text-3xl font-semibold tracking-tight text-paper-ink"
-            >
-              {copy.entry.warningTitle}
-            </h2>
-          </div>
-
-          <div className="grid gap-4">
-            {entry.watchFor.map((item) => {
-              const meta = getRiskMeta(item.severity, locale);
-              return (
-                <section
-                  key={item.title}
-                  className="border-b border-paper-line py-5"
-                >
-                  <div className="flex items-start gap-3">
-                    <RiskDot level={item.severity} />
-                    <div className="space-y-2">
-                      <div className="flex flex-wrap items-center gap-3">
-                        <h3 className="font-display text-lg font-semibold text-paper-ink">
-                          {item.title}
-                        </h3>
-                        <span className="text-[11px] font-semibold uppercase tracking-[0.16em] text-paper-ink/60">
-                          {meta.label}
-                        </span>
-                      </div>
-                      <p className="text-[15px] leading-7 text-paper-ink/85">
-                        {item.description}
-                      </p>
+          <div className="guide-content">
+            <section aria-labelledby="quick-actions-title">
+              <h2 id="quick-actions-title" tabIndex={-1}>{copy.quickActions}</h2>
+              <ol className="guide-actions guide-panel" role="list">
+                {entry.quickActions.map((action, index) => (
+                  <li key={action.title}>
+                    <span className="guide-step-number" aria-hidden="true">{index + 1}</span>
+                    <div className="min-w-0">
+                      <h3>{action.title}</h3>
+                      <p>{action.description}</p>
                     </div>
-                  </div>
-                </section>
-              );
-            })}
-          </div>
-        </section>
+                  </li>
+                ))}
+              </ol>
+            </section>
 
-        {/* SETUP GUIDE ---------------------------------------------- */}
-        <section className="space-y-5" aria-labelledby="setup-guide-title">
-          <div className="space-y-2">
-            <h2
-              id="setup-guide-title"
-              className="font-display text-3xl font-semibold tracking-tight text-paper-ink"
-            >
-              {copy.entry.guideTitle}
-            </h2>
-          </div>
-
-          {entry.setupGuideIntro ? (
-            <p className="rounded-2xl border border-paper-line bg-paper-100 p-5 text-[15px] leading-7 text-paper-ink/85">
-              {entry.setupGuideIntro}
-            </p>
-          ) : null}
-
-          <ol className="setup-steps">
-            {entry.setupGuide.map((item, index) => (
-              <li
-                key={item.title}
-                className="py-5"
-              >
-                <div className="flex items-start gap-4">
-                  <span className="inline-flex h-9 w-9 flex-none items-center justify-center rounded-full bg-brand-50 font-display text-sm font-semibold text-brand-700">
-                    {index + 1}
-                  </span>
-                  <div className="min-w-0 space-y-2">
-                    <h3 className="font-display text-lg font-semibold text-paper-ink">
-                      {item.title}
-                    </h3>
-                    {item.steps.map((step) => (
-                      <p
-                        key={step}
-                        className="text-[15px] leading-7 text-paper-ink/80"
-                      >
-                        {step}
-                      </p>
-                    ))}
-                  </div>
-                </div>
-              </li>
-            ))}
-          </ol>
-        </section>
-
-        {entry.editorialReview ? (
-          <EntrySources review={entry.editorialReview} locale={locale} />
-        ) : null}
-
-        {/* RELATED -------------------------------------------------- */}
-        {relatedEntries.length ? (
-          <nav
-            className="space-y-5 border-t border-paper-line pt-10"
-            aria-labelledby="related-pages-title"
-          >
-            <div className="flex items-center justify-between gap-4">
-              <div>
-                <h2
-                  id="related-pages-title"
-                  className="mt-2 font-display text-2xl font-semibold tracking-tight text-paper-ink"
-                >
-                  {copy.entry.relatedTitle}
-                </h2>
+            {entry.callouts?.length ? (
+              <div className="guide-callouts">
+                {entry.callouts.map((callout) => (
+                  <section
+                    key={callout.title}
+                    className={`guide-callout ${callout.type === "warning" ? "guide-callout-warning" : ""}`}
+                  >
+                    <h2>{getCalloutTitle(callout.title, locale)}</h2>
+                    <p>{callout.description}</p>
+                  </section>
+                ))}
               </div>
-              <Link
-                href={getCategoryDirectoryHref(entry.category, locale)}
-                className="text-sm font-medium text-brand-700 no-underline hover:text-brand-600"
-                style={{ textDecoration: "none" }}
-              >
-                {copy.entry.backTo} {getCategoryLabel(entry.category, locale).toLowerCase()}
+            ) : null}
+
+            {features?.length ? (
+              <section aria-labelledby="app-features-title">
+                <h2 id="app-features-title" tabIndex={-1}>{copy.featuresAndLimits}</h2>
+                <dl className="guide-feature-list guide-panel">
+                  {features.map((feature) => (
+                    <div key={feature.label}>
+                      <dt>{feature.label}</dt>
+                      <dd>{feature.value}</dd>
+                    </div>
+                  ))}
+                </dl>
+              </section>
+            ) : null}
+
+            <section aria-labelledby="watch-for-title">
+              <h2 id="watch-for-title" tabIndex={-1}>{copy.warningTitle}</h2>
+              <ul className="guide-warnings guide-panel" role="list">
+                {entry.watchFor.map((item) => (
+                  <li key={item.title}>
+                    <RiskDot level={item.severity} />
+                    <div className="min-w-0">
+                      <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
+                        <h3>{item.title}</h3>
+                        <span className="eyebrow">{getRiskMeta(item.severity, locale).label}</span>
+                      </div>
+                      <p>{item.description}</p>
+                    </div>
+                  </li>
+                ))}
+              </ul>
+            </section>
+
+            <section aria-labelledby="setup-guide-title">
+              <h2 id="setup-guide-title" tabIndex={-1}>{copy.guideTitle}</h2>
+              {entry.setupGuideIntro && <p className="guide-section-intro">{entry.setupGuideIntro}</p>}
+              <GuideSteps steps={entry.setupGuide} />
+            </section>
+
+            {entry.editorialReview && <EntrySources review={entry.editorialReview} locale={locale} />}
+          </div>
+        </div>
+
+        {relatedEntries.length ? (
+          <nav className="guide-related" aria-labelledby="related-pages-title">
+            <div className="mb-4 flex flex-wrap items-baseline justify-between gap-x-4 gap-y-2">
+              <h2 id="related-pages-title">{copy.relatedTitle}</h2>
+              <Link href={directoryHref} className="text-sm font-medium">
+                {copy.backTo} {categoryLabel.toLowerCase()}
               </Link>
             </div>
             <div className="grid gap-4 md:grid-cols-3">

@@ -29,7 +29,7 @@ export function NetworkApproachCard({
       <div className="space-y-4">
         <div className="flex items-start justify-between gap-4">
           <span
-            className="inline-flex h-12 w-12 items-center justify-center rounded-2xl border border-paper-line bg-paper-50 text-2xl"
+            className="inline-flex h-12 w-12 items-center justify-center rounded-lg border border-paper-line bg-paper-50 text-2xl"
             aria-hidden="true"
           >
             <Icon size={26} />
@@ -39,10 +39,10 @@ export function NetworkApproachCard({
           </span>
         </div>
         <div className="space-y-2">
-          <h3 className="font-display text-xl font-semibold tracking-tight text-paper-ink">
+          <h3 className="text-lg font-bold leading-tight tracking-tight text-paper-ink">
             {approach.name}
           </h3>
-          <p className="text-[15px] leading-7 text-paper-ink/75">
+          <p className="text-base leading-relaxed text-paper-mute">
             {approach.homepageDescription}
           </p>
         </div>

@@ -28,31 +28,29 @@ export function EntryCard({
       style={{ textDecoration: "none" }}
     >
       {isAppCard ? (
-        <div className="space-y-4">
-          <div className="flex items-start justify-between gap-4">
-            <EntryIcon entry={entry} />
-            <RiskBadge
-              level={entry.riskLevel}
-              label={parentFriendlyRiskLabel}
-              compact
-              showDot={false}
-            />
-          </div>
-          <div className="space-y-2">
-            <h3 className="font-display text-xl font-semibold tracking-tight text-paper-ink">
+        <div className="space-y-3">
+          <div className="flex items-center gap-3">
+            <EntryIcon entry={entry} size="sm" />
+            <h3 className="min-w-0 text-lg font-bold leading-tight tracking-tight text-paper-ink">
               {entry.name}
             </h3>
-            <p className="text-[15px] leading-7 text-paper-ink/75">{entry.summary}</p>
           </div>
+          <RiskBadge
+            level={entry.riskLevel}
+            label={parentFriendlyRiskLabel}
+            compact
+            showDot={false}
+          />
+          <p className="text-base leading-relaxed text-paper-mute">{entry.summary}</p>
         </div>
       ) : (
         <div className="flex items-start gap-4">
           <EntryIcon entry={entry} size="sm" />
           <div className="min-w-0 space-y-1.5">
-            <h3 className="font-display text-xl font-semibold tracking-tight text-paper-ink">
+            <h3 className="text-lg font-bold leading-tight tracking-tight text-paper-ink">
               {entry.name}
             </h3>
-            <p className="text-[15px] leading-7 text-paper-ink/75">
+            <p className="text-base leading-relaxed text-paper-mute">
               {subtitle ?? entry.summary}
             </p>
           </div>

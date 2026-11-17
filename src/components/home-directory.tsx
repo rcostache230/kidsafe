@@ -62,169 +62,173 @@ export function HomeDirectory({ locale = "en" }: { locale?: Locale }) {
   const devices = filterEntries(getEntriesByCategory("devices", locale), query);
   const networks = filterNetworkApproaches(getNetworkApproaches(locale), query, locale);
   const resultCount = apps.length + operatingSystems.length + devices.length + networks.length;
-  const hasResults =
-    apps.length > 0 || operatingSystems.length > 0 || devices.length > 0 || networks.length > 0;
+  const isSearching = Boolean(query.trim());
+  const categories = [
+    { id: "apps", label: copy.footer.apps, count: apps.length },
+    { id: "operating-systems", label: copy.footer.os, count: operatingSystems.length },
+    { id: "devices", label: copy.footer.devices, count: devices.length },
+    { id: "network", label: copy.footer.network, count: networks.length }
+  ].filter(({ count }) => count > 0);
 
   return (
-    <div className="page-shell py-8 sm:py-12" lang={locale}>
-      <div className="space-y-8 sm:space-y-10">
-        <section className="space-y-6 border-b border-paper-line pb-8 sm:pb-10">
-          <div className="max-w-3xl space-y-4">
+    <div className="page-shell space-y-10 pb-12 sm:space-y-12 sm:pb-16" lang={locale}>
+      <header className="directory-hero">
+        <div>
+          <div className="space-y-3">
             <p className="eyebrow">{copy.home.eyebrow}</p>
-            <h1 className="font-display text-[36px] font-semibold leading-[1.12] tracking-tight text-paper-ink sm:text-[50px]">
-              {copy.home.title}
-            </h1>
-            <p className="max-w-2xl text-lg leading-relaxed text-paper-ink/80">
-              {copy.home.subtitle}
-            </p>
+            <h1 className="page-title">{copy.home.title}</h1>
+            <p className="page-lede">{copy.home.subtitle}</p>
           </div>
-          <div className="max-w-3xl space-y-2 pt-2">
-            <label htmlFor="directory-search" className="block text-sm font-semibold text-paper-ink">
+
+          <div className="mt-6 max-w-xl space-y-2 sm:mt-8">
+            <label htmlFor="directory-search" className="block text-sm font-semibold">
               {copy.home.searchLabel}
             </label>
             <div className="relative">
               <MagnifyingGlass aria-hidden="true" className="pointer-events-none absolute left-4 top-1/2 h-5 w-5 -translate-y-1/2 text-brand-700" />
-              <input id="directory-search" type="search" value={query}
+              <input
+                id="directory-search"
+                type="search"
+                value={query}
                 onChange={(event) => setQuery(event.target.value)}
                 placeholder={copy.home.searchPlaceholder}
-                className="w-full rounded-2xl border border-paper-line bg-white py-4 pl-12 pr-14 text-base text-paper-ink placeholder:text-paper-mute outline-none transition focus:border-brand-600 focus:ring-4 focus:ring-brand-100"
+                className="directory-search"
               />
-              {query ? <button type="button" onClick={() => setQuery("")} aria-label={copy.home.clearSearch}
-                className="absolute right-2 top-1/2 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-xl text-paper-mute hover:bg-brand-50">
-                <X aria-hidden="true" size={18} />
-              </button> : null}
+              {query && (
+                <button
+                  type="button"
+                  onClick={() => setQuery("")}
+                  aria-label={copy.home.clearSearch}
+                  className="absolute right-2 top-1/2 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-lg text-paper-mute hover:bg-brand-50"
+                >
+                  <X aria-hidden="true" size={18} />
+                </button>
+              )}
             </div>
             <p role="status" aria-live="polite" aria-atomic="true" className="text-sm text-paper-mute">
-              {query.trim() ? `${resultCount} ${resultCount === 1 ? copy.home.resultLabel : copy.home.resultsLabel}` : ""}
+              {isSearching ? `${resultCount} ${resultCount === 1 ? copy.home.resultLabel : copy.home.resultsLabel}` : ""}
             </p>
           </div>
-        </section>
+        </div>
 
-        {!query.trim() ? <div className="space-y-3">
-          <p className="text-sm font-semibold text-paper-mute">{copy.home.quickStartLabel}</p>
-          <div className="flex flex-wrap gap-2">
-            {quickPicks.map((item, index) => (
-              <Link key={item.href} href={localizeHref(item.href, locale)} className="btn-ghost">
-                {copy.home.quickPicks[index]}<ArrowRight size={14} aria-hidden="true" />
-              </Link>
+        {!isSearching && (
+          <nav aria-label={copy.home.quickStartLabel} className="contents-panel directory-quick-start">
+            <p className="eyebrow">{copy.home.quickStartLabel}</p>
+            <ul>
+              {quickPicks.map((item, index) => (
+                <li key={item.href}>
+                  <Link href={localizeHref(item.href, locale)}>
+                    {copy.home.quickPicks[index]}
+                    <ArrowRight size={16} aria-hidden="true" />
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </nav>
+        )}
+      </header>
+
+      {categories.length > 0 && (
+        <nav aria-label={copy.home.browseLabel} className="directory-nav">
+          <p className="eyebrow">{copy.home.browseLabel}</p>
+          <ul>
+            {categories.map(({ id, label }) => (
+              <li key={id}><a href={`#${id}`}>{label}</a></li>
+            ))}
+          </ul>
+        </nav>
+      )}
+
+      {resultCount === 0 ? <section className="card space-y-4 p-6 text-paper-mute">
+        <p>{copy.home.noResults}</p>
+        <button type="button" className="btn-ghost" onClick={() => setQuery("")}>{copy.home.clearSearch}</button>
+      </section> : null}
+
+      {apps.length ? (
+        <DirectorySection
+          id="apps"
+          Icon={IconApps}
+          title={copy.home.sections.appsTitle}
+          description={copy.home.sections.appsDescription}
+        >
+          <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+            {apps.map((entry) => (
+              <EntryCard key={entry.slug} entry={entry} compact locale={locale} />
             ))}
           </div>
-        </div> : null}
+        </DirectorySection>
+      ) : null}
 
-        <nav aria-label={copy.home.browseLabel} className="flex flex-wrap gap-x-6 gap-y-2 border-b border-paper-line pb-4 text-sm font-semibold">
-          {[
-            ["apps", copy.footer.apps, apps.length],
-            ["operating-systems", copy.footer.os, operatingSystems.length],
-            ["devices", copy.footer.devices, devices.length],
-            ["network", copy.footer.network, networks.length]
-          ].filter(([, , count]) => Number(count) > 0).map(([id, label]) => (
-            <a key={id} href={`#${id}`} className="inline-flex min-h-11 items-center">{label}</a>
-          ))}
-        </nav>
-
-        {!hasResults ? <section className="card space-y-4 p-6 text-paper-mute">
-          <p>{copy.home.noResults}</p>
-          <button type="button" className="btn-ghost" onClick={() => setQuery("")}>{copy.home.clearSearch}</button>
-        </section> : null}
-
-        {apps.length ? (
-          <DirectorySection
-            id="apps"
-            Icon={IconApps}
-            title={copy.home.sections.appsTitle}
-            description={copy.home.sections.appsDescription}
-          >
-            <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-              {apps.map((entry) => (
-                <EntryCard key={entry.slug} entry={entry} compact locale={locale} />
-              ))}
-            </div>
-          </DirectorySection>
-        ) : null}
-
-        {operatingSystems.length ? (
-          <DirectorySection
-            id="operating-systems"
-            Icon={IconOS}
-            title={copy.home.sections.osTitle}
-            description={copy.home.sections.osDescription}
-          >
-            <div className="grid gap-4 md:grid-cols-2">
-              {operatingSystems.map((entry) => (
-                <EntryCard key={entry.slug} entry={entry} locale={locale} />
-              ))}
-            </div>
-          </DirectorySection>
-        ) : null}
-
-        {devices.length ? (
-          <DirectorySection
-            id="devices"
-            Icon={IconDevices}
-            title={copy.home.sections.devicesTitle}
-            description={copy.home.sections.devicesDescription}
-          >
-            <div className="grid gap-4 md:grid-cols-2">
-              {devices.map((entry) => (
-                <EntryCard key={entry.slug} entry={entry} locale={locale} />
-              ))}
-            </div>
-          </DirectorySection>
-        ) : null}
-
-        {networks.length ? (
-          <DirectorySection
-            id="network"
-            Icon={IconNetwork}
-            title={copy.home.sections.networkTitle}
-            description={copy.home.sections.networkDescription}
-          >
-            <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-              {networks.map((approach) => (
-                <NetworkApproachCard key={approach.id} approach={approach} locale={locale} />
-              ))}
-            </div>
-          </DirectorySection>
-        ) : null}
-
-        {!query.trim() ? <PartnerTips locale={locale} /> : null}
-
-        {/* ABOUT ----------------------------------------------------- */}
-        <section
-          id="about"
-          className="scroll-mt-24 overflow-hidden rounded-[28px] border border-paper-line bg-paper-100 px-6 py-10 sm:px-10 sm:py-12"
+      {operatingSystems.length ? (
+        <DirectorySection
+          id="operating-systems"
+          Icon={IconOS}
+          title={copy.home.sections.osTitle}
+          description={copy.home.sections.osDescription}
         >
-          <div className="grid gap-8 md:grid-cols-[auto_1fr] md:items-start">
-            <div
-              className="flex h-20 w-20 items-center justify-center rounded-full border border-paper-line bg-white font-display text-xl font-semibold text-brand-700 shadow-soft"
-              aria-hidden="true"
-            >
-              RC
-            </div>
-            <div className="space-y-5">
-              <h2 className="font-display text-3xl font-semibold leading-tight tracking-tight text-paper-ink">
-                {copy.home.aboutTitle}
-              </h2>
-              <p className="text-paper-ink/85">{copy.home.aboutBodyOne}</p>
-              <p className="text-paper-ink/85">{copy.home.aboutBodyTwo}</p>
-              <div className="flex flex-wrap gap-3">
-                <a href={creatorUrl} target="_blank" rel="noopener noreferrer" className="btn-ghost no-underline">
-                  {crossPromoCopy[locale].creatorLink}
-                </a>
-                <a
-                  href="https://www.linkedin.com/in/rcostache/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn-ghost no-underline"
-                  style={{ textDecoration: "none" }}
-                >
-                  {copy.home.linkedin}
-                </a>
-              </div>
-            </div>
+          <div className="grid gap-4 md:grid-cols-2">
+            {operatingSystems.map((entry) => (
+              <EntryCard key={entry.slug} entry={entry} locale={locale} />
+            ))}
           </div>
-        </section>
-      </div>
+        </DirectorySection>
+      ) : null}
+
+      {devices.length ? (
+        <DirectorySection
+          id="devices"
+          Icon={IconDevices}
+          title={copy.home.sections.devicesTitle}
+          description={copy.home.sections.devicesDescription}
+        >
+          <div className="grid gap-4 md:grid-cols-2">
+            {devices.map((entry) => (
+              <EntryCard key={entry.slug} entry={entry} locale={locale} />
+            ))}
+          </div>
+        </DirectorySection>
+      ) : null}
+
+      {networks.length ? (
+        <DirectorySection
+          id="network"
+          Icon={IconNetwork}
+          title={copy.home.sections.networkTitle}
+          description={copy.home.sections.networkDescription}
+        >
+          <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+            {networks.map((approach) => (
+              <NetworkApproachCard key={approach.id} approach={approach} locale={locale} />
+            ))}
+          </div>
+        </DirectorySection>
+      ) : null}
+
+      {!isSearching ? <PartnerTips locale={locale} /> : null}
+
+      <section id="about" className="card p-6 sm:p-8">
+        <div className="max-w-3xl space-y-5">
+          <h2 className="text-2xl font-bold leading-tight tracking-tight sm:text-3xl">
+            {copy.home.aboutTitle}
+          </h2>
+          <p className="text-paper-ink/85">{copy.home.aboutBodyOne}</p>
+          <p className="text-paper-ink/85">{copy.home.aboutBodyTwo}</p>
+          <div className="flex flex-wrap gap-3">
+            <a href={creatorUrl} target="_blank" rel="noopener noreferrer" className="btn-ghost no-underline">
+              {crossPromoCopy[locale].creatorLink}
+            </a>
+            <a
+              href="https://www.linkedin.com/in/rcostache/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-ghost no-underline"
+              style={{ textDecoration: "none" }}
+            >
+              {copy.home.linkedin}
+            </a>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }
@@ -243,13 +247,13 @@ function DirectorySection({
   children: React.ReactNode;
 }) {
   return (
-    <section id={id} className="scroll-mt-36 space-y-6 pt-2">
+    <section id={id} className="directory-section space-y-5">
       <div className="flex items-start gap-4">
-        <span className="inline-flex h-12 w-12 flex-none items-center justify-center rounded-2xl bg-brand-50 text-brand-700">
+        <span className="inline-flex h-11 w-11 flex-none items-center justify-center rounded-lg border border-paper-line bg-white text-paper-ink">
           <Icon className="h-5 w-5" />
         </span>
         <div className="space-y-1.5">
-          <h2 className="font-display text-3xl font-semibold tracking-tight text-paper-ink">
+          <h2 className="text-2xl font-bold leading-tight tracking-tight sm:text-3xl">
             {title}
           </h2>
           <p className="text-paper-ink/75">{description}</p>

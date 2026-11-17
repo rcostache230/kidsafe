@@ -6,13 +6,13 @@ function BannerContent({ locale = "en" }: { locale?: Locale }) {
   const copy = getNetworkCopy(locale);
 
   return (
-    <div className="grid gap-3">
-      <section className="rounded-2xl border border-brand-100 bg-brand-50 p-5">
-        <p className="text-[15px] leading-7 text-paper-ink/90">{copy.infoBanner}</p>
-      </section>
-      <section className="rounded-2xl border border-accent-200 bg-accent-50 p-5">
-        <p className="text-[15px] leading-7 text-paper-ink/90">{copy.warningBanner}</p>
-      </section>
+    <div className="guide-callouts">
+      <div className="guide-callout">
+        <p>{copy.infoBanner}</p>
+      </div>
+      <div className="guide-callout guide-callout-warning">
+        <p>{copy.warningBanner}</p>
+      </div>
     </div>
   );
 }
@@ -31,7 +31,7 @@ export function NetworkBanners({
   }
 
   return (
-    <details className="group overflow-hidden rounded-2xl border border-paper-line bg-white shadow-soft">
+    <details className="group overflow-hidden rounded-card border border-paper-line bg-white">
       <summary className="flex cursor-pointer list-none items-center justify-between gap-4 px-5 py-4 text-sm font-semibold text-paper-ink transition-colors hover:text-brand-700 [&::-webkit-details-marker]:hidden">
         <span className="inline-flex items-center gap-2">
           <Info aria-hidden="true" size={18} />
