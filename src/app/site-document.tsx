@@ -1,0 +1,61 @@
+import type { Metadata } from "next";
+import type { ReactNode } from "react";
+import { Analytics } from "@vercel/analytics/next";
+
+import { SkipLink } from "@/components/skip-link";
+import { Footer } from "@/components/footer";
+import { SiteHeader } from "@/components/site-header";
+import { SITE_DESCRIPTION, SITE_NAME, SITE_URL } from "@/lib/site";
+import { type Locale } from "@/lib/locale";
+
+import "./theme.css";
+import "./globals.css";
+import "./directory.css";
+import "./guide.css";
+
+export const defaultMetadata: Metadata = {
+  metadataBase: new URL(SITE_URL),
+  title: SITE_NAME,
+  description: SITE_DESCRIPTION,
+  openGraph: {
+    siteName: SITE_NAME,
+    type: "website"
+  },
+  twitter: {
+    card: "summary_large_image"
+  },
+  icons: {
+    icon: [
+      { url: "/brand/digitalparents-favicon.png", sizes: "64x64", type: "image/png" }
+    ],
+    apple: [{ url: "/brand/digitalparents-apple.png", sizes: "180x180", type: "image/png" }]
+  }
+};
+
+export function SiteDocument({
+  children,
+  locale
+}: Readonly<{
+  children: ReactNode;
+  locale: Locale;
+}>) {
+  return (
+    <html lang={locale}>
+      <head>
+        <link rel="stylesheet" href="/fonts/fonts.css" />
+        <link rel="preload" href="/fonts/inter-latin.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
+      </head>
+      <body className="bg-paper text-paper-ink">
+        <SkipLink />
+        <div className="flex min-h-screen flex-col">
+          <SiteHeader />
+          <main id="main" className="flex-1">
+            {children}
+          </main>
+          <Footer />
+        </div>
+        <Analytics />
+      </body>
+    </html>
+  );
+}

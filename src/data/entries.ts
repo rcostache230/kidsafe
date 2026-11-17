@@ -1391,7 +1391,7 @@ export const entries: Entry[] = [
     "riskLevel": "high",
     "riskLabelText": "High risk",
     "summary": "A social map for sharing live location with friends. Review who can see your teen’s movements and what their profile reveals.",
-    "description": "Bump lets friends see one another on a live map, chat and see places they have visited. With background location enabled, accepted friends can keep seeing your teen’s location while your teen uses other apps. Review the friend list, location permissions and public profile together.",
+    "description": "Bump generally requires users to be 16. Ages 13–15 are allowed in some countries. Accepted friends can see live location by default, including in the background if the phone allows it. Check the signup rule, friend list and location permissions together.",
     "ageRating": "App Store Romania: 13+. Google Play: Parental Guidance in Romania.",
     "userCount": "10M+ downloads on Google Play",
     "platform": "iOS, Android",

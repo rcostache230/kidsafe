@@ -5,6 +5,7 @@ import {
   getNetworkApproach,
   getNetworkCopy,
   getNetworkMetricLabel,
+  getNetworkGuideHref,
   getNetworkOverviewHref,
   type NetworkGuide
 } from "@/data/network";
@@ -37,6 +38,7 @@ export function NetworkGuidePage({
     <article className="guide-page" lang={locale}>
       <div className="page-shell guide-shell">
         <Breadcrumbs
+          currentUrl={getNetworkGuideHref(guide.slug, locale)}
           items={[
             { label: copy.breadcrumbHome, href: locale === "en" ? "/en" : "/" },
             { label: copy.breadcrumbOverview, href: getNetworkOverviewHref(locale) },

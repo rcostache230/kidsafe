@@ -2,7 +2,8 @@ import Link from "next/link";
 import { ArrowDown } from "@phosphor-icons/react/dist/ssr";
 
 import { getCopy } from "@/lib/copy";
-import { type Locale } from "@/lib/locale";
+import { localizeHref, type Locale } from "@/lib/locale";
+import { absoluteUrl, SITE_AUTHOR, SITE_AUTHOR_URL } from "@/lib/site-identity";
 import {
   getCategoryDirectoryHref,
   getCategoryLabel,
@@ -17,6 +18,7 @@ import { EntryCard } from "./entry-card";
 import { EntryIcon } from "./entry-icon";
 import { EntryReviewDate, EntrySources } from "./entry-sources";
 import { GuideContents, GuideSteps } from "./guide-layout";
+import { JsonLd } from "./json-ld";
 import { RiskBadge } from "./risk-badge";
 import { RiskBar } from "./risk-bar";
 import { RiskDot } from "./risk-dot";
@@ -48,15 +50,31 @@ export function EntryPage({
   const directoryHref = getCategoryDirectoryHref(entry.category, locale);
   const isApp = entry.category === "apps";
   const features = isApp ? entry.appMetrics : undefined;
-  const sections: Array<[string, string]> = [["quick-actions-title", copy.quickActions]];
+  const pageUrl = absoluteUrl(getEntryHref(entry, locale));
+  const sections: Array<[string, string]> = [];
   if (features?.length) sections.push(["app-features-title", copy.featuresAndLimits]);
-  sections.push(["watch-for-title", copy.warningTitle], ["setup-guide-title", copy.guideTitle]);
+  sections.push(
+    ["quick-actions-title", copy.quickActions],
+    ["watch-for-title", copy.warningTitle],
+    ["setup-guide-title", copy.guideTitle]
+  );
   if (entry.editorialReview) sections.push(["guide-sources", copy.sources]);
 
   return (
     <article className="guide-page" lang={locale}>
+      <JsonLd data={{
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        url: pageUrl,
+        name: entry.name,
+        description: entry.description,
+        inLanguage: locale,
+        lastReviewed: entry.editorialReview?.checkedAt,
+        author: { "@type": "Person", name: SITE_AUTHOR, url: SITE_AUTHOR_URL }
+      }} />
       <div className="page-shell guide-shell">
         <Breadcrumbs
+          currentUrl={pageUrl}
           items={[
             { label: copy.homeBreadcrumb, href: locale === "en" ? "/en" : "/" },
             { label: categoryLabel, href: directoryHref },
@@ -72,6 +90,10 @@ export function EntryPage({
             </div>
             <h1 className="page-title">{entry.name}</h1>
             <p className="page-lede">{entry.description}</p>
+            <p className="mt-3 text-sm text-paper-mute">
+              {locale === "ro" ? "De " : "By "}
+              <Link href={localizeHref("/#about", locale)}>{SITE_AUTHOR}</Link>
+            </p>
             <div className="guide-intro-actions">
               {!isApp && <RiskBadge level={entry.riskLevel} label={entry.riskLabelText} />}
               <a href="#setup-guide-title" className="guide-jump">
@@ -110,6 +132,20 @@ export function EntryPage({
           <GuideContents label={copy.onThisPage} links={sections} />
 
           <div className="guide-content">
+            {features?.length ? (
+              <section aria-labelledby="app-features-title">
+                <h2 id="app-features-title" tabIndex={-1}>{copy.featuresAndLimits}</h2>
+                <dl className="guide-feature-list guide-panel">
+                  {features.map((feature) => (
+                    <div key={feature.label}>
+                      <dt>{feature.label}</dt>
+                      <dd>{feature.value}</dd>
+                    </div>
+                  ))}
+                </dl>
+              </section>
+            ) : null}
+
             <section aria-labelledby="quick-actions-title">
               <h2 id="quick-actions-title" tabIndex={-1}>{copy.quickActions}</h2>
               <ol className="guide-actions guide-panel" role="list">
@@ -137,20 +173,6 @@ export function EntryPage({
                   </section>
                 ))}
               </div>
-            ) : null}
-
-            {features?.length ? (
-              <section aria-labelledby="app-features-title">
-                <h2 id="app-features-title" tabIndex={-1}>{copy.featuresAndLimits}</h2>
-                <dl className="guide-feature-list guide-panel">
-                  {features.map((feature) => (
-                    <div key={feature.label}>
-                      <dt>{feature.label}</dt>
-                      <dd>{feature.value}</dd>
-                    </div>
-                  ))}
-                </dl>
-              </section>
             ) : null}
 
             <section aria-labelledby="watch-for-title">

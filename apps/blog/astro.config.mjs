@@ -16,7 +16,13 @@ export default defineConfig({
   build: {
     assets: "_assets"
   },
-  integrations: [mdx(), sitemap()],
+  integrations: [
+    mdx(),
+    sitemap({
+      filter: (url) => new URL(url).pathname.replace(/\/$/, "") !== "/blog/ro",
+      serialize: (entry) => ({ ...entry, url: entry.url.replace(/\/$/, "") })
+    })
+  ],
   markdown: {
     shikiConfig: {
       theme: "github-light",

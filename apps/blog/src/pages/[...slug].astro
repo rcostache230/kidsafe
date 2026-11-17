@@ -1,30 +1,57 @@
 ---
 import { getCollection, render } from "astro:content";
+import { absoluteUrl, breadcrumbData, SITE_AUTHOR, SITE_AUTHOR_URL, SITE_NAME } from "../../../../src/lib/site-identity";
 import Base from "../layouts/Base.astro";
+import { postSlug } from "../lib/post-path";
 
 export async function getStaticPaths() {
   const posts = await getCollection("posts", (entry) => !entry.data.draft);
   return posts.map((post) => {
-    // RO is the default language: /blog/<slug>
-    // EN posts live under the explicit English prefix: /blog/en/<slug>
-    const slug =
-      post.data.lang === "ro" ? post.id.replace(/^ro\//, "") : `en/${post.id}`;
+    const key = post.data.translationKey;
+    const translation = key && posts.find((candidate) =>
+      candidate.data.lang !== post.data.lang && candidate.data.translationKey === key
+    );
     return {
-      params: { slug },
-      props: { post }
+      params: { slug: postSlug(post) },
+      props: { post, translationPath: translation ? `/blog/${postSlug(translation)}` : undefined }
     };
   });
 }
 
-const { post } = Astro.props;
+const { post, translationPath } = Astro.props;
 const { Content, headings } = await render(post);
 const sections = headings.filter(({ depth }) => depth === 2);
 const lang = post.data.lang;
-const postPath = lang === "ro" ? post.id.replace(/^ro\//, "") : `en/${post.id}`;
+const canonical = absoluteUrl(`/blog/${postSlug(post)}`);
 const indexHref = lang === "ro" ? "/blog" : "/blog/en";
 const indexLabel = lang === "ro" ? "Articole" : "Articles";
 const contentsLabel = lang === "ro" ? "În acest articol" : "In this article";
 const dateLocale = lang === "ro" ? "ro-RO" : "en-US";
+
+const breadcrumbs = breadcrumbData([
+  { label: SITE_NAME, href: lang === "ro" ? "/" : "/en" },
+  { label: indexLabel, href: indexHref },
+  { label: post.data.title }
+], canonical);
+const articleData = [
+  breadcrumbs,
+  {
+    "@type": "BlogPosting",
+    headline: post.data.title,
+    description: post.data.description,
+    mainEntityOfPage: canonical,
+    inLanguage: lang,
+    datePublished: post.data.publishedAt.toISOString(),
+    dateModified: post.data.updatedAt?.toISOString(),
+    image: post.data.cover ? absoluteUrl(post.data.cover) : undefined,
+    author: {
+      "@type": "Person",
+      name: post.data.author,
+      url: post.data.author === SITE_AUTHOR ? SITE_AUTHOR_URL : undefined
+    },
+    publisher: { "@type": "Organization", name: SITE_NAME, url: absoluteUrl("/") }
+  }
+];
 
 function formatDate(date: Date) {
   return new Intl.DateTimeFormat(dateLocale, {
@@ -39,7 +66,9 @@ function formatDate(date: Date) {
   title={post.data.title}
   description={post.data.description}
   lang={lang}
-  canonical={`https://digitalparents.xyz/blog/${postPath}`}
+  canonical={canonical}
+  translationPath={translationPath}
+  articleData={articleData}
   image={post.data.cover}
 >
   <article class="article shell">

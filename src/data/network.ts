@@ -650,7 +650,7 @@ export function getNetworkOverviewHref(
   approach?: NetworkApproachId
 ) {
   const base = locale === "en" ? "/en/network" : "/network";
-  return approach ? `${base}?approach=${approach}` : base;
+  return approach ? `${base}#${approach}` : base;
 }
 
 export function getNetworkGuideHref(slug: string, locale: Locale = "en") {

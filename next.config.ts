@@ -19,6 +19,7 @@ const BLOG_ORIGIN = process.env.BLOG_ORIGIN; // e.g. https://blog-prod.example.c
 
 const nextConfig: NextConfig = {
   reactStrictMode: true,
+  experimental: { globalNotFound: true },
   async redirects() {
     return [
       { source: "/ro", destination: "/", permanent: true },
@@ -28,9 +29,21 @@ const nextConfig: NextConfig = {
     ];
   },
   async rewrites() {
+    const previews = [
+      {
+        source: "/en/:category(apps|devices|os|network)/:slug/opengraph-image",
+        destination: "/previews/en/:category/:slug"
+      },
+      {
+        source: "/:category(apps|devices|os|network)/:slug/opengraph-image",
+        destination: "/previews/ro/:category/:slug"
+      }
+    ];
+
     if (!BLOG_ORIGIN) {
       return {
         afterFiles: [
+          ...previews,
           { source: "/blog", destination: "/blog/index.html" },
           { source: "/blog/:path*", destination: "/blog/:path*/index.html" }
         ]
@@ -38,6 +51,7 @@ const nextConfig: NextConfig = {
     }
     // Optional: proxy /blog/* to an external Astro deployment.
     return [
+      ...previews,
       { source: "/blog", destination: `${BLOG_ORIGIN}/blog` },
       { source: "/blog/:path*", destination: `${BLOG_ORIGIN}/blog/:path*` }
     ];

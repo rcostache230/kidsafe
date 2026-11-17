@@ -208,22 +208,22 @@ export const uiCopy = {
       siteDescription:
         "Ghiduri practice de siguranță digitală pentru părinți, despre aplicațiile copiilor, dispozitive și controale parentale.",
       homeDescription:
-        "Ghiduri de siguranta digitala, pas cu pas, pentru aplicatiile, dispozitivele si sistemele folosite de copilul tau.",
+        "Ghiduri de siguranță digitală, pas cu pas, pentru aplicațiile, dispozitivele și sistemele folosite de copilul tău.",
       homeTitle:
         "Viața digitală a copilului tău, pe înțelesul tău.",
       notFound: "Pagina nu a fost gasita | Digital Parents",
-      entryTitleSuffix: "Ghid de siguranta digitala pentru parinti"
+      entryTitleSuffix: "Ghid de siguranță digitală pentru părinți"
     },
     og: {
       homeAlt: "Previzualizare homepage Digital Parents",
       homeTitle:
         "Viața digitală a copilului tău, pe înțelesul tău.",
       homeSubtitle:
-        "Ghiduri de siguranta pas cu pas pentru dispozitivele, sistemele si aplicatiile folosite de copilul tau.",
+        "Ghiduri de siguranță pas cu pas pentru dispozitivele, sistemele și aplicațiile folosite de copilul tău.",
       riskLevel: "Nivel de risc",
       onThisPage: "În acest ghid",
       sources: "Surse",
-      parentGuide: "Ghid de siguranta digitala pentru parinti"
+      parentGuide: "Ghid de siguranță digitală pentru părinți"
     }
   }
 } as const;

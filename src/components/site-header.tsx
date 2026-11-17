@@ -1,7 +1,6 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect } from "react";
 import { usePathname } from "next/navigation";
 
 import { BrandLogo } from "@/components/brand";
@@ -17,7 +16,6 @@ import {
 export function SiteHeader() {
   const pathname = usePathname();
   const locale = getLocaleFromPathname(pathname);
-  useEffect(() => { document.documentElement.lang = locale; }, [locale]);
   const otherLocale = getOppositeLocale(locale);
   const copy = getCopy(locale);
   const promo = crossPromoCopy[locale];

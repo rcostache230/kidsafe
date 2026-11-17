@@ -7,7 +7,7 @@ export const roEntryTranslations: Partial<Record<Entry["slug"], Partial<Localize
     "name": "Bump by amo",
     "riskLabelText": "Risc ridicat",
     "summary": "O hartă pe care prietenii își partajează locația în timp real. Verifică cine poate vedea deplasările adolescentului și ce informații apar în profilul lui.",
-    "description": "Bump le permite prietenilor să se vadă pe o hartă în timp real, să discute și să vadă locurile pe care le-au vizitat. Dacă telefonul îi dă acces la locație în fundal, Bump poate partaja locația adolescentului cu prietenii acceptați, chiar și atunci când aplicația nu e pe ecran. Verificați împreună lista de prieteni, permisiunile de localizare și profilul public.",
+    "description": "Bump cere, în general, vârsta de 16 ani pentru cont. Unele țări permit accesul între 13 și 15 ani. Prietenii acceptați pot vedea implicit locația în timp real, inclusiv în fundal dacă telefonul permite. Verificați împreună regula de vârstă, lista de prieteni și permisiunile de localizare.",
     "ageRating": "App Store România: 13+. Pe Google Play în România apare „Acord parental”.",
     "userCount": "Peste 10 milioane de descărcări pe Google Play",
     "platform": "iOS, Android",

@@ -1,13 +1,18 @@
 import Link from "next/link";
 
+import { breadcrumbData } from "@/lib/site-identity";
+
+import { JsonLd } from "./json-ld";
+
 export type BreadcrumbItem = {
   label: string;
   href?: string;
 };
 
-export function Breadcrumbs({ items }: { items: BreadcrumbItem[] }) {
+export function Breadcrumbs({ items, currentUrl }: { items: BreadcrumbItem[]; currentUrl: string }) {
   return (
     <nav aria-label="Breadcrumb" className="text-sm text-paper-ink/70">
+      <JsonLd data={breadcrumbData(items, currentUrl)} />
       <ol className="flex flex-wrap items-center gap-2">
         {items.map((item, index) => (
           <li key={`${item.label}-${index}`} className="flex items-center gap-2">

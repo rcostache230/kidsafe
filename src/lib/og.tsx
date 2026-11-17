@@ -22,13 +22,13 @@ export const OG_FONTS = [{
   style: "normal" as const
 }];
 
-export const OG_CONTENT_TYPE = "image/png";
-
 const brandMarkData = `data:image/png;base64,${readFileSync(join(process.cwd(), "public/brand/digitalparents-wordmark.png")).toString("base64")}`;
 
 const baseText = "#0f172a";
 const mutedText = "#5f6b7a";
 const brandColor = "#0D5849";
+const riskBarWidth = 820;
+const riskMarkerSize = 16;
 
 function legendDot(color: string) {
   return (
@@ -230,7 +230,7 @@ export function EntryOgCard({
       </div>
 
       {entry.category === "apps" && entry.riskBarPosition !== undefined ? (
-        <div style={{ display: "flex", flexDirection: "column", gap: 14, maxWidth: 820 }}>
+        <div style={{ display: "flex", flexDirection: "column", gap: 14, width: riskBarWidth }}>
           <div
             style={{
               display: "flex",
@@ -261,9 +261,9 @@ export function EntryOgCard({
               style={{
                 position: "absolute",
                 top: 1,
-                left: `calc(${entry.riskBarPosition}% - 10px)`,
-                width: 16,
-                height: 16,
+                left: (riskBarWidth - riskMarkerSize) * entry.riskBarPosition / 100,
+                width: riskMarkerSize,
+                height: riskMarkerSize,
                 borderRadius: 999,
                 background: brandColor,
                 border: "2px solid #ffffff"
@@ -388,6 +388,8 @@ export function NetworkGuideOgCard({
         {setupTime ? (
           <div
             style={{
+              display: "flex",
+              flexDirection: "column",
               flex: 1,
               borderRadius: 24,
               border: "1px solid rgba(148,163,184,0.24)",
@@ -403,6 +405,8 @@ export function NetworkGuideOgCard({
         {bypassResistance ? (
           <div
             style={{
+              display: "flex",
+              flexDirection: "column",
               flex: 1,
               borderRadius: 24,
               border: "1px solid rgba(148,163,184,0.24)",

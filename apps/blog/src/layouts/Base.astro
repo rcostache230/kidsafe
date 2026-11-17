@@ -2,6 +2,7 @@
 import "../../../../src/app/theme.css";
 import "../styles/global.css";
 import { creatorUrl, crossPromoCopy, klioUrl } from "../../../../src/lib/cross-promo";
+import { absoluteUrl, serializeJsonLd, SITE_NAME } from "../../../../src/lib/site-identity";
 
 interface Props {
   title: string;
@@ -9,24 +10,20 @@ interface Props {
   lang?: "en" | "ro";
   canonical?: string;
   image?: string;
+  translationPath?: string;
+  articleData?: object[];
 }
 
-const { title, description, lang = "ro", canonical, image } = Astro.props;
+const { title, description, lang = "ro", canonical, image, translationPath, articleData } = Astro.props;
 const promo = crossPromoCopy[lang];
-const siteName = "Digital Parents";
-const imageUrl = image
-  ? new URL(image, "https://digitalparents.xyz").toString()
-  : undefined;
 const homeHref = lang === "ro" ? "/" : "/en";
 const blogHref = lang === "ro" ? "/blog" : "/blog/en";
-const articlePairs = [
-  ["/blog/fii-partener-nu-paznic", "/blog/en/be-a-partner-not-a-guard"],
-  ["/blog/timp-ecran-fara-cearta", "/blog/en/screen-time-without-a-fight"],
-  ["/blog/new-apple", "/blog/en/apple-ios-27-child-safety"]
-];
-const currentPath = Astro.url.pathname.replace(/\/$/, "");
-const articlePair = articlePairs.find((pair) => pair.includes(currentPath));
-const switchLangHref = articlePair ? articlePair[lang === "ro" ? 1 : 0] : lang === "ro" ? "/blog/en" : "/blog";
+const defaultAlternate = lang === "ro" ? "/blog/en" : "/blog";
+const otherLang = lang === "ro" ? "en" : "ro";
+const canonicalUrl = canonical ?? absoluteUrl(blogHref);
+const alternatePath = articleData ? translationPath : defaultAlternate;
+const switchLangHref = alternatePath ?? defaultAlternate;
+const imageUrl = absoluteUrl(image ?? `${homeHref === "/" ? "" : homeHref}/opengraph-image`);
 const switchLangLabel = lang === "ro" ? "EN" : "RO";
 const navGuides = lang === "ro" ? "Ghiduri" : "Guides";
 const navArticles = lang === "ro" ? "Articole" : "Articles";
@@ -45,16 +42,28 @@ const footerCopy =
     <link rel="preload" href="/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin="anonymous" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content={description} />
-    {canonical ? <link rel="canonical" href={canonical} /> : null}
-    <title>{title} | {siteName}</title>
+    <link rel="canonical" href={canonicalUrl} />
+    {alternatePath && (
+      <>
+        <link rel="alternate" hreflang={lang} href={canonicalUrl} />
+        <link rel="alternate" hreflang={otherLang} href={absoluteUrl(alternatePath)} />
+        <link rel="alternate" hreflang="x-default" href={lang === "ro" ? canonicalUrl : absoluteUrl(alternatePath)} />
+      </>
+    )}
+    <title>{title} | {SITE_NAME}</title>
     <link rel="icon" href="/brand/digitalparents-favicon.png" type="image/png" />
     <link rel="apple-touch-icon" href="/brand/digitalparents-apple.png" />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
-    <meta property="og:type" content="article" />
-    {imageUrl ? <meta property="og:image" content={imageUrl} /> : null}
+    <meta property="og:type" content={articleData ? "article" : "website"} />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:site_name" content={SITE_NAME} />
+    <meta property="og:image" content={imageUrl} />
     <meta name="twitter:card" content="summary_large_image" />
-    {imageUrl ? <meta name="twitter:image" content={imageUrl} /> : null}
+    <meta name="twitter:image" content={imageUrl} />
+    {articleData && (
+      <script type="application/ld+json" set:html={serializeJsonLd({ "@context": "https://schema.org", "@graph": articleData })} is:inline />
+    )}
   </head>
   <body>
     <a class="skip-link" href="#main">{lang === "ro" ? "Sari la conținut" : "Skip to content"}</a>
@@ -69,7 +78,7 @@ const footerCopy =
           <a href={`${homeHref}#about`}>{navAbout}</a>
           <a href={klioUrl} target="_blank" rel="noopener noreferrer" aria-label={promo.klioLabel} title={promo.klioDescription} class="klio-link">Klio <span aria-hidden="true">↗</span></a>
         </nav>
-        <a class="lang-switch" href={switchLangHref} aria-label={switchLangLabel === "RO" ? "Switch to Romanian" : "Switch to English"}>
+        <a class="lang-switch" href={switchLangHref} hreflang={otherLang} aria-label={switchLangLabel === "RO" ? "Switch to Romanian" : "Switch to English"}>
           {switchLangLabel}
         </a>
       </div>

@@ -1,29 +1,30 @@
+import { Suspense } from "react";
+
 import {
   getNetworkCopy,
   getNetworkGuidesByApproach,
   getNetworkOverviewApproaches,
-  isNetworkApproach
+  getNetworkOverviewHref
 } from "@/data/network";
 import { type Locale } from "@/lib/locale";
 
 import { Breadcrumbs } from "./breadcrumbs";
+import { NetworkApproachHighlight } from "./network-approach-highlight";
 import { NetworkBanners } from "./network-banners";
 import { NetworkGuideCard } from "./network-guide-card";
 
 export function NetworkOverview({
-  locale = "en",
-  initialApproach
+  locale = "en"
 }: {
   locale?: Locale;
-  initialApproach?: string;
 }) {
   const copy = getNetworkCopy(locale);
   const approaches = getNetworkOverviewApproaches(locale);
-  const highlightedApproach = isNetworkApproach(initialApproach) ? initialApproach : undefined;
 
   return (
     <article className="page-shell guide-shell space-y-8" lang={locale}>
       <Breadcrumbs
+        currentUrl={getNetworkOverviewHref(locale)}
         items={[
           { label: copy.breadcrumbHome, href: locale === "en" ? "/en" : "/" },
           { label: copy.breadcrumbOverview }
@@ -46,18 +47,19 @@ export function NetworkOverview({
       </nav>
 
       <NetworkBanners locale={locale} />
+      <Suspense><NetworkApproachHighlight /></Suspense>
 
       <div className="space-y-6">
         {approaches.map((approach) => {
           const guides = getNetworkGuidesByApproach(approach.id, locale);
-          const highlighted = approach.id === highlightedApproach;
 
           return (
             <section
               key={approach.id}
               id={approach.id}
               aria-labelledby={`${approach.id}-title`}
-              className={`space-y-5 border-t pt-8 ${highlighted ? "border-brand-600" : "border-paper-line"}`}
+              data-network-approach
+              className="space-y-5 border-t border-paper-line pt-8 target:border-brand-600 data-[highlighted=true]:border-brand-600"
             >
               <div className="space-y-2">
                 <h2 id={`${approach.id}-title`} className="text-2xl font-bold leading-tight tracking-tight sm:text-3xl">

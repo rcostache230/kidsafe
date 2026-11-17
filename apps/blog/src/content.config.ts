@@ -10,6 +10,7 @@ const posts = defineCollection({
     title: z.string(),
     description: z.string(),
     lang: z.enum(["en", "ro"]),
+    translationKey: z.string().optional(),
     publishedAt: z.coerce.date(),
     updatedAt: z.coerce.date().optional(),
     author: z.string().default("Razvan Costache"),
